@@ -15,6 +15,17 @@
     <div id="divPage">
         <div id="divHeader">
             <h1>The Election Leaflet Project</h1>
+            <ul id="ulMenu">
+                <li>
+                    <a href="#">Add a leaflet</a>
+                </li>
+                <li>
+                    <a href="#">Browse leaflets</a>
+                </li>                
+                <li>
+                    <a href="#">About</a>
+                </li>                
+            </ul>
         </div>
         <div id="divContent">
             <div id="divContentLeft">
