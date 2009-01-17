@@ -21,6 +21,9 @@
                 </li>
                 <li>
                     <a href="#">Browse leaflets</a>
+                </li>
+                <li>
+                    <a href="#">League tables</a>
                 </li>                
                 <li>
                     <a href="#">About</a>

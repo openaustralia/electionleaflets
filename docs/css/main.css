@@ -16,3 +16,10 @@ ul.scroll {overflow-y:scroll; height:100px;}
 
 /* Loading */
 #divLoading {text-align:center; display:none; padding:2em;}
+
+
+/* Forms */
+form ul {padding:0; margin:0;}
+form ul li {list-style-type:none;padding:0; margin:0; padding-bottom:1em;}
+form ul li label {display:block; font-size:1.3em; padding:0.3em 0;}
+form ul li ul li label {display:inline; padding:0; font-size:0.8em;}
