@@ -52,7 +52,7 @@
                             <li>
                                 <label for="txtDetail">Enter a general, impartial description of the leaflet</label>
                                 <textarea type="text" id="txtDetail" name="txtDetail"></textarea>
-                            </li> 
+                            </li>  
                             <li>
                                 <label for="ddlElection">Which election(s) is this leaflet about? *</label>
                                 <!--
