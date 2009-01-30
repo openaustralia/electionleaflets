@@ -1,0 +1,34 @@
+
+[spot]
+spot_id = 129
+lat = 
+long = 
+url = 
+source_id = 
+user_id = 
+detail = 
+smile_index = 
+created = 
+
+[spot__keys]
+spot_id = N
+
+[user]
+user_id = 129
+username = 130
+email = 130
+created = 130
+confirmed = 16
+password = 130
+
+[user__keys]
+user_id = N
+
+[confirmation]
+confirmation_id = 129
+parent_table = 130
+parent_id = 129
+link_key = 130
+
+[confirmation__keys]
+confirmation_id = N
