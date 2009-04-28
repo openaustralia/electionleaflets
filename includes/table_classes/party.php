@@ -13,6 +13,7 @@ class tableclass_party extends tablebase {
     public $party_id;
     public $name;
     public $country_id;
+    public $major;    
 
 
     /* Static get */
@@ -23,7 +24,8 @@ class tableclass_party extends tablebase {
         return array(
             'party_id'   	=> DB_DATAOBJECT_INT,
             'name'   			=> DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,
-            'country_id'  => DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL
+            'country_id'  => DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
+            'major'  => DB_DATAOBJECT_BOOL,
         );
     }
 

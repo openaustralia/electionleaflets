@@ -17,4 +17,8 @@ function session_write($id, $data) {
 	$_SESSION[$id] = $data;
 }
 
+function session_delete($id) {
+	unset($_SESSION[$id]);
+}
+
 ?>

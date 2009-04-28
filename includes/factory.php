@@ -2,10 +2,7 @@
 /** @internal Set Callback for object unserialization */
 ini_set('unserialize_callback_func', 'unserialize_callback_factory');
 
-//these shouldent be here, but something odd is happening :(    
-require_once('table_classes/walk.php');
-require_once('table_classes/instruction.php');
-    
+
 class factory {
 
 	public static function create ($class_name, $element_id=null, $cache=false, $require_only=false) {
@@ -71,6 +68,20 @@ class factory {
 					$object = DB_DataObject::factory($class_name);
 				}									
 				break;	
+			case 'leaflet_image':
+				require_once( 'table_classes/config.php' );
+				require_once('table_classes/leaflet_image.php');
+				if (!$require_only) {
+					$object = DB_DataObject::factory($class_name);
+				}									
+				break;			
+			case 'leaflet_election':
+				require_once( 'table_classes/config.php' );
+				require_once('table_classes/leaflet_election.php');
+				if (!$require_only) {
+					$object = DB_DataObject::factory($class_name);
+				}									
+				break;					
 			case 'leaflet_party_attack':
 				require_once( 'table_classes/config.php' );
 				require_once('table_classes/leaflet_party_attack.php');

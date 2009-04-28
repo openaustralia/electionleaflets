@@ -13,10 +13,12 @@ class tableclass_leaflet extends tablebase {
     public $leaflet_id;
     public $title;
     public $description;
-    public $pubisher_party_id;
-    public $election_id;    
+    public $publisher_party_id;
     public $postcode;
-    public $location;
+    public $lng;
+    public $lat;
+    public $name;
+    public $email;        
 
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('tableclass_leaflet',$k,$v); }
@@ -27,17 +29,19 @@ class tableclass_leaflet extends tablebase {
             'leaflet_id'   	=> DB_DATAOBJECT_INT,
             'title'   			=> DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,
             'description'   			=> DB_DATAOBJECT_STR,
-            'pubisher_party_id'   			=> DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
-            'election_id'   			=> DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,            
+            'publisher_party_id'   			=> DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
             'postcode'   			=> DB_DATAOBJECT_STR,
-            'location'   			=> DB_DATAOBJECT_POINT + DB_DATAOBJECT_NOTNULL
+            'lng'   			=> DB_DATAOBJECT_INT,
+            'lat'   			=> DB_DATAOBJECT_INT,
+            'name'   			=> DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,
+            'email'   			=> DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,                                    
         );
     }
 
 	/* Links */
 	public function links (){
 	    return array(
-			"pubisher_party_id" => "party:party_id",
+			"publisher_party_id" => "party:party_id",
 			"election_id" => "election:election_id"			
 			);        
 	}

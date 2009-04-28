@@ -560,5 +560,35 @@
         }
         return $anum;
     }
-    	
+    
+    function resize_image($file_name, $max_side, $destination){
+
+        //grab the image
+        $image = imagecreatefromjpeg($file_name);
+
+        //get size (TODO: this reall should use the above image object rather than reopening)
+        list($width, $height) = getimagesize($file_name);
+        
+        //work out new size
+        $new_height = 0;
+        $new_width = 0;        
+        if($height > $width){
+            $new_height = ($height / $width) * $max_side;
+            $new_width = $max_side;
+        }else{
+            $new_width = ($width / $height) * $max_side;
+            $new_height = $max_side;
+        }
+
+        //resize
+        $tmp = imagecreatetruecolor($new_width, $new_height);
+        imagecopyresampled($tmp, $image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
+
+        //save & destroy
+        imagejpeg($tmp, $destination, 100);
+        imagedestroy($image);
+        imagedestroy($tmp);        
+        
+    }
+
 ?>

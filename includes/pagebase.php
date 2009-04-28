@@ -109,8 +109,6 @@ abstract class pagebase {
 		$this->smarty->assign("rss_link", $this->rss_link);
 		$this->smarty->assign("current_url", htmlspecialchars($_SERVER['REQUEST_URI']));
 		$this->smarty->assign("current_page", htmlspecialchars($_SERVER['PHP_SELF']));		
-		$this->smarty->assign("is_signed_in", $this->application->is_signed_in());
-		$this->smarty->assign("signed_in_user", $this->application->get_user());
         $this->smarty->assign("offline_demo", OFFLINE_DEMO);		
         $this->smarty->assign("google_maps_key", GOOGLE_MAPS_KEY);
         $this->smarty->assign("map_provider", MAP_PROVIDER);
@@ -252,24 +250,6 @@ abstract class pagebase {
             $this->argument = $_POST["_postback_argument"];
         }
     }
-
-	protected function set_user($user){
-		$_SESSION['user'] = $user;
-	}
-	
-	protected function get_user(){
-		if(isset($_SESSION['user'])){
-			return $_SESSION['user'];
-		}
-	}
-	
-	protected function is_signed_in(){
-		return isset($_SESSION['user']);	
-	}
-	
-	protected function signout(){
-		unset($_SESSION['user']);
-	}
 
 	protected function field_to_control_warnings($field_warns){
 		foreach($field_warns as $field_warn) {

@@ -9,7 +9,7 @@ class geocoder{
 	public $lat = null;	
 
 	//set from postcode / zip code
-	function set_from_postcode($zip, $country){
+	function set_from_postcode($zip, $country = 'UK'){
 
 		//reset
 		$this->reset();

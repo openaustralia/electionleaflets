@@ -27,6 +27,7 @@ class tableclass_tag extends tablebase {
 
 	/* Links */
 	public function links (){
+	    
 	}
 
 	/* Keys */
@@ -34,4 +35,4 @@ class tableclass_tag extends tablebase {
         return array('tag_id');
     }
 
-}s
+}

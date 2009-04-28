@@ -13,6 +13,7 @@ class tableclass_category extends tablebase {
     public $category_id;
     public $name;
     public $description;
+    public $default_value;    
 
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('tableclass_category',$k,$v); }
@@ -22,7 +23,8 @@ class tableclass_category extends tablebase {
         return array(
             'category_id'   	=> DB_DATAOBJECT_INT,
             'name'   			=> DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,
-            'description'   			=> DB_DATAOBJECT_STR            
+            'description'   			=> DB_DATAOBJECT_STR,
+            'default_value'   			=> DB_DATAOBJECT_BOOL            
         );
     }
 
