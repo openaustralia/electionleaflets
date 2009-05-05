@@ -6,11 +6,12 @@
 
 	<title>{$site_name} | {$page_title}</title>	
 	<link rel="stylesheet" media="all" type="text/css" href="{$www_server}/css/main.css" />
-    <script src="{$www_server}/javascript/scriptaculous.js" type="text/javascript"></script>   	
-    <script src="{$www_server}/javascript/functions.js" type="text/javascript"></script>      	
+    <script src="{$www_server}/javascript/functions.js" type="text/javascript"></script>
     <script src="{$www_server}/javascript/main.js" type="text/javascript"></script>
-    <script src="{$www_server}/javascript/edit_map.js" type="text/javascript"></script>    
-
+    {if $has_map}
+        <script src="http://maps.google.com/maps?file=api&v=2&key={$google_maps_key}" type="text/javascript"></script>
+        <script src="{$www_server}/javascript/mapstraction.js" type="text/javascript"></script>
+    {/if}
 </head>
 
 <body>
@@ -22,11 +23,13 @@
     <div id="divPage">
         <div id="divHeader">
             
-            <p id="pLogo"><a href="{$www_server}"><span class="hideX">{$site_name} - {$site_tag_line}</span></a></p>
+            {if $hide_logo == false}
+                <p id="pLogo"><a href="{$www_server}"><span class="hide">{$site_name} - {$site_tag_line}</span></a></p>
+            {/if}
             
             <ul id="ulMenu">
   	          <li {if $menu_item == "home"}class="selected"{/if}>
-  	              <a href="{$www_server}/home.php">
+  	              <a href="{$www_server}">
   	                  Home
   	              </a>
   	          </li>
@@ -38,11 +41,6 @@
 	          <li {if $menu_item == "browse"}class="selected"{/if}>
 	              <a href="{$www_server}/browse.php">
 	                  Browse
-	              </a>
-	          </li>
-	          <li {if $menu_item == "league"}class="selected"{/if}>
-	              <a href="{$www_server}/leaguetable.php">
-	                  League tables
 	              </a>
 	          </li>
 	          <li {if $menu_item == "about"}class="selected"{/if}>

@@ -40,4 +40,16 @@ class tableclass_leaflet_image extends tablebase {
         return array('leaflet_image_id');
     }
 
+    public function thumbnail_url(){
+        return WWW_SERVER . "/image.php?s=t&i=" . $this->image_key;
+    }
+    
+    public function medium_url(){
+        return WWW_SERVER . "/image.php?s=m&i=" . $this->image_key;
+    }
+    
+    public function original_url(){
+        return WWW_SERVER . "/image.php?s=o&i=" . $this->image_key;
+    }
+
 }

@@ -9,3 +9,31 @@ function upload(){
     //javascript post goes here
     
 }
+
+function showMap(sMapProvider, nLng, nLat){
+
+    var oMapstraction = new Mapstraction('divSpotMap',sMapProvider);
+
+    oMapstraction.addControls({
+        overview: true          
+    });
+
+    // create a lat/lon object
+    var oPoint = new LatLonPoint(nLat,nLng);
+
+    // display the map centered on a latitude and longitude (Google zoom levels)
+    oMapstraction.setCenterAndZoom(oPoint, 16);
+
+    // create a marker positioned at a lat/lon 
+    //oMarker = new Marker(oPoint);
+ 
+    // display marker
+    //oMapstraction.addMarker(oMarker);
+}
+
+function uploadImages(){
+    document.getElementById('frmUpload').style.display = "none";    
+    document.getElementById('divUploading').style.display = "block";
+    
+    return true;
+}

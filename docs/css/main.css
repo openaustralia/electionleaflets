@@ -1,15 +1,25 @@
-body {text-align:center;}
+body {text-align:center; padding:0; margin:0;}
 
 /* Page */
-#divPage {width:900px; text-align:left; position:relative; margin:0 auto;}
+#divPage { text-align:left; position:relative; margin:0 auto;font-family:verdana; font-size:20px;
+    line-height:1.6em; padding:5%;}
 
 /* Header */
 #divHeader {padding:0 1em;}
+
+/* Logo */
+#pLogo {display:block; width:400px; height:100px; background:url(../images/logo.png);}
 
 /* Menu */
 #ulMenu {padding:0; margin:0; position:absolute; top:0; right:0;}
 #ulMenu li {padding:0; margin:0; float:left; list-style-type:none;}
 #ulMenu li a {display:block; padding:0 1em;}
+
+/* content */
+div.contentfull {padding:1em;}
+div.contentleft, div.contentright {float:left; width:49%;}
+div.contentleft {padding:0 1% 0 0;}
+div.contentright {padding:0 0 0 1%;}
 
 /* Scroll */
 ul.scroll {overflow-y:scroll; height:100px;}
@@ -18,6 +28,17 @@ ul.scroll li.divider {border-bottom:solid 1px #808080;}
 /* Loading */
 #divLoading {text-align:center; display:none; padding:2em;}
 
+/* Results */
+ul.results li {float:left;list-style-type:none;padding:0; margin:0; padding-bottom:1em;}
+ul.results li a {display:block; text-align:center;}
+
+/* Home */
+#divWelcome {text-align:center;}
+#divWelcome #pCount {position:absolute; top:0; left:2em; font-size:0.8em;}
+#divWelcome h1 {display:block; width:100%; height:170px; background:url(../images/logo.png) top center no-repeat;}
+
+div.box {float:left; width:44%; padding:1%; margin:1% ;text-align:center;
+        border:solid 1px #808080; position:relative; left:3%; min-height:12em;}
 
 /* Forms */
 form ul {padding:0; margin:0;}
@@ -26,6 +47,8 @@ form ul li label {display:block; font-size:1.3em; padding:0.3em 0;}
 form ul li ul li label {display:inline; padding:0; font-size:0.8em;}
 fieldset {border:none; padding:0; margin:0;}
 
+/* Uploading images */
+#divUploading {text-align:center; padding:3em 0; display:none;}
 
 /* Warnings, messages & errors*/
 #divWarning, #divMessages {font-size:0.9em;text-align:center; margin-bottom:1em; margin-top:1em;}
@@ -37,3 +60,12 @@ small.error {background:#ff6f75;}
 
 /* Hide */
 .hide {display:none;}
+
+/* Maps */
+#divSpotMap {width:80%; height:200px; background:red;}
+
+/* Clear */
+br.clear {clear:left;}
+
+/* Links */
+a img {border:none;}

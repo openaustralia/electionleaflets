@@ -18,10 +18,15 @@
     if($image_size == 'm'){
         $file_name .= "/medium/";
     }
+    if($image_size == 'l'){
+        $file_name .= "/original/";
+    }
+    /*
     if($image_size == 'o'){
         $file_name .= "/original/";
     }
-
+    */
+    
     $file_name .= $image_id . ".jpg";
 
     //check file exists

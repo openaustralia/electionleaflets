@@ -30,7 +30,7 @@ class tableclass_leaflet_election extends tablebase {
 	public function links (){
 	    return array(
 			"leaflet_id" => "leaflet:leaflet_id",
-			"election_id" => "election:election_id"			
+			"election_id" => "election:election_id"
 			);        
 	}
 

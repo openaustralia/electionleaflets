@@ -34,8 +34,7 @@ class Cache {
 	
 	public function get($id, $group="default") {
 	
-		$return = $this->cache_lite->get($id, $group);
-
+		$return = $this->cache_lite->get($id, $group);		
 		return unserialize($return);	
 	}
 

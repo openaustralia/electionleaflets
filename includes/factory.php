@@ -15,7 +15,13 @@ class factory {
 				if (!$require_only) {
 					$object = new searcher();
 				}
-				break;		
+				break;	
+			case 'leaflet_search':
+				require_once('leaflet_search.php');
+				if (!$require_only) {
+					$object = new leaflet_search();
+				}
+				break;					
 			case 'application':
 				require_once('application.php');
 				if (!$require_only) {
@@ -96,6 +102,13 @@ class factory {
 					$object = DB_DataObject::factory($class_name);
 				}									
 				break;
+			case 'leaflet_category':
+				require_once( 'table_classes/config.php' );
+				require_once('table_classes/leaflet_category.php');
+				if (!$require_only) {
+					$object = DB_DataObject::factory($class_name);
+				}									
+				break;				
 			case 'party':
 				require_once( 'table_classes/config.php' );
 				require_once('table_classes/party.php');

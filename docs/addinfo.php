@@ -231,7 +231,7 @@ class addinfo_page extends pagebase {
 
             //clear session, enable leaflet and then redirect
             session_delete('image_ids');
-            redirect("leaflet.php");
+            redirect("leaflet.php?q=" . $leaflet->leaflet_id . "&m=1");
 
         }else{
             $this->bind();

@@ -63,7 +63,7 @@ class searcher {
 		return $this->handle_result($search_object);
 
 	}
-	
+
 	//custom query
 	public function query($class_name, $sql){
 		//create search object
@@ -147,6 +147,12 @@ class searcher {
 				//check if it has any joins of its own?
 				if($join[3]){
 					$secondary_join_object = factory::create($join[3][0]);
+				    if($join[3][3]){					
+					    $tertiary_join_object = factory::create($join[3][3][0]);				        
+					    $secondary_join_object->joinAdd ($tertiary_join_object, $join[3][3][1], $join[3][3][0], $join[3][3][2]);													    
+					    $search_object->selectAs($tertiary_join_object, $join[3][3][0] . '_%s', $join[3][3][0]);										    
+				    }
+					
 					$join_object->joinAdd ($secondary_join_object, $join[3][1], $join[3][0], $join[3][2]);								
 					$search_object->selectAs($secondary_join_object, $join[3][0] . '_%s', $join[3][0]);					
 				}

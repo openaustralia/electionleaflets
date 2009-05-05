@@ -30,7 +30,7 @@ class tableclass_election extends tablebase {
 	/* Links */
 	public function links (){
 	    return array(
-			"election_type_id" => "election_type:election_type_id"
+			"election_type_id" => "election_type:election_type_id"	
 			);	    
 	}
 

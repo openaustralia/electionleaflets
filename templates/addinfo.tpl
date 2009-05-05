@@ -20,8 +20,9 @@
                     <small>e.g. the main headline</small>
                 </li>
                 <li>
-                    <label for="txtDescription">Enter a general, impartial description of the leaflet</label>
-                    <textarea type="text" id="txtDescription" name="txtDescription" {if $warn_txtDescription}class="error"{/if}>{$data.txtDescription}</textarea>
+                    <label for="txtDescription">Enter a brief, impartial description of issues covered in the leaflet</label>
+                    <textarea type="text" id="txtDescription" name="txtDescription" {if $warn_txtDescription}class="error"{/if} cols="70" rows="5">{$data.txtDescription}</textarea>
+                    <small>e.g. "Free swimming in Cambridge, cutting police numbers and council tax"</small>
                 </li>
                 <li>
                     <label for="ulElection">Which election(s) is this leaflet about? *</label>

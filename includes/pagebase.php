@@ -24,6 +24,7 @@ abstract class pagebase {
     protected $smarty_template ="";
 	protected $data = null;
 	protected $rss_link = '';
+	protected $has_map = false;
 	protected $fields_to_controls = array(); // for mapping table fields to html controls
 
     //Constructor
@@ -109,7 +110,7 @@ abstract class pagebase {
 		$this->smarty->assign("rss_link", $this->rss_link);
 		$this->smarty->assign("current_url", htmlspecialchars($_SERVER['REQUEST_URI']));
 		$this->smarty->assign("current_page", htmlspecialchars($_SERVER['PHP_SELF']));		
-        $this->smarty->assign("offline_demo", OFFLINE_DEMO);		
+        $this->smarty->assign("has_map", $this->has_map);	
         $this->smarty->assign("google_maps_key", GOOGLE_MAPS_KEY);
         $this->smarty->assign("map_provider", MAP_PROVIDER);
 
