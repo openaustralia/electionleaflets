@@ -43,6 +43,11 @@
 	                  Browse
 	              </a>
 	          </li>
+	          <li {if $menu_item == "browse"}class="selected"{/if}>
+	              <a href="http://blog.thestraightchoice.org">
+	                  Blog
+	              </a>
+	          </li>
 	          <li {if $menu_item == "about"}class="selected"{/if}>
 	              <a href="{$www_server}/about.php">
 	                  About
