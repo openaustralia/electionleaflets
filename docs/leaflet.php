@@ -39,7 +39,12 @@ class leaflet_page extends pagebase {
         }
 
         //get images
-        $leaflet_images = $search->search("leaflet_image", array(array("leaflet_id", "=", $this->leaflet_id)));
+        $leaflet_images = $search->search("leaflet_image", 
+            array(array("leaflet_id", "=", $this->leaflet_id)),
+            'AND',
+            null,
+            array(array("sequence", "ASC"))
+            );
 
         //get categories
         $leaflet_categories = $search->search("category", 
@@ -54,7 +59,7 @@ class leaflet_page extends pagebase {
                 'AND',
                 array(array("leaflet_tag", 'inner'))
             );        
-        
+
         //get parties attacked
         $leaflet_parties_attacked = $search->search("party", 
                 array(array("leaflet_party_attack.leaflet_id", "=", $this->leaflet_id)),
