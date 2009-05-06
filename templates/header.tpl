@@ -21,7 +21,7 @@
     </div>
 
     <div id="divPage">
-        <div id="divHeader">
+        <div id="divHeader"{if $hide_logo == true} class="small"{/if}>
             
             {if $hide_logo == false}
                 <p id="pLogo"><a href="{$www_server}"><span class="hide">{$site_name} - {$site_tag_line}</span></a></p>

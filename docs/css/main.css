@@ -2,16 +2,18 @@ body {text-align:center; padding:0; margin:0; color:#353A38;}
 
 /* Page */
 #divPage { text-align:left; position:relative; margin:0 auto;font-family:verdana; font-size:20px;
-    line-height:1.6em; padding:5%;}
+    line-height:1.6em; margin:0 5%;}
 
 /* Header */
-#divHeader {padding:0 1em;}
+#divHeader {padding:0 1em; height:100px;}
+#divHeader.small {height:3em;}
 
 /* headings */
 h1, h2, h3, h4, h5, h6 {font-family:georgia, serif; font-weight:normal; color:#246D62;}
 
 /* Logo */
-#pLogo {display:block; width:400px; height:100px; background:url(../images/logo.png);}
+#pLogo a {display:block; width:400px; height:100px; background:url(../images/logosmall.png) no-repeat;
+    position:absolute; top:5px; left:1em;}
 
 /* Menu */
 #ulMenu {padding:0; margin:0; position:absolute; top:0; right:0;}
