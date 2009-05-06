@@ -2,10 +2,13 @@
 	//define database configuration values
 	$options = &PEAR::getStaticProperty('DB_DataObject','options');
 	//check for sqldebug
-	$debug_level = SQL_DEBUG_LEVEL;
-	if(isset($_GET['sqldebug'])){
-		$debug_level = $_GET['sqldebug'];
-	}
+	$debug_level = 0
+	if(DEVSITE === true){
+    	$debug_level = SQL_DEBUG_LEVEL;
+    	if(isset($_GET['sqldebug'])){
+    		$debug_level = $_GET['sqldebug'];
+    	}
+    }
 
 	//more configs
 	$options = array(

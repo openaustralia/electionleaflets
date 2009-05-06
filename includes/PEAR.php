@@ -22,7 +22,7 @@
  * @license    http://www.php.net/license/3_0.txt  PHP License 3.0
  * @version    CVS: $Id: PEAR.php,v 1.1 2007/09/21 06:49:59 richard Exp $
  * @link       http://pear.php.net/package/PEAR
- * @since      File available since Release 0.1
+ * @since      File available since Release 0.1 
  */
 
 /**#@+
