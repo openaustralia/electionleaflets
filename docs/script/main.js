@@ -12,7 +12,7 @@ function upload(){
 
 function showMap(sMapProvider, nLng, nLat){
 
-    var oMapstraction = new Mapstraction('divSpotMap',sMapProvider);
+    var oMapstraction = new Mapstraction('divSpotMap', sMapProvider);
 
     oMapstraction.addControls({
         overview: true          

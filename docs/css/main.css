@@ -67,7 +67,10 @@ small.error {background:#ff6f75;}
 .hide {display:none;}
 
 /* Maps */
-#divSpotMap {width:80%; height:200px; background:red;}
+#divSpotMap {width:80%; height:200px; border:solid 1px #808080;}
+
+/* Footer */
+#divFooter {clear:left;}
 
 /* Clear */
 br.clear {clear:left;}

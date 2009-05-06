@@ -61,7 +61,7 @@ class leaflet_search {
                 $this->start
             );        
         }
-        
+    
         
     }
     
@@ -141,7 +141,7 @@ class leaflet_search {
         if(isset($this->election_id) && $this->election_id != '' && $this->election_id != 0){
             array_push($where_clauses, array("leaflet_election.election_id", "=", $this->election_id));
         }
-        
+
         if(isset($this->party_attack_id) && $this->party_attack_id != '' && $this->party_attack_id != 0){
             array_push($where_clauses, array("party_attack.party_id", "=", $this->party_attack_id));
         }

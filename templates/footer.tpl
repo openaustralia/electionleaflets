@@ -1,5 +1,5 @@
         </div>
-        <div id="divFooter" class="hide">
+        <div id="divFooter" >
             <ul class="inline">
                 <li><a href="/">Home</a></li>
                 <li><a href="about.php">About</a></li>                

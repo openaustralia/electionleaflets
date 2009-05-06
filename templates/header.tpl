@@ -10,7 +10,7 @@
     <script src="{$www_server}/script/main.js" type="text/javascript"></script>
     {if $has_map}
         <script src="http://maps.google.com/maps?file=api&v=2&key={$google_maps_key}" type="text/javascript"></script>
-        <script src="{$www_server}/javascript/mapstraction.js" type="text/javascript"></script>
+        <script src="{$www_server}/script/mapstraction.js" type="text/javascript"></script>
     {/if}
 </head>
 
