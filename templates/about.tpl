@@ -61,6 +61,10 @@
             <dt></dt>
             <dd></dd>                                                                        
         </dl>
+        <h3>Contact</h3>
+        <p>
+            You can get in touch with us via team [at] thestraightchoice.org or phone Francis on 07970 543358.
+        </p>
     </div>
     
 {include file="footer.tpl"}

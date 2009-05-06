@@ -70,7 +70,10 @@ small.error {background:#ff6f75;}
 #divSpotMap {width:80%; height:200px; border:solid 1px #808080;}
 
 /* Footer */
-#divFooter {clear:left;}
+#divFooter {clear:left; text-align:center; padding-top:0.5em; font-size:0.8em; padding-bottom:1em;
+        border-top:dashed 1px #5c6f7b;}
+#divFooter ul {list-style-type:none;padding:0; margin:0;}
+#divFooter ul li {display:inline;}
 
 /* Clear */
 br.clear {clear:left;}
