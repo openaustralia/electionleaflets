@@ -22,6 +22,7 @@
                 <li>
                     <label for="txtDescription">Enter a brief, impartial description of issues covered in the leaflet</label>
                     <textarea type="text" id="txtDescription" name="txtDescription" {if $warn_txtDescription}class="error"{/if} cols="70" rows="5">{$data.txtDescription}</textarea>
+                    <br/>
                     <small>e.g. "Free swimming in Cambridge, cutting police numbers and council tax"</small>
                 </li>
                 <li>
@@ -92,7 +93,7 @@
                 <li>
                     <label for="txtTags">Enter some extra tags to help describe this leaflet separated by commas</label>
                     <input type="text" id="txtTags" name="txtTags" value="{$data.txtTags}"/>
-                    <small>e.g. the specific name of the issue or an town name it relates to</small>
+                    <small>e.g. crime, london, tax, briansmith</small>
                 </li>
                 <li>
                     <label for="txtName">Enter your name and email address *</label>

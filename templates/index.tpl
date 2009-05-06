@@ -3,7 +3,7 @@
 <div id="divContentFull">
     <div id="divWelcome">
         <p id="pCount">
-            {$leaflet_count} leaflets added so far
+            {$leaflet_count} leaflets added so far!
         </p>
         <h1>
             <span class="hide">{$site_name}</span>
@@ -14,7 +14,7 @@
         <p>
             Election leaflets are one of the main weapons in the fight for votes in the UK.
             <br/>
-            They are targeted, effective and sometimes very bitter. We need your help to photograph and map them to keep an eye on what the parties are up to and keep them honest.
+            They are targeted, effective and sometimes very bitter. We need your help to photograph and map them so we can keep an eye on what the parties are up to, and try to keep them honest.
         </p>
     </div>
 
