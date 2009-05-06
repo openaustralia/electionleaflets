@@ -542,7 +542,7 @@
 		
 		//Dates
 		//TODO: find and make uppercase PM, AM
-		
+
 		//Random Words
 		$string = str_replace("Dj", "DJ", $string);
 		$string = str_replace("(dj)", "(DJ)", $string);		

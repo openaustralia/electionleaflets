@@ -47,21 +47,21 @@ class addupload_page extends pagebase {
 	    array_push($this->image_ids, $file_id);
 
 	    //copy original
-	    //$original_file_name = IMAGES_DIR . "/original/" . $file_id . ".jpg";
-	    //$moved = move_uploaded_file($temp_file, $original_file_name);
+	    $original_file_name = IMAGES_DIR . "/original/" . $file_id . ".jpg";
+	    $moved = move_uploaded_file($temp_file, $original_file_name);
 
         if(!$moved){
             $this->add_warning("Sorry something went wrong saving your image");
         }else{
 
             //save large
-            resize_image($temp_file, IMAGE_LARGE_SIZE, IMAGES_DIR . "/large/" . $file_id . ".jpg");
+            resize_image($original_file_name, IMAGE_LARGE_SIZE, IMAGES_DIR . "/large/" . $file_id . ".jpg");
             
     	    //save medium
-            resize_image($temp_file, IMAGE_MEDIUM_SIZE, IMAGES_DIR . "/medium/" . $file_id . ".jpg");
+            resize_image($original_file_name, IMAGE_MEDIUM_SIZE, IMAGES_DIR . "/medium/" . $file_id . ".jpg");
 
     	    //save thumbnail
-            resize_image($temp_file, IMAGE_THUMBNAIL_SIZE, IMAGES_DIR . "/thumbnail/" . $file_id . ".jpg");    	    
+            resize_image($original_file_name, IMAGE_THUMBNAIL_SIZE, IMAGES_DIR . "/thumbnail/" . $file_id . ".jpg");    	    
         }
 
     }
