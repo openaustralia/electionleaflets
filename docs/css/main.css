@@ -69,3 +69,7 @@ br.clear {clear:left;}
 
 /* Links */
 a img {border:none;}
+
+/* people */
+p.person {clear:left; padding-bottom:2em;}
+p.person img {float:left; width:150px; border:thin black solid; margin-right:1em;}
