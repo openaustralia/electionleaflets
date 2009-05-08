@@ -26,23 +26,6 @@
                     <small>e.g. "Free swimming in Cambridge, cutting police numbers and council tax"</small>
                 </li>
                 <li>
-                    <label for="ulElection">Which election(s) is this leaflet about? *</label>
-                    <ul class="scroll">
-                        {foreach from="$elections" item="election"}
-                            <li>
-                                {assign var="checked" value=false}
-                                {foreach from="$selected_election_ids" item="selected_election_id"}
-                                    {if $election->election_id == $selected_election_id}
-                                        {assign var="checked" value=true}
-                                    {/if}
-                                {/foreach}
-                                <input type="checkbox" id="chkElection_{$election->election_id}" name="chkElection_{$election->election_id}" value="{$election->election_id}" {if $checked == true}checked="checked"{/if}/>
-                                <label for="chkElection_{$election->election_id}">{$election->name}</label>                                        
-                            </li>
-                        {/foreach}
-                    </ul>
-                </li>
-                <li>
                     <label for="ddlPartyBy">Which party is responsible for the leaflet? *</label>
                     <select id="ddlPartyBy" name="ddlPartyBy" {if $warn_ddlPartyBy}class="error"{/if}>
                         <option></option>

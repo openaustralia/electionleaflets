@@ -6,11 +6,10 @@ class index_page extends pagebase {
 
 	//bind
 	function bind() {
-		$this->page_title = "Welcome";	
+		$this->page_title = SITE_TAG_LINE;	
 
         //get count of leaflets
         $this->assign("leaflet_count", $this->get_leaflet_count());
-
 
 		//get recent leaflets
 		$leaflet_search = factory::create("leaflet_search");

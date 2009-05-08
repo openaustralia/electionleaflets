@@ -1114,3 +1114,9 @@ UNLOCK TABLES;
 /*!40000 ALTER TABLE `tag_seq` ENABLE KEYS */;
 
 
+
+-------
+
+drop table election;
+drop table election_type;
+drop table leaflet_election;

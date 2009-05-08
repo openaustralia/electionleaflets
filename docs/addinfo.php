@@ -4,7 +4,6 @@ require_once('init.php');
 class addinfo_page extends pagebase {
 
     private $country_id = 225;
-    private $selected_election_ids = array();
     private $selected_party_attack_ids = array();    
     private $selected_category_ids = array();
     private $lng = null;
@@ -39,31 +38,14 @@ class addinfo_page extends pagebase {
 		    array(array('major', "DESC"), array('name', "ASC"))
 		);
 
-		//get elections
-		$elections = $search->search_cached("election", 
-		    array(array('country_id', '=', $this->country_id), array('vote_date', '>=', date(DATETIMEFORMAT_SQL, time()))),
-		    'AND',
-		    array(array('election_type', 'inner', 'election_type_id')),
-		    array(array('election.vote_date', "DESC"))
-		);
-
 		//assign
 		$this->assign('categories', $categories);		
 		$this->assign('parties', $parties);				
-		$this->assign('elections', $elections);						
-		$this->assign('selected_election_ids', $this->selected_election_ids);								
 		$this->assign('selected_party_attack_ids', $this->selected_party_attack_ids);	
 		$this->assign('selected_category_ids', $this->selected_category_ids);												
 	}
 
 	function unbind(){
-
-        //strip out the election checkboxes
-        foreach ($this->data as $key => $value) {
-            if(strpos($key, 'chkElection_') !== false){
-                array_push($this->selected_election_ids, $value);
-            }
-        }
 
         //strip out parties attacked
         foreach ($this->data as $key => $value) {
@@ -152,16 +134,6 @@ class addinfo_page extends pagebase {
                 }
                 
                 //TODO: move the code below into the leaflet object
-                
-                //save election
-                foreach ($this->selected_election_ids as $selected_election_id) {
-                    $leaflet_election = factory::create("leaflet_election");
-                    $leaflet_election->leaflet_id = $leaflet->leaflet_id;
-                    $leaflet_election->election_id = $selected_election_id;
-                    if(!$leaflet_election->insert()){
-                        trigger_error("Unable to save leaflet election bridge");                    
-                    }
-                }
                 
                 //save party attack
                 foreach ($this->selected_party_attack_ids as $selected_party_attack_id) {

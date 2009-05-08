@@ -104,7 +104,7 @@ class searcher {
 		
 		//get search count
 		$search_count = $search_object->find();
-		
+
 		//grab any objects
 		$found_objects = array();
 		if($search_count > 0){
@@ -131,6 +131,9 @@ class searcher {
 			if(is_numeric($where_clause[2])){
 				$quote = "";
 			}
+			if(isset($where_clauses[3])){
+			    $clause_join = $where_clauses[3];
+		    }
 
 			$search_object->whereAdd( $where_clause[0] . " " . $where_clause[1] . " " . $quote . 
 				$search_object->escape($where_clause[2]) . $quote, $clause_join);

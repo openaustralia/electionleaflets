@@ -66,7 +66,6 @@ class leaflet_page extends pagebase {
                 'AND',
                 array(array("leaflet_party_attack", 'inner'))
             );
-        
         //
 
         //js

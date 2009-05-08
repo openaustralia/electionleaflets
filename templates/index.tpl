@@ -21,7 +21,7 @@
     <div class="boxes">
         <div class="box">
             <h3>Search for leaflets near you, or enter a party name or subject</h3>
-            <p>Enter a postcode, place, party or keyword</p>
+            <p>Enter a postcode, or search term</p>
             <form method="get" action="{$www_server}/leaflets.php">
                 <input type="text" id="txtSearch" name="q"/>
                 <input type="submit" value="GO"/>

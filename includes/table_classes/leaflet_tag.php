@@ -29,7 +29,7 @@ class tableclass_leaflet_tag extends tablebase {
 	public function links (){
 	    return array(
 			"leaflet_id" => "leaflet:leaflet_id",
-			"tag_id" => "tag:tag_id"			
+			"tag_id" => "tag:tag_id"
 			);
 	}
 

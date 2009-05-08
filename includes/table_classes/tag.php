@@ -27,7 +27,6 @@ class tableclass_tag extends tablebase {
 
 	/* Links */
 	public function links (){
-	    
 	}
 
 	/* Keys */

@@ -8,10 +8,9 @@ class leaflet_search {
     public $lat = null;
     public $publisher_party_id = null;
     public $party_attack_id = null;
-    public $election_id = null;
     public $category_id = null;
-    public $current_elections_only = true;
     public $country_id = 225;
+    public $tag = null;    
     
     private $number = null;
     private $start = null;    
@@ -22,7 +21,7 @@ class leaflet_search {
     public function __construct(){
         $this->search = factory::create('search');
     }
-    
+
     //search
     public function search($cache = false){
 
@@ -34,11 +33,11 @@ class leaflet_search {
         }
 
         return $this->results;
-                
+
     }
     
     private function search_geo($cache){
-        
+
         if(!$cache){
             $this->results = $this->search->search_proximity("leaflet",
                 $this->get_where_clauses(), 
@@ -61,7 +60,6 @@ class leaflet_search {
                 $this->start
             );        
         }
-    
         
     }
     
@@ -86,8 +84,10 @@ class leaflet_search {
                 $this->start
             );        
         }
-        
+
     }
+    
+    private funciton search
     
     private function get_joins(){
 
@@ -95,22 +95,19 @@ class leaflet_search {
 
         //required
         array_push($joins, array("leaflet_image", "inner"));
-        array_push($joins, array("leaflet_election", "inner", null, 
-                array("election", "inner", "election_id", array("election_type", "inner", "election_type_id"))
-            )
-        );             
+        array_push($joins, array("party", "inner"));        
             
         //optional
         if(isset($this->party_attack_id) && $this->party_attack_id != '' && $this->party_attack_id != 0){
-            array_push($joins, array("party_attack", "inner", "party_id"));
+            array_push($joins, array("leaflet_party_attack", "inner"));
         }
-        
-        if(isset($this->party_attack_id) && $this->party_attack_id != '' && $this->party_attack_id != 0){
-            array_push($joins, array("party_attack", "inner", "party_id"));
-        }
-        
+
         if(isset($this->category_id) && $this->category_id != '' && $this->category_id != 0){
-            array_push($joins, array("category", "inner", "category_id"));
+            array_push($joins, array("leaflet_category", "inner", null, array("category", "inner", "category_id")));
+        }
+        
+        if(isset($this->tag) && $this->tag != ''){
+            array_push($joins, array("leaflet_tag", "inner", null,array("tag", "inner", "tag_id")));
         }
 
         return $joins;
@@ -118,38 +115,29 @@ class leaflet_search {
     }
 
     private function get_where_clauses(){
-        
+
         $where_clauses = array();
 
         //required
         array_push($where_clauses, array("leaflet_image.sequence", "=", 1));        
-        array_push($where_clauses, array("election_type.country_id", "=", $this->country_id));                
 
         //optional
-        if($this->current_elections_only === true){   
-            array_push($where_clauses, array("election.vote_date", ">", date(DATETIMEFORMAT_SQL, time())));            
-        }
-        
         if(isset($this->publisher_party_id) && $this->publisher_party_id != '' && $this->publisher_party_id != 0){
             array_push($where_clauses, array("publisher_party_id", "=", $this->publisher_party_id));
         }
 
         if(isset($this->party_attack_id) && $this->party_attack_id != '' && $this->party_attack_id != 0){
-            array_push($where_clauses, array("party_attack_id.party_id", "=", $this->party_attack_id));
-        }
-
-        if(isset($this->election_id) && $this->election_id != '' && $this->election_id != 0){
-            array_push($where_clauses, array("leaflet_election.election_id", "=", $this->election_id));
-        }
-
-        if(isset($this->party_attack_id) && $this->party_attack_id != '' && $this->party_attack_id != 0){
-            array_push($where_clauses, array("party_attack.party_id", "=", $this->party_attack_id));
+            array_push($where_clauses, array("leaflet_party_attack.party_id", "=", $this->party_attack_id));
         }
         
         if(isset($this->category_id) && $this->category_id != '' && $this->category_id != 0){
-            array_push($where_clauses, array("category.category_id", "=", $this->category_id));
+            array_push($where_clauses, array("leaflet_category.category_id", "=", $this->category_id));
         }
         
+        if(isset($this->tag) && $this->tag != ''){
+            array_push($where_clauses, array("tag.tag", "=", $this->tag));
+        }   
+                    
         return $where_clauses;
     }
 
@@ -200,7 +188,6 @@ class leaflet_search {
         $this->lat = null;
         $this->party_id = null;
         $this->party_attacked_id = null;
-        $this->election_id = null;
         $this->category_id = null;        
     }
 

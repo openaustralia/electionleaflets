@@ -1,15 +1,17 @@
 {include file="header.tpl"}
 
     <div class="contentfull">
-        <div class="searchbox">
-            <form method="get" action="{$www_server}/leaflets.php">
-            Results for <input type="text" id="txtSearch" name="q" value="{$user_term}"/>
-            <input type="submit" value="GO" />
-            <br/>
-            <small>
-                Showing results for leaflets {if $search_type == "postcode" || $search_type == "partial postcode"}near {$user_term}{elseif $search_type == "party"}by {$user_term}{else}for{/if}.
-        </small>
-        </div>
+        {if $has_party || $has_category || $has_tag || $has_party_attack}
+            <h1>{$heading[0]} <em>{$heading[1]}</em></h1>
+        {else}
+            <div class="searchbox">
+                <form method="get" action="{$www_server}/leaflets.php">
+                Results {if $is_geo}near{else}for{/if} <input type="text" id="txtSearch" name="q" value="{$user_term}"/>
+                <input type="submit" value="GO" />
+                <br/>
+            </div>        
+        {/if}
+
         <ul class="results">
             {foreach from="$leaflets" item="leaflet"}
                 <li>
@@ -17,6 +19,15 @@
                         <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/>
                     </a>
                     <a href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}">{$leaflet->title}</a>
+                    {if is_geo}
+                        {if $leaflet->distance < 0.5 || $leaflet->distance == 0}
+    						Less than 500 m away
+    					{elseif	$leaflet->distance < 1}
+    						About 1 km away
+    					{else}
+    						About {$leaflet->distance|string_format:"%d"} km away
+    					{/if}
+    				{/if}
                 </li>
             {/foreach}
         </ul>
