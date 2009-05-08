@@ -20,7 +20,8 @@ class tableclass_leaflet extends tablebase {
     public $name;
     public $email;        
     public $date_uploaded;    
-
+    public $date_delivered;    
+    
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('tableclass_leaflet',$k,$v); }
 
@@ -37,6 +38,7 @@ class tableclass_leaflet extends tablebase {
             'name'   			=> DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,
             'email'   			=> DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,
             'date_uploaded'   			=> DB_DATAOBJECT_TIMESTAMP,
+            'date_delivered'   			=> DB_DATAOBJECT_STR            
         );
     }
 

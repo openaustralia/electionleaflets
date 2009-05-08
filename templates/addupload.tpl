@@ -5,7 +5,7 @@
         {include file="formvars.tpl"}        
         <h1>Add a leaflet (step 1 of 2)</h1>
         <p>
-            Take a photo of a single leaflet and upload it below. If the leaflet has more than one side you can upload multiple images.
+            Take a photo of a single leaflet and upload it below. If the leaflet has more than one side you can upload multiple images. If the leaflet was sent by mail, please obscure your name and address with a marker pen.
         </p>
         <fieldset>
             <input type="hidden" name="MAX_FILE_SIZE" value="10000000000">

@@ -34,7 +34,7 @@ div.contentright {padding:0 0 0 1%;}
 /* Scroll */
 ul.scroll {overflow-y:scroll; height:200px; border:inset 2px; width:70%;}
 ul.scroll li {padding:0;}
-ul.scroll li.divider {border-bottom:solid 1px #808080;}
+ul.scroll li.divider {border-bottom:dashed 1px #808080;}
 
 /* Loading */
 #divLoading {text-align:center; display:none; padding:2em;}
@@ -49,7 +49,9 @@ ul.results li a {display:block; text-align:center;}
 #divWelcome h1 {display:block; width:100%; height:190px; background:url(../images/logo.png) top center no-repeat;}
 
 div.box {float:left; width:44%; padding:1%; margin:1% ;text-align:center;
-        border:solid 1px #808080; position:relative; left:3%; min-height:12em;}
+        background:#ecf5f4;
+        border-top:dashed 1px #5c6f7b; border-bottom:dashed 1px #5c6f7b; position:relative; 
+        left:3%;    min-height:12em;}
 
 /* Forms */
 form ul {padding:0; margin:0;}
@@ -105,3 +107,6 @@ a img {border:none;}
 /* people */
 p.person {clear:left; padding-bottom:2em;}
 p.person img {float:left; width:150px; border:thin black solid; margin-right:1em;}
+
+/* Highlight */
+.highlight {background:#ffffaa; padding:0 0.3em;}

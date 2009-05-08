@@ -20,10 +20,20 @@
                     <small>e.g. the main headline</small>
                 </li>
                 <li>
-                    <label for="txtDescription">Enter a brief, impartial description of issues covered in the leaflet</label>
+                    <label for="txtDescription">Enter a transcript of the main points or first paragraph</label>
                     <textarea type="text" id="txtDescription" name="txtDescription" {if $warn_txtDescription}class="error"{/if} cols="70" rows="5">{$data.txtDescription}</textarea>
                     <br/>
-                    <small>e.g. "Free swimming in Cambridge, cutting police numbers and council tax"</small>
+                </li>
+                <li>
+                    <label for="ddlDelivered">When was the leaflet delivered? *</label>
+                    <select id="ddlDelivered" name="ddlDelivered" {if $warn_ddlDelivered}class="error"{/if}>
+                        <option value="0" {if $data.ddlDelivered == 0}selected="selected"{/if}>Today</option>
+                        <option value="1" {if $data.ddlDelivered == 1}selected="selected"{/if}>Yesterday</option>
+                        <option value="7" {if $data.ddlDelivered == 7}selected="selected"{/if}>Last Week</option>
+                        <option value="14" {if $data.ddlDelivered == 14}selected="selected"{/if}>Couple of weeks ago</option>
+                        <option value="30" {if $data.ddlDelivered == 30}selected="selected"{/if}>Last month</option>                        
+                    </select>
+                    <small class="highlight">Please only add leaflets that have been delivered to you recently</small>
                 </li>
                 <li>
                     <label for="ddlPartyBy">Which party is responsible for the leaflet? *</label>

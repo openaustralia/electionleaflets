@@ -113,7 +113,17 @@ class addinfo_page extends pagebase {
             $leaflet->lng = $this->lng;            
             $leaflet->lat = $this->lat;
             $leaflet->name = $this->data['txtName'];
-            $leaflet->email = $this->data['txtEmail'];                        
+            $leaflet->email = $this->data['txtEmail'];
+            
+            //date delivered
+            $days = $this->data['ddlDelivered'];
+            if((int)$days > 30){
+                $days = 30;
+            }
+            
+            $date = mktime(0, 0, 0, date("m")  , date("d") - $days, date("Y"));
+            $leaflet->date_delivered = mysql_date($date);
+            
 
             if($leaflet->insert()){
 
