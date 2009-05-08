@@ -22,22 +22,21 @@ class leaflets_page extends pagebase {
 
         //get variables
         $this->get_vars();
-                
+            
         //generic search
-        if(isset($this->leaflet_search->user_term)){
+        if(isset($this->search_term)){
 
             //guess search term
-            $search_type = $this->leaflet_search->guess_search_type($this->leaflet_search->user_term);
+            $search_type = $this->leaflet_search->guess_search_type($this->search_term);
             $this->assign("user_term", $search_type['display']);
             $this->assign("search_type", $search_type['type']);
 
             //geo vs normal
             $leaflets = array();
-            if($search_type['type'] == "postcode"){
+            if($search_type['type'] == "postcode" || $search_type['type'] = 'partial postcode'){
                 $geocoder = factory::create('geocoder');
                 $success = $geocoder->set_from_postcode($search_type['display']);
                 if($success){
-                    
                     $this->leaflet_search->lng = $geocoder->lng;
                     $this->leaflet_search->lat = $geocoder->lat;                    
                 }else{
@@ -90,9 +89,9 @@ class leaflets_page extends pagebase {
     //grab vars form query string
     private function get_vars(){
 
-        $search_term = get_http_var("q");
+        $search_term = get_http_var("q");        
         if(isset($search_term) && $search_term != ''){
-            $this->leaflet_search->search_term = trim($search_term);
+            $this->search_term = trim($search_term);
         }
 
         $publisher_party_id = get_http_var("p");
@@ -146,7 +145,6 @@ class leaflets_page extends pagebase {
     private function is_geo(){
 
         $return = false;
-     
         if(isset($this->leaflet_search->lng) && isset($this->leaflet_search->lat)){
             $return = true;
         }
