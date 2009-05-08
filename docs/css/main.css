@@ -81,7 +81,7 @@ small.error {background:#ff6f75;}
 
 /* Footer */
 #divFooter {clear:left; text-align:center; padding-top:0.5em; font-size:0.8em; padding-bottom:1em;
-        border-top:dashed 1px #5c6f7b;}
+        border-top:dashed 1px #5c6f7b; margin-top:4em;}
 #divFooter ul {list-style-type:none;padding:0; margin:0;}
 #divFooter ul li {display:inline;}
 

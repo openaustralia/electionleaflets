@@ -53,6 +53,7 @@
             </li>
         {/foreach}
     </ul>
+    <br class="clear"/>
 </div>
     
 {include file="footer.tpl"}
