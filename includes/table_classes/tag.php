@@ -13,7 +13,6 @@ class tableclass_tag extends tablebase {
     public $tag_id;
     public $tag;
 
-
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('tableclass_tag',$k,$v); }
 
@@ -27,6 +26,7 @@ class tableclass_tag extends tablebase {
 
 	/* Links */
 	public function links (){
+
 	}
 
 	/* Keys */
@@ -34,4 +34,7 @@ class tableclass_tag extends tablebase {
         return array('tag_id');
     }
 
+    public function get_weighted_tags($limit = 100){
+        return $this->execute("select tag.tag, tag.tag_id, count(leaflet_id) as count from tag inner join leaflet_tag on tag.tag_id = leaflet_tag.tag_id group by tag.tag, tag.tag_id limit " . $limit);
+    }
 }

@@ -75,6 +75,21 @@ small.error {background:#ff6f75;}
 #divFooter ul {list-style-type:none;padding:0; margin:0;}
 #divFooter ul li {display:inline;}
 
+/* Tag cloud */
+ul.tagcloud {margin:0; padding:0;}
+ul.tagcloud li {display:inline; padding:0;list-style-type:none;}
+ul.tagcloud li.tg1 {font-size:0.8em;}
+ul.tagcloud li.tg2 {font-size:0.9em;}
+ul.tagcloud li.tg3 {font-size:1em;}
+ul.tagcloud li.tg4 {font-size:1.2em;}
+ul.tagcloud li.tg5 {font-size:1.3em;}
+ul.tagcloud li.tg6 {font-size:1.4em;}
+
+/* Lists */
+ul {padding:0; margin:0;list-style-type:none;}
+ul.inline li {display:inline; padding:0;}
+ul li.more {padding-top:1em;}
+
 /* Clear */
 br.clear {clear:left;}
 

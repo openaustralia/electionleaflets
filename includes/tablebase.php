@@ -151,6 +151,32 @@ abstract class tablebase extends DB_DataObject {
 		
 	 	return $field_errors === true;
 	}
+
+	public function execute($sql){
+	    $this->query($sql);
+        $return = array();
+    	while ($this->fetch()) {
+          array_push($return, clone($this));
+        }
+        return $return;
+    }
+
+
+	public function execute_cached($sql){
+	    $return = null;
+	    $cache = cache::factory();
+		$cached = $cache->get($key, "execute");
+		
+		//if we have something in the cache, grab that, if not do the query as normal
+		if (isset($cached) && $cached !== false) {
+			$return = $cached;
+		}else{
+	        $return = $this->execute($sql);
+		    $cached = $cache->set($key, $return, "execute");		    
+		}
+		
+		return $return;
+    }
 }
 
 ?>
