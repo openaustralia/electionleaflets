@@ -40,7 +40,9 @@ ul.scroll li.divider {border-bottom:dashed 1px #808080;}
 #divLoading {text-align:center; display:none; padding:2em;}
 
 /* Results */
-ul.results li {float:left;list-style-type:none;padding:0; margin:0; padding-bottom:1em;}
+ul.results {padding:0;margin:0;}
+ul.results li {float:left;list-style-type:none;padding:0; margin:0; padding-bottom:1em;
+    height:190px; font-size:0.8em; padding-bottom:1em; width:160px;}
 ul.results li a {display:block; text-align:center;}
 
 /* Home */
