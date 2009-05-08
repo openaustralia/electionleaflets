@@ -32,7 +32,8 @@ div.contentleft {padding:0 1% 0 0;}
 div.contentright {padding:0 0 0 1%;}
 
 /* Scroll */
-ul.scroll {overflow-y:scroll; height:100px;}
+ul.scroll {overflow-y:scroll; height:200px; border:inset 2px; width:70%;}
+ul.scroll li {padding:0;}
 ul.scroll li.divider {border-bottom:solid 1px #808080;}
 
 /* Loading */
