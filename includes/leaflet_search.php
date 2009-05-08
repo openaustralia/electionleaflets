@@ -87,8 +87,6 @@ class leaflet_search {
 
     }
     
-    private funciton search
-    
     private function get_joins(){
 
         $joins = array();
