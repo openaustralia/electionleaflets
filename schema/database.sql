@@ -1120,3 +1120,18 @@ UNLOCK TABLES;
 drop table election;
 drop table election_type;
 drop table leaflet_election;
+
+
+ALTER TABLE `category` ADD INDEX name(`name`);
+ALTER TABLE `leaflet` ADD INDEX title(`title`),
+ADD INDEX lng(`lng`),
+ADD INDEX lat(`lat`),
+ADD INDEX date_uploaded(`date_uploaded`);
+ALTER TABLE `leaflet_party_attack` ADD INDEX leaflet_id(`leaflet_id`),
+ADD INDEX party_id(`party_id`);
+ALTER TABLE `leaflet` DROP INDEX `lng`
+, DROP INDEX `lat`,
+ADD INDEX latlng(`lng`, `lat`);
+ALTER TABLE `leaflet_tag` ADD INDEX leaflet_id(`leaflet_id`),
+ADD INDEX tag_id(`tag_id`);
+ALTER TABLE `tag` ADD UNIQUE INDEX tag(`tag`);

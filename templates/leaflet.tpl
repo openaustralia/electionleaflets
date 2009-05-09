@@ -28,7 +28,7 @@
 
         <h4>Location</h4>
         <div id="divSpotMap"></div>
-    </div>    
+    </div>
 
     <div class="contentright">
         <ul>
@@ -46,6 +46,13 @@
                 </li>
             {/foreach}
         </ul>
+    </div>
+    <br class="clear"/>
+    <div id="divReportAbuse" class="contentfull bordertop">
+        <h3>Something wrong with this page?</h3>
+        <p>
+            If someone has uploaded something other than an election leaflet <a href="{$www_server}/report.php?q={$leaflet->leaflet_id}"> please report it here</a>.
+        </p>
     </div>
 
 {include file="footer.tpl"}

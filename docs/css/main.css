@@ -31,6 +31,7 @@ div.contentfull {padding:1em;}
 div.contentleft, div.contentright {float:left; width:49%;}
 div.contentleft {padding:0 1% 0 0;}
 div.contentright {padding:0 0 0 1%;}
+div.bordertop {border-top:dashed 1px #5c6f7b;}
 
 /* Scroll */
 ul.scroll {overflow-y:scroll; height:200px; border:inset 2px; width:70%;}
@@ -128,3 +129,6 @@ p.person img {float:left; width:150px; border:thin black solid; margin-right:1em
 
 /* 404 */
 #the404 {text-align:center;}
+
+/* Report abuse */
+#divReportAbuse {font-size:0.8em;}
