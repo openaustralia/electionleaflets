@@ -26,10 +26,10 @@ class addupload_page extends pagebase {
     function process(){
      
         if($this->validate()){
-            
+
             //save IDs to session
             session_write("image_ids", $this->image_ids);
-            
+
             //redirect
             redirect("addinfo.php");
             

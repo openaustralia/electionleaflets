@@ -5,8 +5,8 @@ body {text-align:center; padding:0; margin:0; color:#353A38; font-size:16px;}
     line-height:1.6em; margin:0 5%;}
 
 /* Header */
-#divHeader {padding:0 1em; height:100px;}
-#divHeader.small {height:3em;}
+#divHeader {padding:0 1em; height:85px;}
+#divHeader.small {height:2.5em;}
 
 /* Banner */
 #divBanner {height:2.8em; background:#fafafa; border-bottom:solid 1px #808080;
@@ -18,7 +18,7 @@ body {text-align:center; padding:0; margin:0; color:#353A38; font-size:16px;}
 h1, h2, h3, h4, h5, h6 {font-family:georgia, serif; font-weight:normal; color:#246D62;}
 
 /* Logo */
-#pLogo a {display:block; width:400px; height:100px; background:url(../images/logosmall.png) no-repeat;
+#pLogo a {display:block; width:400px; height:70px; background:url(../images/logosmall.png) no-repeat;
     position:absolute; top:5px; left:1em;}
 
 /* Menu */

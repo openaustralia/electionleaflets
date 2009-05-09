@@ -5,7 +5,7 @@ class parties_page extends pagebase {
 
 	//bind
 	function bind() {
-		$this->page_title = "Browse election leaflets";
+		$this->page_title = "Election leaflets by party";
 
 		$search = factory::create('search');
 

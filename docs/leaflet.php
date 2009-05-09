@@ -22,7 +22,6 @@ class leaflet_page extends pagebase {
 
 	//bind
 	function bind() {
-		$this->page_title = "Welcome";
 
 		//get the leaflet
 		$search = factory::create("search");
@@ -58,7 +57,7 @@ class leaflet_page extends pagebase {
                 array(array("leaflet_tag.leaflet_id", "=", $this->leaflet_id)),
                 'AND',
                 array(array("leaflet_tag", 'inner'))
-            );        
+            );
 
         //get parties attacked
         $leaflet_parties_attacked = $search->search("party", 
@@ -72,6 +71,7 @@ class leaflet_page extends pagebase {
         $this->onloadscript = "showMap('" . MAP_PROVIDER . "', " . $leaflet->lng . ", " . $leaflet->lat .");";
 
         //assign
+		$this->page_title = $leaflet->title . " ( election leaflet published by " . $leaflet->party_name . ")";
         $this->has_map = true;
 	    $this->assign("leaflet", $leaflet);
 	    $this->assign("leaflet_images", $leaflet_images);
