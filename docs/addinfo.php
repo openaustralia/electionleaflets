@@ -181,7 +181,7 @@ class addinfo_page extends pagebase {
                     //insert new tags as required
                     foreach ($tags as $tag) {
                         $tag_id = null;
-                        $tag = str_replace(" ", "", trim($tag))
+                        $tag = str_replace(" ", "", trim($tag));
                         
                         if(isset($tag) && $tag != ''){
                             //exists?

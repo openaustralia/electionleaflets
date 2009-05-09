@@ -213,6 +213,14 @@ abstract class pagebase {
 			}
 		}
 	}
+	
+	protected function strip_tags_from_data(){
+
+		foreach ($this->data as $key => $value) {
+    		$this->data[$key] = strip_tags($value);
+		}
+
+	}
 
 	protected function load(){
 	

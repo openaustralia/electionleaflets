@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:georss="http://www.georss.org/georss">
 	<channel>
-		<title>{$site_name} - {$page_title}</title>
+		<title>{$page_title} ({$site_name})</title>
 		<link>{$search_link}</link>
 		<description>{$site_tag_line}</description>
         {foreach name="leaflets" from="$leaflets" item="leaflet"}

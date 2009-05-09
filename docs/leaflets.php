@@ -48,7 +48,6 @@ class leaflets_page extends pagebase {
                 }else{
                     trigger_error("Error geocoding on user search");
                 }
-
             }
         }
 
@@ -70,6 +69,10 @@ class leaflets_page extends pagebase {
         $this->assign("heading", $title_parts);
 
 	}
+	
+	function unbind(){
+	    $this->strip_tags_from_data();
+    }
 
 	private function get_title($first_leaflet){
 	    $return = array();

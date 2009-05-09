@@ -14,7 +14,9 @@ class addupload_page extends pagebase {
 	    foreach ($_FILES as $key => $value) {
 	        if(isset($_FILES[$key]) && $_FILES[$key]['name'] != ''){
                 $temp_file = $this->upload_image($key);
-                $this->save_image($temp_file);
+                if($temp_file !== false){
+                    $this->save_image($temp_file);
+                }
             }
 	    }
     }
@@ -83,6 +85,10 @@ class addupload_page extends pagebase {
                 if(!getimagesize($image['tmp_name'])){
                      $this->add_warning("Sorry, that doesn't seem to be an image file");                                    
                  }
+            }
+            //check is jpeg
+            if($image['type'] != "image/jpeg"){
+                $this->add_warning("Sorry, your image needs to be in jpeg/jpg format");                                                    
             }
         }
         
