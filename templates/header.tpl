@@ -12,6 +12,7 @@
         <script src="http://maps.google.com/maps?file=api&v=2&key={$google_maps_key}" type="text/javascript"></script>
         <script src="{$www_server}/script/mapstraction.js" type="text/javascript"></script>
     {/if}
+	<link rel="Shortcut Icon" href="{$www_server}/favicon.ico" type="image/x-icon" />    
 </head>
 
 <body>

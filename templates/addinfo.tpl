@@ -10,19 +10,19 @@
         <fieldset>
             <ul>
                 <li>
-                    <label for="txtPostcode">Enter the postcode the leaflet was delivered to *</label>
-                    <input type="text" id="txtPostcode" name="txtPostcode" {if $warn_txtPostcode}class="error"{/if} value="{$data.txtPostcode}"/>
-                    <small>this will let us work out which constituency the leaflet covers</small>
-                </li>
-                <li>
                     <label for="txtTitle">Give the leaflet a title *</label>
                     <input type="text" id="txtTitle" name="txtTitle" {if $warn_txtTitle}class="error"{/if} value="{$data.txtTitle}"/>
                     <small>e.g. the main headline</small>
                 </li>
                 <li>
-                    <label for="txtDescription">Enter a transcript of the main points or first paragraph</label>
+                    <label for="txtDescription">Enter a transcript of the main points / first paragraph</label>
                     <textarea type="text" id="txtDescription" name="txtDescription" {if $warn_txtDescription}class="error"{/if} cols="70" rows="5">{$data.txtDescription}</textarea>
                     <br/>
+                </li>
+                <li>
+                    <label for="txtPostcode">Which postcode was the leaflet was delivered to? *</label>
+                    <input type="text" id="txtPostcode" name="txtPostcode" {if $warn_txtPostcode}class="error"{/if} value="{$data.txtPostcode}"/>
+                    <small>this will let us work out which constituency the leaflet covers</small>
                 </li>
                 <li>
                     <label for="ddlDelivered">When was the leaflet delivered? *</label>
