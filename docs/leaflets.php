@@ -7,6 +7,7 @@ class leaflets_page extends pagebase {
     private $search_term = null;
     private $leaflet_search = null;
     private $user_term = null; //q
+    private $is_rss = false; //q    
 
     //load
     function load(){
@@ -51,6 +52,7 @@ class leaflets_page extends pagebase {
 
 		//assign vars
 		$title_parts = $this->get_title($leaflets[0]);
+        $this->rss_link = htmlspecialchars($_SERVER['REQUEST_URI']) . "&rss=1";
 		$this->page_title = $title_parts[0] . " " . $title_parts[1];		
         $this->assign("leaflets", $leaflets);
         $this->assign("is_search", $this->is_search());            
@@ -61,8 +63,16 @@ class leaflets_page extends pagebase {
         $this->assign("has_tag", isset($this->leaflet_search->tag));
         $this->assign("has_party_attack", isset($this->leaflet_search->party_attack_id));        
         $this->assign("heading", $title_parts);
-                
+
 	}
+
+	public function render(){
+	    //if rss requested, change template
+	    if($this->is_rss){
+	        $this->reset_smarty("rss.tpl");
+        }
+        parent::render();
+    }
 
 	private function get_title($first_leaflet){
 	    $return = array();
@@ -113,6 +123,11 @@ class leaflets_page extends pagebase {
         $party_attack_id = get_http_var("a");
         if(isset($party_attack_id) && $party_attack_id != ''){
             $this->leaflet_search->party_attack_id = trim($party_attack_id);
+        }
+        
+        $is_rss = get_http_var("rss");
+        if(isset($is_rss) && $is_rss != ''){
+            $this->is_rss = true;
         }
         
     }

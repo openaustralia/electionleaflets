@@ -106,7 +106,6 @@ abstract class pagebase {
 		$this->smarty->assign("tracker_location", $this->tracker_location);				
 		$this->smarty->assign("show_tracker",$this->show_tracker);				
         $this->smarty->assign("viewstate", $this->serialize_viewstate());
-        $this->smarty->assign("googleanalytics", DOC_DIR . "templates/googleanalytics.tpl");
 		$this->smarty->assign("rss_link", $this->rss_link);
 		$this->smarty->assign("current_url", htmlspecialchars($_SERVER['REQUEST_URI']));
 		$this->smarty->assign("current_page", htmlspecialchars($_SERVER['PHP_SELF']));		
