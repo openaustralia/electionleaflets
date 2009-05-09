@@ -16,48 +16,39 @@
             <br/>
             They are targeted, effective and sometimes very bitter. We need your help to photograph and map them so we can keep an eye on what the parties are up to, and try to keep them honest.
         </p>
+        <p>
+            <form method="get" action="{$www_server}/addupload.php">
+                <input type="submit" value ="Add a leaflet delivered to you"/>
+            </form>
+        </p>
+        <p>
+            <small>(All you need to do is take a photo of a leaflet and tell us a bit about it)</small>
+        </p>
     </div>
-
-    <div class="boxes">
-        <div class="box box1">
-            <div>
-                <h3>Enter you post code to see leaflets near you</h3>
+     
+     <div id="divRecentLeaflets">
+        <h3>Recently uploaded leaflets</h3>
+        <div id="divRecentControls">
                 <form id="frmHomeSearch" method="get" action="{$www_server}/leaflets.php">
+                    <label for="txtSearch">Enter a post code to see leaflets near you</label>
                     <input type="text" id="txtSearch" name="q"/>
                     <input type="submit" value="GO"/>
                     <small>e.g. <a href="{$www_server}/leaflets.php?q=sw98jx">SW9 8JX</a></small>
                 </form>
-                <h3>or <a href="{$www_server}/browse.php">browse leaflets by party or category</a></h3>                
-            </div>
-            <span>&nbsp;</span>
         </div>
-    
-        <div class="box box2">
-            <div>
-                <h3>Add a leaflet delivered to you</h3>
-                <p>
-                    All you need to do is take a photo of a leaflet and tell us a bit about it.
-                </p>
-                <form method="get" action="{$www_server}/addupload.php">
-                    <input type="submit" value ="Add a leaflet now"/>
-                </form>
-            </div>
-            <span>&nbsp;</span>            
-        </div>
-        <br class="clear"/>        
+        <ul class="results">
+            {foreach from="$leaflets" item="leaflet"}
+                <li>
+                    <a href="{$www_Server}/leaflet.php?q={$leaflet->leaflet_id}">
+                        <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/>
+                    </a>
+                    <a href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}" class="textlink">{$leaflet->title}</a>
+                </li>
+            {/foreach}
+        </ul>
+        <br class="clear"/>
+        <p><a href="{$www_server}/browse.php">browse leaflets by party or category &raquo;</a></p>                        
     </div>
-    
-    <h3>Recently uploaded leaflets</h3>
-    <ul class="results">
-        {foreach from="$leaflets" item="leaflet"}
-            <li>
-                <a href="{$www_Server}/leaflet.php?q={$leaflet->leaflet_id}">
-                    <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/>
-                </a>
-                <a href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}" class="textlink">{$leaflet->title}</a>
-            </li>
-        {/foreach}
-    </ul>
     <br class="clear"/>
 </div>
     
