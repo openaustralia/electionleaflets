@@ -29,7 +29,7 @@
             </ul>
         </fieldset>
         <div class="buttons">
-            <input type="submit"  value="Upload files"/>
+            <input type="submit"  value="Upload files &raquo;"/>
         </div>
     </form>
     <div id="divUploading">

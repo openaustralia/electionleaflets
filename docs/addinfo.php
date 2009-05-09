@@ -167,6 +167,7 @@ class addinfo_page extends pagebase {
 
                 //save tags
                 $tags = split(",", $this->data['txtTags']);
+                
                 if(count($tags) > 0){
 
                     //get any matching tags
@@ -176,22 +177,23 @@ class addinfo_page extends pagebase {
                     }
                     $search = factory::create('search');
                     $existing_tags = $search->search("tag", $where_clause);
-                    
+
                     //insert new tags as required
                     foreach ($tags as $tag) {
                         $tag_id = null;
-
+                        $tag = str_replace(" ", "", trim($tag))
+                        
                         if(isset($tag) && $tag != ''){
                             //exists?
                             foreach ($existing_tags as $existing_tag) {
-                                if(trim($tag) == $existing_tag->tag){
+                                if($tag == $existing_tag->tag){
                                     $tag_id = $existing_tag->tag_id;
                                 }
                             }
                         
                             if(!isset($tag_id)){
                                 $new_tag = factory::create('tag');
-                                $new_tag->tag = trim($tag);
+                                $new_tag->tag = $tag;
 
                                 if(!$new_tag->insert()){
                                     trigger_error("Unable to save new tag");                    

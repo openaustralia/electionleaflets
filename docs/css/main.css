@@ -78,7 +78,13 @@ small.error {background:#ff6f75;}
 .hide {display:none;}
 
 /* Maps */
-#divSpotMap {width:80%; height:200px; border:solid 1px #808080;}
+#divSpotMap {width:80%; height:200px; border:solid 1px #808080; position:relative;margin-bottom:10em;}
+#divSpotMap div.gmnoprint {bottom:-10px!important;left:4em!important;-moz-opacity:0.8; opacity:0.8;}
+#divSpotMap div a {position:absolute;bottom:-34px!important;right:0;color:#808080!important;}
+#divSpotMap div span {position:absolute;bottom:-34px!important;right:6.5em;color:#808080!important;}
+
+/* Forms */
+input[type='submit'] {font-size:1.4em; padding:0.3em;}
 
 /* Footer */
 #divFooter {clear:left; text-align:center; padding-top:0.5em; font-size:0.8em; padding-bottom:1em;

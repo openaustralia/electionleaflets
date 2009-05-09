@@ -22,13 +22,15 @@ function showMap(sMapProvider, nLng, nLat){
     var oPoint = new LatLonPoint(nLat,nLng);
 
     // display the map centered on a latitude and longitude (Google zoom levels)
-    oMapstraction.setCenterAndZoom(oPoint, 13);
+    oMapstraction.setCenterAndZoom(oPoint, 11);
 
     // create a marker positioned at a lat/lon 
-    //oMarker = new Marker(oPoint);
+    oMarker = new Marker(oPoint);
+    oMarker.setIcon("/images/marker.png", [15,15], null);
+    oMarker.setShadowIcon("/images/shadow.png",1);
  
     // display marker
-    //oMapstraction.addMarker(oMarker);
+    oMapstraction.addMarker(oMarker);
 }
 
 function uploadImages(){

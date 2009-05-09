@@ -34,12 +34,12 @@
         <ul>
             {foreach from="$leaflet_images" item="leaflet_image"}
                 <li>
-                    <a href="{$www_server}/full.php?q={$leaflet->leaflet_id}#{$leaflet_image->leaflet_image_id}">
+                    <a href="{$www_server}/full.php?q={$leaflet->leaflet_id}#l{$leaflet_image->leaflet_image_id}">
                         <img src="{$leaflet_image->medium_url()}" />
                     </a>
                     <br/>
                     <small>
-                        <a href="{$www_server}/full.php?q={$leaflet->leaflet_id}#{$leaflet_image->leaflet_image_id}">
+                        <a href="{$www_server}/full.php?q={$leaflet->leaflet_id}#l{$leaflet_image->leaflet_image_id}">
                             view larger image
                         </a>
                     </small>
