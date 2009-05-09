@@ -48,18 +48,12 @@
 
         <h3>FAQs</h3>
         <dl class="faq">
-            <dt></dt>
-            <dd></dd>
-            <dt></dt>
-            <dd></dd>
-            <dt></dt>
-            <dd></dd>
-            <dt></dt>
-            <dd></dd>
-            <dt></dt>
-            <dd></dd>
-            <dt></dt>
-            <dd></dd>                                                                        
+            <dt>How do I upload an election leaflet</dt>
+            <dd>You need to upload a photograph of the leaflet in JPG format, then enter a few details about the leaflet. <a href="{$www_server}/addupload.php">Click here to get started</a>.</dd>
+            <dt>Is this project affiliated to or supported by any political party</dt>
+            <dd>No.</dd>
+            <dt>Can I reuse the images on my website or blog?</dt>
+            <dd>Yes, but please make a copy of the image on your site and link back to us.</dd>                                                                        
         </dl>
         <h3>Contact</h3>
         <p>
