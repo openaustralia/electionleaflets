@@ -14,21 +14,21 @@ class leaflets_page extends pagebase {
 
         //setup search object
 		$this->leaflet_search = factory::create("leaflet_search");
-		
-		//if rss requested, change template
-	    if($this->is_rss){
-	        $this->reset_smarty("rss.tpl");
-        }
 
     }
 
     
 	//bind
 	function bind() {
-
+        
         //get variables
         $this->get_vars();
-            
+
+		//if rss requested, change template
+	    if($this->is_rss){
+	        $this->reset_smarty("rss.tpl");
+        }
+                    
         //generic search
         if(isset($this->search_term)){
 
