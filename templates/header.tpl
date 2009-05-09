@@ -21,7 +21,7 @@
     </div>
 
     <div id="divBanner">
-        This website is being built by volunteers. Please help us out by donating to cover server costs:
+        This website is being built by volunteers. Please help us out by donating to cover <a href="http://www.beerintheevening.com/pubs/s/34/348/Prince_Albert/Brixton">beer</a> &amp; <a href="http://seagrass.goatchurch.org.uk/">server</a> costs:
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
         <input type="hidden" name="cmd" value="_s-xclick">
         <input type="hidden" name="hosted_button_id" value="5300623">
@@ -32,8 +32,8 @@
     </div>
     
     <div id="divPage">
-
-        <div id="divHeader"{if $hide_logo == true} class="small"{/if}>
+        
+        <div id="divHeader"{if $hide_logo == false} class="small"{/if}>
             
             {if $hide_logo == false}
                 <p id="pLogo"><a href="{$www_server}"><span class="hide">{$site_name} - {$site_tag_line}</span></a></p>

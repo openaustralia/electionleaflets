@@ -13,7 +13,7 @@
         </p>
         <p>
             The idea was conjured up in December 2008 at a weekend in Derbyshire, and 
-            finally acted upon in Francis's front living room in Cambridge at the end of April 2009.
+            finally acted upon in Francis's front living room in Cambridge at the end of April 2009. You can read about where the name for this website came from <a href="http://blog.thestraightchoice.org/2009/04/whats-in-the-name-the-straight-choice/">here</a>.
         </p>
         <h3>The team</h3>
         <p>

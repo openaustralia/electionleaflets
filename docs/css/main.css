@@ -12,6 +12,7 @@ body {text-align:center; padding:0; margin:0; color:#353A38; font-size:16px;}
 #divBanner {height:2.8em; background:#fafafa; border-bottom:solid 1px #808080;
         padding-top:0.2em; font-family:verdana, sans-serif; font-size:0.8em;}
 #divBanner form {display:inline; position:relative; top:0.4em;}
+#divBanner a {text-decoration:none; color:#333!important;}
 
 /* headings */
 h1, h2, h3, h4, h5, h6 {font-family:georgia, serif; font-weight:normal; color:#246D62;}
@@ -112,3 +113,10 @@ p.person img {float:left; width:150px; border:thin black solid; margin-right:1em
 
 /* Highlight */
 .highlight {background:#ffffaa; padding:0 0.3em;}
+
+/* Full images */
+#divFullImage ul {padding:1em 0;}
+#divFullImage ul li {padding-bottom:0;}
+
+/* 404 */
+#the404 {text-align:center;}

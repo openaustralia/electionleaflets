@@ -4,7 +4,7 @@
         <h1>{$leaflet->title}</h1>
         <p>{$leaflet->description}</p>
         <p>Published by <a href="{$www_server}/leaflets.php?p={$leaflet->party_party_id}">{$leaflet->party_name}</a></p>
-        
+
         <h4>Categories</h4>
         <ul>
             {foreach from="$leaflet_categories" item="leaflet_category"}
@@ -33,7 +33,17 @@
     <div class="contentright">
         <ul>
             {foreach from="$leaflet_images" item="leaflet_image"}
-                <li><img src="{$leaflet_image->medium_url()}" /></li>
+                <li>
+                    <a href="{$www_server}/full.php?q={$leaflet->leaflet_id}#{$leaflet_image->leaflet_image_id}">
+                        <img src="{$leaflet_image->medium_url()}" />
+                    </a>
+                    <br/>
+                    <small>
+                        <a href="{$www_server}/full.php?q={$leaflet->leaflet_id}#{$leaflet_image->leaflet_image_id}">
+                            view larger image
+                        </a>
+                    </small>
+                </li>
             {/foreach}
         </ul>
     </div>
