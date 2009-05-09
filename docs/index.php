@@ -15,9 +15,10 @@ class index_page extends pagebase {
 
         $leaflets = $leaflet_search->search(true);
         $leaflets_search->start = 0;
-        $leaflets_search->number = 20;        
+        $leaflets_search->number = 20;
         $this->assign("leaflets", $leaflets);			
-        $this->assign("hide_logo", true);			        
+        $this->assign("hide_logo", true);
+        $this->assign("is_home", true);
 	}
 
     private function get_leaflet_count(){

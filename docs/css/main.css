@@ -1,8 +1,9 @@
 body {text-align:center; padding:0; margin:0; color:#353A38; font-size:16px;}
 
 /* Page */
-#divPage { text-align:left; position:relative; margin:0 auto;font-family:verdana, sans-serif;
-    line-height:1.6em; margin:0 5%;}
+#divPage { text-align:left; position:relative; margin:0 auto;font-family:arial, sans-serif;
+    line-height:1.6em; padding:0 5%;}
+#divPage.home {background:url(../images/clouds.png) repeat-x 0 0;}    
 
 /* Header */
 #divHeader {padding:0 1em; height:85px;}
@@ -15,16 +16,17 @@ body {text-align:center; padding:0; margin:0; color:#353A38; font-size:16px;}
 #divBanner a {text-decoration:none; color:#333!important;}
 
 /* headings */
-h1, h2, h3, h4, h5, h6 {font-family:georgia, serif; font-weight:normal; color:#246D62;}
+h1, h2, h3, h4, h5, h6 {font-weight:bold; color:#8e7345;}
+h1 {color:#1f6e62;}
 
 /* Logo */
 #pLogo a {display:block; width:400px; height:70px; background:url(../images/logosmall.png) no-repeat;
     position:absolute; top:5px; left:1em;}
 
 /* Menu */
-#ulMenu {padding:0; margin:0; position:absolute; top:0; right:0;}
+#ulMenu {padding:8px 0.6em 0 0; margin:0; position:absolute; top:0; right:0;}
 #ulMenu li {padding:0; margin:0; float:left; list-style-type:none;}
-#ulMenu li a {display:block; padding:0 1em;}
+#ulMenu li a {display:block; padding:0 0.5em; font-weight:bold;}
 
 /* content */
 div.contentfull {padding:1em;}
@@ -46,18 +48,31 @@ ul.scroll li.divider {border-bottom:dashed 1px #808080;}
 ul.results {padding:0;margin:0;}
 ul.results li {float:left;list-style-type:none;padding:0; margin:0; padding-bottom:1em;
     height:190px; font-size:0.8em; padding-bottom:1em; width:160px;}
-ul.results li a {display:block; text-align:center;}
+ul.results li a {display:block; text-align:left;}
+
 #imgRSS {position:absolute; top:2.4em; right:1.5em;}
 
 /* Home */
 #divWelcome {text-align:center;}
-#divWelcome #pCount {position:absolute; top:0; left:2em; font-size:0.8em;}
-#divWelcome h1 {display:block; width:100%; height:190px; background:url(../images/logo.png) top center no-repeat;}
+#divWelcome p {font-size:1.2em;}
+#divWelcome #pCount {position:absolute; top:0; left:2em; font-size:0.8em; background:#c0a472; color:#fff;
+    padding:0 1em;}
+#divWelcome h1 {display:block; width:100%; height:175px; background:url(../images/logo.png) top center no-repeat;
+        position:relative; top:5px;}
 
-div.box {float:left; width:44%; padding:1%; margin:1% ;text-align:center;
-        background:#ecf5f4;
-        border-top:dashed 1px #5c6f7b; border-bottom:dashed 1px #5c6f7b; position:relative; 
-        left:3%;    min-height:12em;}
+div.box {float:left; width:44%; margin:1% ;text-align:center; 
+        height:13em; position:relative; width:473px; left:1.1em;}
+div.box h3 {color:#353A38;}        
+div.box div {padding:10px;}
+div.box span {display:block; height:20px; width:100%;position:absolute; bottom:-15px; left:0;}        
+
+div.box.box1 {background:url(../images/box1top.png) no-repeat;}
+div.box.box1 span {background:url(../images/box1bottom.png) no-repeat;}
+div.box.box2 {background:url(../images/box2top.png) no-repeat;}
+div.box.box2 span {background:url(../images/box2bottom.png) no-repeat;}
+
+#frmHomeSearch #txtSearch {font-size:1.2em;}
+div.boxes {border-bottom:dashed 1px #5c6f7b; padding-bottom:2em;}
 
 /* Forms */
 form ul {padding:0; margin:0;}
@@ -132,3 +147,6 @@ p.person img {float:left; width:150px; border:thin black solid; margin-right:1em
 
 /* Report abuse */
 #divReportAbuse {font-size:0.8em;}
+
+/* Links */
+a {color:#3e7b9b;}

@@ -19,28 +19,33 @@
     </div>
 
     <div class="boxes">
-        <div class="box">
-            <h3>Search for leaflets near you, or enter a party name or subject</h3>
-            <p>Enter a postcode, or search term</p>
-            <form method="get" action="{$www_server}/leaflets.php">
-                <input type="text" id="txtSearch" name="q"/>
-                <input type="submit" value="GO"/>
-                <br/>
-                <small>e.g. <a href="{$www_server}/leaflets.php?q=sw98jx">SW9 8JX</a>, <a href="{$www_server}/leaflets.php?q=cambridge">Cambridge</a>, <a href="{$www_server}/leaflets.php?q=Labour+Party">Labour Party</a> or <a href="{$www_server}/leaflets.php?q=crime">Crime</a></small>
-            </form>
+        <div class="box box1">
+            <div>
+                <h3>Enter you post code to see leaflets near you</h3>
+                <form id="frmHomeSearch" method="get" action="{$www_server}/leaflets.php">
+                    <input type="text" id="txtSearch" name="q"/>
+                    <input type="submit" value="GO"/>
+                    <small>e.g. <a href="{$www_server}/leaflets.php?q=sw98jx">SW9 8JX</a></small>
+                </form>
+                <h3>or <a href="{$www_server}/browse.php">browse leaflets by party or category</a></h3>                
+            </div>
+            <span>&nbsp;</span>
         </div>
     
-        <div class="box">
-            <h3>Add a leaflet delivered to you</h3>
-            <p>
-                All you need to do is take a photo of a leaflet and tell us a bit about it.
-            </p>
-            <form method="get" action="{$www_server}/addupload.php">
-                <input type="submit" value ="Add a leaflet now"/>
-            </form>
+        <div class="box box2">
+            <div>
+                <h3>Add a leaflet delivered to you</h3>
+                <p>
+                    All you need to do is take a photo of a leaflet and tell us a bit about it.
+                </p>
+                <form method="get" action="{$www_server}/addupload.php">
+                    <input type="submit" value ="Add a leaflet now"/>
+                </form>
+            </div>
+            <span>&nbsp;</span>            
         </div>
+        <br class="clear"/>        
     </div>
-    <br class="clear"/>
     
     <h3>Recently uploaded leaflets</h3>
     <ul class="results">
@@ -49,7 +54,7 @@
                 <a href="{$www_Server}/leaflet.php?q={$leaflet->leaflet_id}">
                     <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/>
                 </a>
-                <a href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}">{$leaflet->title}</a>
+                <a href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}" class="textlink">{$leaflet->title}</a>
             </li>
         {/foreach}
     </ul>

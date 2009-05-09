@@ -35,7 +35,7 @@
         
     </div>
     
-    <div id="divPage">
+    <div id="divPage" {if $is_home}class="home"{/if}>
         
         <div id="divHeader"{if $hide_logo == true} class="small"{/if}>
             
