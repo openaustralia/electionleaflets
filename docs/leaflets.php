@@ -14,6 +14,11 @@ class leaflets_page extends pagebase {
 
         //setup search object
 		$this->leaflet_search = factory::create("leaflet_search");
+		
+		//if rss requested, change template
+	    if($this->is_rss){
+	        $this->reset_smarty("rss.tpl");
+        }
 
     }
 
@@ -39,7 +44,7 @@ class leaflets_page extends pagebase {
                 $success = $geocoder->set_from_postcode($search_type['display']);
                 if($success){
                     $this->leaflet_search->lng = $geocoder->lng;
-                    $this->leaflet_search->lat = $geocoder->lat;                    
+                    $this->leaflet_search->lat = $geocoder->lat;
                 }else{
                     trigger_error("Error geocoding on user search");
                 }
@@ -65,14 +70,6 @@ class leaflets_page extends pagebase {
         $this->assign("heading", $title_parts);
 
 	}
-
-	public function render(){
-	    //if rss requested, change template
-	    if($this->is_rss){
-	        $this->reset_smarty("rss.tpl");
-        }
-        parent::render();
-    }
 
 	private function get_title($first_leaflet){
 	    $return = array();
