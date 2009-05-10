@@ -67,6 +67,7 @@ ul.results li a.leaflet {height:180px;}
 
 #divRecentLeaflets {border-top:dashed 1px #5c6f7b; padding-bottom:2em; position:relative;}
 #divRecentLeaflets ul {padding-top:1.3em;}
+#divRecentLeaflets p {clear:left;}
 #divRecentControls {position:absolute;top:1em; right:0; padding:5px;font-size:0.9em;}
 #divRecentControls p {padding:0;margin:1em 0 0 0; clear:left;}
 
