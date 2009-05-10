@@ -52,8 +52,8 @@ ul.results {padding:0;margin:0;}
 ul.results li {float:left;list-style-type:none;padding:0; margin:0; padding-bottom:1em;
      font-size:0.8em; padding-bottom:2em; width:160px; line-height:1.2em;}
 ul.results li img {margin-bottom:0.2em;}    
-ul.results li a {display:block; text-align:left; padding-top:0.2em;}
-ul.results li a.leaflet {height:180px;}
+ul.results li a {display:block; text-align:left; padding-top:0.2em;padding-left:2em;}
+ul.results li a.leaflet {height:180px;padding-left:0;}
 
 #imgRSS {position:absolute; top:2.4em; right:1.5em;}
 
