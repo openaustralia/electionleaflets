@@ -170,48 +170,22 @@ class addinfo_page extends pagebase {
                 
                 if(count($tags) > 0){
 
-                    //get any matching tags
-                    $where_clause = array();
-                    foreach ($tags as $tag) {
-                        array_push($where_clause, array("tag", "=", $tag));
-                    }
-                    $search = factory::create('search');
-                    $existing_tags = $search->search("tag", $where_clause);
+                    $new_tag = factory::create('tag');
+                    $new_tag->tag = $tag;
 
-                    //insert new tags as required
-                    foreach ($tags as $tag) {
-                        $tag_id = null;
-                        $tag = str_replace(" ", "", trim($tag));
-                        
-                        if(isset($tag) && $tag != ''){
-                            //exists?
-                            foreach ($existing_tags as $existing_tag) {
-                                if($tag == $existing_tag->tag){
-                                    $tag_id = $existing_tag->tag_id;
-                                }
-                            }
-                        
-                            if(!isset($tag_id)){
-                                $new_tag = factory::create('tag');
-                                $new_tag->tag = $tag;
-
-                                if(!$new_tag->insert()){
-                                    trigger_error("Unable to save new tag");                    
-                                }
-                                $tag_id = $new_tag->tag_id;
-                            }
-                        
-                            $leaflet_tag = factory::create('leaflet_tag');
-                            $leaflet_tag->leaflet_id = $leaflet->leaflet_id;
-                            $leaflet_tag->tag_id = $tag_id;
-                            if(!$leaflet_tag->insert()){
-                                trigger_error("Unable to save leaflet/tag bridge");                    
-                            }
-                        }
+                    if(!$new_tag->insert()){
+                        trigger_error("Unable to save new tag");                    
                     }
-                    
+                
+                        
+                    $leaflet_tag = factory::create('leaflet_tag');
+                    $leaflet_tag->leaflet_id = $leaflet->leaflet_id;
+                    $leaflet_tag->tag_id = $new_tag->tag_id;
+                    if(!$leaflet_tag->insert()){
+                        trigger_error("Unable to save leaflet/tag bridge");                    
+                    }
                 }
-
+                    
             }else{
                 trigger_error("Unable to save leaflet");
             }

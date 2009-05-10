@@ -142,7 +142,7 @@ function error_handler($errno, $errmsg, $filename, $linenum, $vars) {
 			print '<div style="text-align:center;">';
 			print '<h1>Sorry, something went wrong</h1>';
 			print '<h3>An email has been sent to the geeks!</h3>';
-			print '<p>In the mean time <a href="http://www.flickr.com/photos/tags/babypanda/">here\'s some baby pandas</a></p>';
+			print '<p><a href="http://www.thestraightchoice.org">click here to go back to the homepage</a></p>';
 			print '</div>';
 			
 			$fatal = true;
