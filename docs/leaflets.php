@@ -52,13 +52,16 @@ class leaflets_page extends pagebase {
         }
 
 		//do search
-        $leaflets = $this->leaflet_search->search();
+		if($this->has_vars_set()){
+            $leaflets = $this->leaflet_search->search();
+        }
 
 		//assign vars
-		$title_parts = $this->get_title($leaflets[0]);
+		$title_parts = $this->get_title();
         $this->rss_link = htmlspecialchars($_SERVER['REQUEST_URI']) . "&rss=1";
 		$this->page_title = $title_parts[0] . " " . $title_parts[1];		
         $this->assign("leaflets", $leaflets);
+        $this->assign("has_leaflets", count($leaflets) > 0);        
         $this->assign("is_search", $this->is_search());            
         $this->assign("is_browse", $this->is_browse());
         $this->assign("is_geo", $this->is_geo());
@@ -73,26 +76,44 @@ class leaflets_page extends pagebase {
 	function unbind(){
 	    $this->strip_tags_from_data();
     }
-
-	private function get_title($first_leaflet){
-	    $return = array();
-	    if(isset($this->leaflet_search->publisher_party_id)){
-	        $return = array("Election leaflets published by", $first_leaflet->party_name);
-        }
-        if(isset($this->leaflet_search->category_id)){
-	        $return = array("Election leaflets about ", $first_leaflet->category_name);
-        }
-        if(isset($this->leaflet_search->tag)){
-	        $return = array("Election leaflets tagged ", $first_leaflet->tag_tag);
-        }
-        if(isset($this->leaflet_search->party_attack_id)){
-
-            $search = factory::create("search");
-            $result = $search->search("party", array(array("party_id", "=", $first_leaflet->leaflet_party_attack_party_id)));
-
-	        $return = array("Election leaflets attacking the", $result[0]->name);
+    
+    
+    private function has_vars_set(){
+        $return = false;
+        if(isset($this->leaflet_search->search_term) || isset($this->leaflet_search->publisher_party_id) || isset($this->leaflet_search->party_attack_id) || isset($this->leaflet_search->category_id) || isset($this->leaflet_search->tag) || (isset($this->leaflet_search->lng) && isset($this->leaflet_search->lat))){
+            $return = true;
         }
         
+        return $return;
+    }
+
+	private function get_title(){
+
+	    $return = array();
+        $search = factory::create("search");	    
+        //party
+	    if(isset($this->leaflet_search->publisher_party_id)){
+	        $result = $search->search("party", array(array("party_id", "=", $this->leaflet_search->publisher_party_id)));
+	        $return = array("Election leaflets published by", $result[0]->name);
+        }
+        
+        //category
+        if(isset($this->leaflet_search->category_id)){
+            $result = $search->search("category", array(array("category_id", "=", $this->leaflet_search->category_id)));
+	        $return = array("Election leaflets about ", $result[0]->name);
+        }
+        
+        //tag
+        if(isset($this->leaflet_search->tag)){
+            $result = $search->search("tag", array(array("tag", "=", $this->leaflet_search->tag)));
+	        $return = array("Election leaflets tagged ", $result[0]->tag);
+        }
+        
+        //party attack
+        if(isset($this->leaflet_search->party_attack_id)){
+            $result = $search->search("party", array(array("party_id", "=", $this->leaflet_search->party_attack_id)));
+	        $return = array("Election leaflets attacking the", $result[0]->name);
+        }
         return $return;
     }
 

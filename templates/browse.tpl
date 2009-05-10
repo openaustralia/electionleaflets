@@ -15,7 +15,6 @@
                     <a href="{$www_server}/parties.php">View all parties ...</a>
                 </li>
         </ul>
-                
         <h3>Tags</h3>
         <ul class="tagcloud">
             {foreach from="$weighted_tags" item="weighted_tag"}

@@ -25,11 +25,11 @@
     </div>
 
     <div id="divBanner">
-        This website is being built by volunteers. Please help us out by donating to cover <a href="http://www.beerintheevening.com/pubs/s/34/348/Prince_Albert/Brixton">beer</a> &amp; <a href="http://seagrass.goatchurch.org.uk/">server</a> costs:
+        This website is being built by volunteers. Please help us out by donating to cover <a href="http://seagrass.goatchurch.org.uk/">server</a> costs:
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
         <input type="hidden" name="cmd" value="_s-xclick">
         <input type="hidden" name="hosted_button_id" value="5300623">
-        <input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
+        <input type="image" width="74px" height="21" src="https://www.paypal.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
         <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
         </form>
         
@@ -44,27 +44,27 @@
             {/if}
             
             <ul id="ulMenu">
-  	          <li {if $menu_item == "home"}class="selected"{/if}>
+  	          <li>
   	              <a href="{$www_server}">
   	                  Home
   	              </a>
   	          </li>
-	          <li {if $menu_item == "add"}class="selected"{/if}>
+	          <li>
 	              <a href="{$www_server}/addupload.php">
 	                  Add a leaflet
 	              </a>
 	          </li>
-	          <li {if $menu_item == "browse"}class="selected"{/if}>
+	          <li>
 	              <a href="{$www_server}/browse.php">
 	                  Browse
 	              </a>
 	          </li>
-	          <li {if $menu_item == "browse"}class="selected"{/if}>
+	          <li>
 	              <a href="http://blog.thestraightchoice.org">
-	                  Blog
+	                  News &amp; analysis
 	              </a>
 	          </li>
-	          <li {if $menu_item == "about"}class="selected"{/if}>
+	          <li>
 	              <a href="{$www_server}/about.php">
 	                  About
 	              </a>

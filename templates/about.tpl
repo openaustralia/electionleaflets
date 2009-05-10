@@ -3,11 +3,10 @@
     <div class="contentfull">
         <h1>About {$site_name}</h1>
         <p>
-            The Straight Choice is an real-time election leaflet project.
+            Electioneering is a high-stakes game. We, at The Straight Choice, believe that it’s time for that game to become a spectator sport.
         </p>
         <p>
-        <p>
-            Our ambition is to create a live visualization of the flood of party political leaflets as they are delivered across the country during an election campaign.
+            The Straight Choice is an real-time election leaflet project. Our ambition is to create a live visualization of the flood of party political leaflets as they are delivered across the country during an election campaign.
 
             If you have recently received any election leaflets through your door you can help by photographing or scanning them and <a href="{$www_server}/addupload.php">uploading the images to our server</a>.
         </p>
@@ -45,7 +44,7 @@
         He has done substantial work on mySociety's <a href="http://www.whatdotheyknow.com">WhatDoTheyKnow.com</a> 
         -- among other projects -- and would specifically like you to sign up for <a href="http://seriouschange.org.uk/">Serious Change</a>.
         </p>
-
+        <br class="clear"/>
         <h3>FAQs</h3>
         <dl class="faq">
             <dt>How do I upload an election leaflet</dt>

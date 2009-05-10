@@ -6,7 +6,8 @@
         {else}
             <div class="searchbox">
                 <form method="get" action="{$www_server}/leaflets.php">
-                Results {if $is_geo}near{else}for{/if} <input type="text" id="txtSearch" name="q" value="{$user_term}"/>
+                <label for="txtSearch">Results {if $is_geo}near{else}for{/if}</label>
+                <input type="text" id="txtSearch" name="q" value="{$user_term}"/>
                 <input type="submit" value="GO" />
                 <br/>
             </div>   
@@ -14,26 +15,32 @@
         <a href="{$rss_link}">
             <img id="imgRSS" src="{$www_server}/images/rss.png" alt="rss" title="Subscribe to RSS feed for '{$page_title}'"/>
         </a>
-
-        <ul class="results">
-            {foreach from="$leaflets" item="leaflet"}
-                <li>
-                    <a href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}">
-                        <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/>
-                    </a>
-                    <a href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}">{$leaflet->title}</a>
-                    {if is_geo}
-                        {if $leaflet->distance < 0.5 || $leaflet->distance == 0}
-    						Less than 500 m away
-    					{elseif	$leaflet->distance < 1}
-    						About 1 km away
-    					{else}
-    						About {$leaflet->distance|string_format:"%d"} km away
-    					{/if}
-    				{/if}
-                </li>
-            {/foreach}
-        </ul>
+        {if $has_leaflets}
+            <ul class="results">
+                {foreach from="$leaflets" item="leaflet"}
+                    <li {if $is_geo}class="has_distance"{/if}>
+                        <a class="leaflet" href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}">
+                            <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/>
+                        </a>
+                        <a href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}">{$leaflet->title}</a>
+                        {if $is_geo}
+                            <span class="distance">
+                                {if $leaflet->distance < 0.5 || $leaflet->distance == 0}
+            						Less than 500 m away
+            					{elseif	$leaflet->distance < 1}
+            						About 1 km away
+            					{else}
+            						About {$leaflet->distance|string_format:"%d"} km away
+            					{/if}
+    					    </span>
+        				{/if}
+                    </li>
+                {/foreach}
+            </ul>
+        {else}
+            <h3>Sorry, we couldn't find any leaflets for you</h3>
+            <p>You can subscribe to the RSS feed at the top of this page to be notified when we do.</p>
+        {/if}
     </div>
     
 {include file="footer.tpl"}
