@@ -49,10 +49,12 @@
         <dl class="faq">
             <dt>How do I upload an election leaflet</dt>
             <dd>You need to upload a photograph of the leaflet in JPG format, then enter a few details about the leaflet. <a href="{$www_server}/addupload.php">Click here to get started</a>.</dd>
+            <dt id="activist">I'm a party activist, can I upload a leaflet?</dt>
+            <dd>Yes. Just upload a photos of your leaflet and enter <strong>one</strong> of the post codes it is aimed at when prompted. <a href="{$www_server}/addupload.php">Click here to add a leaflet now</a>.</dd>
             <dt>Is this project affiliated to or supported by any political party</dt>
             <dd>No.</dd>
             <dt>Can I reuse the images on my website or blog?</dt>
-            <dd>Yes, but please make a copy of the image on your site and link back to us.</dd>                                                                        
+            <dd>Yes, but please make a copy of the image on your site and link back to us.</dd>
         </dl>
         <h3>Contact</h3>
         <p>

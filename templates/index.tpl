@@ -22,7 +22,9 @@
             </form>
         </p>
         <p>
-            <small>(All you need to do is take a photo of a leaflet and tell us a bit about it)</small>
+            <small>All you need to do is take a photo of a leaflet and tell us a bit about it</small>
+            <br/>
+            <small id="smlActivist">(Party activist? <a href="{$www_server}/about.php#activist">read this</a>)</small>
         </p>
     </div>
      
