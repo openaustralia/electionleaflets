@@ -2,7 +2,7 @@
 
     <div class="contentleft">
         <h1>{$leaflet->title}</h1>
-        <div>{$leaflet->description|nl2p}</div>
+        <div>{$leaflet->description|nl2br}</div>
         <p>Published by <a href="{$www_server}/leaflets.php?p={$leaflet->party_party_id}">{$leaflet->party_name}</a></p>
 
         <h4>Categories</h4>
