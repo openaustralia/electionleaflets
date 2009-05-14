@@ -148,3 +148,9 @@ p.person {clear:left; padding-bottom:2em;}
 p.person img {float:left; width:150px; border:thin #808080 solid; margin-right:1em; margin-bottom:2em;}
 dl.faq dt {font-size:1em; color:#1f6e62; font-weight:bold;}
 dl.faq dd {padding-left:0;margin-left:0;padding-bottom:1em;}
+
+
+/* Browse */
+ul.parties li {position:relative;}
+ul.parties li small {position:absolute; right:0;}
+

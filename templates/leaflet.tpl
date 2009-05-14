@@ -2,7 +2,7 @@
 
     <div class="contentleft">
         <h1>{$leaflet->title}</h1>
-        <p>{$leaflet->description}</p>
+        <div>{$leaflet->description|nl2p}</div>
         <p>Published by <a href="{$www_server}/leaflets.php?p={$leaflet->party_party_id}">{$leaflet->party_name}</a></p>
 
         <h4>Categories</h4>
@@ -19,7 +19,7 @@
             {/foreach}
         </ul>
         
-        <h4>Parties attacked</h4>
+        <h4>Parties attacked in this leaflet</h4>
         <ul>
             {foreach from="$leaflet_parties_attacked" item="leaflet_party_attack"}
                 <li><a href="{$www_server}/leaflets.php?a={$leaflet_party_attack->party_id}">{$leaflet_party_attack->name}</a></li>
