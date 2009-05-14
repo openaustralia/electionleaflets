@@ -17,13 +17,15 @@ class index_page extends pagebase {
         
         $leaflets = $leaflet_search->search(true);
         
+        /*
         $leaflet_count = 0;
         $leaflets_limited = array(); // standard limit not working grrr.        
         for ($i=0; $i < 40; $i++) { 
             array_push($leaflets_limited, $leaflets[$i]);
         }
-
-        $this->assign("leaflets", $leaflets_limited);			
+        */
+        
+        $this->assign("leaflets", $leaflets);			
         $this->assign("hide_logo", true);
         $this->assign("is_home", true);
 	}
