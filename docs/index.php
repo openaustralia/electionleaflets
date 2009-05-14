@@ -12,11 +12,18 @@ class index_page extends pagebase {
 
 		//get recent leaflets
 		$leaflet_search = factory::create("leaflet_search");
-
+        $leaflet_search->start = 0;
+        $leaflet_search->number = 20;
+        
         $leaflets = $leaflet_search->search(true);
-        $leaflets_search->start = 0;
-        $leaflets_search->number = 20;
-        $this->assign("leaflets", $leaflets);			
+        
+        $leaflet_count = 0;
+        $leaflets_limited = array(); // standard limit not working grrr.        
+        for ($i=0; $i < 40; $i++) { 
+            array_push($leaflets_limited, $leaflets[$i]);
+        }
+
+        $this->assign("leaflets", $leaflets_limited);			
         $this->assign("hide_logo", true);
         $this->assign("is_home", true);
 	}

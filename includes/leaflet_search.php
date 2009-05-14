@@ -12,8 +12,8 @@ class leaflet_search {
     public $country_id = 225;
     public $tag = null;    
     
-    private $number = null;
-    private $start = null;    
+    public $number = null;
+    public $start = null;    
 
     private $search = null;
     private $results = array();
@@ -64,7 +64,6 @@ class leaflet_search {
     }
     
     private function search_standard($cache){
-
         if(!$cache){
             $this->results = $this->search->search("leaflet",
                 $this->get_where_clauses(), 
