@@ -49,6 +49,7 @@ class tableclass_leaflet_image extends tablebase {
                 $return = false;
             }
 	    }
+	    return $return;
     }
 
 	/* Keys */
