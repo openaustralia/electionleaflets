@@ -18,26 +18,27 @@
         <p>
             This website has been put together by 
             three of the usual suspects who don't have time or contacts to sell ideas or 
-            apply for grants.
+            apply for grants.  
+	    The code has been deposited at <a href="http://code.google.com/p/theelectionleafletproject">code.google/theelectionleafletproject</a>.
         </p>
-        <p class="person">
+        <p class="person" id="julian">
             <img src="{$www_server}/images/julianpic1.jpg">
             <strong>Julian Todd</strong> had the job of pestering people about an election leaflet monitoring website
             after discovering just how crucially important these pieces of paper really are.  
             In 2003 he wrote <a href="http://www.publicwhip.org.uk">Public Whip</a> with Francis Irving, 
             which became the input for mySociety's <a href="http://theyworkforyou.com">TheyWorkForYou.com</a>.  
-            In 2007 he made <a href="http://www.undemocracy.com">UNdemocracy.com</a> which applied the same 
+            In 2007 he made <a href="http://www.undemocracy.com">undemocracy.com</a> which applied the same 
             idea to the United Nations General Assembly and Security Council.
         </p>
-        <p class="person">
+        <p class="person" id="richard">
             <img src="{$www_server}/images/richardpic1.jpg">
             <strong>Richard Pope</strong> spent a couple of days <a href="http://code.google.com/p/theelectionleafletproject/">writing the code for this site</a> and making it look pretty.
             He is the brains behind the <a href="http://www.planningalerts.com">Planning Alerts</a> project, <a href="http://www.groupsnearyou.com">Groups Near You</a> and <a href="http://www.streetwire.org">StreetWire</a>.
             In 2005 he made the <a href="http://www.electionmemory.com">Election Memory project</a> to record and publicise 
             manifestos of the different parties in the Lambeth local elections.
-        </p>
+ </p>
 
-        <p class="person">
+        <p class="person" id="francis">
             <img src="{$www_server}/images/francispic1.jpg">
             <strong>Francis Irving</strong> is the other half of <a href="http://www.publicwhip.org.uk">Public Whip</a> 
         and has volunteered his phone number (07970 543358), should you be interested in talking to someone about this project.
@@ -56,7 +57,7 @@
             <dt>Can I reuse the images on my website or blog?</dt>
             <dd>Yes, but please make a copy of the image on your site and link back to us.</dd>
         </dl>
-        <h3>Contact</h3>
+        <h3 id="contact">Contact</h3>
         <p>
             You can get in touch with us via team [at] thestraightchoice.org or phone Francis on 07970 543358.
         </p>
