@@ -1,7 +1,7 @@
 <?php
 	//get config file
 
- 	require_once(dirname(__FILE__) . "/../config/general.php");
+ 	require_once("/data/vhost/thestraightchocie.org/config/general.php");//TODO this is hardcodes, bad!
 
 	//set include path
 	$include_path = ".:";
