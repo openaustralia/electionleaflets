@@ -35,6 +35,22 @@ class tableclass_leaflet_image extends tablebase {
 			);
 	}
 
+	function rotate($degrees){
+	    $return = true;
+	    $sizes = array("thumbnail", "medium", "large", "original");
+	    foreach ($sizes as $size) {
+	        $file_name = IMAGES_DIR . "/" . $size . "/" . $this->image_key . ".jpg";	        
+	        if (file_exists($file_name)){
+                $image = imagecreatefromjpeg($file_name);
+                $image = imagerotate($image, $degrees, 0);
+                imagejpeg($image, $file_name, 100);
+                imagedestroy($image);                
+            }else{
+                $return = false;
+            }
+	    }
+    }
+
 	/* Keys */
     function keys() {
         return array('leaflet_image_id');
