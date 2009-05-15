@@ -28,7 +28,11 @@
     }
 
 	foreach ($leaflet_images as $leaflet_image) {
-        $leaflet_image->rotate($degrees);
+        if($leaflet_image->rotate($degrees)){
+            print "success! \n";
+        }else{
+            print "failed! \n";            
+        }
 	}
 
 ?>
