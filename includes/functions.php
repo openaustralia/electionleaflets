@@ -590,5 +590,25 @@
         imagedestroy($tmp);        
         
     }
+    
+    if ( !function_exists( 'imagerotate' ) ) {
+        function imagerotate( $source_image, $angle, $bgd_color ) {
+            $angle = 360-$angle; // GD rotates CCW, imagick rotates CW
+            $temp_src = '/tmp/temp_src.png';
+            $temp_dst = '/tmp/temp_dst.png';
+            if (!imagepng($source_image,$temp_src)){
+                return false;
+            }
+            $imagick = new Imagick();
+            $imagick->readImage($temp_src);
+            $imagick->rotateImage(new ImagickPixel($bgd_color?$bgd_color:'black'), $angle);
+            $imagick->writeImage($temp_dst);
+            //trigger_error( 'imagerotate( could not write to ' . $file1 . ', original image returned', E_USER_WARNING );
+            $result = imagecreatefrompng($temp_dst);
+            unlink($temp_dst);
+            unlink($temp_src);
+            return $result;
+        }
+    }
 
 ?>
