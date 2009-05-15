@@ -1,7 +1,7 @@
 <?php
 	//get config file
 
- 	require_once(dirname(__FILE__) . "../config/general.php");
+ 	require_once(dirname(__FILE__) . "/../config/general.php");
 
 	//set include path
 	$include_path = ".:";
