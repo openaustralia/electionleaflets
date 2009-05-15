@@ -28,9 +28,10 @@
         </p>
     </div>
      
+     
      <div id="divRecentLeaflets">
         <h2>Latest leaflets</h2>
-        <span class="highlight">If a leaflet you have received already appears here please still upload it, it helps us figure out where in the country is being targeted and leaflets may vary local in small details.</span>
+        <span class="highlight">If a leaflet you have received already appears here please still upload it, it helps us figure out where in the country is being targeted and leaflets may vary locally in small details.</span>
         <div id="divRecentControls">
                 <form id="frmHomeSearch" method="get" action="{$www_server}/leaflets.php">
                     <label for="txtSearch">Enter your post code to see leaflets near you</label>
