@@ -61,7 +61,7 @@
 	          </li>
 	          <li>
 	              <a href="http://blog.thestraightchoice.org">
-	                  News &amp; analysis
+	                  Blog
 	              </a>
 	          </li>
 	          <li>
