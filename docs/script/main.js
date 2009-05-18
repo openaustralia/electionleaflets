@@ -3,8 +3,8 @@ function upload(){
     //validation goes here
     
     //hide form and show loading gif
-    document.getElementById('frmLeaflet').style.position = "absolute";
-    document.getElementById('frmLeaflet').style.left = "-20000px";    
+//    document.getElementById('frmLeaflet').style.position = "absolute";
+//    document.getElementById('frmLeaflet').style.left = "-20000px";    
     document.getElementById('divLoading').style.display = "block";
 
     //javascript post goes here
