@@ -3,8 +3,7 @@ function upload(){
     //validation goes here
     
     //hide form and show loading gif
-//    document.getElementById('frmLeaflet').style.position = "absolute";
-//    document.getElementById('frmLeaflet').style.left = "-20000px";    
+    document.getElementById('frmLeaflet').style.display = "none";
     document.getElementById('divLoading').style.display = "block";
 
     //javascript post goes here
@@ -35,7 +34,7 @@ function showMap(sMapProvider, nLng, nLat){
 }
 
 function uploadImages(){
-    document.getElementById('frmUpload').style.display = "none";    
+ //   document.getElementById('frmUpload').style.display = "none";    
     document.getElementById('divUploading').style.display = "block";
     
     return true;
