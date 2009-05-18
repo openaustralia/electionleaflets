@@ -88,7 +88,7 @@ class addupload_page extends pagebase {
             }
             //check is jpeg
             if($image['type'] != "image/jpeg"){
-                $this->add_warning("Sorry, your image needs to be in jpeg/jpg format");                                                    
+                $this->add_warning("Sorry, your image needs to be in jpeg/jpg format: " . $image['type']);                                                    
             }
         }
         
