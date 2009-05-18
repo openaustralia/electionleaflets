@@ -51,7 +51,7 @@ class leaflet_page extends pagebase {
                 'AND',
                 array(array("leaflet_category", 'inner'))
             );
-        
+
         //get tags
         $leaflet_tags = $search->search("tag", 
                 array(array("leaflet_tag.leaflet_id", "=", $this->leaflet_id)),

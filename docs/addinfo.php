@@ -144,7 +144,7 @@ class addinfo_page extends pagebase {
                 }
                 
                 //TODO: move the code below into the leaflet object
-                
+
                 //save party attack
                 foreach ($this->selected_party_attack_ids as $selected_party_attack_id) {
                     $leaflet_party_attack = factory::create("leaflet_party_attack");
@@ -169,20 +169,21 @@ class addinfo_page extends pagebase {
                 $tags = split(",", $this->data['txtTags']);
                 
                 if(count($tags) > 0){
+                    foreach ($tags as $tag) {
+                        $new_tag = factory::create('tag');
+                        $new_tag->tag = $tag;
 
-                    $new_tag = factory::create('tag');
-                    $new_tag->tag = $tag;
-
-                    if(!$new_tag->insert()){
-                        trigger_error("Unable to save new tag");                    
-                    }
+                        if(!$new_tag->insert()){
+                            trigger_error("Unable to save new tag");                    
+                        }
                 
                         
-                    $leaflet_tag = factory::create('leaflet_tag');
-                    $leaflet_tag->leaflet_id = $leaflet->leaflet_id;
-                    $leaflet_tag->tag_id = $new_tag->tag_id;
-                    if(!$leaflet_tag->insert()){
-                        trigger_error("Unable to save leaflet/tag bridge");                    
+                        $leaflet_tag = factory::create('leaflet_tag');
+                        $leaflet_tag->leaflet_id = $leaflet->leaflet_id;
+                        $leaflet_tag->tag_id = $new_tag->tag_id;
+                        if(!$leaflet_tag->insert()){
+                            trigger_error("Unable to save leaflet/tag bridge");                    
+                        }
                     }
                 }
                     
