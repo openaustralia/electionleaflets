@@ -64,11 +64,11 @@ class report_page extends pagebase {
 				$email = $this->data['txtEmail'];
 				$name = $this->data['txtName'];
 				$message = "Leaflet link: " . WWW_SERVER . "/leaflet.php?q=" . $this->viewstate['leaflet_id']  . "\n";
-				$message = "Name: " . $this->data['txtName'] . "\n";
+				$message .= "Name: " . $this->data['txtName'] . "\n";
 				$message .= ("Email: " . $this->data['txtEmail'] . "\n");
 				$message .= ("Details: " . $this->data['txtDetails'] . "\n");															
 
-				send_text_email(CONTACT_EMAIL, $name, $this->data['txtEmail'] . DOMAIN, "[" . SITE_NAME . "ABUSE REPORT]", $message);
+				send_text_email(CONTACT_EMAIL, $name, $this->data['txtEmail'], "[" . SITE_NAME . "ABUSE REPORT]", $message);
 			}
 			$this->viewstate['message_sent'] = true;
 		}
