@@ -57,7 +57,11 @@
             <dt>Can I reuse the images on my website or blog?</dt>
             <dd>Yes, but please make a copy of the image on your site and link back to us.</dd>
             <dt>What do you mean by a leaflet? Does a letter count?</dt>
-            <dd>Any kind of written communication - letters, leaflets, flyers - contain useful information. If in doubt, upload it anyway or get in touch with us.</dd>            
+            <dd>Any kind of written communication - letters, leaflets, flyers - contain useful information. If in doubt, upload it anyway or get in touch with us.</dd> 
+            <dt>Can I send you leaflets by post?</dt>
+            <dd>
+                Yes. Please send them to: <address>PO BOX 4312, Wolverhampton, WV11 3WZ</address> and mark each leaflet with the postcode (or postcode district) it was delivered to.
+            </dd>                       
         </dl>
         <h3 id="contact">Contact</h3>
         <p>

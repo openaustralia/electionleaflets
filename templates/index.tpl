@@ -23,8 +23,14 @@
         </p>
         <p>
             <small>All you need to do is take a photo of a leaflet and tell us a bit about it</small>
+            <!--
             <br/>
             <small id="smlActivist">(Party activist or candidate? <a href="{$www_server}/about.php#activist">read this</a>)</small>
+        -->
+            <br/>
+            <small id="smlPost">
+                <span class="new">New!</span>You can also post us leaflets too<a href="{$www_server}/about.php#activist">more info</a>
+            </small>
         </p>
     </div>
      
