@@ -29,7 +29,7 @@
         -->
             <br/>
             <small id="smlPost">
-                <span class="new">New!</span>You can also post us leaflets too <a href="{$www_server}/about.php#activist">more info</a>
+                <span class="new">New!</span>You can also post us leaflets too <a href="{$www_server}/about.php#activist">more info ...</a>
             </small>
         </p>
     </div>
