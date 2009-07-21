@@ -46,6 +46,11 @@
         -- among other projects -- and would specifically like you to sign up for <a href="http://seriouschange.org.uk/">Serious Change</a>.
         </p>
         <br class="clear"/>
+        <h3>Volunteers</h3>
+        <p>
+            We have also had the support of a great bunch volunteers who have helped promote The Straight Choice <a href="http://www.flickr.com/photos/memespring/3701738722/in/set-72157621134703752/">by delivering leaflets</a> during by-elections. If you'd like to help out, <a href="mailto:team@thestraightchoice.org">please get in touch</a> we'd love to hear from you.
+        </p>
+        <br class="clear"/>
         <h3>FAQs</h3>
         <dl class="faq">
             <dt>How do I upload an election leaflet</dt>
