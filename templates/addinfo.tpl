@@ -87,7 +87,7 @@
                     <label for="txtTags">Tags this leaflet (candidate name, town, policy name, etc)</label>
                     <textarea type="text" id="txtTags" name="txtTags" {if $warn_txtTags}class="error"{/if} cols="70" rows="3">{$data.txtTags}</textarea>
                     <br/>
-                    <small>e.g. Brian Smith, Woking, zero tolerance, parks, transport</small>
+                    <small>e.g. Brian Smith<span class="huge">,</span> Woking<span class="huge">,</span> zero tolerance<span class="huge">,</span> parks<span class="huge">,</span> transport</small>
                 </li>
                 <li>
                     <label for="txtName">Enter your name and email address *</label>
