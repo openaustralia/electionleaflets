@@ -5,12 +5,20 @@ class addupload_page extends pagebase {
 
     private $image_ids = array();
 
+    //setup
+    function setup(){
+        //clear session
+        session_delete("image_ids");   
+    }
+
 	//bind
 	function bind() {
 		$this->page_title = "Add a leaflet (step 1 of 2)";				
 	}
 
 	function unbind(){
+	    
+	    //get images
 	    foreach ($_FILES as $key => $value) {
 	        if(isset($_FILES[$key]) && $_FILES[$key]['name'] != ''){
                 $temp_file = $this->upload_image($key);
