@@ -2,12 +2,11 @@
 
     <div class="contentleft">
         <h1>{$leaflet->title}</h1>
-        <div>
-            <small>Delivered on {$leaflet->date_delivered|date_format:"%A, %e %B, %Y"} (approximate). Uploaded on {$leaflet->date_uploaded|date_format:"%A, %e %B, %Y"}.</small>
-        </div>
         <div>{$leaflet->description|nl2br}</div>
         <p>Published by <a href="{$www_server}/leaflets.php?p={$leaflet->party_party_id}">{$leaflet->party_name}</a></p>
-
+        <p>
+            Delivered on {$leaflet->date_delivered|date_format:"%A, %e %B, %Y"} (approximate). Uploaded on {$leaflet->date_uploaded|date_format:"%A, %e %B, %Y"}.
+        </p>
         <h4>Categories</h4>
         <ul>
             {foreach from="$leaflet_categories" item="leaflet_category"}
