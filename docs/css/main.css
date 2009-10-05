@@ -10,7 +10,7 @@ body {text-align:center; padding:0; margin:0; color:#353A38; font-size:16px;}
 #divHeader.small {height:2.5em;}
 
 /* Banner */
-#divBanner {height:4.8em; background:#fafafa; border-bottom:solid 1px #808080;
+#divBanner {background:#fafafa; border-bottom:solid 1px #808080;
         padding-top:0.2em; font-family:verdana, sans-serif; font-size:0.8em;background:#f9b4b4; padding:0.5em;}
 #divBanner form {display:inline; position:relative; top:0.4em;}
 #divBanner a {text-decoration:none; color:#333!important;}
