@@ -25,14 +25,10 @@
     </div>
 
     <div id="divBanner">
-        This website is being built by volunteers. Please help us out by donating to cover <a href="http://seagrass.goatchurch.org.uk/">server</a> costs:
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-        <input type="hidden" name="cmd" value="_s-xclick">
-        <input type="hidden" name="hosted_button_id" value="5300623">
-        <input type="image" width="74px" height="21" src="https://www.paypal.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
-        <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-        </form>
-        
+        <strong>The Straight Choice is currently experiencing technical difficulties because of ongoing legal action by Royal Mail</strong>.<br/> 
+        Our provider of postcode data, ErnestMarples.com, has been taken offline because of legal action. Until we find an alternative source, we you are unable to upload new leaflets or search for existing leaflets near you.
+        We apologise for the inconvenience. For more information, visit the <a href="http://www.ernestmarples.com/blog/">Ernest Marples Blog</a>
+
     </div>
     
     <div id="divPage" {if $is_home}class="home"{/if}>
@@ -50,8 +46,8 @@
   	              </a>
   	          </li>
 	          <li>
-	              <a href="{$www_server}/addupload.php">
-	                  Add a leaflet
+	              <a href="#">
+	                  <strike>Add a leaflet</strike>
 	              </a>
 	          </li>
 	          <li>
