@@ -26,9 +26,9 @@
             <strong>Julian Todd</strong> had the job of pestering people about an election leaflet monitoring website
             after discovering just how crucially important these pieces of paper really are.  
             In 2003 he wrote <a href="http://www.publicwhip.org.uk">Public Whip</a> with Francis Irving, 
-            which became the input for mySociety's <a href="http://theyworkforyou.com">TheyWorkForYou.com</a>.  
+            which became the input for mySociety's <a href="http://theyworkforyou.com">TheyWorkForYou.com</a>.
             In 2007 he made <a href="http://www.undemocracy.com">undemocracy.com</a> which applied the same 
-            idea to the United Nations General Assembly and Security Council.
+            idea to the United Nations General Assembly and Security Council. Julian and has volunteered his phone number (0791 6090736), should you be interested in talking to someone about this project
         </p>
         <p class="person" id="richard">
             <img src="{$www_server}/images/richardpic1.jpg">
@@ -40,8 +40,7 @@
 
         <p class="person" id="francis">
             <img src="{$www_server}/images/francispic1.jpg">
-            <strong>Francis Irving</strong> is the other half of <a href="http://www.publicwhip.org.uk">Public Whip</a> 
-        and has volunteered his phone number (07970 543358), should you be interested in talking to someone about this project.
+            <strong>Francis Irving</strong> is the other half of <a href="http://www.publicwhip.org.uk">Public Whip</a> .
         He has done substantial work on mySociety's <a href="http://www.whatdotheyknow.com">WhatDoTheyKnow.com</a> 
         -- among other projects -- and would specifically like you to sign up for <a href="http://seriouschange.org.uk/">Serious Change</a>.
         </p>
