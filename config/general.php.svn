@@ -75,12 +75,15 @@ define(MAX_DISTANCE_SEARCH, 30); //km
 define("API_SLEEP", 0.5); //time to wait between api calls
 
 //Maps
-define("GOOGLE_MAPS_KEY", 'ABQIAAAA74qlSxRXDySLggVC9lWIbBRmGcQQs8nohDRYKsYeYndWFpt7DxQJsIYNL87mHHEPvdWZq-G-Tn6C9A');
+define("GOOGLE_MAPS_KEY", 'YOUR KEY');
 define("MAP_PROVIDER", "openstreetmap");
 
 
 //cookies
 define("LOGIN_COOKIE_NAME", "electionleafletlogin");
 define("LOGIN_COOKIE_EXPIRE_DAYS", 14);
+
+// TheyWorkForYou API
+define("THEYWORKFORYOU_API_KEY", 'YOUR KEY');
 
 ?>

@@ -24,12 +24,14 @@
         <a href="#divContent">Skip navigation</a>
     </div>
 
+    <!--
     <div id="divBanner">
         <strong>The Straight Choice is currently experiencing technical difficulties because of ongoing legal action by Royal Mail</strong>.<br/> 
         Our provider of postcode data, ErnestMarples.com, has been taken offline because of legal action. Until we find an alternative source, we you are unable to upload new leaflets or search for existing leaflets near you.
         We apologise for the inconvenience. For more information, visit the <a href="http://www.ernestmarples.com/blog/">Ernest Marples Blog</a>
 
     </div>
+    -->
     
     <div id="divPage" {if $is_home}class="home"{/if}>
         
@@ -47,7 +49,7 @@
   	          </li>
 	          <li>
 	              <a href="#">
-	                  <strike>Add a leaflet</strike>
+	                  Add a leaflet
 	              </a>
 	          </li>
 	          <li>
@@ -69,7 +71,7 @@
         </div>
 
         <div id="divContent">
-   
+
             {* Warnings *}
 			<div id="divWarning">
 	            {if $show_warnings == true}

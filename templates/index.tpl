@@ -18,7 +18,7 @@
         </p>
         <p>
             <form method="get" action="{$www_server}/addupload.php">
-                <input type="submit" value ="Add a leaflet delivered to you" disabled="disabled"/>
+                <input type="submit" value ="Add a leaflet delivered to you" />
             </form>
         </p>
         <p>
@@ -40,9 +40,9 @@
         <span class="highlight">If a leaflet you have received already appears here please still upload it, it helps us figure out where in the country is being targeted, and leaflets may vary locally in small details.</span>
         <div id="divRecentControls">
                 <form id="frmHomeSearch" method="get" action="{$www_server}/leaflets.php">
-                    <label for="txtSearch"><strike>Enter your post code to see leaflets near you</strike></label>
-                    <input type="text" id="txtSearch" name="q" disabled="disabled"/>
-                    <input type="submit" value="GO" disabled="disabled"/>
+                    <label for="txtSearch">Enter your post code to see leaflets near you</label>
+                    <input type="text" id="txtSearch" name="q" />
+                    <input type="submit" value="GO" />
                     <small>e.g. <a href="{$www_server}/leaflets.php?q=sw98jx">SW9 8JX</a></small>
                 </form>
         </div>

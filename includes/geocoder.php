@@ -124,19 +124,25 @@ class geocoder{
 		return $return;
 	}
 
-	//UK postcode
-	private function get_uk_postcode($postcode){
-		$return = false;
-        $clean_postcode = str_replace(" ","+", $clean_postcode);
-        		
-        $url = "http://ernestmarples.com/?p=" . $clean_postcode . "&f=csv";
-        $result = file_get_contents($url);
-        $result = split(",", $result);
-        if(count($result) == 2){
-            $return = array($result[0], $result[1]);
-        }
-		return $return;
-	}
+    //UK postcode (scrapes google maps)
+    private function get_uk_postcode($postcode){
+            $return = false;
+            $html = safe_scrape_cached("http://maps.google.com/maps?f=q&hl=en&geocode=&q=" . urlencode($postcode), CACHE_TIME_LONG);
+
+            if($html){
+                    //$regex = '/geocode:\"(.*?),(.*?),(.*?)\"/';
+                    $regex = '/viewport:{center:{lat:(.*?),lng:(.*?)}/';
+                    
+                    preg_match_all($regex, $html, $matches, PREG_PATTERN_ORDER);
+
+                    if(isset($matches[2][0]) && isset($matches[1][0])){
+                            $return = array($matches[2][0], $matches[1][0]);
+                    }
+            }
+
+            return $return;
+    
+    }
 	
 	public static function extract_postcode($text){
 
