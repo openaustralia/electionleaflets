@@ -65,7 +65,7 @@
             <dt>Can I send you leaflets by post?</dt>
             <dd>
                 Yes. Please send them to: <address>PO BOX 4312, Wolverhampton, WV11 3WZ</address> and mark each leaflet with the postcode (or postcode district) it was delivered to.
-            </dd>                       
+            </dd>
         </dl>
         <h3 id="contact">Contact</h3>
         <p>
