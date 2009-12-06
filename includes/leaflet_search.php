@@ -10,6 +10,7 @@ class leaflet_search {
     public $party_attack_id = null;
     public $category_id = null;
     public $country_id = 225;
+    public $constituency_id = null;
     public $tag = null;    
     
     public $number = null;
@@ -102,6 +103,10 @@ class leaflet_search {
         if(isset($this->category_id) && $this->category_id != '' && $this->category_id != 0){
             array_push($joins, array("leaflet_category", "inner", null, array("category", "inner", "category_id")));
         }
+
+        if(isset($this->constituency_id) && $this->constituency_id != '' && $this->constituency_id != 0){
+            array_push($joins, array("leaflet_constituency", "inner", null, array("constituency", "inner", "constituency_id")));
+        }
         
         if(isset($this->tag) && $this->tag != ''){
             array_push($joins, array("leaflet_tag", "inner", null,array("tag", "inner", "tag_id")));
@@ -131,9 +136,13 @@ class leaflet_search {
             array_push($where_clauses, array("leaflet_category.category_id", "=", $this->category_id));
         }
         
+        if(isset($this->constituency_id) && $this->constituency_id != '' && $this->constituency_id != 0){
+            array_push($where_clauses, array("leaflet_constituency.constituency_id", "=", $this->constituency_id));
+        }
+
         if(isset($this->tag) && $this->tag != ''){
             array_push($where_clauses, array("tag.tag", "=", $this->tag));
-        }   
+        }
                     
         return $where_clauses;
     }

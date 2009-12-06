@@ -32,6 +32,15 @@
                 </li>
             {/foreach}
         </ul>
+        
+        <h3>Categories</h3>
+        <ul>
+            {foreach from="$constituencies" item="constituency"}
+                <li>
+                    <a href="{$www_server}/leaflets.php?n={$constituency->url_id}">{$constituency->name}</a>
+                </li>
+            {/foreach}
+        </ul>
     </div>
     
 {include file="footer.tpl"}

@@ -28,7 +28,7 @@
             $leaflet_constituency->constituency_id = $constituency->constituency_id;            
             $leaflet_constituency->insert();
         }else{
-            //todo: raise exception
+            //todo: exception
         }
     }
 

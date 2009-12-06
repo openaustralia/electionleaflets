@@ -22,7 +22,10 @@ class browse_page extends pagebase {
 
         $categories = $search->search_cached("category", array(array("1", "=", "1")));
         $this->assign("categories", $categories);
-        
+
+        $constituencies = $search->search_cached("constituency", array(array("1", "=", "1")));
+        $this->assign("constituencies", $constituencies);
+
 		//get top tags
         $tag = factory::create("tag");
         $weighted_tags = $tag->get_weighted_tags();

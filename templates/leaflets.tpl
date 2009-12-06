@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 
     <div id="divResults" class="contentfull">
-        {if $has_party || $has_category || $has_tag || $has_party_attack}
+        {if $has_party || $has_category || $has_tag || $has_party_attack || $has_constituency}
             <h1>{$heading[0]} <em>{$heading[1]}</em></h1>
         {else}
             <div class="searchbox">

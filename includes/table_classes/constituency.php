@@ -18,8 +18,7 @@ class tableclass_constituency extends tablebase {
     public $area_code; //national area code (where such a system is present)
     public $area_uri; //a URI describing the cosntituency (where present)
     public $wikipedia_url; //link to teh wikipedia page describing the constituency
-
-
+    public $url_id;
 
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('tableclass_constituency',$k,$v); }
@@ -32,6 +31,10 @@ class tableclass_constituency extends tablebase {
             'alternative_name'   			=> DB_DATAOBJECT_STR,            
             'constituency_type_id'   			=> DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,            
             'retired'   			=> DB_DATAOBJECT_BOOL,                        
+            'area_code'   			=> DB_DATAOBJECT_STR,                     
+            'area_uri'   			=> DB_DATAOBJECT_STR,                                 
+            'wikipedia_url'   			=> DB_DATAOBJECT_STR,                                             
+            'url_id'   			=> DB_DATAOBJECT_STR,                     
         );
     }
 
@@ -46,5 +49,21 @@ class tableclass_constituency extends tablebase {
     function keys() {
         return array('constituency_id');
     }
+    
+    //overrride insert to create a url id
+    public function insert (){
+
+		$this->url_id = $this->generate_url_id($this->name);
+		
+		$saved = parent::insert();
+			
+		//if url_id ended up fase, then set it to the ID
+		if($this->url_id == false){
+			$this->url_id = $this->id;
+			$this->update();
+		}
+		
+		return $saved;
+	}
 
 }

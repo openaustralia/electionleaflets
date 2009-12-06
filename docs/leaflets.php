@@ -67,6 +67,7 @@ class leaflets_page extends pagebase {
         $this->assign("is_geo", $this->is_geo());
         $this->assign("has_party", isset($this->leaflet_search->publisher_party_id));
         $this->assign("has_category", isset($this->leaflet_search->category_id));
+        $this->assign("has_constituency", isset($this->leaflet_search->constituency_id));        
         $this->assign("has_tag", isset($this->leaflet_search->tag));
         $this->assign("has_party_attack", isset($this->leaflet_search->party_attack_id));        
         $this->assign("heading", $title_parts);
@@ -80,7 +81,7 @@ class leaflets_page extends pagebase {
     
     private function has_vars_set(){
         $return = false;
-        if(isset($this->leaflet_search->search_term) || isset($this->leaflet_search->publisher_party_id) || isset($this->leaflet_search->party_attack_id) || isset($this->leaflet_search->category_id) || isset($this->leaflet_search->tag) || (isset($this->leaflet_search->lng) && isset($this->leaflet_search->lat))){
+        if(isset($this->leaflet_search->constituency_id) || isset($this->leaflet_search->search_term) || isset($this->leaflet_search->publisher_party_id) || isset($this->leaflet_search->party_attack_id) || isset($this->leaflet_search->category_id) || isset($this->leaflet_search->tag) || (isset($this->leaflet_search->lng) && isset($this->leaflet_search->lat))){
             $return = true;
         }
         
@@ -114,6 +115,13 @@ class leaflets_page extends pagebase {
             $result = $search->search("party", array(array("party_id", "=", $this->leaflet_search->party_attack_id)));
 	        $return = array("Election leaflets attacking the", $result[0]->name);
         }
+        
+        //constituency
+
+        if(isset($this->leaflet_search->constituency_id)){
+            $result = $search->search_cached("constituency", array(array("constituency_id", "=", $this->leaflet_search->constituency_id)));
+	        $return = array("Election leaflets delivered in ", $result[0]->name);
+        }
         return $return;
     }
 
@@ -144,6 +152,17 @@ class leaflets_page extends pagebase {
         $party_attack_id = get_http_var("a");
         if(isset($party_attack_id) && $party_attack_id != ''){
             $this->leaflet_search->party_attack_id = trim($party_attack_id);
+        }
+        
+        $constituency_url_id = trim(get_http_var("n"));
+        if(isset($constituency_url_id) && $constituency_url_id != ''){
+
+            $search = factory::create('search');
+            $results = $search->search_cached('constituency', array(array('url_id', '=', $constituency_url_id)));
+            if (count($results) !=1){
+                throw_404();
+            }
+            $this->leaflet_search->constituency_id = $results[0]->constituency_id;
         }
         
         $is_rss = get_http_var("rss");
