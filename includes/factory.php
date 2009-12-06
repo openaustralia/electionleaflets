@@ -49,12 +49,26 @@ class factory {
 					$object = DB_DataObject::factory($class_name);
 				}
 				break;							
+			case 'constituency':
+				require_once( 'table_classes/config.php' );
+				require_once('table_classes/constituency.php');
+				if (!$require_only) {
+					$object = DB_DataObject::factory($class_name);
+				}
+				break;				
+			case 'constituency_type':
+				require_once( 'table_classes/config.php' );
+				require_once('table_classes/constituency_type.php');
+				if (!$require_only) {
+					$object = DB_DataObject::factory($class_name);
+				}				
+				break;				
 			case 'leaflet':
 				require_once( 'table_classes/config.php' );
 				require_once('table_classes/leaflet.php');
 				if (!$require_only) {
 					$object = DB_DataObject::factory($class_name);
-				}
+				}				
 			case 'leaflet_category':
 				require_once( 'table_classes/config.php' );
 				require_once('table_classes/leaflet_category.php');
@@ -68,7 +82,14 @@ class factory {
 				if (!$require_only) {
 					$object = DB_DataObject::factory($class_name);
 				}									
-				break;				
+				break;
+			case 'leaflet_constituency':
+				require_once( 'table_classes/config.php' );
+				require_once('table_classes/leaflet_constituency.php');
+				if (!$require_only) {
+					$object = DB_DataObject::factory($class_name);
+				}									
+				break;								
 			case 'leaflet_party_attack':
 				require_once( 'table_classes/config.php' );
 				require_once('table_classes/leaflet_party_attack.php');
@@ -133,7 +154,12 @@ class factory {
 				require_once('apis/geograph.php');
 				if (!$require_only) {
 					$object = new geograph();
-				}				
+				}	
+			case 'twfy':
+				require_once('apis/theyworkforyou.php');
+				if (!$require_only) {
+			        $object = new TWFYAPI(THEYWORKFORYOU_API_KEY);
+				}							
 			break;			
 			case 'pdfer':
 				require_once('pdfer.php');
