@@ -18,7 +18,7 @@
 
     //for each leaflet, try to map it to a consituency
     foreach ($leaflets as $leaflet) {
-        $twfy_constituency = $twfy->query('getConstituency', array('output' => 'php', 'postcode' => $leaflet->postcode));         
+        $twfy_constituency = $twfy->query('getConstituency', array('output' => 'php', 'postcode' => $leaflet->postcode, 'future' => 'yes_please'));         
         $twfy_constituency = unserialize($twfy_constituency);
 
         $constituency = match_constituency($twfy_constituency['name'], $constituencies);
@@ -40,7 +40,7 @@
                 break;
             }
         }
-        
+
         return $return;
     }
     

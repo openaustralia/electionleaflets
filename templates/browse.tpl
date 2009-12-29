@@ -1,5 +1,4 @@
 {include file="header.tpl"}
-
     <div class="contentfull">
         <h1>Browse election leaflets</h1>
 
@@ -33,7 +32,7 @@
             {/foreach}
         </ul>
         
-        <h3>Categories</h3>
+        <h3>Constituencies</h3>
         <ul>
             {foreach from="$constituencies" item="constituency"}
                 <li>
