@@ -27,7 +27,7 @@
     </div>
 {else}
     <div class="attention">
-        <h3>Now check your email!</h3>
+        <h1>Now check your email!</h1>
         <p>
             We have sent you an email, <span class="highlight">click on the link in the email</span> to confirm your alert. If you don't get an email in the next few minutes, try checking your spam filter.
         </p>

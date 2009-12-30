@@ -9,7 +9,10 @@
 		$headers .= 'Content-type: text/plain; charset=iso-8859-1' . "\r\n";
 		$headers .= 'From: ' . $from_name. ' <' . $from_email . ">\r\n";
 
-		mail($to, $subject, $body, $headers);
+		$success = mail($to, $subject, $body, $headers);
+		if(!$success){
+		    trigger_error("Failed to send email");
+	    }
 
     }
 
