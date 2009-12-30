@@ -49,7 +49,7 @@ class tableclass_email_alert extends tablebase {
     }
 
     function validate(){
-     	if(!valid_email($this->email)){
+     	if($this->email != '' && !valid_email($this->email)){
 			$this->add_warning('Please enter a valid email address');
 			$this->add_warn_field('email');
 		}

@@ -7,25 +7,25 @@
 
  	require_once(dirname(__FILE__) . "/include_path.php");
 	require_once(dirname(__FILE__) . "/../includes/init.php");
-	        
+
     $email_alert = factory::create('leaflet');
     $email_alerts = $email_alert->execute("
         Select * from email_alert 
-        where hour(timediff(now(), last_sent)) >= frequency_hours
+        where hour(timediff(now(), last_sent)) >= frequency_hours and activated = 1
     ");            
 
 	foreach ($email_alerts as $email_alert) {
         
         //send email
         $leaflets = get_leaflets($email_alert);
-        
+
         if(count($leaflets) > 0){
             send_alert($email_alert);
         }
 
         //update last_sent
-        //$email_alert->last_sent = $this->last_sent = mysql_date(time());
-        //$email_alert->update();
+        $email_alert->last_sent = $this->last_sent = mysql_date(time());
+        $email_alert->update();
 	}
 
 	function get_leaflets($email_alert){
