@@ -71,6 +71,7 @@ class leaflets_page extends pagebase {
         $this->assign("has_tag", isset($this->leaflet_search->tag));
         $this->assign("has_party_attack", isset($this->leaflet_search->party_attack_id));        
         $this->assign("heading", $title_parts);
+        $this->assign("alert_link", $this->get_alert_link());
 
 	}
 	
@@ -121,6 +122,33 @@ class leaflets_page extends pagebase {
         if(isset($this->leaflet_search->constituency_id)){
             $result = $search->search_cached("constituency", array(array("constituency_id", "=", $this->leaflet_search->constituency_id)));
 	        $return = array("Election leaflets delivered in ", $result[0]->name);
+        }
+        return $return;
+    }
+
+    private function get_alert_link(){
+
+	    $return = null;
+
+        //party
+	    if(isset($this->leaflet_search->publisher_party_id)){
+	        $return = WWW_SERVER . "/alerts/create.php?p=" . $this->leaflet_search->publisher_party_id;
+        }
+        
+        //category
+        if(isset($this->leaflet_search->category_id)){
+	        $return = WWW_SERVER . "/alerts/create.php?c=" . $this->leaflet_search->category_id;
+        }
+        
+        //party attack
+        if(isset($this->leaflet_search->party_attack_id)){
+	        $return = WWW_SERVER . "/alerts/create.php?a=" . $this->leaflet_search->party_attack_id;
+        }
+        
+        //constituency
+
+        if(isset($this->leaflet_search->constituency_id)){
+        	$return = WWW_SERVER . "/alerts/create.php?n=" . $this->leaflet_search->constituency_id;    
         }
         return $return;
     }

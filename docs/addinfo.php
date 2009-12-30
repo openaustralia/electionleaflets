@@ -66,7 +66,7 @@ class addinfo_page extends pagebase {
 		if(!isset($this->data['txtTitle']) || $this->data['txtTitle'] ==''){
 			$this->add_warning('Please add a title for this leaflet');
 			$this->add_warn_control('txtTitle');
-		}		
+		}
 		if(!isset($this->data['ddlPartyBy']) || $this->data['ddlPartyBy'] ==''){
 			$this->add_warning('Please specify the party responsible for this leaflet');
 			$this->add_warn_control('ddlPartyBy');

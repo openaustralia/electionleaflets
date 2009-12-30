@@ -71,6 +71,9 @@
         <p>
             You can get in touch with us via team [at] thestraightchoice.org or phone Julian on 0791 6090736.
         </p>
+        
+        <h3>Thanks and acknowledgements</h3>
+        <p>Linking leaflets to constituencies is made possible thanks to the <a href="http://www.theyworkforyou.com/api/">TheyWorkForYou.com API</a></p>
     </div>
     
 {include file="footer.tpl"}

@@ -1,4 +1,4 @@
-{include file="header.tpl"}
+{include file="$template_dir/header.tpl"}
 
     <div id="the404" class="contentfull">
         <h1>Sorry, the page you were looking for doesn't seem to exist</h1>
@@ -8,4 +8,4 @@
 
     </div>
     
-{include file="footer.tpl"}
+{include file="$template_dir/footer.tpl"}

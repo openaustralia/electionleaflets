@@ -349,11 +349,11 @@
         $request = new HTTP_Request($url, array("method" => "GET", "allowRedirects" => true));
         $request->sendRequest();
         $page = $request->getResponseBody();
-        
+
         return $page;
 
     }
-    
+
 	//scrape by curl
     function scrape_page_curl($url) {
 		$ch = curl_init($url);
@@ -375,7 +375,7 @@
 	//Throw 404
 	function throw_404(){
 		header("HTTP/1.0 404 Not Found");
-		include("the404.php");
+		include(DOC_DIR . "/the404.php");
 		exit;
 	}
 

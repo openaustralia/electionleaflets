@@ -31,28 +31,6 @@ UNLOCK TABLES;
 
 
 --
--- Definition of table `constituency`
---
-
-DROP TABLE IF EXISTS `constituency`;
-CREATE TABLE  `constituency` (
-  `constituency_id` int(11) NOT NULL auto_increment,
-  `name` int(11) NOT NULL,
-  `election_type_id` int(11) NOT NULL,
-  PRIMARY KEY  (`constituency_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `constituency`
---
-
-/*!40000 ALTER TABLE `constituency` DISABLE KEYS */;
-LOCK TABLES `constituency` WRITE;
-UNLOCK TABLES;
-/*!40000 ALTER TABLE `constituency` ENABLE KEYS */;
-
-
---
 -- Definition of table `country`
 --
 
@@ -1135,3 +1113,51 @@ ADD INDEX latlng(`lng`, `lat`);
 ALTER TABLE `leaflet_tag` ADD INDEX leaflet_id(`leaflet_id`),
 ADD INDEX tag_id(`tag_id`);
 ALTER TABLE `tag` ADD UNIQUE INDEX tag(`tag`);
+
+--------
+
+CREATE TABLE  `constituency` (
+  `constituency_id` int(11) NOT NULL auto_increment,
+  `name` varchar(255) NOT NULL,
+  `alternative_name` varchar(255) default NULL,
+  `constituency_type_id` int(11) NOT NULL,
+  `retired` tinyint(1) default '0',
+  `area_code` varchar(20) default NULL,
+  `area_uri` varchar(255) default NULL,
+  `wikipedia_url` varchar(255) default NULL,
+  `url_id` varchar(100) default NULL,
+  PRIMARY KEY  (`constituency_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=8399 DEFAULT CHARSET=utf8;
+
+CREATE TABLE  `constituency_type` (
+  `constituency_type_id` int(11) NOT NULL auto_increment,
+  `name` varchar(50) NOT NULL,
+  `country_id` int(11) NOT NULL,
+  `url_id` varchar(100) default NULL,
+  PRIMARY KEY  (`constituency_type_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+INSERT INTO `constituency_type` VALUES  (1,'European Parliament Constituency',225,'europe'),
+ (2,'Local Authority Ward',225,'council'),
+ (3,'UK Parliament Constituency',225,'wesminster');
+ 
+ CREATE TABLE  `leaflet_constituency` (
+   `leaflet_constituency_id` int(11) NOT NULL auto_increment,
+   `leaflet_id` int(11) NOT NULL,
+   `constituency_id` int(11) NOT NULL,
+   PRIMARY KEY  (`leaflet_constituency_id`)
+ ) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+
+
+ CREATE TABLE  `email_alert` (
+   `email_alert_id` int(11) NOT NULL auto_increment,
+   `email` varchar(50) NOT NULL,
+   `frequency_hours` int(11) NOT NULL,
+   `last_sent` datetime default NULL,
+   `type` varchar(50) NOT NULL,
+   `parent_id` int(11) NOT NULL,
+   `activated` tinyint(1) default '0',
+   `confirm_id` varchar(100) NOT NULL,
+   `title` varchar(255) NOT NULL,
+   PRIMARY KEY  (`email_alert_id`)
+ ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
