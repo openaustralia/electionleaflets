@@ -18,19 +18,22 @@
 
     //for each leaflet, try to map it to a consituency
     foreach ($leaflets as $leaflet) {
-        print_message("Matching " . $leaflet->postcode);
-        $twfy_constituency = $twfy->query('getConstituency', array('output' => 'php', 'postcode' => $leaflet->postcode, 'future' => 'yes_please'));         
-        $twfy_constituency = unserialize($twfy_constituency);
+        try{
+            $twfy_constituency = $twfy->query('getConstituency', array('output' => 'php', 'postcode' => $leaflet->postcode, 'future' => 'yes_please'));         
+            $twfy_constituency = unserialize($twfy_constituency);
 
-        $constituency = match_constituency($twfy_constituency['name'], $constituencies);
-        if($constituency != false){
-            $leaflet_constituency = factory::create('leaflet_constituency');
-            $leaflet_constituency->leaflet_id = $leaflet->leaflet_id;
-            $leaflet_constituency->constituency_id = $constituency->constituency_id;            
-            $leaflet_constituency->insert();
-            print_message($twfy_constituency['name'] . ' - ' . $leaflet->title);
-        }else{
-            trigger_error("Unable to find a constituency called: " . $twfy_constituency['name']);
+            $constituency = match_constituency($twfy_constituency['name'], $constituencies);
+            if($constituency != false){
+                $leaflet_constituency = factory::create('leaflet_constituency');
+                $leaflet_constituency->leaflet_id = $leaflet->leaflet_id;
+                $leaflet_constituency->constituency_id = $constituency->constituency_id;            
+                $leaflet_constituency->insert();
+                print_message($twfy_constituency['name'] . ' - ' . $leaflet->title);
+            }else{
+                trigger_error("Unable to find a constituency called: " . $twfy_constituency['name']);
+            }
+        } catch (Exception $e){
+            print_message("skipped " .  $leaflet->postcode);
         }
     }
 
