@@ -27,8 +27,9 @@
             $leaflet_constituency->leaflet_id = $leaflet->leaflet_id;
             $leaflet_constituency->constituency_id = $constituency->constituency_id;            
             $leaflet_constituency->insert();
+            print_message($twfy_constituency['name'] . ' - ' . $leaflet->title);
         }else{
-            //todo: exception
+            trigger_error("Unable to find a constituency called: " . $twfy_constituency['name']);
         }
     }
 
