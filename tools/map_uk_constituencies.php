@@ -35,7 +35,7 @@
 
     function match_constituency($constituency_name, $constituencies){
         $return = false;
-        $constituency_name = str_replace(',', '', $constituency_name)
+        $constituency_name = str_replace(',', '', $constituency_name);
         foreach ($constituencies as $constituency) {
             if($constituency->name == $constituency_name){
                 $return = $constituency;
