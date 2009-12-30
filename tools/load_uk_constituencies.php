@@ -35,7 +35,7 @@
             $cosntituency->insert();            
         }
     }
-    
+
     function get_constituency_names($method){
         $return = array();
         
@@ -46,7 +46,12 @@
 
         	preg_match_all($regex, $html, $matches, PREG_PATTERN_ORDER);
         	foreach ($matches[1] as $match) {
-                array_push($return, str_replace("_", " ", $match));
+        	    
+        	    $constituency_name = str_replace(',', '', $match);
+                $constituency_name = str_replace('&', 'and', $constituency_name);
+                $constituency_name = str_replace('_', ' ', $constituency_name);                
+
+                array_push($return, str_replace("_", " ", $constituency_name));
         	}
         }else{
          
@@ -55,7 +60,9 @@
             $twfy_constituencies = unserialize($twfy_constituencies);
             
             foreach ($twfy_constituencies as $twfy_constituency) {
-                array_push($return, $twfy_constituency['name']);
+                $constituency_name = str_replace(',', '', $twfy_constituency);
+                $constituency_name = str_replace('&', 'and', $constituency_name);
+                array_push($return, $constituency_name);
             }
         }
         
