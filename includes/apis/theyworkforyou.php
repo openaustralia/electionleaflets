@@ -15,7 +15,7 @@
 // Inspiration: WebService::TWFY::API by Spiros Denaxas 
 // Available at: http://search.cpan.org/~sden/WebService-TWFY-API-0.01/ 
 // ********************************************************************** 
-
+//HACK: RJP changed die()'s to Exceptions
 class TWFYAPI 
 { 
 
@@ -31,11 +31,13 @@ class TWFYAPI
         // Check and set API key 
         if (!$key) 
         { 
-            die('ERROR: No API key provided.'); 
+            //die('ERROR: No API key provided.'); 
+            throw new Exception('ERROR: No API key provided.');            
         } 
         if (!preg_match('/^[A-Za-z0-9]+$/', $key)) 
         { 
-            die('ERROR: Invalid API key provided.'); 
+            //die('ERROR: Invalid API key provided.'); 
+            throw new Exception('ERROR: No API key provided.');                  
         } 
         $this->key = $key; 
 
@@ -64,7 +66,8 @@ class TWFYAPI
         // Exit if any arguments are not defined 
         if (!isset($func) || $func == '' || !isset($args) || $args == '' || !is_array($args)) 
         { 
-            die('ERROR: Function name or arguments not provided.'); 
+            //die('ERROR: Function name or arguments not provided.'); 
+            throw new Exception('ERROR: Function name or arguments not provided.');             
         } 
 
         // Construct the query 
@@ -77,7 +80,8 @@ class TWFYAPI
         } 
         else 
         { 
-            die('ERROR: Could not assemble request using TWFYAPI_Request.'); 
+            //die('ERROR: Could not assemble request using TWFYAPI_Request.'); 
+            throw new Exception('ERROR: Could not assemble request using TWFYAPI_Request.');            
         } 
     } 
 
@@ -96,7 +100,8 @@ class TWFYAPI
         // Find out if all is OK 
         if (!$result) 
         { 
-            die('ERROR: cURL error occurred: ' . curl_error($this->ch)); 
+            //die('ERROR: cURL error occurred: ' . curl_error($this->ch)); 
+            throw new Exception('ERROR: cURL error occurred: ' . curl_error($this->ch));
         } 
         else 
         { 
@@ -131,7 +136,8 @@ class TWFYAPI_Request
         // Check to see if valid URL has been set 
         if (!isset($this->URL) || $this->URL == '') 
         { 
-            die('ERROR: Invalid function: ' . $this->func . '. Please look at the documentation for supported functions.'); 
+            //die('ERROR: Invalid function: ' . $this->func . '. Please look at the documentation for supported functions.'); 
+            throw new Exception('ERROR: Invalid function: ' . $this->func . '. Please look at the documentation for supported functions.');
         } 
     } 
 
@@ -232,7 +238,8 @@ class TWFYAPI_Request
         } 
         else 
         { 
-            die('ERROR: Invalid output type: ' . $output . '. Please look at the documentation for supported output types.'); 
+            //die('ERROR: Invalid output type: ' . $output . '. Please look at the documentation for supported output types.'); 
+            throw new Exception('ERROR: Invalid output type: ' . $output . '. Please look at the documentation for supported output types.');
         } 
     } 
 
@@ -267,7 +274,8 @@ class TWFYAPI_Request
         { 
             if (!isset($args[$param])) 
             { 
-                die('ERROR: All manadatory arguments for ' . $func . ' not provided.'); 
+                //die('ERROR: All manadatory arguments for ' . $func . ' not provided.'); 
+                throw new Exception ('ERROR: All manadatory arguments for ' . $func . ' not provided.');
             } 
         } 
 
