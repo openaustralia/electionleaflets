@@ -35,6 +35,9 @@
         } catch (Exception $e){
             print_message("skipped " .  $leaflet->postcode);
         }
+        
+        //sleep
+        sleep(1);
     }
 
     function match_constituency($constituency_name, $constituencies){
