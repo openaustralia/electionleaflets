@@ -47,7 +47,7 @@ class addupload_page extends pagebase {
             $this->bind();
             $this->render();
         }
-        
+
     }
 
     private function save_image($temp_file){

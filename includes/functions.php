@@ -6,8 +6,8 @@
     function send_text_email($to, $from_name, $from_email, $subject, $body){
 
     	$headers  = 'MIME-Version: 1.0' . "\r\n";
-		$headers .= 'Content-type: text/plain; charset=iso-8859-1' . "\r\n";
-		$headers .= 'From: ' . $from_name. ' <' . $from_email . ">\r\n";
+		$headers .= 'Content-type: text/plain; charset=iso-8859-1';
+		$headers .= 'From: ' . $from_name. ' <' . $from_email . ">";
 
 		$success = mail($to, $subject, $body, $headers);
 		if(!$success){
