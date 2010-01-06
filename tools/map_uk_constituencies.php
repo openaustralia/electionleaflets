@@ -13,15 +13,10 @@
     //get the constituency type for UK Parliament
     $leaflets = get_leaflets();
 
-	//create the twfy api
-    $twfy = factory::create('twfy');
-
     //for each leaflet, try to map it to a consituency
     foreach ($leaflets as $leaflet) {
         try{
-            $twfy_constituency = $twfy->query('getConstituency', array('output' => 'php', 'postcode' => $leaflet->postcode, 'future' => 'yes_please'));         
-            $twfy_constituency = unserialize($twfy_constituency);
-
+            $twfy_constituency = lookup_constituency($leaflet->postcode);
             $constituency = match_constituency($twfy_constituency['name'], $constituencies);
             if($constituency != false){
                 $leaflet_constituency = factory::create('leaflet_constituency');
@@ -73,6 +68,24 @@
                 inner join constituency_type on constituency.constituency_type_id = constituency_type.constituency_type_id
             Where country_id = 225 and retired = 0
         ");
+
+    }
+
+    function lookup_constituency ($postcode){
+        
+        $cache = cache::factory();
+
+		$cached = $cache->get('twfy' . $postcode);
+		if (isset($cached) && $cached !== false) {
+		    print "it worked!!!!";
+			return $cached;
+		}else{
+            $twfy = factory::create('twfy');
+		    $twfy_constituency = $twfy->query('getConstituency', array('output' => 'php', 'postcode' => $postcode, 'future' => 'yes_please'));         
+            $twfy_constituency = unserialize($twfy_constituency);
+		    $success = $cache->set('twfy' . $postcode, $twfy_constituency);
+			return $twfy_constituency;
+		}
 
     }
 
