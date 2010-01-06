@@ -73,7 +73,7 @@ class create_page extends pagebase {
             $success = $this->email_alert->insert();
             if($success){
                 //send email
-                
+                $this->send_confirmation();
                 
                 
                 //show message
@@ -100,7 +100,7 @@ class create_page extends pagebase {
         $body = $smarty->fetch(TEMPLATE_DIR . '/emails/confirm_alert.tpl');
 
 		//send email
-		send_text_email($to, SITE_NAME, CONFIRMATION_EMAIL, $subject, $body);
+		send_text_email(trim($this->data['txtEmail']), SITE_NAME, CONFIRMATION_EMAIL, $subject, $body);
 		
 	}
 
