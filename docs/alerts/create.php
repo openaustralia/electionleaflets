@@ -72,9 +72,9 @@ class create_page extends pagebase {
         if($this->validate()){
             $success = $this->email_alert->insert();
             if($success){
+
                 //send email
                 $this->send_confirmation();
-                
                 
                 //show message
                 $this->viewstate['done'] = 'yes';

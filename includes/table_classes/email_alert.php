@@ -38,7 +38,7 @@ class tableclass_email_alert extends tablebase {
             'type'   			=> DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,                        
             'parent_id'   			=> DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
             'activated'   			=> DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
-            'confirm_id'   			=> DB_DATAOBJECT_STR,  
+            'confirm_id'   			=> DB_DATAOBJECT_STR,
             'title'   			=> DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,                                                      
         );
     }
