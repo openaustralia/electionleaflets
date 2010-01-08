@@ -25,7 +25,7 @@
                 $leaflet_constituency->insert();
                 print_message($twfy_constituency['name'] . ' - ' . $leaflet->title);
             }else{
-                trigger_error("Unable to find a constituency called: " . $twfy_constituency['name']);
+                print_message("skipped " .  $leaflet->postcode);                
             }
         } catch (Exception $e){
             print_message("skipped " .  $leaflet->postcode);
@@ -76,15 +76,19 @@
         $cache = cache::factory();
 
 		$cached = $cache->get('twfy' . $postcode);
-		if (isset($cached) && $cached !== false) {
-		    print "it worked!!!!";
+		if (isset($cached) && $cached !== false && $cached !='') {
 			return $cached;
 		}else{
             $twfy = factory::create('twfy');
 		    $twfy_constituency = $twfy->query('getConstituency', array('output' => 'php', 'postcode' => $postcode, 'future' => 'yes_please'));         
             $twfy_constituency = unserialize($twfy_constituency);
 		    $success = $cache->set('twfy' . $postcode, $twfy_constituency);
-			return $twfy_constituency;
+		    if($success && isset($twfy_constituency) && $twfy_constituency !='' && $twfy_constituency != false){
+			        return $twfy_constituency;		        
+	        }else{
+	            return false;
+            }
+
 		}
 
     }
