@@ -48,7 +48,7 @@ class addupload_page extends pagebase {
 
             //redirect with callback provided
             if($this->viewstate['callback']){
-                redirect("addinfo.php?callback=" . urlencode($this->viewstate['callback']));
+                redirect("addinfo.php?callback=" . $this->viewstate['callback']);
             }else{
                 redirect("addinfo.php");                                
             }
