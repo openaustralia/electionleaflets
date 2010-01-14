@@ -53,8 +53,6 @@ class addupload_page extends pagebase {
                 redirect("addinfo.php");                                
             }
             
-
-            
         }else{
             $this->bind();
             $this->render();

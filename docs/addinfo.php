@@ -201,7 +201,7 @@ class addinfo_page extends pagebase {
 
             //redirect with callback provided
             if($this->viewstate['callback']){
-                redirect($this->viewstate['callback']);
+                redirect($this->viewstate['callback'] . "?v1=" . WWW_SERVER . "/leaflet.php?q=" . $leaflet->leaflet_id);
             }else{
                 redirect("leaflet.php?q=" . $leaflet->leaflet_id . "&m=1");                
             }
