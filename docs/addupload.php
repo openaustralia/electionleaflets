@@ -8,7 +8,13 @@ class addupload_page extends pagebase {
     //setup
     function setup(){
         //clear session
-        session_delete("image_ids");   
+        session_delete("image_ids");
+        
+        //store callback url in viewstate if needed
+        $callback = get_http_var('callback');        
+        if(isset($callback) && valid_url($callback)){
+            $this->viewstate['callback'] = $callback;
+        }
     }
 
 	//bind
@@ -17,7 +23,7 @@ class addupload_page extends pagebase {
 	}
 
 	function unbind(){
-	    
+
 	    //get images
 	    foreach ($_FILES as $key => $value) {
 	        if(isset($_FILES[$key]) && $_FILES[$key]['name'] != ''){
@@ -40,8 +46,14 @@ class addupload_page extends pagebase {
             //save IDs to session
             session_write("image_ids", $this->image_ids);
 
-            //redirect
-            redirect("addinfo.php");
+            //redirect with callback provided
+            if($this->viewstate['callback']){
+                redirect("addinfo.php?callback=" . urlencode($this->viewstate['callback']));
+            }else{
+                redirect("addinfo.php");                                
+            }
+            
+
             
         }else{
             $this->bind();

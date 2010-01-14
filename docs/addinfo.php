@@ -15,6 +15,12 @@ class addinfo_page extends pagebase {
         if(!isset($image_ids) || count($image_ids) == 0){
             redirect("addupload.php");
         }
+        
+        //store callback url in viewstate if needed
+        $callback = get_http_var('callback');        
+        if(isset($callback) && valid_url($callback)){
+            $this->viewstate['callback'] = $callback;
+        }
     }
 
 	//bind
@@ -176,8 +182,7 @@ class addinfo_page extends pagebase {
                         if(!$new_tag->insert()){
                             trigger_error("Unable to save new tag");                    
                         }
-                
-                        
+                         
                         $leaflet_tag = factory::create('leaflet_tag');
                         $leaflet_tag->leaflet_id = $leaflet->leaflet_id;
                         $leaflet_tag->tag_id = $new_tag->tag_id;
@@ -191,9 +196,15 @@ class addinfo_page extends pagebase {
                 trigger_error("Unable to save leaflet");
             }
 
-            //clear session, enable leaflet and then redirect
+            //clear session
             session_delete('image_ids');
-            redirect("leaflet.php?q=" . $leaflet->leaflet_id . "&m=1");
+
+            //redirect with callback provided
+            if($this->viewstate['callback']){
+                redirect($this->viewstate['callback']);
+            }else{
+                redirect("leaflet.php?q=" . $leaflet->leaflet_id . "&m=1");                
+            }
 
         }else{
             $this->bind();
