@@ -18,8 +18,11 @@ class addinfo_page extends pagebase {
         
         //store callback url in viewstate if needed
         $callback = get_http_var('callback');        
-        if(isset($callback) && valid_url($callback)){
-            $this->viewstate['callback'] = $callback;
+        if(isset($callback)){
+            if(valid_url($callback)){
+                $callback = urldecode($callback);
+                $this->viewstate['callback'] = $callback;                
+            }
         }
     }
 

@@ -12,8 +12,11 @@ class addupload_page extends pagebase {
         
         //store callback url in viewstate if needed
         $callback = get_http_var('callback');        
-        if(isset($callback) && valid_url($callback)){
-            $this->viewstate['callback'] = $callback;
+        if(isset($callback)){
+            if(valid_url($callback)){
+                $callback = urldecode($callback);
+                $this->viewstate['callback'] = $callback;                
+            }
         }
     }
 
@@ -48,7 +51,7 @@ class addupload_page extends pagebase {
 
             //redirect with callback provided
             if($this->viewstate['callback']){
-                redirect("addinfo.php?callback=" . $this->viewstate['callback']);
+                redirect("addinfo.php?callback=" . urlencode($this->viewstate['callback']));
             }else{
                 redirect("addinfo.php");                                
             }
