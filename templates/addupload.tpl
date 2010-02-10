@@ -7,6 +7,7 @@
         <p>
             Take a photo of a single leaflet and upload it below in JPG format. If the leaflet has more than one side you can upload multiple images. If the leaflet was sent by mail, please obscure your name and address with a marker pen.
         </p>
+        <p>If your image files are large (more than about 1MB), please resize to help keep our server happy, very large files may not upload.</p>
         <fieldset>
             <input type="hidden" name="MAX_FILE_SIZE" value="10000000000">
             <ul>
