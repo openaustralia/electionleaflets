@@ -166,7 +166,13 @@ class factory {
 				if (!$require_only) {
 			        $object = new TWFYAPI(THEYWORKFORYOU_API_KEY);
 				}							
-			break;			
+			break;
+			case 's3':
+				require_once('apis/s3/S3.php');
+				if (!$require_only) {
+			        $object = new S3();
+				}							
+			break;						
 			case 'pdfer':
 				require_once('pdfer.php');
 				if (!$require_only) {

@@ -1161,3 +1161,7 @@ INSERT INTO `constituency_type` VALUES  (1,'European Parliament Constituency',22
    `title` varchar(255) NOT NULL,
    PRIMARY KEY  (`email_alert_id`)
  ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+ 
+ ALTER TABLE `constituency` ADD COLUMN `guardian_aristotle_id` INT AFTER `url_id`,
+  ADD COLUMN `guardian_pa_code` INT AFTER `guardian_aristotle_id`;
+ 

@@ -19,7 +19,8 @@ class tableclass_constituency extends tablebase {
     public $area_uri; //a URI describing the cosntituency (where present)
     public $wikipedia_url; //link to teh wikipedia page describing the constituency
     public $url_id;
-
+    public $guardian_aristotle_id;
+    public $guardian_pa_code;
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('tableclass_constituency',$k,$v); }
 
@@ -35,6 +36,8 @@ class tableclass_constituency extends tablebase {
             'area_uri'   			=> DB_DATAOBJECT_STR,                                 
             'wikipedia_url'   			=> DB_DATAOBJECT_STR,                                             
             'url_id'   			=> DB_DATAOBJECT_STR,                     
+            'guardian_aristotle_id'   			=> DB_DATAOBJECT_INT,                     
+            'guardian_pa_code'   			=> DB_DATAOBJECT_INT,                                             
         );
     }
 
