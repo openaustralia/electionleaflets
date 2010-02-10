@@ -9,6 +9,7 @@ class apicall_page extends pagebase {
 	private $leaflet_search = null;
 	private $success = false;
 	private $count = 5;
+	private $max_count = 30;
 
     //setup
     function setup(){
@@ -17,6 +18,15 @@ class apicall_page extends pagebase {
         $method = get_http_var('method');
         if($method){
             $this->method = $method;
+        }
+        
+        $count = get_http_var('count');
+        if($count){
+            if($count < $this->max_count){
+                $this->count = $count;
+            }else{
+                $this->count = $this->max_count;
+            }
         }
         
         $output = get_http_var('output');
