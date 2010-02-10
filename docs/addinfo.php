@@ -175,9 +175,10 @@ class addinfo_page extends pagebase {
                 }
 
                 //save tags
-                $tags = split(",", $this->data['txtTags']);
+                $tag_string = trim($this->data['txtTags']);
+                $tags = split(",", $tag_string);
                 
-                if(count($tags) > 0){
+                if($tag_string != '' && isset($tag_string) && count($tags) > 0){
                     foreach ($tags as $tag) {
                         $new_tag = factory::create('tag');
                         $new_tag->tag = $tag;
