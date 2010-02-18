@@ -35,7 +35,6 @@
         $total_count ++;
     }
 
-
     print_message("Updated " . $success_count . "  out of " . $total_count . " (" . $fail_count . " failures)");
 
     function get_guardian_data (){
@@ -60,11 +59,19 @@
     //create a new cosntituency or retrun the existing one
     function get_constituency_object($constituency_name){
 
+        $return = false;
         $cosntituency = factory::create('constituency');
         $search = factory::create('search');
         $results = $search->search('constituency', array(array("name", "=", $constituency_name)));
+        if(count($results) > 0){
+            $return = $results[0];
+        }else{
+         
+            
+            
+        }
 
-        return $results[0];
+        return $return;
     }
     
     function wikipedia_url_from_name($constituency_name){

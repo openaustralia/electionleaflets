@@ -3,7 +3,7 @@
 1471,"Aberconwy","http://www.guardian.co.uk/politics/constituency/1471",2
 666,"Aberdeen North","http://www.guardian.co.uk/politics/constituency/666",3
 667,"Aberdeen South","http://www.guardian.co.uk/politics/constituency/667",4
-1417,"Aberdeenshire West and Kincardine","http://www.guardian.co.uk/politics/constituency/1417",5
+1417,"West Aberdeenshire and Kincardine","http://www.guardian.co.uk/politics/constituency/1417",5
 668,"Airdrie and Shotts","http://www.guardian.co.uk/politics/constituency/668",6
 669,"Aldershot","http://www.guardian.co.uk/politics/constituency/669",7
 670,"Aldridge-Brownhills","http://www.guardian.co.uk/politics/constituency/670",8
@@ -11,19 +11,19 @@
 672,"Alyn and Deeside","http://www.guardian.co.uk/politics/constituency/672",10
 673,"Amber Valley","http://www.guardian.co.uk/politics/constituency/673",11
 674,"Angus","http://www.guardian.co.uk/politics/constituency/674",12
-898,"Antrim East","http://www.guardian.co.uk/politics/constituency/898",13
-1164,"Antrim North","http://www.guardian.co.uk/politics/constituency/1164",14
-1293,"Antrim South","http://www.guardian.co.uk/politics/constituency/1293",15
+898,"East Antrim","http://www.guardian.co.uk/politics/constituency/898",13
+1164,"North Antrim","http://www.guardian.co.uk/politics/constituency/1164",14
+1293,"South Antrim","http://www.guardian.co.uk/politics/constituency/1293",15
 1472,"Arfon","http://www.guardian.co.uk/politics/constituency/1472",16
 675,"Argyll and Bute","http://www.guardian.co.uk/politics/constituency/675",17
 677,"Arundel and South Downs","http://www.guardian.co.uk/politics/constituency/677",18
 678,"Ashfield","http://www.guardian.co.uk/politics/constituency/678",19
 679,"Ashford","http://www.guardian.co.uk/politics/constituency/679",20
-680,"Ashton under Lyne","http://www.guardian.co.uk/politics/constituency/680",21
+680,"Ashton-under-Lyne","http://www.guardian.co.uk/politics/constituency/680",21
 681,"Aylesbury","http://www.guardian.co.uk/politics/constituency/681",22
 797,"Ayr, Carrick and Cumnock","http://www.guardian.co.uk/politics/constituency/797",23
-682,"Ayrshire Central","http://www.guardian.co.uk/politics/constituency/682",24
-860,"Ayrshire North and Arran","http://www.guardian.co.uk/politics/constituency/860",25
+682,"Central Ayrshire","http://www.guardian.co.uk/politics/constituency/682",24
+860,"North Ayrshire and Arran","http://www.guardian.co.uk/politics/constituency/860",25
 683,"Banbury","http://www.guardian.co.uk/politics/constituency/683",26
 684,"Banff and Buchan","http://www.guardian.co.uk/politics/constituency/684",27
 685,"Barking","http://www.guardian.co.uk/politics/constituency/685",28
@@ -31,7 +31,7 @@
 687,"Barnsley East","http://www.guardian.co.uk/politics/constituency/687",30
 690,"Barrow and Furness","http://www.guardian.co.uk/politics/constituency/690",31
 1474,"Basildon and Billericay","http://www.guardian.co.uk/politics/constituency/1474",32
-1473,"Basildon South and Thurrock East","http://www.guardian.co.uk/politics/constituency/1473",33
+1473,"South Basildon and East Thurrock","http://www.guardian.co.uk/politics/constituency/1473",33
 692,"Basingstoke","http://www.guardian.co.uk/politics/constituency/692",34
 693,"Bassetlaw","http://www.guardian.co.uk/politics/constituency/693",35
 694,"Bath","http://www.guardian.co.uk/politics/constituency/694",36
@@ -40,9 +40,9 @@
 697,"Beaconsfield","http://www.guardian.co.uk/politics/constituency/697",39
 698,"Beckenham","http://www.guardian.co.uk/politics/constituency/698",40
 699,"Bedford","http://www.guardian.co.uk/politics/constituency/699",41
-1120,"Bedfordshire Mid","http://www.guardian.co.uk/politics/constituency/1120",42
-1170,"Bedfordshire North East","http://www.guardian.co.uk/politics/constituency/1170",43
-1310,"Bedfordshire South West","http://www.guardian.co.uk/politics/constituency/1310",44
+1120,"Mid Bedfordshire","http://www.guardian.co.uk/politics/constituency/1120",42
+1170,"North East Bedfordshire","http://www.guardian.co.uk/politics/constituency/1170",43
+1310,"South West Bedfordshire","http://www.guardian.co.uk/politics/constituency/1310",44
 700,"Belfast East","http://www.guardian.co.uk/politics/constituency/700",45
 701,"Belfast North","http://www.guardian.co.uk/politics/constituency/701",46
 702,"Belfast South","http://www.guardian.co.uk/politics/constituency/702",47
@@ -93,7 +93,7 @@
 756,"Brentford and Isleworth","http://www.guardian.co.uk/politics/constituency/756",92
 757,"Brentwood and Ongar","http://www.guardian.co.uk/politics/constituency/757",93
 758,"Bridgend","http://www.guardian.co.uk/politics/constituency/758",94
-1480,"Bridgwater and Somerset West","http://www.guardian.co.uk/politics/constituency/1480",95
+1480,"Bridgwater and West Somerset","http://www.guardian.co.uk/politics/constituency/1480",95
 762,"Brigg and Goole","http://www.guardian.co.uk/politics/constituency/762",96
 763,"Brighton Kemptown","http://www.guardian.co.uk/politics/constituency/763",97
 764,"Brighton Pavilion","http://www.guardian.co.uk/politics/constituency/764",98
@@ -118,10 +118,10 @@
 784,"Camberwell and Peckham","http://www.guardian.co.uk/politics/constituency/784",117
 1482,"Camborne and Redruth","http://www.guardian.co.uk/politics/constituency/1482",118
 785,"Cambridge","http://www.guardian.co.uk/politics/constituency/785",119
-1171,"Cambridgeshire North East","http://www.guardian.co.uk/politics/constituency/1171",120
-1186,"Cambridgeshire North West","http://www.guardian.co.uk/politics/constituency/1186",121
-1294,"Cambridgeshire South","http://www.guardian.co.uk/politics/constituency/1294",122
-1298,"Cambridgeshire South East","http://www.guardian.co.uk/politics/constituency/1298",123
+1171,"North East Cambridgeshire","http://www.guardian.co.uk/politics/constituency/1171",120
+1186,"North West Cambridgeshire","http://www.guardian.co.uk/politics/constituency/1186",121
+1294,"South Cambridgeshire","http://www.guardian.co.uk/politics/constituency/1294",122
+1298,"South East Cambridgeshire","http://www.guardian.co.uk/politics/constituency/1298",123
 786,"Cannock Chase","http://www.guardian.co.uk/politics/constituency/786",124
 788,"Canterbury","http://www.guardian.co.uk/politics/constituency/788",125
 789,"Cardiff Central","http://www.guardian.co.uk/politics/constituency/789",126
@@ -130,7 +130,7 @@
 792,"Cardiff West","http://www.guardian.co.uk/politics/constituency/792",129
 793,"Carlisle","http://www.guardian.co.uk/politics/constituency/793",130
 795,"Carmarthen East and Dinefwr","http://www.guardian.co.uk/politics/constituency/795",131
-796,"Carmarthen West and Pembrokeshire South","http://www.guardian.co.uk/politics/constituency/796",132
+796,"Carmarthen West and South Pembrokeshire","http://www.guardian.co.uk/politics/constituency/796",132
 798,"Carshalton and Wallington","http://www.guardian.co.uk/politics/constituency/798",133
 799,"Castle Point","http://www.guardian.co.uk/politics/constituency/799",134
 803,"Ceredigion","http://www.guardian.co.uk/politics/constituency/803",135
@@ -160,8 +160,8 @@
 841,"Congleton","http://www.guardian.co.uk/politics/constituency/841",159
 843,"Copeland","http://www.guardian.co.uk/politics/constituency/843",160
 844,"Corby","http://www.guardian.co.uk/politics/constituency/844",161
-1166,"Cornwall North","http://www.guardian.co.uk/politics/constituency/1166",162
-1299,"Cornwall South East","http://www.guardian.co.uk/politics/constituency/1299",163
+1166,"North Cornwall","http://www.guardian.co.uk/politics/constituency/1166",162
+1299,"South East Cornwall","http://www.guardian.co.uk/politics/constituency/1299",163
 845,"Cotswold","http://www.guardian.co.uk/politics/constituency/845",164
 846,"Coventry North East","http://www.guardian.co.uk/politics/constituency/846",165
 847,"Coventry North West","http://www.guardian.co.uk/politics/constituency/847",166
@@ -182,39 +182,39 @@
 870,"Derby North","http://www.guardian.co.uk/politics/constituency/870",181
 871,"Derby South","http://www.guardian.co.uk/politics/constituency/871",182
 1487,"Derbyshire Dales","http://www.guardian.co.uk/politics/constituency/1487",183
-1488,"Derbyshire Mid","http://www.guardian.co.uk/politics/constituency/1488",184
-1172,"Derbyshire North East","http://www.guardian.co.uk/politics/constituency/1172",185
-1295,"Derbyshire South","http://www.guardian.co.uk/politics/constituency/1295",186
+1488,"Mid Derbyshire","http://www.guardian.co.uk/politics/constituency/1488",184
+1172,"North East Derbyshire","http://www.guardian.co.uk/politics/constituency/1172",185
+1295,"South Derbyshire","http://www.guardian.co.uk/politics/constituency/1295",186
 872,"Devizes","http://www.guardian.co.uk/politics/constituency/872",187
-1489,"Devon Central","http://www.guardian.co.uk/politics/constituency/1489",188
-900,"Devon East","http://www.guardian.co.uk/politics/constituency/900",189
-1167,"Devon North","http://www.guardian.co.uk/politics/constituency/1167",190
-1312,"Devon South West","http://www.guardian.co.uk/politics/constituency/1312",191
-1376,"Devon West and Torridge","http://www.guardian.co.uk/politics/constituency/1376",192
+1489,"Central Devon","http://www.guardian.co.uk/politics/constituency/1489",188
+900,"East Devon","http://www.guardian.co.uk/politics/constituency/900",189
+1167,"North Devon","http://www.guardian.co.uk/politics/constituency/1167",190
+1312,"South West Devon","http://www.guardian.co.uk/politics/constituency/1312",191
+1376,"Torridge and West Devon","http://www.guardian.co.uk/politics/constituency/1376",192
 873,"Dewsbury","http://www.guardian.co.uk/politics/constituency/873",193
 874,"Don Valley","http://www.guardian.co.uk/politics/constituency/874",194
 875,"Doncaster Central","http://www.guardian.co.uk/politics/constituency/875",195
 876,"Doncaster North","http://www.guardian.co.uk/politics/constituency/876",196
-1121,"Dorset Mid and Poole North","http://www.guardian.co.uk/politics/constituency/1121",197
-1168,"Dorset North","http://www.guardian.co.uk/politics/constituency/1168",198
-1296,"Dorset South","http://www.guardian.co.uk/politics/constituency/1296",199
-1422,"Dorset West","http://www.guardian.co.uk/politics/constituency/1422",200
+1121,"Mid Dorset and North Poole","http://www.guardian.co.uk/politics/constituency/1121",197
+1168,"North Dorset","http://www.guardian.co.uk/politics/constituency/1168",198
+1296,"South Dorset","http://www.guardian.co.uk/politics/constituency/1296",199
+1422,"West Dorset","http://www.guardian.co.uk/politics/constituency/1422",200
 877,"Dover","http://www.guardian.co.uk/politics/constituency/877",201
-1169,"Down North","http://www.guardian.co.uk/politics/constituency/1169",202
-1297,"Down South","http://www.guardian.co.uk/politics/constituency/1297",203
+1169,"North Down","http://www.guardian.co.uk/politics/constituency/1169",202
+1297,"South Down","http://www.guardian.co.uk/politics/constituency/1297",203
 879,"Dudley North","http://www.guardian.co.uk/politics/constituency/879",204
 880,"Dudley South","http://www.guardian.co.uk/politics/constituency/880",205
 883,"Dulwich and West Norwood","http://www.guardian.co.uk/politics/constituency/883",206
 952,"Dumfries and Galloway","http://www.guardian.co.uk/politics/constituency/952",207
 885,"Dumfriesshire, Clydesdale and Tweeddale","http://www.guardian.co.uk/politics/constituency/885",208
-1344,"Dunbartonshire East","http://www.guardian.co.uk/politics/constituency/1344",209
-884,"Dunbartonshire West","http://www.guardian.co.uk/politics/constituency/884",210
+1344,"East Dunbartonshire","http://www.guardian.co.uk/politics/constituency/1344",209
+884,"West Dunbartonshire","http://www.guardian.co.uk/politics/constituency/884",210
 886,"Dundee East","http://www.guardian.co.uk/politics/constituency/886",211
 887,"Dundee West","http://www.guardian.co.uk/politics/constituency/887",212
-889,"Dunfermline and Fife West","http://www.guardian.co.uk/politics/constituency/889",213
+889,"Dunfermline and West Fife","http://www.guardian.co.uk/politics/constituency/889",213
 825,"City of Durham","http://www.guardian.co.uk/politics/constituency/825",214
-890,"Durham North","http://www.guardian.co.uk/politics/constituency/890",215
-891,"Durham North West","http://www.guardian.co.uk/politics/constituency/891",216
+890,"North Durham","http://www.guardian.co.uk/politics/constituency/890",215
+891,"North West Durham","http://www.guardian.co.uk/politics/constituency/891",216
 1490,"Dwyfor Meirionnydd","http://www.guardian.co.uk/politics/constituency/1490",217
 1491,"Ealing Central and Acton","http://www.guardian.co.uk/politics/constituency/1491",218
 894,"Ealing North","http://www.guardian.co.uk/politics/constituency/894",219
@@ -245,10 +245,10 @@
 934,"Exeter","http://www.guardian.co.uk/politics/constituency/934",244
 936,"Falkirk","http://www.guardian.co.uk/politics/constituency/936",245
 938,"Fareham","http://www.guardian.co.uk/politics/constituency/938",246
-940,"Faversham and Kent Mid","http://www.guardian.co.uk/politics/constituency/940",247
+940,"Faversham and Mid Kent","http://www.guardian.co.uk/politics/constituency/940",247
 941,"Feltham and Heston","http://www.guardian.co.uk/politics/constituency/941",248
 942,"Fermanagh and South Tyrone","http://www.guardian.co.uk/politics/constituency/942",249
-1173,"Fife North East","http://www.guardian.co.uk/politics/constituency/1173",250
+1173,"North East Fife","http://www.guardian.co.uk/politics/constituency/1173",250
 1493,"Filton and Bradley Stoke","http://www.guardian.co.uk/politics/constituency/1493",251
 944,"Finchley and Golders Green","http://www.guardian.co.uk/politics/constituency/944",252
 945,"Folkestone and Hythe","http://www.guardian.co.uk/politics/constituency/945",253
@@ -285,9 +285,9 @@
 991,"Haltemprice and Howden","http://www.guardian.co.uk/politics/constituency/991",284
 992,"Halton","http://www.guardian.co.uk/politics/constituency/992",285
 996,"Hammersmith","http://www.guardian.co.uk/politics/constituency/996",286
-902,"Hampshire East","http://www.guardian.co.uk/politics/constituency/902",287
-1174,"Hampshire North East","http://www.guardian.co.uk/politics/constituency/1174",288
-1187,"Hampshire North West","http://www.guardian.co.uk/politics/constituency/1187",289
+902,"East Hampshire","http://www.guardian.co.uk/politics/constituency/902",287
+1174,"North East Hampshire","http://www.guardian.co.uk/politics/constituency/1174",288
+1187,"North West Hampshire","http://www.guardian.co.uk/politics/constituency/1187",289
 1497,"Hampstead and Kilburn","http://www.guardian.co.uk/politics/constituency/1497",290
 999,"Harborough","http://www.guardian.co.uk/politics/constituency/999",291
 1000,"Harlow","http://www.guardian.co.uk/politics/constituency/1000",292
@@ -295,7 +295,7 @@
 1003,"Harrow East","http://www.guardian.co.uk/politics/constituency/1003",294
 1004,"Harrow West","http://www.guardian.co.uk/politics/constituency/1004",295
 1005,"Hartlepool","http://www.guardian.co.uk/politics/constituency/1005",296
-1498,"Harwich and Essex North","http://www.guardian.co.uk/politics/constituency/1498",297
+1498,"Harwich and North Essex","http://www.guardian.co.uk/politics/constituency/1498",297
 1007,"Hastings and Rye","http://www.guardian.co.uk/politics/constituency/1007",298
 1008,"Havant","http://www.guardian.co.uk/politics/constituency/1008",299
 1009,"Hayes and Harlington","http://www.guardian.co.uk/politics/constituency/1009",300
@@ -304,11 +304,11 @@
 1012,"Hemsworth","http://www.guardian.co.uk/politics/constituency/1012",303
 1013,"Hendon","http://www.guardian.co.uk/politics/constituency/1013",304
 1016,"Henley","http://www.guardian.co.uk/politics/constituency/1016",305
-1499,"Hereford and Herefordshire South","http://www.guardian.co.uk/politics/constituency/1499",306
-1500,"Herefordshire North","http://www.guardian.co.uk/politics/constituency/1500",307
+1499,"Hereford and South Herefordshire","http://www.guardian.co.uk/politics/constituency/1499",306
+1500,"North Herefordshire","http://www.guardian.co.uk/politics/constituency/1500",307
 1018,"Hertford and Stortford","http://www.guardian.co.uk/politics/constituency/1018",308
-1175,"Hertfordshire North East","http://www.guardian.co.uk/politics/constituency/1175",309
-1313,"Hertfordshire South West","http://www.guardian.co.uk/politics/constituency/1313",310
+1175,"North East Hertfordshire","http://www.guardian.co.uk/politics/constituency/1175",309
+1313,"South West Hertfordshire","http://www.guardian.co.uk/politics/constituency/1313",310
 1019,"Hertsmere","http://www.guardian.co.uk/politics/constituency/1019",311
 1020,"Hexham","http://www.guardian.co.uk/politics/constituency/1020",312
 1021,"Heywood and Middleton","http://www.guardian.co.uk/politics/constituency/1021",313
@@ -321,9 +321,9 @@
 1502,"Houghton and Sunderland South","http://www.guardian.co.uk/politics/constituency/1502",320
 1032,"Hove","http://www.guardian.co.uk/politics/constituency/1032",321
 1033,"Huddersfield","http://www.guardian.co.uk/politics/constituency/1033",322
-1034,"Hull East","http://www.guardian.co.uk/politics/constituency/1034",323
-1035,"Hull North","http://www.guardian.co.uk/politics/constituency/1035",324
-1037,"Hull West and Hessle","http://www.guardian.co.uk/politics/constituency/1037",325
+1034,"Kingston upon Hull East","http://www.guardian.co.uk/politics/constituency/1034",323
+1035,"Kingston upon Hull North","http://www.guardian.co.uk/politics/constituency/1035",324
+1037,"Kingston upon Hull West and Hessle","http://www.guardian.co.uk/politics/constituency/1037",325
 1038,"Huntingdon","http://www.guardian.co.uk/politics/constituency/1038",326
 1039,"Hyndburn","http://www.guardian.co.uk/politics/constituency/1039",327
 1040,"Ilford North","http://www.guardian.co.uk/politics/constituency/1040",328
@@ -347,7 +347,7 @@
 1504,"Knowsley","http://www.guardian.co.uk/politics/constituency/1504",346
 1063,"Lagan Valley","http://www.guardian.co.uk/politics/constituency/1063",347
 835,"Lanark and Hamilton East","http://www.guardian.co.uk/politics/constituency/835",348
-1426,"Lancashire West","http://www.guardian.co.uk/politics/constituency/1426",349
+1426,"West Lancashire","http://www.guardian.co.uk/politics/constituency/1426",349
 1505,"Lancaster and Fleetwood","http://www.guardian.co.uk/politics/constituency/1505",350
 1067,"Leeds Central","http://www.guardian.co.uk/politics/constituency/1067",351
 1068,"Leeds East","http://www.guardian.co.uk/politics/constituency/1068",352
@@ -357,8 +357,8 @@
 1073,"Leicester East","http://www.guardian.co.uk/politics/constituency/1073",356
 1074,"Leicester South","http://www.guardian.co.uk/politics/constituency/1074",357
 1075,"Leicester West","http://www.guardian.co.uk/politics/constituency/1075",358
-1188,"Leicestershire North West","http://www.guardian.co.uk/politics/constituency/1188",359
-1506,"Leicestershire South","http://www.guardian.co.uk/politics/constituency/1506",360
+1188,"North West Leicestershire","http://www.guardian.co.uk/politics/constituency/1188",359
+1506,"South Leicestershire","http://www.guardian.co.uk/politics/constituency/1506",360
 1076,"Leigh","http://www.guardian.co.uk/politics/constituency/1076",361
 1078,"Lewes","http://www.guardian.co.uk/politics/constituency/1078",362
 1082,"Lewisham Deptford","http://www.guardian.co.uk/politics/constituency/1082",363
@@ -367,14 +367,14 @@
 1084,"Leyton and Wanstead","http://www.guardian.co.uk/politics/constituency/1084",366
 1085,"Lichfield","http://www.guardian.co.uk/politics/constituency/1085",367
 1086,"Lincoln","http://www.guardian.co.uk/politics/constituency/1086",368
-1088,"Linlithgow and Falkirk East","http://www.guardian.co.uk/politics/constituency/1088",369
+1088,"Linlithgow and East Falkirk","http://www.guardian.co.uk/politics/constituency/1088",369
 1093,"Liverpool Riverside","http://www.guardian.co.uk/politics/constituency/1093",370
 1094,"Liverpool Walton","http://www.guardian.co.uk/politics/constituency/1094",371
 1095,"Liverpool Wavertree","http://www.guardian.co.uk/politics/constituency/1095",372
 1096,"Liverpool West Derby","http://www.guardian.co.uk/politics/constituency/1096",373
 1097,"Livingston","http://www.guardian.co.uk/politics/constituency/1097",374
 1098,"Llanelli","http://www.guardian.co.uk/politics/constituency/1098",375
-904,"Londonderry East","http://www.guardian.co.uk/politics/constituency/904",376
+904,"East Londonderry","http://www.guardian.co.uk/politics/constituency/904",376
 1099,"Loughborough","http://www.guardian.co.uk/politics/constituency/1099",377
 1100,"Louth and Horncastle","http://www.guardian.co.uk/politics/constituency/1100",378
 1101,"Ludlow","http://www.guardian.co.uk/politics/constituency/1101",379
@@ -393,7 +393,7 @@
 1118,"Meriden","http://www.guardian.co.uk/politics/constituency/1118",392
 1119,"Merthyr Tydfil and Rhymney","http://www.guardian.co.uk/politics/constituency/1119",393
 1128,"Middlesbrough","http://www.guardian.co.uk/politics/constituency/1128",394
-1129,"Middlesbrough South and Cleveland East","http://www.guardian.co.uk/politics/constituency/1129",395
+1129,"Middlesbrough South and East Cleveland","http://www.guardian.co.uk/politics/constituency/1129",395
 1130,"Midlothian","http://www.guardian.co.uk/politics/constituency/1130",396
 1510,"Milton Keynes North","http://www.guardian.co.uk/politics/constituency/1510",397
 1511,"Milton Keynes South","http://www.guardian.co.uk/politics/constituency/1511",398
@@ -419,22 +419,22 @@
 1161,"Newport West","http://www.guardian.co.uk/politics/constituency/1161",418
 1162,"Newry and Armagh","http://www.guardian.co.uk/politics/constituency/1162",419
 1513,"Newton Abbot","http://www.guardian.co.uk/politics/constituency/1513",420
-1123,"Norfolk Mid","http://www.guardian.co.uk/politics/constituency/1123",421
-1178,"Norfolk North","http://www.guardian.co.uk/politics/constituency/1178",422
-1189,"Norfolk North West","http://www.guardian.co.uk/politics/constituency/1189",423
-1303,"Norfolk South","http://www.guardian.co.uk/politics/constituency/1303",424
-1314,"Norfolk South West","http://www.guardian.co.uk/politics/constituency/1314",425
+1123,"Mid Norfolk","http://www.guardian.co.uk/politics/constituency/1123",421
+1178,"North Norfolk","http://www.guardian.co.uk/politics/constituency/1178",422
+1189,"North West Norfolk","http://www.guardian.co.uk/politics/constituency/1189",423
+1303,"South Norfolk","http://www.guardian.co.uk/politics/constituency/1303",424
+1314,"South West Norfolk","http://www.guardian.co.uk/politics/constituency/1314",425
 1514,"Normanton, Pontefract and Castleford","http://www.guardian.co.uk/politics/constituency/1514",426
 1192,"Northampton North","http://www.guardian.co.uk/politics/constituency/1192",427
 1193,"Northampton South","http://www.guardian.co.uk/politics/constituency/1193",428
-1515,"Northamptonshire South ","http://www.guardian.co.uk/politics/constituency/1515",429
+1515,"South Northamptonshire ","http://www.guardian.co.uk/politics/constituency/1515",429
 1195,"Norwich North","http://www.guardian.co.uk/politics/constituency/1195",430
 1196,"Norwich South","http://www.guardian.co.uk/politics/constituency/1196",431
 1198,"Nottingham East","http://www.guardian.co.uk/politics/constituency/1198",432
 1199,"Nottingham North","http://www.guardian.co.uk/politics/constituency/1199",433
 1200,"Nottingham South","http://www.guardian.co.uk/politics/constituency/1200",434
 1201,"Nuneaton","http://www.guardian.co.uk/politics/constituency/1201",435
-1202,"Ochil and Perthshire South","http://www.guardian.co.uk/politics/constituency/1202",436
+1202,"Ochil and South Perthshire","http://www.guardian.co.uk/politics/constituency/1202",436
 1203,"Ogmore","http://www.guardian.co.uk/politics/constituency/1203",437
 1204,"Old Bexley and Sidcup","http://www.guardian.co.uk/politics/constituency/1204",438
 1206,"Oldham East and Saddleworth","http://www.guardian.co.uk/politics/constituency/1206",439
@@ -448,7 +448,7 @@
 1217,"Pendle","http://www.guardian.co.uk/politics/constituency/1217",447
 1516,"Penistone and Stocksbridge","http://www.guardian.co.uk/politics/constituency/1516",448
 1218,"Penrith and The Border","http://www.guardian.co.uk/politics/constituency/1218",449
-1219,"Perth and Perthshire North","http://www.guardian.co.uk/politics/constituency/1219",450
+1219,"Perth and North Perthshire","http://www.guardian.co.uk/politics/constituency/1219",450
 1221,"Peterborough","http://www.guardian.co.uk/politics/constituency/1221",451
 1517,"Plymouth Moor View","http://www.guardian.co.uk/politics/constituency/1517",452
 1518,"Plymouth Sutton and Devonport","http://www.guardian.co.uk/politics/constituency/1518",453
@@ -467,7 +467,7 @@
 1239,"Redcar","http://www.guardian.co.uk/politics/constituency/1239",466
 1240,"Redditch","http://www.guardian.co.uk/politics/constituency/1240",467
 1242,"Reigate","http://www.guardian.co.uk/politics/constituency/1242",468
-910,"Renfrewshire East","http://www.guardian.co.uk/politics/constituency/910",469
+910,"East Renfrewshire","http://www.guardian.co.uk/politics/constituency/910",469
 1243,"Rhondda","http://www.guardian.co.uk/politics/constituency/1243",470
 1244,"Ribble Valley","http://www.guardian.co.uk/politics/constituency/1244",471
 1245,"Richmond (Yorks)","http://www.guardian.co.uk/politics/constituency/1245",472
@@ -509,17 +509,17 @@
 1283,"Sherwood","http://www.guardian.co.uk/politics/constituency/1283",508
 1284,"Shipley","http://www.guardian.co.uk/politics/constituency/1284",509
 1286,"Shrewsbury and Atcham","http://www.guardian.co.uk/politics/constituency/1286",510
-1179,"Shropshire North","http://www.guardian.co.uk/politics/constituency/1179",511
+1179,"North Shropshire","http://www.guardian.co.uk/politics/constituency/1179",511
 1287,"Sittingbourne and Sheppey","http://www.guardian.co.uk/politics/constituency/1287",512
 1288,"Skipton and Ripon","http://www.guardian.co.uk/politics/constituency/1288",513
 1289,"Sleaford and North Hykeham","http://www.guardian.co.uk/politics/constituency/1289",514
 1290,"Slough","http://www.guardian.co.uk/politics/constituency/1290",515
 1291,"Solihull","http://www.guardian.co.uk/politics/constituency/1291",516
-1530,"Somerset North","http://www.guardian.co.uk/politics/constituency/1530",517
-1531,"Somerset North East","http://www.guardian.co.uk/politics/constituency/1531",518
+1530,"North Somerset","http://www.guardian.co.uk/politics/constituency/1530",517
+1531,"North East Somerset","http://www.guardian.co.uk/politics/constituency/1531",518
 1292,"Somerton and Frome","http://www.guardian.co.uk/politics/constituency/1292",519
 1302,"South Holland and The Deepings","http://www.guardian.co.uk/politics/constituency/1302",520
-1304,"Ribble South (South Ribble)","http://www.guardian.co.uk/politics/constituency/1304",521
+1304,"South Ribble","http://www.guardian.co.uk/politics/constituency/1304",521
 1305,"South Shields","http://www.guardian.co.uk/politics/constituency/1305",522
 1317,"Southampton Itchen","http://www.guardian.co.uk/politics/constituency/1317",523
 1318,"Southampton Test","http://www.guardian.co.uk/politics/constituency/1318",524
@@ -528,7 +528,7 @@
 1323,"Spelthorne","http://www.guardian.co.uk/politics/constituency/1323",527
 1328,"Stafford","http://www.guardian.co.uk/politics/constituency/1328",528
 1329,"Staffordshire Moorlands","http://www.guardian.co.uk/politics/constituency/1329",529
-1306,"Staffordshire South","http://www.guardian.co.uk/politics/constituency/1306",530
+1306,"South Staffordshire","http://www.guardian.co.uk/politics/constituency/1306",530
 1330,"Stalybridge and Hyde","http://www.guardian.co.uk/politics/constituency/1330",531
 1332,"Stevenage","http://www.guardian.co.uk/politics/constituency/1332",532
 1333,"Stirling","http://www.guardian.co.uk/politics/constituency/1333",533
@@ -545,28 +545,28 @@
 1345,"Streatham","http://www.guardian.co.uk/politics/constituency/1345",544
 1347,"Stretford and Urmston","http://www.guardian.co.uk/politics/constituency/1347",545
 1348,"Stroud","http://www.guardian.co.uk/politics/constituency/1348",546
-802,"Suffolk Central and Ipswich North","http://www.guardian.co.uk/politics/constituency/802",547
+802,"Central Suffolk and North Ipswich","http://www.guardian.co.uk/politics/constituency/802",547
 1349,"Suffolk Coastal","http://www.guardian.co.uk/politics/constituency/1349",548
-1307,"Suffolk South","http://www.guardian.co.uk/politics/constituency/1307",549
-1429,"Suffolk West","http://www.guardian.co.uk/politics/constituency/1429",550
+1307,"South Suffolk","http://www.guardian.co.uk/politics/constituency/1307",549
+1429,"West Suffolk","http://www.guardian.co.uk/politics/constituency/1429",550
 1534,"Sunderland Central","http://www.guardian.co.uk/politics/constituency/1534",551
-906,"Surrey East","http://www.guardian.co.uk/politics/constituency/906",552
+906,"East Surrey","http://www.guardian.co.uk/politics/constituency/906",552
 1353,"Surrey Heath","http://www.guardian.co.uk/politics/constituency/1353",553
-1315,"Surrey South West","http://www.guardian.co.uk/politics/constituency/1315",554
-1125,"Sussex Mid","http://www.guardian.co.uk/politics/constituency/1125",555
+1315,"South West Surrey","http://www.guardian.co.uk/politics/constituency/1315",554
+1125,"Mid Sussex","http://www.guardian.co.uk/politics/constituency/1125",555
 1355,"Sutton and Cheam","http://www.guardian.co.uk/politics/constituency/1355",556
 1354,"Sutton Coldfield","http://www.guardian.co.uk/politics/constituency/1354",557
-1356,"Swansea East","http://www.guardian.co.uk/politics/constituency/1356",558
+1356,"Swansea East ","http://www.guardian.co.uk/politics/constituency/1356",558
 1357,"Swansea West","http://www.guardian.co.uk/politics/constituency/1357",559
-1181,"Swindon North","http://www.guardian.co.uk/politics/constituency/1181",560
-1308,"Swindon South","http://www.guardian.co.uk/politics/constituency/1308",561
+1181,"North Swindon","http://www.guardian.co.uk/politics/constituency/1181",560
+1308,"South Swindon","http://www.guardian.co.uk/politics/constituency/1308",561
 1359,"Tamworth","http://www.guardian.co.uk/politics/constituency/1359",562
 1360,"Tatton","http://www.guardian.co.uk/politics/constituency/1360",563
-1535,"Taunton Deane","http://www.guardian.co.uk/politics/constituency/1535",564
+1535,"Taunton","http://www.guardian.co.uk/politics/constituency/1535",564
 1364,"Telford","http://www.guardian.co.uk/politics/constituency/1364",565
 1365,"Tewkesbury","http://www.guardian.co.uk/politics/constituency/1365",566
-1183,"Thanet North","http://www.guardian.co.uk/politics/constituency/1183",567
-1309,"Thanet South","http://www.guardian.co.uk/politics/constituency/1309",568
+1183,"North Thanet","http://www.guardian.co.uk/politics/constituency/1183",567
+1309,"South Thanet","http://www.guardian.co.uk/politics/constituency/1309",568
 1536,"Thirsk and Malton","http://www.guardian.co.uk/politics/constituency/1536",569
 1537,"Thornbury and Yate","http://www.guardian.co.uk/politics/constituency/1537",570
 1369,"Thurrock","http://www.guardian.co.uk/politics/constituency/1369",571
@@ -581,11 +581,11 @@
 1381,"Tunbridge Wells","http://www.guardian.co.uk/politics/constituency/1381",580
 1383,"Twickenham","http://www.guardian.co.uk/politics/constituency/1383",581
 1385,"Tynemouth","http://www.guardian.co.uk/politics/constituency/1385",582
-1184,"Tyneside North","http://www.guardian.co.uk/politics/constituency/1184",583
-1430,"Tyrone West","http://www.guardian.co.uk/politics/constituency/1430",584
-1126,"Ulster Mid","http://www.guardian.co.uk/politics/constituency/1126",585
+1184,"North Tyneside","http://www.guardian.co.uk/politics/constituency/1184",583
+1430,"West Tyrone","http://www.guardian.co.uk/politics/constituency/1430",584
+1126,"Mid Ulster","http://www.guardian.co.uk/politics/constituency/1126",585
 1387,"Upper Bann","http://www.guardian.co.uk/politics/constituency/1387",586
-1539,"Uxbridge and Ruislip South","http://www.guardian.co.uk/politics/constituency/1539",587
+1539,"Uxbridge and South Ruislip","http://www.guardian.co.uk/politics/constituency/1539",587
 1389,"Vale of Clwyd","http://www.guardian.co.uk/politics/constituency/1389",588
 1390,"Vale of Glamorgan","http://www.guardian.co.uk/politics/constituency/1390",589
 1392,"Vauxhall","http://www.guardian.co.uk/politics/constituency/1392",590
@@ -600,7 +600,7 @@
 1406,"Warrington North","http://www.guardian.co.uk/politics/constituency/1406",599
 1407,"Warrington South","http://www.guardian.co.uk/politics/constituency/1407",600
 1408,"Warwick and Leamington","http://www.guardian.co.uk/politics/constituency/1408",601
-1185,"Warwickshire North","http://www.guardian.co.uk/politics/constituency/1185",602
+1185,"North Warwickshire","http://www.guardian.co.uk/politics/constituency/1185",602
 1540,"Washington and Sunderland West","http://www.guardian.co.uk/politics/constituency/1540",603
 1409,"Watford","http://www.guardian.co.uk/politics/constituency/1409",604
 1410,"Waveney","http://www.guardian.co.uk/politics/constituency/1410",605
@@ -617,8 +617,8 @@
 1435,"Westmorland and Lonsdale","http://www.guardian.co.uk/politics/constituency/1435",616
 1436,"Weston-Super-Mare","http://www.guardian.co.uk/politics/constituency/1436",617
 1437,"Wigan","http://www.guardian.co.uk/politics/constituency/1437",618
-1191,"Wiltshire North","http://www.guardian.co.uk/politics/constituency/1191",619
-1542,"Wiltshire South West","http://www.guardian.co.uk/politics/constituency/1542",620
+1191,"North Wiltshire","http://www.guardian.co.uk/politics/constituency/1191",619
+1542,"South West Wiltshire","http://www.guardian.co.uk/politics/constituency/1542",620
 1438,"Wimbledon","http://www.guardian.co.uk/politics/constituency/1438",621
 1439,"Winchester","http://www.guardian.co.uk/politics/constituency/1439",622
 1440,"Windsor","http://www.guardian.co.uk/politics/constituency/1440",623
@@ -632,11 +632,11 @@
 1448,"Wolverhampton South East","http://www.guardian.co.uk/politics/constituency/1448",631
 1449,"Wolverhampton South West","http://www.guardian.co.uk/politics/constituency/1449",632
 1452,"Worcester","http://www.guardian.co.uk/politics/constituency/1452",633
-1127,"Worcestershire Mid","http://www.guardian.co.uk/politics/constituency/1127",634
-1431,"Worcestershire West","http://www.guardian.co.uk/politics/constituency/1431",635
+1127,"Mid Worcestershire","http://www.guardian.co.uk/politics/constituency/1127",634
+1431,"West Worcestershire","http://www.guardian.co.uk/politics/constituency/1431",635
 1453,"Workington","http://www.guardian.co.uk/politics/constituency/1453",636
 1544,"Worsley and Eccles South","http://www.guardian.co.uk/politics/constituency/1544",637
-907,"Worthing East and Shoreham","http://www.guardian.co.uk/politics/constituency/907",638
+907,"East Worthing and Shoreham","http://www.guardian.co.uk/politics/constituency/907",638
 1456,"Worthing West","http://www.guardian.co.uk/politics/constituency/1456",639
 1368,"The Wrekin","http://www.guardian.co.uk/politics/constituency/1368",640
 1457,"Wrexham","http://www.guardian.co.uk/politics/constituency/1457",641
@@ -648,4 +648,4 @@
 1463,"Ynys Mon","http://www.guardian.co.uk/politics/constituency/1463",647
 1546,"York Central","http://www.guardian.co.uk/politics/constituency/1546",648
 1547,"York Outer","http://www.guardian.co.uk/politics/constituency/1547",649
-1465,"Yorkshire East","http://www.guardian.co.uk/politics/constituency/1465",650
+1465,"East Yorkshire","http://www.guardian.co.uk/politics/constituency/1465",650
