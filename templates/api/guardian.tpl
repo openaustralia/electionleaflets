@@ -10,6 +10,11 @@
     		background:white;
     		font-size:12px;
     	}
+    	
+    	#straightchoice li {
+    	    padding-left:0; margin-left:0;
+    	    list-style-type:none;
+	    }
 
 	
     	#straightchoice .straightchoice_section {
