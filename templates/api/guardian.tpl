@@ -1,26 +1,28 @@
-<style>
+{literal}
+    <style>
 
-	#straightchoice {
-		width:140px;
-		border-top: 10px solid;
-		padding-bottom: 15px;
-		padding-top: 4px;
-		border-top-color: rgb(214, 29, 0);
-		background:white;
-		font-size:12px;
-	}
+    	#straightchoice {
+    		width:140px;
+    		border-top: 10px solid;
+    		padding-bottom: 15px;
+    		padding-top: 4px;
+    		border-top-color: rgb(214, 29, 0);
+    		background:white;
+    		font-size:12px;
+    	}
 
 	
-	#straightchoice .straightchoice_section {
+    	#straightchoice .straightchoice_section {
 		
-		border-top-style: dotted;
-		border-top-width: 1px;
-		padding: 3px 0px 6px 0px;
-		border-top-color: rgb(153, 153, 153);
+    		border-top-style: dotted;
+    		border-top-width: 1px;
+    		padding: 3px 0px 6px 0px;
+    		border-top-color: rgb(153, 153, 153);
 		
-	}
+    	}
 
-</style>
+    </style>
+{/literal}
 <div id="straightchoice">
     <h2>Latest campaign material near here</h2>
     <p>
