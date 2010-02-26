@@ -28,7 +28,7 @@
             {/foreach}            
         </ul>
 
-        <h4>Location</h4>
+        <h4>Location (approximate)</h4>
         <div id="divSpotMap"></div>
     </div>
 

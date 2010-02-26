@@ -68,7 +68,7 @@ class leaflet_page extends pagebase {
         //
 
         //js
-        $this->onloadscript = "showMap('" . MAP_PROVIDER . "', " . $leaflet->lng . ", " . $leaflet->lat .");";
+        $this->onloadscript = "showMap('" . MAP_PROVIDER . "', " . number_format($leaflet->lng, 2) . ", " . number_format($leaflet->lat, 2) .");";        
 
         //assign
 		$this->page_title = $leaflet->title . " ( election leaflet published by " . $leaflet->party_name . ")";
