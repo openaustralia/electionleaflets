@@ -29,24 +29,35 @@
     </style>
 {/literal}
 <div id="straightchoice">
-    <h2>Latest campaign material near here</h2>
-    <p>
-        from
-        <br/>
-        <a href="http://www.thestraightchoice.org">thestraightchoice.org</a>
-    </p>
+    {if $has_leaflets}
+        <h2>Latest campaign material near here</h2>
+        <p>
+            from
+            <br/>
+            <a href="http://www.thestraightchoice.org">thestraightchoice.org</a>
+        </p>
+    {else}
+        <h2>Have you received any election leaflets?</h2>    
+    {/if}
     <ul class="results">
-
-        {foreach from="$leaflets" item="leaflet"}
-            <li {if $is_geo}class="has_distance"{/if} class="straightchoice_section">
-                <a class="leaflet" href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}">
-                    <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/>
+        {if $has_leaflets}
+            {foreach from="$leaflets" item="leaflet"}
+                <li {if $is_geo}class="has_distance"{/if} class="straightchoice_section">
+                    <a class="leaflet" href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}">
+                        <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/>
+                    </a>
+                    <p>
+                        <a href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}"><strong>{$leaflet->party_name}</strong> uploaded {$leaflet->date_uploaded}</a>
+                    </p>
+                </li>
+            {/foreach}
+        {else}
+            <li>
+                <a class="leaflet" href="{$www_server}">
+                    <img src="{$www_server}/images/country.jpg"/>
                 </a>
-                <p>
-                    <a href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}"><strong>{$leaflet->party_name}</strong> uploaded {$leaflet->date_uploaded}</a>
-                </p>
             </li>
-        {/foreach}
+        {/if}
     </ul>
     <p class="straightchoice_section">
         <a href="{$www_server}/addupload.php">Help The Straight Choice monitor the campaign by uploading material you receive</a>

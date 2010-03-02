@@ -47,10 +47,10 @@ class apicall_page extends pagebase {
 	function bind() {
 	    
 	    $leaflets = $this->get_data();
-	    
 	    if($this->success){
 		    $this->reset_smarty(TEMPLATE_DIR . "/api/" . $this->output . ".tpl");
 	        $this->assign("leaflets", $leaflets);
+	        $this->assign("has_leaflets", count($leaflets) > 0);	        
 		}else{
 		    throw_404();
 	    }
