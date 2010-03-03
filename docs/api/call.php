@@ -45,15 +45,20 @@ class apicall_page extends pagebase {
     
 	//bind
 	function bind() {
-	    
-	    $leaflets = $this->get_data();
-	    if($this->success){
-		    $this->reset_smarty(TEMPLATE_DIR . "/api/" . $this->output . ".tpl");
-	        $this->assign("leaflets", $leaflets);
-	        $this->assign("has_leaflets", count($leaflets) > 0);	        
-		}else{
-		    throw_404();
-	    }
+		
+		$this->reset_smarty(TEMPLATE_DIR . "/api/" . $this->output . ".tpl");
+    	$result = $this->get_data();
+    	    		
+		if($this->method == 'constituency'){    	    
+    	    if($this->success){
+    	        $this->assign("leaflets", $result);
+    	        $this->assign("has_leaflets", count($result) > 0);	        
+    		}else{
+    		    throw_404();
+    	    }
+        }else{
+    	    $this->assign("result", $result);            
+        }
 	}
 
     function get_data(){
@@ -80,6 +85,15 @@ class apicall_page extends pagebase {
                 $return = $this->leaflet_search->search();
             }
             
+        }else if ($this->method == 'image'){
+            if(isset($this->all_arguments['leaflet_id']) && isset($this->all_arguments['size'])){
+                $search = factory::create('search');                
+                $result = $search->search_cached("leaflet_image", 
+                        array(array("leaflet_id", "=", $this->all_arguments['leaflet_id'])));
+                if (count($result) > 0){
+                    return WWW_SERVER . '/image.php?i=' . $result[0]->image_key . '&s=' . $this->all_arguments['size'];
+                }
+            }                
         }
         
         return $return;
