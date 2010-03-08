@@ -27,6 +27,14 @@
                     <label for="uplFile">Image 4</label>
                     <input type="file" id="uplFile_4" name="uplFile_4" />
                 </li>
+                <li>
+                    <label for="uplFile">Image 5</label>
+                    <input type="file" id="uplFile_5" name="uplFile_5" />
+                </li>
+                <li>
+                    <label for="uplFile">Image 6</label>
+                    <input type="file" id="uplFile_6" name="uplFile_6" />
+                </li>
             </ul>
         </fieldset>
         <div class="buttons">
