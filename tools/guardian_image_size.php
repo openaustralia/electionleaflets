@@ -1,7 +1,8 @@
 <?php
 
     //get all leaflets
-    $leaflet_images = $search->search_cached("leaflet_image", array(array("1", "=", "1")));
+    $search = factory::create('search');
+    $leaflet_images = $search->search("leaflet_image", array(array("1", "=", "1")));
     
     foreach ($leaflet_images as $leaflet_image) {
         $file_name = IMAGES_DIR . "/original/" . $leaflet_image->image_key . ".jpg";	        
