@@ -47,7 +47,7 @@
                         <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/>
                     </a>
                     <p>
-                        <a href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}"><strong>{$leaflet->party_name}</strong> uploaded {$leaflet->date_uploaded|date_format:"%A %e %B %Y"}</a>
+                        <a href="{$www_server}/party.php?p={$leaflet->publisher_party_id}"><strong>{$leaflet->party_name}</strong></a> uploaded {$leaflet->date_uploaded|date_format:"%A %e %B %Y"}
                     </p>
                 </li>
             {/foreach}

@@ -48,7 +48,7 @@ class apicall_page extends pagebase {
 		
 		$this->reset_smarty(TEMPLATE_DIR . "/api/" . $this->output . ".tpl");
     	$result = $this->get_data();
-    	    		
+
 		if($this->method == 'constituency'){    	    
     	    if($this->success){
     	        $this->assign("leaflets", $result);
