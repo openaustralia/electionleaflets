@@ -58,7 +58,8 @@ define('CACHE_TIME', 0);
 define('DB_CACHE_EXPIRE', 3600);
 
 //image sizes
-define('IMAGE_THUMBNAIL_SIZE', 120);
+define('IMAGE_THUMBNAIL_SIZE', 140);
+define('IMAGE_SMALL_SIZE', 120);
 define('IMAGE_MEDIUM_SIZE', 300);
 define('IMAGE_LARGE_SIZE', 1024);
 
