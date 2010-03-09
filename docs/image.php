@@ -15,7 +15,7 @@
     if($image_size == 't'){
         $file_name .= "/thumbnail/";
     }
-    if($image_size == 'small'){
+    if($image_size == 's'){
         $file_name .= "/small/";
     }
     if($image_size == 'm'){
