@@ -62,7 +62,9 @@
     <p class="straightchoice_section">
         <a href="{$www_server}/addupload.php">Help The Straight Choice monitor the campaign by uploading material you receive</a>
     </p>
-    <p class="straightchoice_section">
-        <a href="{$www_server}/leaflets.php?n={$leaflets[0]->constituency_url_id}">More campaign material from this area</a>
-    </p>
+    {if $has_leaflets}    
+        <p class="straightchoice_section">
+            <a href="{$www_server}/leaflets.php?n={$leaflets[0]->constituency_url_id}">More campaign material from this area</a>
+        </p>
+    {/if}
 </div>
