@@ -6,7 +6,7 @@
     $image_size = get_http_var('s');    
 
     //check vars passed
-    if(!isset($image_id) || ($image_size != 't' && $image_size != 'm' && $image_size != 'l' && $image_size != 'o')){
+    if(!isset($image_id) || ($image_size != 't' && $image_size != 'm' && $image_size != 'l' && $image_size != 'o' && $image_size != 's')){
         throw_404();
     }
     
