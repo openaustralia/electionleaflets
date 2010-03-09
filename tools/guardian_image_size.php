@@ -1,5 +1,8 @@
 <?php
 
+    require_once(dirname(__FILE__) . "/include_path.php");
+    require_once(dirname(__FILE__) . "/../includes/init.php");
+
     //get all leaflets
     $search = factory::create('search');
     $leaflet_images = $search->search("leaflet_image", array(array("1", "=", "1")));
