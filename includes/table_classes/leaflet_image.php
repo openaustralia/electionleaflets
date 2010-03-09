@@ -61,6 +61,10 @@ class tableclass_leaflet_image extends tablebase {
         return WWW_SERVER . "/image.php?s=t&i=" . $this->image_key;
     }
     
+    public function small_url(){
+        return WWW_SERVER . "/image.php?s=s&i=" . $this->image_key;
+    }
+    
     public function medium_url(){
         return WWW_SERVER . "/image.php?s=m&i=" . $this->image_key;
     }

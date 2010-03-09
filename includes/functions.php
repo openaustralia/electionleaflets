@@ -564,7 +564,7 @@
         return $anum;
     }
     
-    function resize_image($file_name, $max_side, $destination){
+    function resize_image($file_name, $max_side, $destination, $restrict_width = false){
 
         //grab the image
         $image = imagecreatefromjpeg($file_name);
@@ -574,8 +574,8 @@
         
         //work out new size
         $new_height = 0;
-        $new_width = 0;        
-        if($height > $width){
+        $new_width = 0;
+        if($height > $width || $restrict_width == true){
             $new_height = ($height / $width) * $max_side;
             $new_width = $max_side;
         }else{

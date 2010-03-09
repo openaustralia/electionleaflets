@@ -83,8 +83,11 @@ class addupload_page extends pagebase {
     	    //save medium
             resize_image($original_file_name, IMAGE_MEDIUM_SIZE, IMAGES_DIR . "/medium/" . $file_id . ".jpg");
 
+            //save small
+            resize_image($original_file_name, IMAGE_SMALL_SIZE, IMAGES_DIR . "/small/" . $file_id . ".jpg");
+            
     	    //save thumbnail
-            resize_image($original_file_name, IMAGE_THUMBNAIL_SIZE, IMAGES_DIR . "/thumbnail/" . $file_id . ".jpg");    	    
+            resize_image($original_file_name, IMAGE_THUMBNAIL_SIZE, IMAGES_DIR . "/thumbnail/" . $file_id . ".jpg", true);    	    
         }
 
     }
