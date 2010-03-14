@@ -181,7 +181,7 @@ class addinfo_page extends pagebase {
                 if($tag_string != '' && isset($tag_string) && count($tags) > 0){
                     foreach ($tags as $tag) {
                         $new_tag = factory::create('tag');
-                        $new_tag->tag = $tag;
+                        $new_tag->tag = trim($tag);
 
                         if(!$new_tag->insert()){
                             trigger_error("Unable to save new tag");                    
