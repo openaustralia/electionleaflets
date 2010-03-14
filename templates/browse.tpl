@@ -17,7 +17,7 @@
         <h3>Tags</h3>
         <ul class="tagcloud">
             {foreach from="$weighted_tags" item="weighted_tag"}
-                <li class="{if $weighted_tag->count < 10}tg1{elseif $weighted_tag->count < 30}tg2{elseif $weighted_tag->count < 50}tg3{elseif $weighted_tag->count < 75}tg4{elseif $weighted_tag->count < 100}tg5{else}tg6{/if}">
+                <li class="{if $weighted_tag->count < 1}tg1{elseif $weighted_tag->count < 3}tg2{elseif $weighted_tag->count < 5}tg3{elseif $weighted_tag->count < 10}tg4{elseif $weighted_tag->count < 30}tg5{else}tg6{/if}">
                     <a href="{$www_server}/leaflets.php?t={$weighted_tag->tag}">{$weighted_tag->tag}</a>
                 </li>
             {/foreach}
