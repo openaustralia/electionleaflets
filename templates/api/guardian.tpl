@@ -30,7 +30,15 @@
 {/literal}
 <div id="straightchoice">
     {if $has_leaflets}
-        <h2>Latest campaign material near here</h2>
+        {if $method == 'constituency'}
+            <h2>Latest campaign material near here</h2>
+        {/if}
+        {if $method == 'party'}
+            <h2>Latest campaign material</h2>
+        {/if}
+        {if $method == 'latest'}
+            <h2>Latest campaign material</h2>
+        {/if}
         <p>
             from
             <br/>
@@ -47,7 +55,14 @@
                         <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/>
                     </a>
                     <p>
-                        <a href="{$www_server}/party.php?p={$leaflet->publisher_party_id}"><strong>{$leaflet->party_name}</strong></a> uploaded {$leaflet->date_uploaded|date_format:"%A %e %B %Y"}
+                        {if $method != 'party'}
+                            <a href="{$www_server}/party.php?p={$leaflet->publisher_party_id}"><strong>{$leaflet->party_name}</strong>
+                            </a>
+                            uploaded {$leaflet->date_uploaded|date_format:"%A %e %B %Y"}
+                        {else}
+                            Uploaded {$leaflet->date_uploaded|date_format:"%A %e %B %Y"}
+                        {/if}
+
                     </p>
                 </li>
             {/foreach}
@@ -62,7 +77,7 @@
     <p class="straightchoice_section">
         <a href="{$www_server}/addupload.php">Help The Straight Choice monitor the campaign by uploading material you receive</a>
     </p>
-    {if $has_leaflets}    
+    {if $has_leaflets}
         <p class="straightchoice_section">
             <a href="{$www_server}/leaflets.php?n={$leaflets[0]->constituency_url_id}">More campaign material from this area</a>
         </p>

@@ -49,9 +49,10 @@ class apicall_page extends pagebase {
 		$this->reset_smarty(TEMPLATE_DIR . "/api/" . $this->output . ".tpl");
     	$result = $this->get_data();
 
-		if($this->method == 'constituency'){    	    
+		if($this->method == 'constituency' || $this->method == 'party'|| $this->method == 'latest'){    	    
     	    if($this->success){
     	        $this->assign("leaflets", $result);
+    	        $this->assign("method", $this->method);    	        
     	        $this->assign("has_leaflets", count($result) > 0);	        
     		}else{
     		    throw_404();
@@ -64,7 +65,8 @@ class apicall_page extends pagebase {
     function get_data(){
         $return = null;
         $this->leaflet_search->number = $this->count;
-        
+
+        //cosntituency
         if($this->method == 'constituency'){
             $constituency = null;
             
@@ -85,7 +87,30 @@ class apicall_page extends pagebase {
                 $return = $this->leaflet_search->search();
             }
             
-        }else if ($this->method == 'image'){
+        }
+
+        //party
+        if($this->method == 'party'){
+
+            // for now we are only handling the guardian
+            if(isset($this->all_arguments['party_id'])){
+
+                $this->leaflet_search->publisher_party_id = $this->all_arguments['party_id'];
+                $this->success = true;
+                $return = $this->leaflet_search->search();
+                
+            }
+        }
+        
+        //latest
+        if($this->method == 'latest'){
+            $this->success = true;
+            $return = $this->leaflet_search->search();
+        }
+        
+
+        //image
+        if ($this->method == 'image'){
             if(isset($this->all_arguments['leaflet_id']) && isset($this->all_arguments['size'])){
                 $search = factory::create('search');                
                 $result = $search->search_cached("leaflet_image", 
@@ -95,6 +120,7 @@ class apicall_page extends pagebase {
                 }
             }                
         }
+
         
         return $return;
     }
