@@ -56,7 +56,7 @@
                     </a>
                     <p>
                         {if $method != 'party'}
-                            <a href="{$www_server}/party.php?p={$leaflet->publisher_party_id}"><strong>{$leaflet->party_name}</strong>
+                            <a href="{$www_server}/leaflets.php?p={$leaflet->publisher_party_id}"><strong>{$leaflet->party_name}</strong>
                             </a>
                             uploaded {$leaflet->date_uploaded|date_format:"%A %e %B %Y"}
                         {else}
@@ -79,7 +79,15 @@
     </p>
     {if $has_leaflets}
         <p class="straightchoice_section">
-            <a href="{$www_server}/leaflets.php?n={$leaflets[0]->constituency_url_id}">More campaign material from this area</a>
+            {if $method == 'constituency'}
+                <a href="{$www_server}/leaflets.php?n={$leaflets[0]->constituency_url_id}">More campaign material from this area</a>
+            {/if}
+            {if $method == 'party'}
+                <a href="{$www_server}/leaflets.php?p={$leaflets[0]->publisher_party_id}">More campaign material for the party</a>
+            {/if}
+            {if $method == 'latest'}
+                <a href="{$www_server}/leaflets.php">More latest campaign material</a>
+            {/if}
         </p>
     {/if}
 </div>
