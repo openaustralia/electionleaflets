@@ -564,10 +564,15 @@
         return $anum;
     }
     
-    function resize_image($file_name, $max_side, $destination, $restrict_width = false){
+    function resize_image($file_name, $max_side, $destination, $restrict_width = false, $format = 'jpeg'){
 
         //grab the image
-        $image = imagecreatefromjpeg($file_name);
+        $image = null;
+        if ($format == 'gif'){
+            $image = imagecreatefromgif($file_name);
+        }else{
+            $image = imagecreatefromjpeg($file_name);            
+        }
 
         //get size (TODO: this reall should use the above image object rather than reopening)
         list($width, $height) = getimagesize($file_name);
@@ -588,7 +593,11 @@
         imagecopyresampled($tmp, $image, 0, 0, 0, 0, $new_width, $new_height, $width, $height);
 
         //save & destroy
-        imagejpeg($tmp, $destination, 100);
+        if ($format == 'gif'){        
+            imagepng($tmp, $destination, 100);            
+        }else{
+            imagejpeg($tmp, $destination, 100);
+        }
         imagedestroy($image);
         imagedestroy($tmp);        
         

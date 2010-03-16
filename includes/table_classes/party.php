@@ -13,7 +13,8 @@ class tableclass_party extends tablebase {
     public $party_id;
     public $name;
     public $country_id;
-    public $major;    
+    public $major;
+    public $logo_file;
 
 
     /* Static get */
@@ -26,6 +27,7 @@ class tableclass_party extends tablebase {
             'name'   			=> DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,
             'country_id'  => DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
             'major'  => DB_DATAOBJECT_BOOL,
+            'logo_file' => DB_DATAOBJECT_STR,
         );
     }
 
