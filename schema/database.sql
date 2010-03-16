@@ -648,6 +648,8 @@ CREATE TABLE  `party` (
   PRIMARY KEY  (`party_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1358 DEFAULT CHARSET=utf8;
 
+ALTER TABLE `electionleaflet`.`party` ADD COLUMN `logo_file` varchar(100) AFTER `major`;
+
 --
 -- Dumping data for table `party`
 --
