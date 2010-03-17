@@ -7,7 +7,7 @@
         {foreach name="leaflets" from="$leaflets" item="leaflet"}
             <item>
                 <title>{$leaflet->title}</title>
-                <pubDate>{$leaflet->date_delivered|date_uploaded:"%a, %d %b %Y"} %H:%M:%S GMT</pubDate>                
+                <pubDate>{$leaflet->date_uploaded|date_format:"%a, %d %b %Y"} %H:%M:%S GMT</pubDate>                
                 <guid isPermaLink="true">{$www_server}/leaflet.php?q={$leaflet->leaflet_id}</guid>
                 <georss:featurename>{$group->name}</georss:featurename>
                 <georss:point>{$leaflet->lat} {$leaflet->lng}</georss:point>                
