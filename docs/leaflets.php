@@ -72,6 +72,7 @@ class leaflets_page extends pagebase {
         $this->assign("has_party_attack", isset($this->leaflet_search->party_attack_id));        
         $this->assign("heading", $title_parts);
         $this->assign("alert_link", $this->get_alert_link());
+        $this->assign("search_link", WWW_SERVER);        
 
 	}
 	

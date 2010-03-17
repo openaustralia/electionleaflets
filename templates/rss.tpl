@@ -6,7 +6,7 @@
 		<description>{$site_tag_line}</description>
         {foreach name="leaflets" from="$leaflets" item="leaflet"}
             <item>
-                <title>{$leaflet->title}</title>
+                <title>{$leaflet->title|escape}</title>
                 <pubDate>{$leaflet->date_uploaded|date_format:"%a, %d %b %Y %H:%M:%S"} GMT</pubDate>                
                 <guid isPermaLink="true">{$www_server}/leaflet.php?q={$leaflet->leaflet_id}</guid>
                 <georss:featurename>{$group->name}</georss:featurename>
