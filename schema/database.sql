@@ -1170,3 +1170,14 @@ INSERT INTO `constituency_type` VALUES  (1,'European Parliament Constituency',22
  
  ALTER TABLE `leaflet` ADD COLUMN `live` boolean AFTER `date_delivered`;
  
+ 
+ CREATE TABLE `email_que` (
+   `email_que_id` INT NOT NULL AUTO_INCREMENT,
+   `email` varchar(255) NOT NULL,
+   `postcode` varchar(20) NOT NULL,
+   PRIMARY KEY (`email_que_id`)
+ )
+
+CHARACTER SET utf8;
+ALTER TABLE `email_que` ADD COLUMN `name` varchar(255) AFTER `email_que_id`;
+ALTER TABLE `email_que` ADD COLUMN `delivery_date` TIMESTAMP AFTER `postcode`; 
