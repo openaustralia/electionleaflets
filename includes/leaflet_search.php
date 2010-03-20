@@ -11,7 +11,7 @@ class leaflet_search {
     public $category_id = null;
     public $country_id = 225;
     public $constituency_id = null;
-    public $tag = null;    
+    public $tag = null;
     
     public $number = null;
     public $start = null;    
@@ -24,24 +24,24 @@ class leaflet_search {
     }
 
     //search
-    public function search($cache = false){
+    public function search($cache = false, $live_only = true){
 
         //is geo search?
         if(isset($this->lng) && isset($this->lat)){
-            $this->search_geo($cache);
+            $this->search_geo($cache, $live_only);
         }else{
-            $this->search_standard($cache);            
+            $this->search_standard($cache, $live_only);            
         }
 
         return $this->results;
 
     }
     
-    private function search_geo($cache){
+    private function search_geo($cache, $live_only = true){
 
         if(!$cache){
             $this->results = $this->search->search_proximity("leaflet",
-                $this->get_where_clauses(), 
+                $this->get_where_clauses($live_only), 
                 $this->lng,
                 $this->lat,
                 MAX_DISTANCE_SEARCH,
@@ -53,7 +53,7 @@ class leaflet_search {
             );
         }else{
             $this->results = $this->search->search_cached("leaflet",
-                $this->get_where_clauses(), 
+                $this->get_where_clauses($live_only), 
                 'AND', 
                 $this->get_joins(),
                 array(array("distance", "ASC")),
@@ -64,10 +64,10 @@ class leaflet_search {
         
     }
     
-    private function search_standard($cache){
+    private function search_standard($cache, $live_only = true){
         if(!$cache){
             $this->results = $this->search->search("leaflet",
-                $this->get_where_clauses(), 
+                $this->get_where_clauses($live_only), 
                 'AND', 
                 $this->get_joins(),
                 array(array("date_uploaded", "DESC")),
@@ -76,7 +76,7 @@ class leaflet_search {
             );
         }else{
             $this->results = $this->search->search_cached("leaflet",
-                $this->get_where_clauses(), 
+                $this->get_where_clauses($live_only), 
                 'AND', 
                 $this->get_joins(),
                 array(array("date_uploaded", "DESC")),
@@ -116,9 +116,13 @@ class leaflet_search {
 
     }
 
-    private function get_where_clauses(){
+    private function get_where_clauses($live_only){
 
         $where_clauses = array();
+
+        if ($live_only){
+            array_push($where_clauses, array("leaflet.live", "=", 1));                    
+        }
 
         //required
         array_push($where_clauses, array("leaflet_image.sequence", "=", 1));        

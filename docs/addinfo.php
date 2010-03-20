@@ -123,6 +123,7 @@ class addinfo_page extends pagebase {
             $leaflet->lat = $this->lat;
             $leaflet->name = $this->data['txtName'];
             $leaflet->email = $this->data['txtEmail'];
+            $leaflet->live = true;
             
             //date delivered
             $days = $this->data['ddlDelivered'];
