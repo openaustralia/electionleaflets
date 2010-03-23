@@ -123,8 +123,8 @@ class addinfo_page extends pagebase {
             $leaflet->lat = $this->lat;
             $leaflet->name = $this->data['txtName'];
             $leaflet->email = $this->data['txtEmail'];
-            $leaflet->live = true;
-            
+            $leaflet->live = 1;
+
             //date delivered
             $days = $this->data['ddlDelivered'];
             if((int)$days > 30){
