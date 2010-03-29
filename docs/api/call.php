@@ -41,11 +41,19 @@ class apicall_page extends pagebase {
 		$this->leaflet_search = factory::create("leaflet_search");
 		
     }
-        
-    
+
+
 	//bind
 	function bind() {
-		
+
+        //add a cache header
+        //TODO: make this generic and add to config file
+		$expires = 60*60*5;
+        header("Pragma: public");
+        header("Cache-Control: maxage=".$expires);
+        header('Expires: ' . gmdate('D, d M Y H:i:s', time()+$expires) . ' GMT');
+
+		//output
 		$this->reset_smarty(TEMPLATE_DIR . "/api/" . $this->output . ".tpl");
     	$result = $this->get_data();
 
