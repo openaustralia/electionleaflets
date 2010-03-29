@@ -64,7 +64,8 @@
             <dd>Any kind of written communication - letters, leaflets, flyers - contain useful information. If in doubt, upload it anyway or get in touch with us.</dd> 
             <dt>Can I send you leaflets by post?</dt>
             <dd>
-                Yes. Please send them to: <address>PO BOX 4312, Wolverhampton, WV11 3WZ</address> and mark each leaflet with the postcode (or postcode district) it was delivered to.
+                Yes. Please send them to: <address>The Straight Choice c/o Scraperwiki, LSP 2, 146
+                Brownlow Hill, Liverpool L3 5RF</address> and mark each leaflet with the postcode (or postcode district) it was delivered to.
             </dd>
         </dl>
         <h3 id="contact">Contact</h3>
