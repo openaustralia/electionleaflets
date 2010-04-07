@@ -20,7 +20,7 @@
         $leaflets = get_leaflets($email_alert);
 
         if(count($leaflets) > 0){
-            send_alert($email_alert);
+            send_alert($email_alert, $leaflets);
         }
 
         //update last_sent
@@ -33,10 +33,10 @@
         $search = factory::create('search');
         $time = time() - (60 * 60 * $email_alert->frequency_hours);
         $time = mysql_date($time);
-        
+
         //do we have any matching leaflets?
         if($email_alert->type = 'attack'){
-            $search->search('leaflet', 
+            $results = $search->search('leaflet', 
                 array(
                     array('leaflet_party_attack.party_id', '=', $email_alert->parent_id),
                     array('leaflet.date_uploaded', '>=', $time)
@@ -45,14 +45,14 @@
     			array(array('leaflet_party_attack', 'inner'))
             );
         }else if($email_alert->type = 'party'){
-            $search->search('leaflet', 
+            $results = $search->search('leaflet', 
                 array(
                     array('leaflet.party_id', '=', $email_alert->parent_id),
                     array('leaflet.date_uploaded', '>=', $time)                    
                 )
             );
         }else if($email_alert->type = 'constituency'){
-            $search->search('leaflet', 
+            $results = $search->search('leaflet', 
                 array(
                     array('leaflet_constituency.constituency_id', '=', $email_alert->parent_id),
                     array('leaflet.date_uploaded', '>=', $time)                    
@@ -62,7 +62,7 @@
             );
 
         }else if($email_alert->type = 'category'){
-            $search->search('leaflet', 
+            $results = $search->search('leaflet', 
                 array(
                     array('leaflet_category.category_id', '=', $email_alert->parent_id),
                     array('leaflet.date_uploaded', '>=', $time)                    
@@ -72,6 +72,8 @@
             );
 
         }
+        
+        return $results;
     }
 
     function send_alert($email_alert, $leaflets){
@@ -88,7 +90,8 @@
         $body = $smarty->fetch(TEMPLATE_DIR . '/emails/send_alert.tpl');
 
 		//send email
-		send_text_email($email_alert->email, SITE_NAME, CONFIRMATION_EMAIL, $subject, $body);
+		send_text_email("test@memespring.co.uk", SITE_NAME, CONFIRMATION_EMAIL, $subject, $body);
+		//send_text_email($email_alert->email, SITE_NAME, CONFIRMATION_EMAIL, $subject, $body);
 
     }
 
