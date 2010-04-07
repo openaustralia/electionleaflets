@@ -8,7 +8,7 @@
  	require_once(dirname(__FILE__) . "/include_path.php");
 	require_once(dirname(__FILE__) . "/../includes/init.php");
 
-    $email_alert = factory::create('leaflet');
+    $email_alert = factory::create('email_alert');
     $email_alerts = $email_alert->execute("
         Select * from email_alert 
         where hour(timediff(now(), last_sent)) >= frequency_hours and activated = 1
@@ -90,13 +90,12 @@
         $body = $smarty->fetch(TEMPLATE_DIR . '/emails/send_alert.tpl');
 
 		//send email
-		send_text_email("test@memespring.co.uk", SITE_NAME, CONFIRMATION_EMAIL, $subject, $body);
-		//send_text_email($email_alert->email, SITE_NAME, CONFIRMATION_EMAIL, $subject, $body);
+		send_text_email($email_alert->email, SITE_NAME, CONFIRMATION_EMAIL, $subject, $body);
 
     }
 
     function get_url($email_alert){
-        $return = WWW_SERVER . 'leaflets.php?';
+        $return = WWW_SERVER . '/leaflets.php?';
         
         //do we have any matching leaflets?
         if($email_alert->type = 'attack'){

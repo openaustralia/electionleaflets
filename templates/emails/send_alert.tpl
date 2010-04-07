@@ -1,6 +1,6 @@
 {textformat style='email'}
 
-$leaflet_count {if $leaflet_count == 1}new leaflet has been uploaded{else}new leaflets have been uploaded{/if}:
+{if $leaflet_count == 1}New leaflet has been uploaded{else}New leaflets have been uploaded{/if}:
 
 {$url}
 
