@@ -24,7 +24,7 @@
         }
 
         //update last_sent
-        $email_alert->last_sent = $this->last_sent = mysql_date(time());
+        $email_alert->last_sent = mysql_date(time());
         $email_alert->update();
 	}
 
