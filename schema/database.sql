@@ -1181,3 +1181,7 @@ INSERT INTO `constituency_type` VALUES  (1,'European Parliament Constituency',22
 CHARACTER SET utf8;
 ALTER TABLE `email_que` ADD COLUMN `name` varchar(255) AFTER `email_que_id`;
 ALTER TABLE `email_que` ADD COLUMN `delivery_date` TIMESTAMP AFTER `postcode`; 
+
+
+-- add missing url ids
+ALTER TABLE `party` ADD COLUMN `url_id` varchar(255) AFTER `logo_file`;
