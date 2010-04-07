@@ -37,7 +37,7 @@ class tableclass_leaflet_image extends tablebase {
 
 	function rotate($degrees){
 	    $return = true;
-	    $sizes = array("thumbnail", "medium", "large", "original");
+	    $sizes = array("thumbnail", "small", "medium", "large", "original");
 	    foreach ($sizes as $size) {
 	        $file_name = IMAGES_DIR . "/" . $size . "/" . $this->image_key . ".jpg";	        
 	        if (file_exists($file_name)){

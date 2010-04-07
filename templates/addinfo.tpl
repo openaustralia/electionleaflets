@@ -18,6 +18,7 @@
                     <label for="txtDescription">Enter a transcript of the main points / first paragraph</label>
                     <textarea type="text" id="txtDescription" name="txtDescription" {if $warn_txtDescription}class="error"{/if} cols="70" rows="5">{$data.txtDescription}</textarea>
                     <br/>
+                    <strong>Note: please only add what is actually on the leaflet, not your opinion of it.</strong>
                 </li>
                 <li>
                     <label for="txtPostcode">Which postcode was the leaflet was delivered to? *</label>
