@@ -40,7 +40,7 @@ class addinfo_page extends pagebase {
 		);
 
 		//get parties
-		$parties = $search->search_cached("party", 
+		$parties = $search->search("party", 
 		    array(array('country_id', '=', $this->country_id)),
 		    'AND',
 		    null,
