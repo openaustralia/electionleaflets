@@ -1,8 +1,8 @@
 <?php
 	//get config file
 
- 	//require_once("/data/vhost/thestraightchoice.org/config/general.php");//TODO this is hardcodes, bad!
-    require_once("/data/vhost/electionleaflet/config/general.php");//TODO this is hardcodes, bad!
+ 	require_once("/data/vhost/thestraightchoice.org/config/general.php");//TODO this is hardcodes, bad!
+    //require_once("/data/vhost/electionleaflet/config/general.php");//TODO this is hardcodes, bad!
     
 	//set include path
 	$include_path = ".:";

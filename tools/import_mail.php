@@ -83,7 +83,7 @@ function send_fail($email){
     $smarty->template_dir = TEMPLATE_DIR;
 
     $subject = 'Failed to upload leadflet';
-    $body = $smarty->fetch(TEMPLATE_DIR . '/emails/emailin_fail.tpl');
+    $body = $smarty->fetch(TEMPLATE_DIR . '/emails/emailin_fail.tlp');
 
 	//send email
 	send_text_email(trim($email), SITE_NAME, CONFIRMATION_EMAIL, $subject, $body);
