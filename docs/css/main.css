@@ -160,3 +160,6 @@ small span.huge {font-size:3em;}
 
 /* Attention */
 div.attention {text-align:center; font-size:1.3em;}
+
+/* upload scroller */
+.upload_scroller {position:fixed; bottom:0; height:5%;}

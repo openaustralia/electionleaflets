@@ -7,7 +7,8 @@ class addinfo_page extends pagebase {
     private $selected_party_attack_ids = array();    
     private $selected_category_ids = array();
     private $lng = null;
-    private $lat = null;      
+    private $lat = null;
+    private $image_que_items = array();
 
     //setup
     function setup(){
@@ -15,8 +16,8 @@ class addinfo_page extends pagebase {
         if(!isset($upload_key)){
             redirect("addupload.php");
         }else{
-            $image_que_items = $this->get_images_from_que();   
-            if(count($image_que_items) <= 0){
+            $this->image_que_items = $this->get_images_from_que();   
+            if(count($this->image_que_items) <= 0){
                 redirect("addupload.php");                
             }
         }
@@ -56,7 +57,9 @@ class addinfo_page extends pagebase {
 		$this->assign('categories', $categories);		
 		$this->assign('parties', $parties);				
 		$this->assign('selected_party_attack_ids', $this->selected_party_attack_ids);	
-		$this->assign('selected_category_ids', $this->selected_category_ids);												
+		$this->assign('selected_category_ids', $this->selected_category_ids);	
+		$this->assign('image_que_items', $this->image_que_items);			
+
 	}
 
 	function unbind(){

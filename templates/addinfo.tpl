@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 
-<div id="divContentFull">
+<div class="contentfull">
     <form id="frmUpload" method="post" action="{$form_action}">
         {include file="formvars.tpl"}
         <h1>Add a leaflet (step 2 of 2)</h1>
@@ -102,6 +102,14 @@
             <input type="submit"  value="Save leaflet"/>
         </div>
     </form>    
-</div>                
-    
+</div>         
+<!--       
+<div class="contentfull">
+    <div class="upload_scroller">
+        {foreach from="$image_que_items" item="image_que_item"}
+            <img src="{$www_server}/image.php?s=l&i={$image_que_item->image_key}"/>
+        {/foreach}
+    </div>
+</div>
+-->
 {include file="footer.tpl"}
