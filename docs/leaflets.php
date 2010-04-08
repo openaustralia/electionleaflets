@@ -79,8 +79,7 @@ class leaflets_page extends pagebase {
 	function unbind(){
 	    $this->strip_tags_from_data();
     }
-    
-    
+
     private function has_vars_set(){
         $return = false;
         if(isset($this->leaflet_search->constituency_id) || isset($this->leaflet_search->search_term) || isset($this->leaflet_search->publisher_party_id) || isset($this->leaflet_search->party_attack_id) || isset($this->leaflet_search->category_id) || isset($this->leaflet_search->tag) || (isset($this->leaflet_search->lng) && isset($this->leaflet_search->lat))){

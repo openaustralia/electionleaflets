@@ -1185,3 +1185,16 @@ ALTER TABLE `email_que` ADD COLUMN `delivery_date` TIMESTAMP AFTER `postcode`;
 
 -- add missing url ids
 ALTER TABLE `party` ADD COLUMN `url_id` varchar(255) AFTER `logo_file`;
+
+CREATE TABLE `image_que` (
+  `image_que_id` INT NOT NULL AUTO_INCREMENT,
+  `upload_key` varchar(255) NOT NULL,
+  `name` varchar(100),
+  `email` varchar(100),
+  PRIMARY KEY (`image_que_id`)
+)
+CHARACTER SET utf8;
+
+ALTER TABLE `image_que` ADD COLUMN `image_key` varchar(255) AFTER `email`;
+ALTER TABLE `image_que` ADD COLUMN `uploaded_date` timestamp AFTER `image_key`;
+

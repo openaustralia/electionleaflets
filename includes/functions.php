@@ -563,7 +563,7 @@
         }
         return $anum;
     }
-    
+
     function resize_image($file_name, $max_side, $destination, $restrict_width = false, $format = 'jpeg'){
 
         //grab the image

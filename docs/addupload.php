@@ -1,15 +1,14 @@
 <?php
 require_once('init.php');
 
-class addupload_page extends pagebase {
-
-    private $image_ids = array();
+class addupload_page extends pagebase {    
 
     //setup
     function setup(){
+
         //clear session
-        session_delete("image_ids");
-        
+        session_delete("upload_key");
+
         //store callback url in viewstate if needed
         $callback = get_http_var('callback');        
         if(isset($callback)){
@@ -18,6 +17,9 @@ class addupload_page extends pagebase {
                 $this->viewstate['callback'] = $callback;                
             }
         }
+        
+        //create a new upload id and add to viewstate
+        session_write("upload_key", md5(uniqid(rand(), true))); 
     }
 
 	//bind
@@ -32,7 +34,11 @@ class addupload_page extends pagebase {
 	        if(isset($_FILES[$key]) && $_FILES[$key]['name'] != ''){
                 $temp_file = $this->upload_image($key);
                 if($temp_file !== false){
-                    $this->save_image($temp_file);
+            	    $image_que = factory::create('image_que');
+            	    $image_que->upload_key =  session_read("upload_key");
+            	    $this->viewstate['upload_key'];
+            	    $image_que->save_image($temp_file);
+            	    $image_que->insert();
                 }
             }
 	    }
@@ -46,9 +52,6 @@ class addupload_page extends pagebase {
      
         if($this->validate()){
 
-            //save IDs to session
-            session_write("image_ids", $this->image_ids);
-
             //redirect with callback provided
             if($this->viewstate['callback']){
                 redirect("addinfo.php?callback=" . urlencode($this->viewstate['callback']));
@@ -59,35 +62,6 @@ class addupload_page extends pagebase {
         }else{
             $this->bind();
             $this->render();
-        }
-
-    }
-
-    private function save_image($temp_file){
-
-	    //generate a random ID for this image
-	    $file_id = md5(uniqid(rand(), true));
-	    array_push($this->image_ids, $file_id);
-
-	    //copy original
-	    $original_file_name = IMAGES_DIR . "/original/" . $file_id . ".jpg";
-	    $moved = move_uploaded_file($temp_file, $original_file_name);
-
-        if(!$moved){
-            $this->add_warning("Sorry something went wrong saving your image");
-        }else{
-
-            //save large
-            resize_image($original_file_name, IMAGE_LARGE_SIZE, IMAGES_DIR . "/large/" . $file_id . ".jpg");
-            
-    	    //save medium
-            resize_image($original_file_name, IMAGE_MEDIUM_SIZE, IMAGES_DIR . "/medium/" . $file_id . ".jpg");
-
-            //save small
-            resize_image($original_file_name, IMAGE_SMALL_SIZE, IMAGES_DIR . "/small/" . $file_id . ".jpg");
-            
-    	    //save thumbnail
-            resize_image($original_file_name, IMAGE_THUMBNAIL_SIZE, IMAGES_DIR . "/thumbnail/" . $file_id . ".jpg", true);    	    
         }
 
     }
@@ -117,12 +91,16 @@ class addupload_page extends pagebase {
         }
         
         //if errors return false
-        if(count($this->warnings) > 0){
-            $return = false;
-        }else{
-            $return = $image['tmp_name'];            
+        if(count($this->warnings) == 0){
+            
+            //save it to disk in a temp location
+            $temp_file_name = TEMP_DIR . '/' . md5(uniqid(rand(), true));
+    	    $moved = move_uploaded_file($image['tmp_name'], $temp_file_name);
+    	    if($moved){
+    	        $return = $temp_file_name;
+	        }
         }
-        
+
         return $return;
     }
 

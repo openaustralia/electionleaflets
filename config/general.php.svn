@@ -9,6 +9,7 @@ define('INCLUDE_DIR', ROOT_DIR . '/includes');
 define('PEAR_DIR', INCLUDE_DIR . '/PEAR');
 define('DATA_DIR', ROOT_DIR . '/data');
 define('IMAGES_DIR', DATA_DIR . '/images');
+define('TEMP_DIR', DATA_DIR . '/temp');
 define('DOC_DIR' , ROOT_DIR . '/docs');
 define('TOOLS_DIR' , ROOT_DIR . '/tools');
 define('CONFIG_DIR' , ROOT_DIR . '/config');
@@ -86,5 +87,12 @@ define("LOGIN_COOKIE_EXPIRE_DAYS", 14);
 
 // TheyWorkForYou API
 define("THEYWORKFORYOU_API_KEY", 'YOUR KEY');
+
+/image upload by email/
+define("UPLOAD_MAIL_SERVER", 'AN IMAP SERVER LIKE GMAIL'); //imap server
+define("UPLOAD_MAIL_USER", 'USERNAME');
+define("UPLOAD_MAIL_PASSWORD", 'PASSWORD');
+
+?>
 
 ?>

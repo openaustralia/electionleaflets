@@ -34,6 +34,12 @@ class factory {
 				if (!$require_only) {
 					$object = DB_DataObject::factory($class_name);
 				}
+			case 'image_que':
+				require_once( 'table_classes/config.php' );
+				require_once('table_classes/image_que.php');
+				if (!$require_only) {
+					$object = DB_DataObject::factory($class_name);
+				}				
 			case 'email_alert':
 				require_once( 'table_classes/config.php' );
 				require_once('table_classes/email_alert.php');

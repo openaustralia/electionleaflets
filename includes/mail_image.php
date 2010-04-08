@@ -9,17 +9,16 @@ class MailImage {
     private $mail_server = null;
     private $username = null;
     private $password = null;
-    private $min_import_size = 400;
+    public $messages = array();
 
     public function __construct($mail_server, $username, $password){    
-        $self->$mail_server = $mail_server;
-        $self->$username = $username;
-        $self->$password = $password;
+        $this->mail_server = $mail_server;
+        $this->username = $username;
+        $this->password = $password;
     }
 
     public function fetch ($delete = false) {
-
-        $oImap = imap_open('{'. $self->mail_server.':993/imap/ssl/novalidate-cert}', $self->username, $self->password);
+        $oImap = imap_open('{'. $this->mail_server.':993/imap/ssl/novalidate-cert}', $this->username, $this->password);
 
         $oMailboxStatus = imap_check($oImap);
         $aMessages = imap_fetch_overview($oImap, "1:{$oMailboxStatus->Nmsgs}");
@@ -28,9 +27,25 @@ class MailImage {
 
         foreach ($aMessages as $oMessage) {
             $fileContent = $fileType = '';
-            $postCode = geocoder::extract_postcode($oMessage->subject);
-            $fromAddress = $oMessage->from;            
-            
+        	$geocoder = factory::create('geocoder');
+            $postCode = $geocoder->extract_postcode($oMessage->subject);
+
+            $fromName = null;
+            $fromEmail = null;
+
+            if (strpos($oMessage->from, '<')){
+                $split = split('<', $oMessage->from);
+                
+                //name - make sure name not an email address
+                $fromName = trim($split[0]);
+                if(valid_email($fromName)){
+                    $fromName = null;
+                }
+                
+                //email
+                $fromEmail = trim(str_replace('>', '', $split[1]));
+            }
+
             $images = array();
 
             $messageStructure = imap_fetchstructure($oImap, $oMessage->msgno);
@@ -57,10 +72,9 @@ class MailImage {
                         $fileContent = base64_decode($encodedBody);
 
                         $oImage = imagecreatefromstring($fileContent);
-                        if (imagesx($oImage) < $self->min_import_size && imagesy($oImage) < $self->min_import_size) {
-                            $fileContent = null;
-                        }else{
-                            array_push($images, $oImage);
+                        
+                        if (imagesx($oImage) > $this->min_import_size && imagesy($oImage) > $this->min_import_size) {
+                            array_push($images, $oImage);                                                    
                         }
 
                         $fileType = strtolower($oPart->subtype);
@@ -68,14 +82,15 @@ class MailImage {
                 }
             }
 
-            if ($postCode && $fileContent) {
-                array_push($validMessages, array(
-                    'postcode'  => $postCode,
-                    'images'      => $images,
-                    'file_type'  => $fileType,
-                    'from_address'  => $fromAddress,                    
-                ));
-            }
+            //add to the messages array
+            array_push($validMessages, array(
+                'postcode'  => $postCode,
+                'images'      => $images,
+                'file_type'  => $fileType,
+                'from_address'  => $fromAddress,
+                'from_email'  => $fromEmail,                
+                'from_name'  => $fromName,
+            ));
 
             if ($delete){
                 imap_delete($oImap, $oMessage->msgno);
@@ -84,7 +99,6 @@ class MailImage {
 
         imap_close($oImap, CL_EXPUNGE);
 
-        return $validMessages;
+        $this->messages = $validMessages;
     }
-
 }

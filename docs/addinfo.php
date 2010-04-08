@@ -11,11 +11,16 @@ class addinfo_page extends pagebase {
 
     //setup
     function setup(){
-        $image_ids = session_read("image_ids");        
-        if(!isset($image_ids) || count($image_ids) == 0){
+        $upload_key = session_read("upload_key");
+        if(!isset($upload_key)){
             redirect("addupload.php");
+        }else{
+            $image_que_items = $this->get_images_from_que();   
+            if(count($image_que_items) <= 0){
+                redirect("addupload.php");                
+            }
         }
-        
+
         //store callback url in viewstate if needed
         $callback = get_http_var('callback');        
         if(isset($callback)){
@@ -138,18 +143,18 @@ class addinfo_page extends pagebase {
             if($leaflet->insert()){
 
                 //save images
-                $image_ids = session_read("image_ids");
+                $images = $this->get_images_from_que();
  
                 $sequence = 1;
-                foreach ($image_ids as $image_id) {
+                foreach ($images as $image) {
                     $leaflet_image = factory::create("leaflet_image");
                     $leaflet_image->leaflet_id = $leaflet->leaflet_id;
-                    $leaflet_image->image_key = $image_id;
+                    $leaflet_image->image_key = $image->image_key;
                     $leaflet_image->sequence = $sequence;
                     if(!$leaflet_image->insert()){
                         trigger_error("Unable to save leaflet image");                    
                     }
-                    
+
                     $sequence ++;
                 }
                 
@@ -203,6 +208,9 @@ class addinfo_page extends pagebase {
 
             //clear session
             session_delete('image_ids');
+            
+            //clear the image que for this upload
+            $this->clear_images_from_que();
 
             //redirect with callback provided
             if($this->viewstate['callback']){
@@ -215,6 +223,26 @@ class addinfo_page extends pagebase {
             $this->bind();
             $this->render();            
         }
+    }
+
+    private function clear_images_from_que(){
+        $upload_key = session_read("upload_key");        
+        $image_que = factory::create('image_que');
+        $image_que->upload_key = $upload_key;
+        $image_que->delete();
+    }
+
+    private function get_images_from_que(){
+
+        $upload_key = session_read("upload_key");
+        $search = factory::create('search');
+        $image_que_items = $search->search("image_que", 
+                array(array("upload_key", "=", $upload_key)),
+                "AND",
+                null,
+                array(array("uploaded_date", "ASC"))
+            );
+        return $image_que_items;
     }
 
 }
