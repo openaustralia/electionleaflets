@@ -85,7 +85,7 @@ class MailImage {
             //add to the messages array
             array_push($validMessages, array(
                 'postcode'  => $postCode,
-                'images'      => $images,
+                'images'      => array_reverse($images),
                 'file_type'  => $fileType,
                 'from_address'  => $fromAddress,
                 'from_email'  => $fromEmail,                
