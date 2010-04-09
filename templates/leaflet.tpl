@@ -5,7 +5,7 @@
         <div>{$leaflet->description|nl2br}</div>
         <p>Published by <a href="{$www_server}/leaflets.php?p={$leaflet->party_party_id}">{$leaflet->party_name}</a></p>
         <p>
-            Delivered {if $constituency}in {$constituency} {/if}on {$leaflet->date_delivered|date_format:"%A, %e %B, %Y"} (approximate). Uploaded on {$leaflet->date_uploaded|date_format:"%A, %e %B, %Y"} at {$leaflet->date_uploaded|date_format:"%H:%M"}.
+            Delivered {if $constituency}in <a href="{$www_server}/leaflets.php?n={$constituency->url_id}">{$constituency->name}</a> {/if}on {$leaflet->date_delivered|date_format:"%A, %e %B, %Y"} (approximate). Uploaded on {$leaflet->date_uploaded|date_format:"%A, %e %B, %Y"} at {$leaflet->date_uploaded|date_format:"%H:%M"}.
         </p>
         <h4>Categories</h4>
         <ul>

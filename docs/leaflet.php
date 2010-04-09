@@ -72,7 +72,6 @@ class leaflet_page extends pagebase {
                 'AND',
                 array(array("leaflet_constituency", 'inner'))
             );    
-
         //js
         $this->onloadscript = "showMap('" . MAP_PROVIDER . "', " . number_format($leaflet->lng, 2) . ", " . number_format($leaflet->lat, 2) .");";        
 
