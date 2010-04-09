@@ -13,7 +13,7 @@ class addinfo_page extends pagebase {
     //setup
     function setup(){
         $upload_key = session_read("upload_key");
-        if(!isset($upload_key)){
+        if(!isset($upload_key) || $upload_key == ''){
             redirect("addupload.php");
         }else{
             $this->image_que_items = $this->get_images_from_que();   

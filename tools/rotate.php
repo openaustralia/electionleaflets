@@ -12,7 +12,7 @@
 	$leaflet_image_id = isset($swiches['i']) ? $swiches['i'] : null;	
 	$degrees = isset($swiches['d']) ? $swiches['d'] : 0;
 	$leaflet_id = isset($swiches['l']) ? $swiches['l'] : null;		
-    		
+
 	//setup search
 	$search = factory::create('search');
     $leaflet_images = array();
