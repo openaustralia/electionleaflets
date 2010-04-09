@@ -5,7 +5,7 @@
         <div>{$leaflet->description|nl2br}</div>
         <p>Published by <a href="{$www_server}/leaflets.php?p={$leaflet->party_party_id}">{$leaflet->party_name}</a></p>
         <p>
-            Delivered on {$leaflet->date_delivered|date_format:"%A, %e %B, %Y"} (approximate). Uploaded on {$leaflet->date_uploaded|date_format:"%A, %e %B, %Y"}.
+            Delivered {if $constituency}in {$constituency} {/if}on {$leaflet->date_delivered|date_format:"%A, %e %B, %Y"} (approximate). Uploaded on {$leaflet->date_uploaded|date_format:"%A, %e %B, %Y"} at {$leaflet->date_uploaded|date_format:"%H:%M"}.
         </p>
         <h4>Categories</h4>
         <ul>
@@ -13,14 +13,14 @@
                 <li><a href="{$www_server}/leaflets.php?c={$leaflet_category->category_id}">{$leaflet_category->name}</a></li>
             {/foreach}            
         </ul>
-        
+
         <h4>Tags</h4>
         <ul>
             {foreach from="$leaflet_tags" item="leaflet_tag"}
                 <li><a href="{$www_server}/leaflets.php?t={$leaflet_tag->tag}">{$leaflet_tag->tag}</a></li>
             {/foreach}
         </ul>
-        
+
         <h4>Parties attacked in this leaflet</h4>
         <ul>
             {foreach from="$leaflet_parties_attacked" item="leaflet_party_attack"}
