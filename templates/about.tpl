@@ -12,7 +12,10 @@
         </p>
         <p>
             The idea was conjured up in December 2008 at a weekend in Derbyshire, and 
-            finally acted upon in Francis's front living room in Cambridge at the end of April 2009. You can read about where the name for this website came from <a href="http://blog.thestraightchoice.org/2009/04/whats-in-the-name-the-straight-choice/">here</a>.
+            finally acted upon in Francis's front living room in Cambridge at the end of April 2009.
+        </p>
+        <p>
+            The name of the website is derived from a leaflet in the controversial by-election in <a href="http://en.wikipedia.org/wiki/Bermondsey_by-election,_1983">Bermondsey in 1983</a> which has become the type specimen of accusations of dodgy campaigning.
         </p>
         <h3>The team</h3>
         <p>
@@ -61,7 +64,7 @@
             <dt>Can I reuse the images on my website or blog?</dt>
             <dd>Yes, but please make a copy of the image on your site and link back to us.</dd>
             <dt>What do you mean by a leaflet? Does a letter count?</dt>
-            <dd>Any kind of written communication - letters, leaflets, flyers - contain useful information. If in doubt, upload it anyway or get in touch with us.</dd> 
+            <dd>Any kind of written communication - letters, leaflets, flyers - contain useful information. If in doubt, upload it anyway or get in touch with us.</dd>
             <dt>Can I send you leaflets by post?</dt>
             <dd>
                 Yes. Please send them to: <address>The Straight Choice c/o Scraperwiki, LSP 2, 146
