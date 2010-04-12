@@ -9,9 +9,13 @@ class leaflet_page extends pagebase {
     function setup(){
         $leaflet_id = get_http_var('q');
         if(!isset($leaflet_id)){
-            throw_404();
+            throw_404();                
         }else{
-            $this->leaflet_id = $leaflet_id;
+            if($leaflet_id == 1362){
+                redirect(WWW_SERVER . '/leaflet.php?q=' . 1339);
+            }else{
+                $this->leaflet_id = $leaflet_id;
+            }
         }
         
         $message_id = get_http_var('m');
