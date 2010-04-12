@@ -11,6 +11,9 @@
         <p>
             We need your help to photograph and map them so we can keep an eye on what the parties are up to, and try to keep them honest.
         </p>
+        <p id="pCount">
+            {$leaflet_count} leaflets added so far!
+        </p>
     </div>
      <div id="divAction">
         <div>

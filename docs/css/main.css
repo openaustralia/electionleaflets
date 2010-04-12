@@ -59,6 +59,7 @@ ul.results li a.leaflet {height:180px;padding-right:0;}
 /* Home */
 #divWelcome {width:45%; float:left;}
 #divWelcome p {font-size:1.3em; font-weight:bold; line-height:1.3em;}
+#pCount {font-size:1em!important; font-weight:normal;}
 
 #smlActivist, #smlPost {font-size:0.7em;}
 #divRecentLeaflets {padding-bottom:2em; position:relative; border-top:solid 2px #ccc; margin-top:1em;}
@@ -66,6 +67,7 @@ ul.results li a.leaflet {height:180px;padding-right:0;}
 #divRecentLeaflets p {clear:left;}
 #divRecentControls {position:absolute;top:1em; right:0; padding:5px;font-size:0.9em;}
 #divRecentControls p {padding:0;margin:1em 0 0 0; clear:left;}
+
 
 /* calls to action */
 #divAction div {float:left; width:45%; padding-left:5%;}
