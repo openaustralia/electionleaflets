@@ -30,42 +30,44 @@
     </div>
 
     
-    <div id="divPage" {if $is_home}class="home"{/if}>
+    <div id="divHeader"{if $hide_logo == true} class="small"{/if}>
         
-        <div id="divHeader"{if $hide_logo == true} class="small"{/if}>
-            
-            {if $hide_logo == false}
-                <p id="pLogo"><a href="{$www_server}"><span class="hide">{$site_name} - {$site_tag_line}</span></a></p>
-            {/if}
-            
-            <ul id="ulMenu">
-  	          <li>
-  	              <a href="{$www_server}">
-  	                  Home
-  	              </a>
-  	          </li>
-	          <li>
-	              <a href="{$www_server}/addupload.php">
-	                  Add a leaflet
-	              </a>
-	          </li>
-	          <li>
-	              <a href="{$www_server}/browse.php">
-	                  Browse
-	              </a>
-	          </li>
-	          <li>
-	              <a href="http://blog.thestraightchoice.org">
-	                  Blog
-	              </a>
-	          </li>
-	          <li>
-	              <a href="{$www_server}/about.php">
-	                  About
-	              </a>
-	          </li>
-	        </ul>
-        </div>
+        {if $hide_logo == false}
+            <p id="pLogo"><a href="{$www_server}"><span class="hide">{$site_name} - {$site_tag_line}</span></a></p>
+        {/if}
+        
+        <ul id="ulMenu">
+          <li>
+              <a href="{$www_server}">
+                  Home
+              </a>
+          </li>
+          <li>
+              <a href="{$www_server}/addupload.php">
+                  Add a leaflet
+              </a>
+          </li>
+          <li>
+              <a href="{$www_server}/browse.php">
+                  Browse
+              </a>
+          </li>
+          <!--
+          <li>
+              <a href="http://blog.thestraightchoice.org">
+                  Blog
+              </a>
+          </li>
+          -->
+          <li>
+              <a href="{$www_server}/about.php">
+                  About
+              </a>
+          </li>
+        </ul>
+    </div>
+    
+    <div id="divPage" {if $is_home}class="home"{/if}>
 
         <div id="divContent">
 

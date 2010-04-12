@@ -26,7 +26,6 @@ class index_page extends pagebase {
         */
         
         $this->assign("leaflets", $leaflets);			
-        $this->assign("hide_logo", true);
         $this->assign("is_home", true);
 	}
 
