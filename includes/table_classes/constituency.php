@@ -54,7 +54,7 @@ class tableclass_constituency extends tablebase {
     }
     
     //overrride insert to create a url id
-    public function insert (){
+    public function insert(){
 
 		$this->url_id = $this->generate_url_id($this->name);
 		
@@ -69,4 +69,9 @@ class tableclass_constituency extends tablebase {
 		return $saved;
 	}
 
+	public static function get_not_spots($limit = 10){
+	    $constituency = factory::create('constituency');
+        return $constituency->execute("select constituency.name, constituency.constituency_id from constituency left outer join leaflet_constituency on constituency.constituency_id = leaflet_constituency.constituency_id group by constituency.name, constituency.constituency_id limit " . $limit);
+    }
+    
 }

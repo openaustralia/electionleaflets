@@ -181,3 +181,6 @@ div.attention {text-align:center; font-size:1.3em;}
 #btnPrevious {left:0; top:0; border-right:solid 3px #000;}
 #btnNext {right:0; top:0; border-left:solid 3px #000;}
 #btnPrevious img, #btnNext img {position:absolute; top:35%; left:20%;}
+
+/* stats */
+div.stats div {float:left;padding-right:30px;}

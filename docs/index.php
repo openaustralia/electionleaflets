@@ -1,6 +1,7 @@
 <?php
 require_once('init.php');
 require_once('table_classes/party.php');
+require_once('table_classes/constituency.php');
 
 class index_page extends pagebase {
 
@@ -29,9 +30,12 @@ class index_page extends pagebase {
         
         //counts
         $total_counts = tableclass_party::get_party_count();
+        $not_spots = tableclass_constituency::get_not_spots();        
 
         //assign
         $this->assign("total_counts", $total_counts);
+        $this->assign("not_spots", $not_spots);        
+        
         $this->assign("leaflets", $leaflets);			
         $this->assign("is_home", true);
 	}

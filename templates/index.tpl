@@ -59,13 +59,28 @@
         <p><a href="{$www_server}/browse.php">Browse leaflets by party or category &raquo;</a></p>                        
     </div>
     <br class="clear"/>
+    
+    <div class="stats">
+        <div>
+            <h2>Top parties</h2>
+            <ol>
+                {foreach from="$total_counts" item="party" name="parties"}
+                    <li><a href="{$www_server}/leaflets.php?p={$party->party_id}">{$party->name}</a> {$party->count} leaflets</li>
+                {/foreach}
+            </ol>
+        </div>
+        <div>
+            <h2>Campaign not-spots</h2>
+            <ul>
+                {foreach from="$not_spots" item="constituency"}
+                    <li><a href="{$www_server}/leaflets.php?p={$cosntituency->url_id}">{$constituency->name}</a></li>
+                {/foreach}
+            </ul>
+        </div>
+    </div>
+    
 </div>
-<h2>Top parties</h2>
-<ol>
-    {foreach from="$total_counts" item="party" name="parties"}
-        <li><a href="{$www_server}/leaflets.php?p={$party->party_id}">{$party->name}</a> {$party->count} leaflets</li>
-    {/foreach}
-</ol>
+
 {*
 <div class="contenthalf">
     <h2>Leaflets by party</h2>
