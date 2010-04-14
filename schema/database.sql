@@ -1199,4 +1199,4 @@ ALTER TABLE `image_que` ADD COLUMN `image_key` varchar(255) AFTER `email`;
 ALTER TABLE `image_que` ADD COLUMN `uploaded_date` timestamp AFTER `image_key`;
 
 
-ALTER TABLE `electionleaflet`.`party` ADD COLUMN `colour` char(6) AFTER `url_id`;
+ALTER TABLE `party` ADD COLUMN `colour` char(6) AFTER `url_id`;
