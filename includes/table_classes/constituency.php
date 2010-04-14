@@ -69,9 +69,29 @@ class tableclass_constituency extends tablebase {
 		return $saved;
 	}
 
-	public static function get_not_spots($limit = 10){
+	public static function get_not_spots($limit = 10, $cache = true){
+        $return = array();
 	    $constituency = factory::create('constituency');
-        return $constituency->execute("select constituency.name, constituency.constituency_id from constituency left outer join leaflet_constituency on constituency.constituency_id = leaflet_constituency.constituency_id group by constituency.name, constituency.constituency_id limit " . $limit);
+	    $sql = "select constituency.name, constituency.constituency_id from constituency left outer join leaflet_constituency on constituency.constituency_id = leaflet_constituency.constituency_id where leaflet_constituency.constituency_id is null group by constituency.name, constituency.constituency_id limit " . $limit;
+	    if($cache){
+            $return = $constituency->execute_cached($sql);
+        }else{
+            $return = $constituency->execute($sql);            
+        }
+        return $return;
     }
+    
+    public static function constituency_count($limit = 10, $cache = true){
+        $return = array();
+	    $constituency = factory::create('constituency');
+	    $sql = "select count(leaflet_constituency.leaflet_constituency_id), constituency.name, constituency.constituency_id from constituency inner join leaflet_constituency on constituency.constituency_id = leaflet_constituency.constituency_id group by constituency.name, constituency.constituency_id limit " . $limit;
+	    if($cache){
+            $return = $constituency->execute_cached($sql);
+        }else{
+            $return = $constituency->execute($sql);            
+        }
+        return $return;
+    }
+    
     
 }

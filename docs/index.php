@@ -31,10 +31,13 @@ class index_page extends pagebase {
         //counts
         $total_counts = tableclass_party::get_party_count();
         $not_spots = tableclass_constituency::get_not_spots();        
+        $constituency_counts = tableclass_constituency::constituency_count();                
 
         //assign
         $this->assign("total_counts", $total_counts);
+        $this->assign("constituency_counts", $constituency_counts);        
         $this->assign("not_spots", $not_spots);        
+        
         
         $this->assign("leaflets", $leaflets);			
         $this->assign("is_home", true);

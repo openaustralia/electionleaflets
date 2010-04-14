@@ -62,9 +62,17 @@ class tableclass_party extends tablebase {
 		return $saved;
 	}
 	
-	public static function get_party_count($limit = 10){
+	public static function get_party_count($limit = 10, $cache = true){
+	    $return = array();
 	    $party = factory::create('party');
-        return $party->execute("select party.name, party.party_id, party.colour, count(leaflet_id) as count from leaflet inner join party on leaflet.publisher_party_id = party.party_id group by party.name, party.party_id, party.colour order by count(leaflet_id) desc limit " . $limit);
+	    $sql = "select party.name, party.party_id, party.colour, count(leaflet_id) as count from leaflet inner join party on leaflet.publisher_party_id = party.party_id group by party.name, party.party_id, party.colour order by count(leaflet_id) desc limit " . $limit;
+	    if($cache){
+            $return = $party->execute_cached($sql);
+        }else{
+            $return = $party->execute($sql);            
+        }
+        
+        return $return;
     }
 	
 }
