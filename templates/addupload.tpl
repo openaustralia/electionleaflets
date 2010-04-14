@@ -5,7 +5,7 @@
         {include file="formvars.tpl"}        
         <h1>Add a leaflet (step 1 of 2)</h1>
         <p>
-            Take a photo of a single leaflet and upload it below in JPG format. If the leaflet has more than one side you can upload multiple images. If the leaflet was sent by mail, please obscure your name and address with a marker pen.
+            Take a photo of a <strong>single leaflet</strong> and upload it below in JPG format. If the leaflet has more than one side you can upload multiple images. If the leaflet was sent by mail, please obscure your name and address with a marker pen.
         </p>
         <p>If your image files are large (more than about 1MB), please resize to help keep our server happy, very large files may not upload.</p>
         <fieldset>
@@ -42,7 +42,7 @@
         </div>
     </form>
     <div id="divUploading">
-        <h3>Uploading your images, please wait a moment</h3>
+        <h3>Uploading your images, please don't close this window, <strong>you will need to fill in a few extra details in a moment</strong></h3>
         <img src="{$www_server}/images/loading.gif"/>
     </div> 
 </div>                
