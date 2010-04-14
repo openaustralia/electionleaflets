@@ -73,7 +73,7 @@
             <h2>Top constituencies</h2>
             <ol>
                 {foreach from="$constituency_counts" item="constituency"}
-                    <li><a href="{$www_server}/leaflets.php?n={$cosntituency->url_id}">{$constituency->name}</a></li>
+                    <li><a href="{$www_server}/leaflets.php?n={$cosntituency->url_id}">{$constituency->name}</a> {$constituency->count} leaflets</li>
                 {/foreach}
             </ol>
         </div>
