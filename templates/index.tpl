@@ -59,6 +59,12 @@
     </div>
     <br class="clear"/>
 </div>
+<h2>Top parties</h2>
+<ol>
+    {foreach from="$total_counts" item="party" name="parties"}
+        <li><a href="{$www_server}/leaflets.php?p={$party->party_id}">{$party->name}</a> {$party->count} leaflets</li>
+    {/foreach}
+</ol>
 {*
 <div class="contenthalf">
     <h2>Leaflets by party</h2>
