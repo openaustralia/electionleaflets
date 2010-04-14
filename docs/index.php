@@ -7,6 +7,7 @@ class index_page extends pagebase {
 	//bind
 	function bind() {
 		$this->page_title = SITE_TAG_LINE;	
+		$this->onloadscript = "$('#divScroller ul').jcarousel({auto: 2,wrap: 'last',initCallback: mycarousel_initCallback,buttonNextHTML: null,buttonPrevHTML: null});";
 
         //get count of leaflets
         $this->assign("leaflet_count", $this->get_leaflet_count());

@@ -5,11 +5,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
 	<title>{$site_name} | {$page_title}</title>	
-	<link rel="stylesheet" media="all" type="text/css" href="{$www_server}/css/main.css" />
+	<link rel="stylesheet" media="all" type="text/css" href="{$www_server}/css/main.css?v=1" />
     <script src="{$www_server}/script/functions.js" type="text/javascript"></script>
     <script src="{$www_server}/script/jquery.js" type="text/javascript"></script>
     <script src="{$www_server}/script/jcarousel.js" type="text/javascript" charset="utf-8"></script>
-    <script src="{$www_server}/script/main.js" type="text/javascript"></script>
+    <script src="{$www_server}/script/main.js?v=1" type="text/javascript"></script>
     
     {if $has_map}
         <script src="http://maps.google.com/maps?file=api&v=2&key={$google_maps_key}" type="text/javascript"></script>

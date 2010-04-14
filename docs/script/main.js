@@ -70,15 +70,3 @@ function mycarousel_initCallback(carousel)
         carousel.startAuto();
     });
 };
-
-$(document).ready(function() {
-
-    
-    $('#divScroller ul').jcarousel({
-        auto: 2,
-        wrap: 'last',
-        initCallback: mycarousel_initCallback,
-        buttonNextHTML: null,
-        buttonPrevHTML: null
-    });
-});
