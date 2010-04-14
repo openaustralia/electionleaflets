@@ -1,5 +1,6 @@
 <?php
 require_once('init.php');
+require_once('table_classes/party.php');
 
 class index_page extends pagebase {
 
@@ -16,7 +17,7 @@ class index_page extends pagebase {
         $leaflet_search->number = 20;
         
         $leaflets = $leaflet_search->search(true);
-        
+
         /*
         $leaflet_count = 0;
         $leaflets_limited = array(); // standard limit not working grrr.        
@@ -25,6 +26,11 @@ class index_page extends pagebase {
         }
         */
         
+        //counts
+        $total_counts = tableclass_party::get_party_count();
+
+        //assign
+        $this->assign("total_counts", $total_counts);
         $this->assign("leaflets", $leaflets);			
         $this->assign("is_home", true);
 	}
@@ -42,6 +48,7 @@ class index_page extends pagebase {
         }
         return $return;
     }
+    
     
 }
 

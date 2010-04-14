@@ -40,3 +40,45 @@ function uploadImages(){
     
     return true;
 }
+
+
+function mycarousel_initCallback(carousel)
+{
+    // Disable autoscrolling if the user clicks the prev or next button.
+    carousel.buttonNext.bind('click', function() {
+        carousel.startAuto(0);
+    });
+
+    carousel.buttonPrev.bind('click', function() {
+        carousel.startAuto(0);
+    });
+    
+    $('#btnNext').bind('click', function() {
+        carousel.next();
+        return false;
+    });
+
+    $('#btnPrevious').bind('click', function() {
+        carousel.prev();
+        return false;
+    });
+
+    // Pause autoscrolling if the user moves with the cursor over the clip.
+    carousel.clip.hover(function() {
+        carousel.stopAuto();
+    }, function() {
+        carousel.startAuto();
+    });
+};
+
+$(document).ready(function() {
+
+    
+    $('#divScroller ul').jcarousel({
+        auto: 2,
+        wrap: 'last',
+        initCallback: mycarousel_initCallback,
+        buttonNextHTML: null,
+        buttonPrevHTML: null
+    });
+});

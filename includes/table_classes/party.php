@@ -16,6 +16,7 @@ class tableclass_party extends tablebase {
     public $major;
     public $logo_file;
     public $url_id;
+    public $colour;    
 
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('tableclass_party',$k,$v); }
@@ -29,6 +30,7 @@ class tableclass_party extends tablebase {
             'major'  => DB_DATAOBJECT_BOOL,
             'logo_file' => DB_DATAOBJECT_STR,
             'url_id' => DB_DATAOBJECT_STR,            
+            'colour' => DB_DATAOBJECT_STR,               
         );
     }
 
@@ -56,8 +58,13 @@ class tableclass_party extends tablebase {
 			$this->url_id = $this->id;
 			$this->update();
 		}
-		
+
 		return $saved;
 	}
+	
+	public static function get_party_count($limit = 100){
+	    $party = factory::create('party');
+        return $party->execute("select party.name, party.party_id, party.colour, count(leaflet_id) * 10 as count from leaflet inner join party on leaflet.publisher_party_id = party.party_id where party.major = 1 group by party.name, party.party_id, party.colour order by count(leaflet_id) desc");
+    }
 	
 }

@@ -12,6 +12,7 @@ class leaflet_page extends pagebase {
             throw_404();                
         }else{
             if($leaflet_id == 1362){
+                //redirects
                 redirect(WWW_SERVER . '/leaflet.php?q=' . 1339);
             }else{
                 $this->leaflet_id = $leaflet_id;
