@@ -14,7 +14,7 @@ class index_page extends pagebase {
 		//get recent leaflets
 		$leaflet_search = factory::create("leaflet_search");
         $leaflet_search->start = 0;
-        $leaflet_search->number = 20;
+        $leaflet_search->number = 60;
         
         $leaflets = $leaflet_search->search(true);
 
