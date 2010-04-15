@@ -30,8 +30,9 @@ class addupload_page extends pagebase {
 	function unbind(){
 
 	    //get images
-	    foreach ($_FILES as $key => $value) {
-	        if(isset($_FILES[$key]) && $_FILES[$key]['name'] != '' && isset(session_read("upload_key")) && session_read("upload_key") != ''){
+	    foreach ($_FILES as $key => $value) {   
+	        $ulpoad_key = session_read("upload_key");
+	        if(isset($_FILES[$key]) && $_FILES[$key]['name'] != '' && isset($ulpoad_key) &&  $ulpoad_key != ''){
                 $temp_file = $this->upload_image($key);
                 if($temp_file !== false){
             	    $image_que = factory::create('image_que');

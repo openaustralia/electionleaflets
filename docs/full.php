@@ -22,7 +22,7 @@ class full_page extends pagebase {
 		//get the leaflet
 		$search = factory::create("search");
 		$result = $search->search("leaflet",
-		    array(array("leaflet_id", "=", $this->leaflet_id)),
+		    array(array("leaflet_id", "=", $this->leaflet_id), array("live", "=", 1)),
 		    'AND',
 		    array(array("party", "inner"))
 		);

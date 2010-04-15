@@ -5,9 +5,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
 	<title>{$site_name} | {$page_title}</title>	
+	<link rel="stylesheet" media="all" type="text/css" href="{$www_server}/css/ui-lightness/jquery-ui-1.8.custom.css" />
 	<link rel="stylesheet" media="all" type="text/css" href="{$www_server}/css/main.css?v=1" />
     <script src="{$www_server}/script/functions.js" type="text/javascript"></script>
     <script src="{$www_server}/script/jquery.js" type="text/javascript"></script>
+    <script src="{$www_server}/script/jquery-ui.js" type="text/javascript" charset="utf-8"></script>    
     <script src="{$www_server}/script/jcarousel.js" type="text/javascript" charset="utf-8"></script>
     <script src="{$www_server}/script/main.js?v=1" type="text/javascript"></script>
     
@@ -22,53 +24,54 @@
 </head>
 
 <body>
+    {if $hide_header == false}
+        <div class="hide">
+            <a href="#divContent">Skip navigation</a>
+        </div>
 
-    <div class="hide">
-        <a href="#divContent">Skip navigation</a>
-    </div>
+
+        <div id="divBanner">
+            <a href="http://twitter.com/thesc">Follow us on Twitter for the latest titbits of electioneering</a>
+        </div>
 
 
-    <div id="divBanner">
-        <a href="http://twitter.com/thesc">Follow us on Twitter for the latest titbits of electioneering</a>
-    </div>
-
-    
-    <div id="divHeader"{if $hide_logo == true} class="small"{/if}>
+        <div id="divHeader"{if $hide_logo == true} class="small"{/if}>
         
-        {if $hide_logo == false}
-            <p id="pLogo"><a href="{$www_server}"><span class="hide">{$site_name} - {$site_tag_line}</span></a></p>
-        {/if}
+            {if $hide_logo == false}
+                <p id="pLogo"><a href="{$www_server}"><span class="hide">{$site_name} - {$site_tag_line}</span></a></p>
+            {/if}
         
-        <ul id="ulMenu">
-          <li>
-              <a href="{$www_server}">
-                  Home
-              </a>
-          </li>
-          <li>
-              <a href="{$www_server}/addupload.php">
-                  Add a leaflet
-              </a>
-          </li>
-          <li>
-              <a href="{$www_server}/browse.php">
-                  Browse
-              </a>
-          </li>
-          <!--
-          <li>
-              <a href="http://blog.thestraightchoice.org">
-                  Blog
-              </a>
-          </li>
-          -->
-          <li>
-              <a href="{$www_server}/about.php">
-                  About
-              </a>
-          </li>
-        </ul>
-    </div>
+            <ul id="ulMenu">
+              <li>
+                  <a href="{$www_server}">
+                      Home
+                  </a>
+              </li>
+              <li>
+                  <a href="{$www_server}/addupload.php">
+                      Add a leaflet
+                  </a>
+              </li>
+              <li>
+                  <a href="{$www_server}/browse.php">
+                      Browse
+                  </a>
+              </li>
+              <!--
+              <li>
+                  <a href="http://blog.thestraightchoice.org">
+                      Blog
+                  </a>
+              </li>
+              -->
+              <li>
+                  <a href="{$www_server}/about.php">
+                      About
+                  </a>
+              </li>
+            </ul>
+        </div>
+    {/if}
     
     <div id="divPage" {if $is_home}class="home"{/if}>
 

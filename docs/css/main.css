@@ -184,3 +184,20 @@ div.attention {text-align:center; font-size:1.3em;}
 
 /* stats */
 div.stats div {float:left;padding-right:30px;}
+
+/* Rate */
+#divRateControls {background:#fff; height:140px; padding-top:10px; position:fixed; bottom:0; left:0; right:0;
+    border-top:ridge 4px #ccc;}
+
+#divRateControls div {clear:left;}
+#divRateControls div.slider, #divRateControls div span {float:left; clear:none;}
+#divRateControls div.slider {width:500px; top:5px;}
+#divRateControls div span {float:left; display:block; padding: 0 20px; width:120px;} 
+#divRateControls div span.left {text-align:right;}
+
+#divButtons {position:absolute; top:0; right:0; padding:10px;}
+#divButtons form {padding-bottom:10px;}
+#divButtons form input {width:200px;}
+
+#divButtons #btnSave {background:#D2FFCF;}
+#divButtons #btnSkip {font-weight:normal;}

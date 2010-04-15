@@ -70,3 +70,18 @@ function mycarousel_initCallback(carousel)
         carousel.startAuto();
     });
 };
+
+
+function setupRate(){
+    
+    var aRatingNames = new Array('LocalNational', 'CandidateParty', 'SingleMultiple', 'PositiveNegative', 'PolicyPersonality')
+    for (var i=0; i < aRatingNames.length; i++) {
+         $("#div" + aRatingNames[i] + " div.slider").slider({
+                value: 50,
+                change: function (event, ui){
+        //                changeWeek(ui.value);
+        
+                    }
+                });        
+    };
+}
