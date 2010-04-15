@@ -5,7 +5,7 @@
 
 	$swiches = getopt('l:s');
 	$leaflet_image_id = isset($swiches['i']) ? $swiches['i'] : null;	
-	$show = isset($swiches['s']) ? true : false;
+	$show = isset($swiches['s']) ? 1 : 0;
 
     if(!isset($leaflet_image_id)){
         print "help: php hide.php -i[LEALFET ID] -s[show]";
