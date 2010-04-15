@@ -31,12 +31,11 @@ class addupload_page extends pagebase {
 
 	    //get images
 	    foreach ($_FILES as $key => $value) {
-	        if(isset($_FILES[$key]) && $_FILES[$key]['name'] != ''){
+	        if(isset($_FILES[$key]) && $_FILES[$key]['name'] != '' && isset(session_read("upload_key")) && session_read("upload_key") != ''){
                 $temp_file = $this->upload_image($key);
                 if($temp_file !== false){
             	    $image_que = factory::create('image_que');
             	    $image_que->upload_key =  session_read("upload_key");
-            	    $this->viewstate['upload_key'];
             	    $image_que->save_image($temp_file);
             	    $image_que->insert();
                 }
