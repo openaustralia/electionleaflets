@@ -14,9 +14,8 @@
      	$leaflets = $search->search('leaflet', 
     		array(array("leaflet_id", "=", $leaflet_id)));   
     	if(count($leaflets) == 1){
-    	    $leaflets->live = $show;
-    	    print $leaflets->live;
-    	    $leaflets->update();
+    	    $leaflets[0]->live = $show;
+    	    $leaflets[0]->update();
 	    }else{
             print "cant find a leaflet for that id";	        
         }
