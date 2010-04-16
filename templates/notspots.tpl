@@ -7,9 +7,9 @@
         </p> 
         <p>Help us find out what is really going on in these seats by:
             <ol>
-                <li>Email of tweet politicians in these seats asking for their and their opponants leaflets</li>
-                <li>Writing a blog post appealing for leaflets that links to this page.</li>
-                <li>If you live in one of these constituencies hunt down and <a href="{$www_server}/addupload.php">upload a leaflet</a>.
+                <li>Email or tweet politicians in these seats asking for their or their opponents leaflets.</li>
+                <li>Write a blog post appealing for leaflets that links to this page.</li>
+                <li>If you live in one of these constituencies hunt down and <a href="{$www_server}/addupload.php">upload a leaflet</a>.</li>
             </ol>
         </p>
         <p>Thanks and have a good weekend, The Straight Choice.org team</p>
