@@ -73,6 +73,7 @@ class tableclass_constituency extends tablebase {
         $return = array();
 	    $constituency = factory::create('constituency');
 	    $sql = "select constituency.name, constituency.url_id, constituency.constituency_id from constituency left outer join leaflet_constituency on constituency.constituency_id = leaflet_constituency.constituency_id where leaflet_constituency.constituency_id is null group by constituency.name, constituency.constituency_id, constituency.url_id limit " . $limit;
+
 	    if($cache){
             $return = $constituency->execute_cached($sql);
         }else{
