@@ -25,7 +25,7 @@
         <div>
             <h3>2) Send them to us</h3>
             <p>
-                Upload the images (one leaflet at a time). <a href="{$www_server}/addupload.php">Upload now</a>
+                The just upload the images (one leaflet at a time) and tell us a bit about the leaflet. <a href="{$www_server}/addupload.php">Upload now</a>.
             </p>
             <!--
             <p>
