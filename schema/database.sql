@@ -1200,3 +1200,24 @@ ALTER TABLE `image_que` ADD COLUMN `uploaded_date` timestamp AFTER `image_key`;
 
 
 ALTER TABLE `party` ADD COLUMN `colour` char(6) AFTER `url_id`;
+
+
+CREATE TABLE `rate_type` (
+  `rate_type_id` INT NOT NULL AUTO_INCREMENT,
+  `left_label` varchar(50) NOT NULL,
+  `right_label` varchar(50),
+  PRIMARY KEY (`rate_type_id`)
+)
+CHARACTER SET utf8;
+
+
+CREATE TABLE `rate_value` (
+  `rate_value_id` INT NOT NULL AUTO_INCREMENT,
+  `leaflet_id` INT NOT NULL,
+  `user_name` varchar(100) NOT NULL,
+  `user_email` varchar(100) NOT NULL,
+  `rate_type_id` INT NOT NULL,
+  `value` INT NOT NULL,
+  PRIMARY KEY (`rate_value_id`)
+)
+CHARACTER SET utf8;

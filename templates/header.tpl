@@ -31,7 +31,12 @@
 
 
         <div id="divBanner">
+            {if $is_home}
             <a href="http://twitter.com/thesc">Follow us on Twitter for the latest titbits of electioneering</a>
+            {else}
+            <strong>Have you received any election leaflets?</strong>
+            <a href="/">We need you to photograph them and send them to us!</a>
+            {/if}
         </div>
 
 

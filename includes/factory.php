@@ -34,6 +34,18 @@ class factory {
 				if (!$require_only) {
 					$object = DB_DataObject::factory($class_name);
 				}
+			case 'rate_type':
+				require_once( 'table_classes/config.php' );
+				require_once('table_classes/rate_type.php');
+				if (!$require_only) {
+					$object = DB_DataObject::factory($class_name);
+				}
+			case 'rate_value':
+				require_once( 'table_classes/config.php' );
+				require_once('table_classes/rate_value.php');
+				if (!$require_only) {
+					$object = DB_DataObject::factory($class_name);
+				}								
 			case 'image_que':
 				require_once( 'table_classes/config.php' );
 				require_once('table_classes/image_que.php');

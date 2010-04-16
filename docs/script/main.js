@@ -41,7 +41,6 @@ function uploadImages(){
     return true;
 }
 
-
 function mycarousel_initCallback(carousel)
 {
     // Disable autoscrolling if the user clicks the prev or next button.
@@ -52,7 +51,7 @@ function mycarousel_initCallback(carousel)
     carousel.buttonPrev.bind('click', function() {
         carousel.startAuto(0);
     });
-    
+
     $('#btnNext').bind('click', function() {
         carousel.next();
         return false;
@@ -71,17 +70,18 @@ function mycarousel_initCallback(carousel)
     });
 };
 
-
 function setupRate(){
-    
-    var aRatingNames = new Array('LocalNational', 'CandidateParty', 'SingleMultiple', 'PositiveNegative', 'PolicyPersonality')
-    for (var i=0; i < aRatingNames.length; i++) {
-         $("#div" + aRatingNames[i] + " div.slider").slider({
-                value: 50,
-                change: function (event, ui){
-        //                changeWeek(ui.value);
-        
-                    }
-                });        
+
+    var aItems = $('#hidRateItems').val().split(',');
+    for (var i=0; i < aItems.length; i++) {
+        if(aItems[i] != ''){
+             $("#divRate_" + aItems[i] + " div.slider").slider({
+                    value: 50,
+                    change: function (event, ui){
+                            iRateId = $(this).parent().attr('id').split('_')[1];
+                            $('#hidRateValue_' + iRateId).val($(this).slider('value'));
+                        }
+                    });        
+        }
     };
 }
