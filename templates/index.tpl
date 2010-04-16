@@ -89,6 +89,7 @@
                     <li><a href="{$www_server}/leaflets.php?n={$constituency->url_id}">{$constituency->name}</a></li>
                 {/foreach}
             </ul>
+            <a href="{$www_server}/notspots.php">View all not-spots</a>
         </div>
     </div>
     
