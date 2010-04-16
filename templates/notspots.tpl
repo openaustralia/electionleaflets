@@ -3,7 +3,7 @@
 <div class="contentfull">
 
         <h1>Election Campaign Not-Spots Appeal</h1>
-        <p>We currently have <strong>no leaflets for these constituencies</strong>! Are the politicians just ignoring them, or are we just missing missing out on the campaign?
+        <p>We currently have <strong>no leaflets for these constituencies</strong>! Are the politicians just ignoring them, or are we just missing out on the campaign?
         </p> 
         <p>Help us find out what is really going on in these seats by:
             <ol>
