@@ -81,7 +81,7 @@
             <h2>Campaign not-spots</h2>
             <ul>
                 {foreach from="$not_spots" item="constituency"}
-                    <li><a href="{$www_server}/leaflets.php?p={$cosntituency->url_id}">{$constituency->name}</a></li>
+                    <li><a href="{$www_server}/leaflets.php?p={$constituency->url_id}">{$constituency->name}</a></li>
                 {/foreach}
             </ul>
         </div>
