@@ -189,6 +189,7 @@ div.stats div {float:left;padding-right:30px;}
 
 /* Rate */
 #divUserStatus {text-align:right; font-size:0.9em; border-bottom:solid 1px #ccc;}
+#divUserStatus span {float:left;}
 #divRateControls {background:#fff; height:140px; padding-top:10px; position:fixed; bottom:0; left:0; right:0;
     border-top:ridge 4px #ccc;}
 
