@@ -1,4 +1,7 @@
 {include file="header.tpl"}
+    <div id="divUserStatus">
+        Hi {$name}, you have completed <strong>{$user_count}</strong> leaflets. <a href="{$www_server}">Exit</a>
+    </div>
 
     <div id="divFullImage" class="contentfull">
         <ul>
@@ -14,7 +17,7 @@
             <div id="divRate_{$rate_type->rate_type_id}" class="rate_item">
                 <span class="label left">{$rate_type->left_label}</span><div class="slider"></div><span class="label right">{$rate_type->right_label}</span>
             </div>
-        {/foreach}        
+        {/foreach}
     </div>
 
     <div id="divButtons">

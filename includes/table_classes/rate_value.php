@@ -32,4 +32,23 @@ class tableclass_rate_value extends tablebase {
         return array('rate_value_id');
     }
 
+	public static function user_count($email, $cache = true){
+        $return = 0;
+	    $rate_value = factory::create('rate_value');
+	    $sql = "select count(distinct leaflet_id) as count from rate_value where user_email = '" . $rate_value->escape($email) . "'";
+
+	    if($cache){
+            $return = $rate_value->execute_cached($sql);
+        }else{
+            $return = $rate_value->execute($sql);            
+        }        
+
+        if(count($return) == 1){
+            $return = $return[0]->count;
+        }else{
+            $return = 0;    
+        }
+        return $return;
+    }
+    
 }
