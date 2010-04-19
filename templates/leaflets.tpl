@@ -58,7 +58,7 @@
                 <div class="attention">
                     We don't have any leaflets for {$heading[1]}. This could mean that the parties are ignoring this constituency or not sending out many leaflets because they think it is a forgone conclusion.
                     <p>
-                    <a href="">If you know differently please add a leaflet now</a>
+                    If you know differently please  <a href="{$www_server}/addupload.php">add a leaflet now</a>
                 </p>
             </div>
             {else}
