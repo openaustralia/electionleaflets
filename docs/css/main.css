@@ -81,6 +81,8 @@ form ul li label {display:block; font-size:1.3em; padding:0.3em 0;}
 form ul li ul li label {display:inline; padding:0; font-size:0.8em;}
 fieldset {border:none; padding:0; margin:0;}
 
+form.formhighlight {background:#ffffaa; padding:10px;}
+
 /* Uploading images */
 #divUploading {text-align:center; padding:3em 0; display:none;}
 
