@@ -194,7 +194,7 @@ div.stats div {float:left;padding-right:30px;}
 
 #divRateControls div {clear:left;}
 #divRateControls div.slider, #divRateControls div span {float:left; clear:none;}
-#divRateControls div.slider {width:500px; top:5px;}
+#divRateControls div.slider {width:400px; top:5px;}
 #divRateControls div span {float:left; display:block; padding: 0 20px; width:120px;} 
 #divRateControls div span.left {text-align:right;}
 

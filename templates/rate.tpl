@@ -1,6 +1,6 @@
 {include file="header.tpl"}
     <div id="divUserStatus">
-        Hi {$name}, you have completed <strong>{$user_count}</strong> leaflets. <a href="{$www_server}">Exit</a>
+        <span><a href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}">link to this leaflet</a></span> Hi {$name}, you have completed <strong>{$user_count}</strong> leaflets. <a href="{$www_server}">Exit</a>
     </div>
 
     <div id="divFullImage" class="contentfull">
