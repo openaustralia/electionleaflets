@@ -62,13 +62,13 @@
                       Browse
                   </a>
               </li>
-              <!--
+
               <li>
-                  <a href="http://blog.thestraightchoice.org">
-                      Blog
+                  <a href="{$www_server}/analyze.php">
+                      Analyse
                   </a>
               </li>
-              -->
+
               <li>
                   <a href="{$www_server}/about.php">
                       About
