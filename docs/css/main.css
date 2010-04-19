@@ -163,7 +163,8 @@ span.new {text-transform:uppercase; background:#ffff00; font-weight:bold; color:
 small span.huge {font-size:3em;}
 
 /* Attention */
-div.attention {text-align:center; font-size:1.3em;}
+div.attention {text-align:center; font-size:1.6em; line-height:1.6em;}
+div.attention a {font-weight:bold;}
 
 
 /* Scroller */

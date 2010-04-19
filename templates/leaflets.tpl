@@ -26,7 +26,7 @@
                 {if $has_party_attack}
                     <a href="{$alert_link}">Email alerts for new leaflets attacking the {$heading[1]}</a>
                 {/if}
-                {if $has_constituency}
+                {if $has_constituency and $has_leaflets}
                     <a href="{$alert_link}">Email alerts for new leaflets in {$heading[1]}</a>
                 {/if}
             </p>
@@ -54,8 +54,17 @@
                 {/foreach}
             </ul>
         {else}
-            <h3>Sorry, we couldn't find any leaflets for you</h3>
-            <p>You can subscribe to email alerts or an RSS feed at the top of this page to be notified when we do.</p>
+            {if $has_constituency}
+                <div class="attention">
+                    We don't have any leaflets for {$heading[1]}. This could mean that the parties are ignoring this constituency or not sending out many leaflets because they think it is a forgone conclusion.
+                    <p>
+                    <a href="">Add a leaflet now</a>
+                </p>
+            </div>
+            {else}
+                <h3>Sorry, we couldn't find any leaflets for you</h3>
+                <p>You can subscribe to email alerts or an RSS feed at the top of this page to be notified when we do.</p>
+            {/if}
         {/if}
     </div>
     
