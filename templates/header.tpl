@@ -5,18 +5,23 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
 	<title>{$site_name} | {$page_title}</title>	
-	<link rel="stylesheet" media="all" type="text/css" href="{$www_server}/css/ui-lightness/jquery-ui-1.8.custom.css" />
+	<link rel="stylesheet" media="all" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/themes/ui-lightness/jquery-ui.css" />
 	<link rel="stylesheet" media="all" type="text/css" href="{$www_server}/css/main.css?v=1" />
-    <script src="{$www_server}/script/functions.js" type="text/javascript"></script>
-    <script src="{$www_server}/script/jquery.js" type="text/javascript"></script>
-    <script src="{$www_server}/script/jquery-ui.js" type="text/javascript" charset="utf-8"></script>    
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js" type="text/javascript"></script> 
     <script src="{$www_server}/script/jcarousel.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{$www_server}/script/functions.js" type="text/javascript"></script>
     <script src="{$www_server}/script/main.js?v=1" type="text/javascript"></script>
-    
-    {if $has_map}
-        <script src="http://maps.google.com/maps?file=api&v=2&key={$google_maps_key}" type="text/javascript"></script>
-        <script src="{$www_server}/script/mapstraction.js" type="text/javascript"></script>
-    {/if}
+{if $has_upload}
+	<script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js" type="text/javascript"></script>
+	<script src="{$www_server}/script/jquery.uploadify.v2.1.0.min.js" type="text/javascript"></script>
+	<script src="{$www_server}/script/jquery.json-2.2.min.js" type="text/javascript"></script>
+	
+{/if}
+{if $has_map}
+     <script src="http://maps.google.com/maps?file=api&v=2&key={$google_maps_key}" type="text/javascript"></script>
+     <script src="{$www_server}/script/mapstraction.js" type="text/javascript"></script>
+{/if}
 	<link rel="Shortcut Icon" href="{$www_server}/favicon.ico" type="image/x-icon" />
 	{if $rss_link != ''}
 	    <link rel="alternate" type="application/rss+xml" title="{$page_title}" href="{$rss_link}">
@@ -53,7 +58,7 @@
                   </a>
               </li>
               <li>
-                  <a href="{$www_server}/addupload.php">
+                  <a href="{$www_server}/upload.php">
                       Add a leaflet
                   </a>
               </li>

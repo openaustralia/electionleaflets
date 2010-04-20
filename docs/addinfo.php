@@ -14,11 +14,11 @@ class addinfo_page extends pagebase {
     function setup(){
         $upload_key = session_read("upload_key");
         if(!isset($upload_key) || $upload_key == ''){
-            redirect("addupload.php");
+            redirect("upload.php");
         }else{
             $this->image_que_items = $this->get_images_from_que();   
             if(count($this->image_que_items) <= 0){
-                redirect("addupload.php");                
+                redirect("upload.php");                
             }
         }
 

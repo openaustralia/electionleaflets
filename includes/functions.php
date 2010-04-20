@@ -623,4 +623,25 @@
         }
     }
 
+	function s3_url($image_size,$image_id){
+		//get file name
+	    $url = "http://".S3_BUCKET.".s3.amazonaws.com/";
+	    if($image_size == 't'){
+	        $url .= "thumbnail/";
+	    }
+	    if($image_size == 's'){
+	        $url .= "small/";
+	    }
+	    if($image_size == 'm'){
+	        $url .= "medium/";
+	    }
+	    if($image_size == 'l'){
+	        $url .= "large/";
+	    }
+
+	    $url .= $image_id . ".jpg";
+	
+		return $url;
+	}
+
 ?>

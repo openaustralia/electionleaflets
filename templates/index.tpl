@@ -25,7 +25,7 @@
         <div>
             <h3>2) Send them to us</h3>
             <p>
-            Email them to <a href="mailto:leaflets@thestraightchoice.org">leaflets@thestraightchoice.org</a> and follow the instructions we send you, or just <a href="{$www_server}/addupload.php">upload them directly</a>.
+            Email them to <a href="mailto:leaflets@thestraightchoice.org">leaflets@thestraightchoice.org</a> and follow the instructions we send you, or just <a href="{$www_server}/upload.php">upload them directly</a>.
             <br/><strong>(One leaflet at a time please).</strong>
             </p>
         </div>

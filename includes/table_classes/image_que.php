@@ -35,7 +35,10 @@ class tableclass_image_que extends tablebase {
     function save_image($temp_file){
 
         //generate a random ID for this image
-	    $this->image_key = md5(uniqid(rand(), true));
+	    // $this->image_key = md5(uniqid(rand(), true));
+	
+		//use an md5 of the file as a hash to prevent reuploads of the same file
+		$this->image_key = md5_file($temp_file);
 
 	    //copy original
 	    $original_file_name = IMAGES_DIR . "/original/" . $this->image_key . ".jpg";
@@ -44,21 +47,29 @@ class tableclass_image_que extends tablebase {
         if(!$moved){
             trigger_error("Failed to move image");
         }else{
-
+            S3::setAuth(AWS_KEY, AWS_SECRET);
+            
             //save large
-            resize_image($original_file_name, IMAGE_LARGE_SIZE, IMAGES_DIR . "/large/" . $this->image_key . ".jpg");
+            $this->save_sized_image($original_file_name,$this->image_key,IMAGE_LARGE_SIZE,"large");
             
     	    //save medium
-            resize_image($original_file_name, IMAGE_MEDIUM_SIZE, IMAGES_DIR . "/medium/" . $this->image_key . ".jpg");
+    	    $this->save_sized_image($original_file_name,$this->image_key,IMAGE_MEDIUM_SIZE,"medium");
 
             //save small
-            resize_image($original_file_name, IMAGE_SMALL_SIZE, IMAGES_DIR . "/small/" . $this->image_key . ".jpg");
+            $this->save_sized_image($original_file_name,$this->image_key,IMAGE_SMALL_SIZE,"small");
             
     	    //save thumbnail
-            resize_image($original_file_name, IMAGE_THUMBNAIL_SIZE, IMAGES_DIR . "/thumbnail/" . $this->image_key . ".jpg", true);    	    
-
+    	    $this->save_sized_image($original_file_name,$this->image_key,IMAGE_THUMBNAIL_SIZE,"thumbnail");
         }
 
+    }
+    
+    function save_sized_image($original,$key,$size, $folder){
+        $file = $folder."/" . $key . ".jpg";
+        $file_path = IMAGES_DIR ."/". $file;
+        resize_image($original, $size, $file_path);    
+        $input = S3::inputFile($file_path);
+        S3::putObject($input, S3_BUCKET, $file, S3::ACL_PUBLIC_READ);
     }
 
 	/* Keys */

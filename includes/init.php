@@ -13,5 +13,5 @@
 	require_once('DB/DataObject/Cast.php');	
 	require_once ('functions.php');	
 	require_once ('pagebase.php');
-
+	require_once ('s3.php');
 ?>

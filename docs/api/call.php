@@ -124,7 +124,8 @@ class apicall_page extends pagebase {
                 $result = $search->search_cached("leaflet_image", 
                         array(array("leaflet_id", "=", $this->all_arguments['leaflet_id'])));
                 if (count($result) > 0){
-                    return WWW_SERVER . '/image.php?i=' . $result[0]->image_key . '&s=' . $this->all_arguments['size'];
+                    return s3_url($this->all_arguments['size'],$result[0]->image_key);
+					// return WWW_SERVER . '/image.php?i=' . $result[0]->image_key . '&s=' . $this->all_arguments['size'];
                 }
             }                
         }

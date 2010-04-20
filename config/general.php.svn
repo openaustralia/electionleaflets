@@ -3,7 +3,7 @@
 define('DEVSITE', true);
 
 // Paths
-define('VHOST_DIR', '/data/vhost');
+define('VHOST_DIR', '/usr/local/code/theelectionleafletproject');
 define('ROOT_DIR', VHOST_DIR . '/electionleaflet');
 define('INCLUDE_DIR', ROOT_DIR . '/includes');
 define('PEAR_DIR', INCLUDE_DIR . '/PEAR');
@@ -87,6 +87,11 @@ define("LOGIN_COOKIE_EXPIRE_DAYS", 14);
 
 // TheyWorkForYou API
 define("THEYWORKFORYOU_API_KEY", 'YOUR KEY');
+
++//AWS API
++define("AWS_KEY",'YOUR AWS KEY');
++define("AWS_SECRET",'YOUR AWS SECRET');
++define("S3_BUCKET",DEV_SITE?'thestraightchoicedev':'thestraightchoice');
 
 /image upload by email/
 define("UPLOAD_MAIL_SERVER", 'AN IMAP SERVER LIKE GMAIL'); //imap server

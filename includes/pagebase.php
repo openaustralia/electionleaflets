@@ -25,6 +25,8 @@ abstract class pagebase {
 	protected $data = null;
 	protected $rss_link = '';
 	protected $has_map = false;
+	protected $has_upload = false;
+	protected $upload_key = "";
 	protected $fields_to_controls = array(); // for mapping table fields to html controls
 
     //Constructor
@@ -109,7 +111,9 @@ abstract class pagebase {
 		$this->smarty->assign("rss_link", $this->rss_link);
 		$this->smarty->assign("current_url", htmlspecialchars($_SERVER['REQUEST_URI']));
 		$this->smarty->assign("current_page", htmlspecialchars($_SERVER['PHP_SELF']));		
-        $this->smarty->assign("has_map", $this->has_map);	
+        $this->smarty->assign("has_map", $this->has_map);
+		$this->smarty->assign("has_upload", $this->has_upload);	
+		$this->smarty->assign("upload_key", $this->upload_key);	
         $this->smarty->assign("google_maps_key", GOOGLE_MAPS_KEY);
         $this->smarty->assign("map_provider", MAP_PROVIDER);
 
