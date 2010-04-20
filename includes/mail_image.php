@@ -47,7 +47,7 @@ class MailImage {
                 //email
                 $fromEmail = trim(str_replace('>', '', $split[1]));
             }else{
-                $fromEmail = $oMessage->from
+                $fromEmail = $oMessage->from;
             }
 
             $images = array();
