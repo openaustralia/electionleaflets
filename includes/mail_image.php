@@ -46,6 +46,8 @@ class MailImage {
                 
                 //email
                 $fromEmail = trim(str_replace('>', '', $split[1]));
+            }else{
+                $fromEmail = $oMessage->from
             }
 
             $images = array();
@@ -71,14 +73,9 @@ class MailImage {
                     } elseif ($oPart->encoding == 3 && in_array($oPart->subtype, array('JPEG', 'PNG'))) {
 
                         $oImage = null;
-                        try{
                             $encodedBody = imap_fetchbody($oImap, $oMessage->msgno, $partNumber);
                             $fileContent = base64_decode($encodedBody);
-
                             $oImage = imagecreatefromstring($fileContent);
-                        }catch (Exception $e){
-                            print "failed";
-                        }
                         
                         if (imagesx($oImage) > $this->min_import_size && imagesy($oImage) > $this->min_import_size) {
                             array_push($images, $oImage);                                                    
