@@ -58,6 +58,7 @@ class upload_page extends pagebase {
     }
     
     function process(){
+
     }
 
     private function upload_image($upload_control){

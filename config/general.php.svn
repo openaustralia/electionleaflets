@@ -88,10 +88,10 @@ define("LOGIN_COOKIE_EXPIRE_DAYS", 14);
 // TheyWorkForYou API
 define("THEYWORKFORYOU_API_KEY", 'YOUR KEY');
 
-+//AWS API
-+define("AWS_KEY",'YOUR AWS KEY');
-+define("AWS_SECRET",'YOUR AWS SECRET');
-+define("S3_BUCKET",DEV_SITE?'thestraightchoicedev':'thestraightchoice');
+//AWS API
+define("AWS_KEY",'YOUR AWS KEY');
+define("AWS_SECRET",'YOUR AWS SECRET');
++define("S3_BUCKET",'BUCKET NAME');
 
 /image upload by email/
 define("UPLOAD_MAIL_SERVER", 'AN IMAP SERVER LIKE GMAIL'); //imap server

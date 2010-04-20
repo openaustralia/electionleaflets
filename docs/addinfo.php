@@ -18,7 +18,7 @@ class addinfo_page extends pagebase {
         }else{
             $this->image_que_items = $this->get_images_from_que();   
             if(count($this->image_que_items) <= 0){
-                redirect("upload.php");                
+                redirect("addupload.php");                
             }
         }
 
