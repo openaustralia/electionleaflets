@@ -58,7 +58,7 @@
                   </a>
               </li>
               <li>
-                  <a href="{$www_server}/upload.php">
+                  <a href="{$www_server}/addupload.php">
                       Add a leaflet
                   </a>
               </li>

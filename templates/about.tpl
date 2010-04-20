@@ -8,7 +8,7 @@
         <p>
             The Straight Choice is an real-time election leaflet project. Our ambition is to create a live visualization of the flood of party political leaflets as they are delivered across the country during an election campaign.
 
-            If you have recently received any election leaflets through your door you can help by photographing or scanning them and <a href="{$www_server}/upload.php">uploading the images to our server</a>.
+            If you have recently received any election leaflets through your door you can help by photographing or scanning them and <a href="{$www_server}/addupload.php">uploading the images to our server</a>.
         </p>
         <p>
             The idea was conjured up in December 2008 at a weekend in Derbyshire, and 
@@ -56,9 +56,9 @@
         <h3>FAQs</h3>
         <dl class="faq">
             <dt>How do I upload an election leaflet</dt>
-            <dd>You need to upload a photograph of the leaflet in JPG format, then enter a few details about the leaflet. <a href="{$www_server}/upload.php">Click here to get started</a>.</dd>
+            <dd>You need to upload a photograph of the leaflet in JPG format, then enter a few details about the leaflet. <a href="{$www_server}/addupload.php">Click here to get started</a>.</dd>
             <dt id="activist">I'm a party activist, can I upload a leaflet?</dt>
-            <dd>Yes. Just upload a photos of your leaflet and enter <strong>one</strong> of the post codes it is aimed at when prompted. <a href="{$www_server}/upload.php">Click here to add a leaflet now</a>.</dd>
+            <dd>Yes. Just upload a photos of your leaflet and enter <strong>one</strong> of the post codes it is aimed at when prompted. <a href="{$www_server}/addupload.php">Click here to add a leaflet now</a>.</dd>
             <dt>Who can reuse the images</dt>
             <dd>By uploading an image to The Straight Choice you are allowing free reuse of the image. For this site to make an impact on the way electioneering is conducted it's important that the dodgy ones get as wide an audience as possible, and this helps it happen. If you would like to make sure that proper attribution for a particular image please let us know.</dd>
             <dt>Is this project affiliated to or supported by any political party</dt>
