@@ -12,7 +12,7 @@
 			$('[name=addInfo]').click(function(){window.location="/addinfo.php";return false;});
 			$("#uploadify").uploadify({
 				'uploader'       : 'script/uploadify.swf',
-				'script'         : '/addupload.php',
+				'script'         : '/upload.php',
 				'scriptData'     : {
 										'_is_postback' : true,
 										'upload_key'   : $('[name=upload_key]').val()
