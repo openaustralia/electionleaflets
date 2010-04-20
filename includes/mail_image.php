@@ -70,10 +70,15 @@ class MailImage {
 
                     } elseif ($oPart->encoding == 3 && in_array($oPart->subtype, array('JPEG', 'PNG'))) {
 
-                        $encodedBody = imap_fetchbody($oImap, $oMessage->msgno, $partNumber);
-                        $fileContent = base64_decode($encodedBody);
+                        $oImage = null;
+                        try{
+                            $encodedBody = imap_fetchbody($oImap, $oMessage->msgno, $partNumber);
+                            $fileContent = base64_decode($encodedBody);
 
-                        $oImage = imagecreatefromstring($fileContent);
+                            $oImage = imagecreatefromstring($fileContent);
+                        }catch (Exception $e){
+                            print "failed";
+                        }
                         
                         if (imagesx($oImage) > $this->min_import_size && imagesy($oImage) > $this->min_import_size) {
                             array_push($images, $oImage);                                                    
