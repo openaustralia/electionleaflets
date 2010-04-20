@@ -26,6 +26,8 @@ class MailImage {
         $validMessages = array();
 
         foreach ($aMessages as $oMessage) {
+            
+            print "Trying message '" . $oMessage->subject . "'";
             $fileContent = $fileType = '';
         	$geocoder = factory::create('geocoder');
             $postCode = $geocoder->extract_postcode($oMessage->subject);
