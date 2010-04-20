@@ -6,7 +6,7 @@ body {text-align:center; padding:0; margin:0; color:#353A38; font-size:16px; fon
 #divPage.home {}    
 
 /* Header */
-#divHeader {padding:0; height:130px; border-bottom:solid 10px #1f6e62;background:url(../images/clouds.png) repeat-x 0 0;
+#divHeader {padding:0; height:130px; border-bottom:solid 10px #353B38;background:url(../images/clouds.png) repeat-x 0 0;
     position:relative;}
 #pLogo {position:absolute;position:absolute; top:-5px; left:5%;width:400px; height:107px; }
 #pLogo a {display:block; width:400px; height:107px; background:url(../images/logo.png) no-repeat;;}
@@ -23,7 +23,7 @@ h3, h4, h5, h6 {margin:1.2em 0 0.3em 0;}
 
 
 /* Menu */
-#ulMenu {padding:8px 0.6em 0 0; margin:0; position:absolute; bottom:0; right:0; background:#1f6e62;}
+#ulMenu {padding:8px 0.6em 0 0; margin:0; position:absolute; bottom:0; right:0; background:#353B38;}
 #ulMenu li {padding:0 0 7px 0; margin:0; float:left; list-style-type:none;}
 #ulMenu li a {display:block; padding:0 0.6em; font-weight:bold; color:#fff; text-decoration:none;}
 #ulMenu li a:hover {text-decoration:underline;}

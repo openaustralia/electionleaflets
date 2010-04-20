@@ -18,7 +18,7 @@ class MailImage {
     }
 
     public function fetch ($delete = false) {
-        $oImap = imap_open('{'. $this->mail_server.':993/imap/ssl/novalidate-cert}', $this->username, $this->password);
+        $oImap = imap_open('{'. $this->mail_server.':993/imap/notls/novalidate-cert}', $this->username, $this->password);
 
         $oMailboxStatus = imap_check($oImap);
         $aMessages = imap_fetch_overview($oImap, "1:{$oMailboxStatus->Nmsgs}");
