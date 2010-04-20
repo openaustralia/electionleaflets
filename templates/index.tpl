@@ -25,14 +25,9 @@
         <div>
             <h3>2) Send them to us</h3>
             <p>
-                The just upload the images (one leaflet at a time) and tell us a bit about the leaflet. <a href="{$www_server}/addupload.php">Upload now</a>.
-            </p>
-            <!--
-            <p>
             Email them to <a href="mailto:leaflets@thestraightchoice.org">leaflets@thestraightchoice.org</a> and follow the instructions we send you, or just <a href="{$www_server}/addupload.php">upload them directly</a>.
             <br/><strong>(One leaflet at a time please).</strong>
             </p>
-            -->
         </div>
      </div>
      <br class="clear"/>
