@@ -70,7 +70,7 @@ function send_success($email, $upload_key){
     $body = $smarty->fetch(TEMPLATE_DIR . '/emails/emailin_success.tlp');
 
 	//send email
-	print $body;
+
 	send_text_email(trim($email), SITE_NAME, CONFIRMATION_EMAIL, $subject, $body);
 }
 
