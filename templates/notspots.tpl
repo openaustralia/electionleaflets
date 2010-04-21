@@ -16,7 +16,7 @@
         <hr/>
         <ul>
             {foreach from="$not_spots" item="constituency"}
-                <li><a href="{$www_server}/leaflets.php?n={$constituency->url_id}">{$constituency->name}</a></li>
+                <li><a href="{$www_server}/constituencies/{$constituency->url_id}/">{$constituency->name}</a></li>
             {/foreach}
         </ul>
 

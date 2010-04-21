@@ -48,10 +48,10 @@
             <ul class="results">
                 {foreach from="$leaflets" item="leaflet"}
                     <li>
-                        <a class="leaflet" href="{$www_Server}/leaflet.php?q={$leaflet->leaflet_id}">
+                        <a class="leaflet" href="{$www_Server}/leaflets/{$leaflet->leaflet_id}/">
                             <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=s"/>
                         </a>
-                        {*<a href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}" class="textlink">{$leaflet->title}</a>*}
+                        {*<a href="{$www_server}/leaflets/{$leaflet->leaflet_id}/" class="textlink">{$leaflet->title}</a>*}
                     </li>
                 {/foreach}
             </ul>
@@ -65,7 +65,7 @@
             <h2>Top parties</h2>
             <ol>
                 {foreach from="$total_counts" item="party" name="parties"}
-                    <li><a href="{$www_server}/leaflets.php?p={$party->party_id}">{$party->name}</a> {$party->count} leaflets</li>
+                    <li><a href="{$www_server}/parties/{$party->url_id}/">{$party->name}</a> {$party->count} leaflets</li>
                 {/foreach}
             </ol>
         </div>
@@ -73,7 +73,7 @@
             <h2>Top constituencies</h2>
             <ol>
                 {foreach from="$constituency_counts" item="constituency"}
-                    <li><a href="{$www_server}/leaflets.php?n={$constituency->url_id}">{$constituency->name}</a> {$constituency->count} leaflets</li>
+                    <li><a href="{$www_server}/constituencies/{$constituency->url_id}/">{$constituency->name}</a> {$constituency->count} leaflets</li>
                 {/foreach}
             </ol>
         </div>
@@ -81,7 +81,7 @@
             <h2>Campaign not-spots</h2>
             <ul>
                 {foreach from="$not_spots" item="constituency"}
-                    <li><a href="{$www_server}/leaflets.php?n={$constituency->url_id}">{$constituency->name}</a></li>
+                    <li><a href="{$www_server}/constituencies/{$constituency->url_id}/">{$constituency->name}</a></li>
                 {/foreach}
             </ul>
             <a href="{$www_server}/notspots.php">View all not-spots</a>

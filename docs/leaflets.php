@@ -161,10 +161,14 @@ class leaflets_page extends pagebase {
             $this->search_term = trim($search_term);
         }
 
-        $publisher_party_id = get_http_var("p");
-        if(isset($publisher_party_id) && $publisher_party_id != ''){
-            
-            $this->leaflet_search->publisher_party_id = trim($publisher_party_id);
+        $publisher_party_url_id = get_http_var("p");
+        if(isset($publisher_party_url_id) && $publisher_party_url_id != ''){
+            $search = factory::create('search');
+            $results = $search->search_cached('party', array(array('url_id', '=', $publisher_party_url_id)));
+            if (count($results) !=1){
+                throw_404();
+            }
+            $this->leaflet_search->publisher_party_id = $results[0]->party_id;
         }
 
         $category_id = get_http_var("c");

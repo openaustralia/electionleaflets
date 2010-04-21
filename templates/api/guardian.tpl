@@ -51,12 +51,12 @@
         {if $has_leaflets}
             {foreach from="$leaflets" item="leaflet"}
                 <li {if $is_geo}class="has_distance"{/if} class="straightchoice_section">
-                    <a class="leaflet" href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}">
+                    <a class="leaflet" href="{$www_server}/leaflets/{$leaflet->leaflet_id}/">
                         <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/>
                     </a>
                     <p>
                         {if $method != 'party'}
-                            <a href="{$www_server}/leaflets.php?p={$leaflet->publisher_party_id}"><strong>{$leaflet->party_name}</strong>
+                            <a href="{$www_server}/parties/{$leaflet->party_url_id}/"><strong>{$leaflet->party_name}</strong>
                             </a>
                             uploaded {$leaflet->date_uploaded|date_format:"%A %e %B %Y"}
                         {else}
@@ -80,10 +80,10 @@
     {if $has_leaflets}
         <p class="straightchoice_section">
             {if $method == 'constituency'}
-                <a href="{$www_server}/leaflets.php?n={$leaflets[0]->constituency_url_id}">More campaign material from this area</a>
+                <a href="{$www_server}/constituencies/{$leaflets[0]->constituency_url_id}/">More campaign material from this area</a>
             {/if}
             {if $method == 'party'}
-                <a href="{$www_server}/leaflets.php?p={$leaflets[0]->publisher_party_id}">More campaign material for the party</a>
+                <a href="{$www_server}/parties/{$leaflets[0]->party_url_id}/">More campaign material for the party</a>
             {/if}
             {if $method == 'latest'}
                 <a href="{$www_server}/leaflets.php">More latest campaign material</a>

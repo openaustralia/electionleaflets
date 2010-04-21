@@ -65,7 +65,7 @@ class tableclass_party extends tablebase {
 	public static function get_party_count($date_since, $limit = 10, $cache = true){
 	    $return = array();
 	    $party = factory::create('party');
-	    $sql = "select party.name, party.party_id, party.colour, count(leaflet_id) as count from leaflet inner join party on leaflet.publisher_party_id = party.party_id where date_uploaded > '$date_since' group by party.name, party.party_id, party.colour order by count(leaflet_id)  desc limit " . $limit;
+	    $sql = "select party.name, party.party_id, party.url_id, party.colour, count(leaflet_id) as count from leaflet inner join party on leaflet.publisher_party_id = party.party_id where date_uploaded > '$date_since' group by party.name, party.party_id, party.colour order by count(leaflet_id)  desc limit " . $limit;
 	    if($cache){
             $return = $party->execute_cached($sql);
         }else{

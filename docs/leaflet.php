@@ -85,6 +85,7 @@ class leaflet_page extends pagebase {
 
         //assign
 		$this->page_title = $leaflet->title . " ( election leaflet published by " . $leaflet->party_name . ")";
+
         $this->has_map = true;
 	    $this->assign("leaflet", $leaflet);
 	    $this->assign("leaflet_images", $leaflet_images);
