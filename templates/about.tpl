@@ -52,6 +52,9 @@
         <p>
             We have also had the support of a great bunch volunteers who have helped promote The Straight Choice <a href="http://www.flickr.com/photos/memespring/3701738722/in/set-72157621134703752/">by delivering leaflets</a> during by-elections. If you'd like to help out, <a href="mailto:team@thestraightchoice.org">please get in touch</a> we'd love to hear from you.
         </p>
+		<p>
+			<strong><a href="http://www.availableimagination.com">Donovan Hide</a></strong> helped get all the images uploaded to and served from  Amazon's <a href="http://aws.amazon.com/s3/">S3</a> service.
+		</p>
         <br class="clear"/>
         <h3>FAQs</h3>
         <dl class="faq">
