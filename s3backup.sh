@@ -1,0 +1,1 @@
+s3cmd sync data/images/original/  s3://thestraightchoicebackup/original/
