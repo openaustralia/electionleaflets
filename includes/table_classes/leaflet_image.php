@@ -58,23 +58,23 @@ class tableclass_leaflet_image extends tablebase {
     }
 
     public function thumbnail_url(){
-        return s3_url('t',$this->image_key);
-		//return WWW_SERVER . "/image.php?s=t&i=" . $this->image_key;
+        //return s3_url('t',$this->image_key);
+		return WWW_SERVER . "/image.php?s=t&i=" . $this->image_key;
     }
     
     public function small_url(){
-        return s3_url('s',$this->image_key);
-        // return WWW_SERVER . "/image.php?s=s&i=" . $this->image_key;
+        //return s3_url('s',$this->image_key);
+         return WWW_SERVER . "/image.php?s=s&i=" . $this->image_key;
     }
     
     public function medium_url(){
-        return s3_url('m',$this->image_key);
-        // return WWW_SERVER . "/image.php?s=m&i=" . $this->image_key;
+        //return s3_url('m',$this->image_key);
+        return WWW_SERVER . "/image.php?s=m&i=" . $this->image_key;
     }
 
     public function large_url(){
-		return s3_url('l',$this->image_key);
-        // return WWW_SERVER . "/image.php?s=l&i=" . $this->image_key;
+		//return s3_url('l',$this->image_key);
+         return WWW_SERVER . "/image.php?s=l&i=" . $this->image_key;
     }
         
     public function original_url(){
