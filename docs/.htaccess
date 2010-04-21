@@ -3,8 +3,7 @@ RewriteEngine On
 RewriteRule ^parties/?$ parties.php [NC,L]
 RewriteRule ^parties/([^/]+)/?$ leaflets.php?p=$1 [NC,L] 
 RewriteRule ^constituencies/([^/]+)/?$ leaflets.php?n=$1 [NC,L]
-RewriteRule ^leaflets/([1-9]+)/?$ leaflet.php?q=$1 [NC,L]
-
+RewriteRule ^leaflets/([0-9]+)/?$ leaflet.php?q=$1 [NC,L]
 
 
 RewriteRule ^about/?$ about.php [NC,L]
