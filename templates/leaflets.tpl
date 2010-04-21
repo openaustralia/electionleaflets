@@ -38,7 +38,7 @@
                         <a class="leaflet" href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}">
                             <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/>
                         </a>
-                        <a href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}">{$leaflet->title}</a>
+                        <a href="{$www_server}/leaflets/{$leaflet->leaflet_id}/">{$leaflet->title}</a>
                         {if $is_geo}
                             <span class="distance">
                                 {if $leaflet->distance < 0.5 || $leaflet->distance == 0}
