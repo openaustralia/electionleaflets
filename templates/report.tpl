@@ -29,7 +29,7 @@
         {else}
             <div class="attention">
                 <h1>Thank you, your message has been sent</h1>
-                <p><a href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}">Click here to return to the leaflet</a></p>
+                <p><a href="{$www_server}/leaflets/{$leaflet->leaflet_id}/">Click here to return to the leaflet</a></p>
             </div>
         {/if}
     </div>

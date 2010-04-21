@@ -63,7 +63,7 @@ class report_page extends pagebase {
 				//send email
 				$email = $this->data['txtEmail'];
 				$name = $this->data['txtName'];
-				$message = "Leaflet link: " . WWW_SERVER . "/leaflet.php?q=" . $this->viewstate['leaflet_id']  . "\n";
+				$message = "Leaflet link: " . WWW_SERVER . "/leaflets/" . $this->viewstate['leaflet_id']  . "\n";
 				$message .= "Name: " . $this->data['txtName'] . "\n";
 				$message .= ("Email: " . $this->data['txtEmail'] . "\n");
 				$message .= ("Details: " . $this->data['txtDetails'] . "\n");															

@@ -13,10 +13,10 @@ class full_page extends pagebase {
         }else{
             if($leaflet_id == 1362){
                 //redirects
-                redirect(WWW_SERVER . '/leaflet.php?q=' . 1339);
+                redirect(WWW_SERVER . '/full.php?q=' . 1339);
             }else if($leaflet_id == 1882){
                 //redirects
-                redirect(WWW_SERVER . '/leaflet.php?q=' . 1842);
+                redirect(WWW_SERVER . '/full.php?q=' . 1842);
             }else{
                 $this->leaflet_id = $leaflet_id;
             }
