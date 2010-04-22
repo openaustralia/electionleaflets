@@ -34,12 +34,12 @@
         {if $has_leaflets}
             {foreach from="$leaflets" item="leaflet"}
                 <li {if $is_geo}class="has_distance"{/if} class="straightchoice_section">
-                    <a class="leaflet" href="{$www_server}/leaflets/{$leaflet->leaflet_id}/" target="_parent">
+                    <a class="leaflet" href="{$www_server}/leaflets/{$leaflet->leaflet_id}/" target="_new">
                         <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/>
                     </a>
                     <p>
                         {if $method != 'party'}
-                            <a href="{$www_server}/parties/{$leaflet->party_url_id}/" target="_parent"><strong>{$leaflet->party_name}</strong>
+                            <a href="{$www_server}/parties/{$leaflet->party_url_id}/" target="_new"><strong>{$leaflet->party_name}</strong>
                             </a>
                             uploaded {$leaflet->date_uploaded|date_format:"%A %e %B %Y"}
                         {else}
@@ -51,25 +51,25 @@
             {/foreach}
         {else}
             <li>
-                <a class="leaflet" href="{$www_server}" target="_parent">
+                <a class="leaflet" href="{$www_server}" target="_new">
                     <img src="{$www_server}/images/country.jpg"/>
                 </a>
             </li>
         {/if}
     </ul>
     <p class="straightchoice_section">
-        <a href="{$www_server}/upload.php" target="_parent">Help The Straight Choice monitor the campaign by uploading material you receive</a>
+        <a href="{$www_server}/upload.php" target="_new">Help The Straight Choice monitor the campaign by uploading material you receive</a>
     </p>
     {if $has_leaflets}
         <p class="straightchoice_section">
             {if $method == 'constituency'}
-                <a href="{$www_server}/constituencies/{$leaflets[0]->constituency_url_id}/" target="_parent">More campaign material from this area</a>
+                <a href="{$www_server}/constituencies/{$leaflets[0]->constituency_url_id}/" target="_new">More campaign material from this area</a>
             {/if}
             {if $method == 'party'}
-                <a href="{$www_server}/parties/{$leaflets[0]->party_url_id}/" target="_parent">More campaign material for the party</a>
+                <a href="{$www_server}/parties/{$leaflets[0]->party_url_id}/" target="_new">More campaign material for the party</a>
             {/if}
             {if $method == 'latest'}
-                <a href="{$www_server}/leaflets.php" target="_parent">More latest campaign material</a>
+                <a href="{$www_server}/leaflets.php" target="_new">More latest campaign material</a>
             {/if}
         </p>
     {/if}
