@@ -1,3 +1,4 @@
+<html>
 <head>
     <base href="{$www_server}" />
     <base target="_blank" />
@@ -81,3 +82,4 @@
     {/if}
 </div>
 </body>
+</html>
