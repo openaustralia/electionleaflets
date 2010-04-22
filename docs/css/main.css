@@ -242,6 +242,8 @@ div.stats div {float:left;padding-right:30px;}
 
 
 /* info box */
-div.infobox {background:#f8f8f8; padding:10px; font-size:0.8em;}
+div.infobox {background:#f8f8f8; padding:10px; font-size:0.8em; margin-bottom:1em; line-height:1.2em;
+    min-height:50px;}
 div.infobox textarea{width:100%;}
 div.infobox p, div.infobox h3 {color:#333; line-height:1.2em; padding:0 0 1em 0;margin:0;}
+div.infobox img {vertical-align:top; float:left; margin:0 4px 4px 0;}

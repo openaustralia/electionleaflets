@@ -17,6 +17,7 @@ class tableclass_party extends tablebase {
     public $logo_file;
     public $url_id;
     public $colour;    
+    public $twitter_account;        
 
     /* Static get */
     function staticGet($k,$v=NULL) { return DB_DataObject::staticGet('tableclass_party',$k,$v); }
@@ -31,6 +32,7 @@ class tableclass_party extends tablebase {
             'logo_file' => DB_DATAOBJECT_STR,
             'url_id' => DB_DATAOBJECT_STR,            
             'colour' => DB_DATAOBJECT_STR,               
+            'twitter_account' => DB_DATAOBJECT_STR,                           
         );
     }
 

@@ -1221,3 +1221,5 @@ CREATE TABLE `rate_value` (
   PRIMARY KEY (`rate_value_id`)
 )
 CHARACTER SET utf8;
+
+ALTER TABLE `party` ADD COLUMN `twitter_account` varchar(50) AFTER `colour`;
