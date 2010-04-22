@@ -36,7 +36,7 @@
         <ul>
             {foreach from="$constituencies" item="constituency"}
                 <li>
-                    <a href="{$www_server}/leaflets.php?n={$constituency->url_id}">{$constituency->name}</a>
+                    <a href="{$www_server}/constituencies/{$constituency->url_id}/">{$constituency->name}</a>
                 </li>
             {/foreach}
         </ul>
