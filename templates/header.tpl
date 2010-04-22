@@ -16,7 +16,6 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js" type="text/javascript"></script>
 	<script src="{$www_server}/script/jquery.uploadify.v2.1.0.min.js" type="text/javascript"></script>
 	<script src="{$www_server}/script/jquery.json-2.2.min.js" type="text/javascript"></script>
-	
 {/if}
 {if $has_map}
      <script src="http://maps.google.com/maps?file=api&v=2&key={$google_maps_key}" type="text/javascript"></script>

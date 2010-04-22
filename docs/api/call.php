@@ -93,7 +93,7 @@ class apicall_page extends pagebase {
                 if(count($result) > 0){        
                     $constituency = $result[0];
                 }
-                
+
             }
 
             //if constituency, proceed
