@@ -66,7 +66,11 @@
                       Browse
                   </a>
               </li>
-
+              <li>
+                  <a href="{$www_server}/random/">
+                      Random
+                  </a>
+              </li>
               <li>
                   <a href="{$www_server}/analyze.php">
                       Analyse
