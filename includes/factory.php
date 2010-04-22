@@ -2,6 +2,10 @@
 /** @internal Set Callback for object unserialization */
 ini_set('unserialize_callback_func', 'unserialize_callback_factory');
 
+require_once('table_classes/leaflet.php');
+require_once('table_classes/party.php');
+require_once('table_classes/category.php');
+require_once('table_classes/constituency.php');
 
 class factory {
 
