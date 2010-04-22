@@ -76,7 +76,7 @@
             <div class="infobox">            
                 <h3>Add leaflets from {$heading[1]} to your website</h3>
             
-                 <textarea rows="5"><iframe src="{$www_server}/api/call.php?method=constituency&output=html&constituency={$leaflets[0]->constituency_url_id}&count=3" style="border:none;height:900px; overflow:hiden;width:160px;"></iframe></textarea>
+                 <textarea rows="5"><iframe src="{$www_server}/api/call.php?method=constituency&output=html&constituency={$leaflets[0]->constituency_url_id}&count=3" style="border:none;height:900px; overflow:hidden;width:160px;"></iframe></textarea>
                 <p>
                     Just copy and paste the code above into your web page.
                 </p>
@@ -86,7 +86,7 @@
             <div class="infobox">            
                 <h3>Add leaflets from {$heading[1]} to your website</h3>
             
-                 <textarea rows="5"><iframe src="{$www_server}/api/call.php?method=party&output=html&party_id={$leaflets[0]->party_party_id}&count=3" style="border:none;height:900px; overflow:hiden;width:160px;"></iframe></textarea>
+                 <textarea rows="5"><iframe src="{$www_server}/api/call.php?method=party&output=html&party_id={$leaflets[0]->party_party_id}&count=3" style="border:none;height:900px; overflow:hidden;width:160px;"></iframe></textarea>
                 <p>
                     Just copy and paste the code above into your web page.
                 </p>
