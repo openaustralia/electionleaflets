@@ -1,6 +1,5 @@
 {include file="header.tpl"}
-
-    <div id="divResults" class="contentfull">
+    <div class="contentfull">
         {if $has_party || $has_category || $has_tag || $has_party_attack || $has_constituency}
             <h1>{$heading[0]} <em>{$heading[1]}</em></h1>
         {else}
@@ -15,27 +14,13 @@
         <a href="{$rss_link}">
             <img id="imgRSS" src="{$www_server}/images/rss.png" alt="rss" title="Subscribe to RSS feed for '{$page_title}'"/>
         </a>
-        {if $has_party || $has_category || $has_party_attack || $has_constituency}
-            <p class="email_alert">
-                {if $has_party}
-                    <a href="{$alert_link}">Email alerts for new leaflets from the {$heading[1]}</a>
-                {/if}
-                {if $has_category}
-                    <a href="{$alert_link}">Email alerts for new leaflets about {$heading[1]}</a>
-                {/if}
-                {if $has_party_attack}
-                    <a href="{$alert_link}">Email alerts for new leaflets attacking the {$heading[1]}</a>
-                {/if}
-                {if $has_constituency and $has_leaflets}
-                    <a href="{$alert_link}">Email alerts for new leaflets in {$heading[1]}</a>
-                {/if}
-            </p>
-        {/if}
+    </div>
+    <div id="divResults" class="contentcolleft">
         {if $has_leaflets}
             <ul class="results">
                 {foreach from="$leaflets" item="leaflet"}
                     <li {if $is_geo}class="has_distance"{/if}>
-                        <a class="leaflet" href="{$www_server}/leaflet.php?q={$leaflet->leaflet_id}">
+                        <a class="leaflet" href="{$www_server}/leaflets/{$leaflet->leaflet_id}/">
                             <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/>
                         </a>
                         <a href="{$www_server}/leaflets/{$leaflet->leaflet_id}/">{$leaflet->title}</a>
@@ -67,5 +52,44 @@
             {/if}
         {/if}
     </div>
-    
+    <div class="contentcolright">
+
+        {* iframe  *}
+        {if $has_party || $has_category || $has_party_attack || $has_constituency}
+            <p class="email_alert">
+                {if $has_party}
+                    <a href="{$alert_link}">Email alerts for new leaflets from the {$heading[1]}</a>
+                {/if}
+                {if $has_category}
+                    <a href="{$alert_link}">Email alerts for new leaflets about {$heading[1]}</a>
+                {/if}
+                {if $has_party_attack}
+                    <a href="{$alert_link}">Email alerts for new leaflets attacking the {$heading[1]}</a>
+                {/if}
+                {if $has_constituency and $has_leaflets}
+                    <a href="{$alert_link}">Email alerts for new leaflets in {$heading[1]}</a>
+                {/if}
+            </p>
+        {/if}
+        {if $has_constituency}
+            <div class="infobox">            
+                <h3>Add leaflets from {$heading[1]} to your website</h3>
+            
+                 <textarea rows="5"><iframe src="http://localhost.electionleaflet/api/call.php?method=constituency&output=html&constituency={$leaflets[0]->constituency_url_id}&count=3" style="border:none;height:900px; overflow:hiden;width:160px;"></iframe></textarea>
+                <p>
+                    Just copy and paste the code above into your web page.
+                </p>
+            </div>                    
+        {/if}
+        {if $has_party}
+            <div class="infobox">            
+                <h3>Add leaflets from {$heading[1]} to your website</h3>
+            
+                 <textarea rows="5"><iframe src="http://localhost.electionleaflet/api/call.php?method=party&output=html&party_id={$leaflets[0]->party_party_id}&count=3" style="border:none;height:900px; overflow:hiden;width:160px;"></iframe></textarea>
+                <p>
+                    Just copy and paste the code above into your web page.
+                </p>
+            </div>                    
+        {/if}
+    </div>    
 {include file="footer.tpl"}

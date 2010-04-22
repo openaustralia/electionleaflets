@@ -13,7 +13,7 @@ class apicall_page extends pagebase {
 
     //setup
     function setup(){
-        
+
         //get vars
         $method = get_http_var('method');
         if($method){
@@ -73,19 +73,27 @@ class apicall_page extends pagebase {
     function get_data(){
         $return = null;
         $this->leaflet_search->number = $this->count;
-
+        $search = factory::create('search');
+                
         //cosntituency
         if($this->method == 'constituency'){
             $constituency = null;
-            
+
             // for now we are only handling the guardian
             if(isset($this->all_arguments['aristotle_id'])){
-                $search = factory::create('search');
                 $result = $search->search_cached("constituency", 
                         array(array("guardian_aristotle_id", "=", $this->all_arguments['aristotle_id'])));                        
                 if(count($result) > 0){        
                     $constituency = $result[0];
                 }
+            }else{
+
+                $result = $search->search_cached("constituency", 
+                        array(array("url_id", "=", $this->all_arguments['constituency'])));
+                if(count($result) > 0){        
+                    $constituency = $result[0];
+                }
+                
             }
 
             //if constituency, proceed
