@@ -35,11 +35,11 @@
         </p>
         <p class="person" id="richard">
             <img src="{$www_server}/images/richardpic1.jpg">
-            <strong>Richard Pope</strong> spent a couple of days <a href="http://code.google.com/p/theelectionleafletproject/">writing the code for this site</a> and making it look pretty.
+            <strong>Richard Pope</strong> initially spent a couple of days <a href="http://code.google.com/p/theelectionleafletproject/">writing the code for this site</a> and making it look pretty for the European Elections in 2009. During the run up to the 2010 General Election he has been working full time on the project on a voluntary basis expanding the website and dealing with the press.
             He is the brains behind the <a href="http://www.planningalerts.com">Planning Alerts</a> project, <a href="http://www.groupsnearyou.com">Groups Near You</a> and <a href="http://www.streetwire.org">StreetWire</a>.
-            In 2005 he made the <a href="http://www.electionmemory.com">Election Memory project</a> to record and publicise 
+            In 2005 he made theElection Memory project to record and publicise 
             manifestos of the different parties in the Lambeth local elections.
- </p>
+        </p>
 
         <p class="person" id="francis">
             <img src="{$www_server}/images/francispic1.jpg">
@@ -48,7 +48,25 @@
         -- among other projects -- and would specifically like you to sign up for <a href="http://seriouschange.org.uk/">Serious Change</a>.
         </p>
         <br class="clear"/>
-        <h3>Volunteers</h3>
+        <h3>Thanks</h3>
+        <p>
+            Our biggest thanks go out to the hundreds of volunteers who have
+            kindly uploaded leaflets in recent weeks and months.  This site
+            couldn't exist without you.
+        </p>
+        <p>
+            Thanks also to <a href="http://thestraightchoice.org">mySociety</a> and <a href="http://democracyclub.org.uk">Democracy Club</a> for their support and
+            publicity in terms of promoting the site to interested citizens across
+            the country.
+        </p>
+        <p>
+            In terms of project development, Richard Pope has put a lot of free
+            time and effort into developing the code since April 2009, with a cash
+            contribution of £3000 from Julian and use of his server.  As the load
+            has increased in recent days owing to the election, the service has
+            been upgraded by Donvan Hide to Amazon S3 technology with a
+            contribution from <a href="http://scraperwiki.com">ScraperWiki</a>.
+        </p>
         <p>
             We have also had the support of a great bunch volunteers who have helped promote The Straight Choice <a href="http://www.flickr.com/photos/memespring/3701738722/in/set-72157621134703752/">by delivering leaflets</a> during by-elections. If you'd like to help out, <a href="mailto:team@thestraightchoice.org">please get in touch</a> we'd love to hear from you.
         </p>
