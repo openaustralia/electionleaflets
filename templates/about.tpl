@@ -64,7 +64,7 @@
             time and effort into developing the code since April 2009, with a cash
             contribution of £3000 from Julian and use of his server.  As the load
             has increased in recent days owing to the election, the service has
-            been upgraded by Donvan Hide to Amazon S3 technology with a
+            been upgraded by Donovan Hide to Amazon S3 technology with a
             contribution from <a href="http://scraperwiki.com">ScraperWiki</a>.
         </p>
         <p>
