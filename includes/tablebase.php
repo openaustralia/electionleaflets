@@ -165,14 +165,14 @@ abstract class tablebase extends DB_DataObject {
 	public function execute_cached($sql){
 	    $return = null;
 	    $cache = cache::factory();
-		$cached = $cache->get($key, "execute");
+		$cached = $cache->get($sql, "execute");
 		
 		//if we have something in the cache, grab that, if not do the query as normal
 		if (isset($cached) && $cached !== false) {
 			$return = $cached;
 		}else{
 	        $return = $this->execute($sql);
-		    $cached = $cache->set($key, $return, "execute");		    
+		    $cached = $cache->set($sql, $return, "execute");		    
 		}
 		
 		return $return;
