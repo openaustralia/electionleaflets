@@ -18,9 +18,9 @@ class uploadv2_page extends pagebase {
 	}
 
 	function unbind(){
-	    //get image
-		error_log("upload_key set to:".$upload_key);		
+	    //get image		
         $upload_key = get_http_var('upload_key');        
+		error_log("upload_key set to:".$upload_key);
         $image_que = factory::create('image_que');
         if(isset($_FILES['Filedata']) && $_FILES['Filedata']['name'] != '' && isset($upload_key) &&  $upload_key != ''){
                $temp_file = $this->upload_image('Filedata');
@@ -77,7 +77,7 @@ class uploadv2_page extends pagebase {
     	        $return = $temp_file_name;
 	        }
         }
-
+		error_log("Problems with image");
         return $return;
     }
 
