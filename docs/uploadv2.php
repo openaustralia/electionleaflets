@@ -44,6 +44,7 @@ class uploadv2_page extends pagebase {
     }
 
     private function upload_image($upload_control){
+		error_log('starting upload');
         $return = false;
         $image = $_FILES[$upload_control];
 
