@@ -240,6 +240,14 @@ div.stats div {float:left;padding-right:30px;}
 	height: 3px;
 }
 
+/* Snipshot upload */
+#uploadProgress
+{
+	padding: 10px;
+	text-align: center;
+	background-image: url(/images/candy.gif);
+}
+
 
 /* info box */
 div.infobox {background:#f8f8f8; padding:10px; font-size:0.8em; margin-bottom:1em; line-height:1.2em;
