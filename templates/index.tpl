@@ -49,7 +49,8 @@
                 {foreach from="$leaflets" item="leaflet"}
                     <li>
                         <a class="leaflet" href="{$www_Server}/leaflets/{$leaflet->leaflet_id}/">
-                            <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=s"/>
+							<img src="{image_url id=$leaflet->leaflet_image_image_key size=s}">
+                            <!-- <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=s"/> -->
                         </a>
                         {*<a href="{$www_server}/leaflets/{$leaflet->leaflet_id}/" class="textlink">{$leaflet->title}</a>*}
                     </li>

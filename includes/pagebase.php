@@ -120,6 +120,9 @@ abstract class pagebase {
 		foreach($this->warn_controls  as $warn_control) {
 			$this->assign('warn_' . $warn_control, true);
 		}
+		
+		//register the image url function
+		$this->smarty->register_function('image_url', 'get_image_url');
 
        $this->smarty->display($this->smarty_template);
     }

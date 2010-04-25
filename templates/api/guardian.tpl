@@ -52,7 +52,8 @@
             {foreach from="$leaflets" item="leaflet"}
                 <li {if $is_geo}class="has_distance"{/if} class="straightchoice_section">
                     <a class="leaflet" href="{$www_server}/leaflets/{$leaflet->leaflet_id}/">
-                        <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/>
+						<img src="{image_url id=$leaflet->leaflet_image_image_key size=t}">
+                        <!-- <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/> -->
                     </a>
                     <p>
                         {if $method != 'party'}

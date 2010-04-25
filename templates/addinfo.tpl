@@ -107,7 +107,8 @@
 <div class="contentright">
     <div>
         {foreach from="$image_que_items" item="image_que_item"}
-            <img src="{$www_server}/image.php?s=m&i={$image_que_item->image_key}"/>
+			<img src="{image_url id=$image_que_item->image_key size=m}">
+            <!-- <img src="{$www_server}/image.php?s=m&i={$image_que_item->image_key}"/> -->
             <br/>
         {/foreach}
     </div>

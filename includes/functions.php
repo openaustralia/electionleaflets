@@ -1,6 +1,7 @@
 <?php
 
     require_once('cache.php');
+	require_once ("smarty/Smarty.class.php");
 
     //Send a text email
     function send_text_email($to, $from_name, $from_email, $subject, $body){
@@ -643,5 +644,14 @@
 	
 		return $url;
 	}
-
+	
+	function get_image_url($params, &$smarty){
+		if (USE_S3_DIRECTLY){
+			return s3_url($params['size'],$params['id']);
+		}
+		else{
+			return WWW_SERVER.'/image.php?i='.$params['id'].'&s='.$params['size'];
+		}
+	}
+	
 ?>

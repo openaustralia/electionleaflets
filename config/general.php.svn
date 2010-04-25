@@ -91,9 +91,10 @@ define("THEYWORKFORYOU_API_KEY", 'YOUR KEY');
 //AWS API
 define("AWS_KEY",'YOUR AWS KEY');
 define("AWS_SECRET",'YOUR AWS SECRET');
-+define("S3_BUCKET",'BUCKET NAME');
+define("S3_BUCKET",'BUCKET NAME');
+define("USE_S3_DIRECTLY",true);
 
-/image upload by email/
+//image upload by email
 define("UPLOAD_MAIL_SERVER", 'AN IMAP SERVER LIKE GMAIL'); //imap server
 define("UPLOAD_MAIL_USER", 'USERNAME');
 define("UPLOAD_MAIL_PASSWORD", 'PASSWORD');
