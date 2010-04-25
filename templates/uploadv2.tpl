@@ -18,7 +18,7 @@
 					<input type="hidden" name="snipshot_input_options" value='{"effect":{"enhance": true}}'/>
 					<input type="hidden" name="snipshot_output_options" value='{"hires":true,"filetype":"jpg"}'/>
 					<input type="hidden" name="snipshot_css" value="#enhance,#resize,#adjust,#effects,#crop,#undo{display:none;}"/>
-		            <input type="hidden "name="snipshot_output" value="Filedata" />
+		            <input type="hidden" name="snipshot_output" value="Filedata" />
 					{/literal}
 					<input id="file" name="snipshot_input" size="41" type="file" />
 				    <input type="hidden" name="snipshot_callback" value="{$www_server}/uploadv2.php" /> 
