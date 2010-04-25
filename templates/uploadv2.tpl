@@ -29,7 +29,7 @@
 				<br/>
 				<form>
 					<input type="hidden" name="upload_key" value="{$upload_key}"/> 
-					<input name="addInfo" type="submit" disabled="{if empty($image_que_items)}disabled{/if}"  value="Add Info &raquo;"/>
+					<input name="addInfo" type="submit" {if empty($image_que_items)}disabled="disabled"{/if} value="Add Info &raquo;"/>
 	        </div>
 			<br/>
 		</div>
