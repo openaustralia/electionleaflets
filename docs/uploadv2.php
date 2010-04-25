@@ -14,13 +14,13 @@ class uploadv2_page extends pagebase {
 		$this->upload_key = $upload_key;
 		session_delete("upload_key");
 		session_write("upload_key", $upload_key);
-		error_log("upload_key set to:".$upload_key);
+		error_log("bind:upload_key set to:".$upload_key);
 	}
 
 	function unbind(){
 	    //get image		
         $upload_key = get_http_var('upload_key');        
-		error_log("upload_key set to:".$upload_key);
+		error_log("unbind:upload_key set to:".$upload_key);
         $image_que = factory::create('image_que');
         if(isset($_FILES['Filedata']) && $_FILES['Filedata']['name'] != '' && isset($upload_key) &&  $upload_key != ''){
                $temp_file = $this->upload_image('Filedata');
