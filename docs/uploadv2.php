@@ -14,10 +14,12 @@ class uploadv2_page extends pagebase {
 		$this->upload_key = $upload_key;
 		session_delete("upload_key");
 		session_write("upload_key", $upload_key);
+		error_log("upload_key set to:".$upload_key);
 	}
 
 	function unbind(){
 	    //get image
+		error_log("upload_key set to:".$upload_key);		
         $upload_key = get_http_var('upload_key');        
         $image_que = factory::create('image_que');
         if(isset($_FILES['Filedata']) && $_FILES['Filedata']['name'] != '' && isset($upload_key) &&  $upload_key != ''){
@@ -28,6 +30,9 @@ class uploadv2_page extends pagebase {
            	    $image_que->insert();
                }
            }
+		else{
+			error_log("File not uploaded");
+		}
     }
     
     function validate(){
