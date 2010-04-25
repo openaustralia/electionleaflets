@@ -29,7 +29,7 @@
 				<br/>
 				<form>
 					<input type="hidden" name="upload_key" value="{$upload_key}"/> 
-					<input name="addInfo" type="submit" disabled="disabled"  value="Add Info &raquo;"/>
+					<input name="addInfo" type="submit" disabled="{if empty($image_que_items)}disabled{/if}"  value="Add Info &raquo;"/>
 	        </div>
 			<br/>
 		</div>
@@ -37,7 +37,6 @@
 			<div>
 		        {foreach from="$image_que_items" item="image_que_item"}
 					<img src="{image_url id=$image_que_item->image_key size=m}">
-		            <!-- <img src="{$www_server}/image.php?s=m&i={$image_que_item->image_key}"/> -->
 		            <br/>
 		        {/foreach}
 		    </div>

@@ -3,5 +3,6 @@ $(document).ready(function(){
         $('#uploadForm').hide();
         $('#uploadForm').submit();
         $('#uploadProgress').show();
+        $('[name=addInfo]').attr('disabled', 'disabled');
     })
 })

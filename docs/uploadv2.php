@@ -93,7 +93,7 @@ class uploadv2_page extends pagebase {
                 array(array("upload_key", "=", $upload_key)),
                 "AND",
                 null,
-                array(array("uploaded_date", "ASC"))
+                array(array("uploaded_date", "DESC"))
             );
         return $image_que_items;
     }
