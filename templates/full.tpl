@@ -7,7 +7,7 @@
                 <li id="l{$leaflet_image->leaflet_image_id}"><img src="{$leaflet_image->large_url()}" /></li>
             {/foreach}
         </ul>
-        <a href="#">&larr; back to details of <em>{$leaflet->title}</em></a>
+        <a href="{$www_server}/leaflets/{$leaflet->leaflet_id}/">&larr; back to details of <em>{$leaflet->title}</em></a>
     </div>
  
 {include file="footer.tpl"}
