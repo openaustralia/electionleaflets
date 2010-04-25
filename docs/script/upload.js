@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $('[name=addInfo]').click(function(){window.location="/addinfo.php";return false;});
     $('#file').change(function(){
         $('#uploadForm').hide();
         $('#uploadForm').submit();
