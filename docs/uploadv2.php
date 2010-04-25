@@ -63,7 +63,7 @@ class uploadv2_page extends pagebase {
                  }
             }
             //check is jpeg-Uploadify does not send mime-type, so use a PHP function instead
-			$finfo = finfo_open(FILEINFO_MIME_TYPE);
+			$finfo = finfo_open(FILEINFO_MIME);
 			$image_type = finfo_file($finfo, $image['tmp_name']);
 			finfo_close($finfo);
             if($image_type != "image/jpeg" && $image_type != "image/pjpeg"){
