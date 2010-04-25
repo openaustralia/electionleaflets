@@ -24,6 +24,7 @@ class uploadv2_page extends pagebase {
         $image_que = factory::create('image_que');
         if(isset($_FILES['Filedata']) && $_FILES['Filedata']['name'] != '' && isset($upload_key) &&  $upload_key != ''){
                $temp_file = $this->upload_image('Filedata');
+			   error_log("temp file created");
                if($temp_file !== false){
            	    $image_que->upload_key =  $upload_key;
            	    $image_que->save_image($temp_file);
