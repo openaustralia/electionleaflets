@@ -10,11 +10,14 @@ class uploadv2_page extends pagebase {
 	//bind
 	function bind() {
 		$this->page_title = "Add a leaflet";
-		$upload_key = md5(uniqid(rand(), true));
-		$this->upload_key = $upload_key;
-		session_delete("upload_key");
-		session_write("upload_key", $upload_key);
-		error_log("bind:upload_key set to:".$upload_key);
+		$upload_key = session_read("upload_key");
+        if(!isset($upload_key) || $upload_key == ''){
+			$upload_key = md5(uniqid(rand(), true));
+			$this->upload_key = $upload_key;
+			session_delete("upload_key");
+			session_write("upload_key", $upload_key);
+			error_log("bind:upload_key set to:".$upload_key);
+		}
 	}
 
 	function unbind(){
@@ -31,9 +34,6 @@ class uploadv2_page extends pagebase {
            	    $image_que->insert();
                }
            }
-		else{
-			error_log("File not uploaded");
-		}
     }
     
     function validate(){
@@ -45,7 +45,6 @@ class uploadv2_page extends pagebase {
     }
 
     private function upload_image($upload_control){
-		error_log('starting upload');
         $return = false;
         $image = $_FILES[$upload_control];
 
@@ -79,7 +78,6 @@ class uploadv2_page extends pagebase {
     	        $return = $temp_file_name;
 	        }
         }
-		error_log("Problems with image");
         return $return;
     }
 
