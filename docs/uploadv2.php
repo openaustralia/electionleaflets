@@ -3,6 +3,8 @@ require_once('init.php');
 
 class uploadv2_page extends pagebase {    
 
+	private $image_que_items = array();
+
     //setup
     function setup(){
     }
@@ -18,6 +20,8 @@ class uploadv2_page extends pagebase {
 			session_write("upload_key", $upload_key);
 			error_log("bind:upload_key set to:".$upload_key);
 		}
+		$this->image_que_items = $this->get_images_from_que();
+		$this->assign('image_que_items', $this->image_que_items);
 	}
 
 	function unbind(){
@@ -79,6 +83,19 @@ class uploadv2_page extends pagebase {
 	        }
         }
         return $return;
+    }
+
+    private function get_images_from_que(){
+
+        $upload_key = session_read("upload_key");
+        $search = factory::create('search');
+        $image_que_items = $search->search("image_que", 
+                array(array("upload_key", "=", $upload_key)),
+                "AND",
+                null,
+                array(array("uploaded_date", "ASC"))
+            );
+        return $image_que_items;
     }
 
 }
