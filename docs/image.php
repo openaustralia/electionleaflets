@@ -24,11 +24,11 @@
      if($image_size == 'l'){
          $file_name .= "/large/";
      }
-     /*
+     
      if($image_size == 'o'){
          $file_name .= "/original/";
      }
-     */
+     
 
      $file_name .= $image_id . ".jpg";
 
