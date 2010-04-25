@@ -15,11 +15,11 @@ class uploadv2_page extends pagebase {
 		$upload_key = session_read("upload_key");
         if(!isset($upload_key) || $upload_key == ''){
 			$upload_key = md5(uniqid(rand(), true));
-			$this->upload_key = $upload_key;
 			session_delete("upload_key");
 			session_write("upload_key", $upload_key);
 			error_log("bind:upload_key set to:".$upload_key);
 		}
+		$this->upload_key = $upload_key;
 		$this->image_que_items = $this->get_images_from_que();
 		$this->assign('image_que_items', $this->image_que_items);
 	}
