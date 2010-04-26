@@ -270,4 +270,4 @@ ul.pagination li.next {padding-left:20px;}
 
 
 /* Random  */
-ul.random li {float:left;}
+ul.random li {float:left; margin-right:20px;}
