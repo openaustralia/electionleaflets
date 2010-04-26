@@ -46,7 +46,7 @@
             <ul class="pagination">
                 {foreach from="$pagination" item="page"}
                     <li{if $page.current}class="current"{/if}>
-                        <a href="./?page={$page.number}">
+                        <a href="{$current_url}?page={$page.number}">
                             {$page.number}
                         </a>
                     </li>

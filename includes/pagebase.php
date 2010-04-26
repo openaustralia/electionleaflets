@@ -109,7 +109,7 @@ abstract class pagebase {
 		$this->smarty->assign("show_tracker",$this->show_tracker);				
         $this->smarty->assign("viewstate", $this->serialize_viewstate());
 		$this->smarty->assign("rss_link", $this->rss_link);
-		$this->smarty->assign("current_url", htmlspecialchars($_SERVER['REQUEST_URI']));
+		$this->smarty->assign("current_url", $this->get_url());
 		$this->smarty->assign("current_page", htmlspecialchars($_SERVER['PHP_SELF']));		
         $this->smarty->assign("has_map", $this->has_map);
 		$this->smarty->assign("has_upload", $this->has_upload);	
@@ -131,6 +131,15 @@ abstract class pagebase {
 	public function assign($name, $value){
 		$this->smarty->assign($name, $value);
 	}
+	
+	private function get_url(){
+        $url = htmlspecialchars($_SERVER['REQUEST_URI']);
+        $split = preg_split('/\?/', $url);
+        if(count($split) > 1){
+            $url = $split[0];
+        }
+        return $url;
+    }
 
     //Reset smarty object and template path
     public function reset_smarty($template_file){
