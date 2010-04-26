@@ -20,6 +20,8 @@ body {text-align:center; padding:0; margin:0; color:#353A38; font-size:16px; fon
 h1, h2, h3, h4, h5, h6 {font-weight:bold; color:#8e7345; line-height:1.5em;}
 h1, h2 {color:#1f6e62;}
 h3, h4, h5, h6 {margin:1.2em 0 0.3em 0;}
+p.page_count {font-size:0.8em; margin:0;padding:0 0.8em; border-top:solid 1px #ddd; border-bottom:solid 1px #ddd;
+        color:#808080;}
 
 
 /* Menu */
@@ -255,3 +257,13 @@ div.infobox {background:#f8f8f8; padding:10px; font-size:0.8em; margin-bottom:1e
 div.infobox textarea{width:100%;}
 div.infobox p, div.infobox h3 {color:#333; line-height:1.2em; padding:0 0 1em 0;margin:0;}
 div.infobox img {vertical-align:top; float:left; margin:0 4px 4px 0;}
+
+/* Pagination  */
+ul.pagination {margin:0 auto!important; clear:left; text-align:center;}
+ul.pagination li {display:inline;}
+ul.pagination li a {border:solid 1px #bdd8ec;padding:2px 7px;text-align:center;margin:0 2px; text-decoration:none!important;}
+ul.pagination li span {padding:2px 7px;text-align:center;margin:0 2px;}
+ul.pagination li.current {font-weight:bold; border:none; text-decoration:none!important;}
+ul.pagination li.previous a, #divPagination ul li.next a {border:none;}
+ul.pagination li.previous {padding-right:20px;}
+ul.pagination li.next {padding-left:20px;}

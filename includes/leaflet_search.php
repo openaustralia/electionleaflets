@@ -52,6 +52,7 @@ class leaflet_search {
                 $this->start
             );
         }else{
+
             $this->results = $this->search->search_cached("leaflet",
                 $this->get_where_clauses($live_only), 
                 'AND', 
@@ -64,7 +65,8 @@ class leaflet_search {
         
     }
     
-    private function search_standard($cache, $live_only = true){
+    private function search_standard($cache, $live_only = true){        
+
         if(!$cache){
             $this->results = $this->search->search("leaflet",
                 $this->get_where_clauses($live_only), 
@@ -75,6 +77,7 @@ class leaflet_search {
                 $this->start
             );
         }else{
+
             $this->results = $this->search->search_cached("leaflet",
                 $this->get_where_clauses($live_only), 
                 'AND', 

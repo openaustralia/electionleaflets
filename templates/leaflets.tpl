@@ -3,6 +3,11 @@
         <div class="contentfull">
             {if $has_party || $has_category || $has_tag || $has_party_attack || $has_constituency}
                 <h1>{$heading[0]} <em>{$heading[1]}</em></h1>
+                {if $has_leaflets}
+                    <p class="page_count">
+                        <strong>{$total_count}</strong> leaflets found, page <strong>{$current_page_number}</strong> of <strong>{$total_pages}</strong>
+                    </p>
+                {/if}
             {else}
                 <div class="searchbox">
                     <form method="get" action="{$www_server}/leaflets.php">
@@ -14,7 +19,7 @@
             {/if}
         </div>
     {/if}
-    <div id="divResults"  {if $has_leaflets}class="contentcolleft"{else}class="contentfull"{/if}>
+    <div id="divResults"  {if $has_leaflets}class="contentcolleft"{else}class="contentfull"{/if}>    
         {if $has_leaflets}
             <ul class="results">
                 {foreach from="$leaflets" item="leaflet"}
@@ -35,6 +40,15 @@
             					{/if}
     					    </span>
         				{/if}
+                    </li>
+                {/foreach}
+            </ul>
+            <ul class="pagination">
+                {foreach from="$pagination" item="page"}
+                    <li{if $page.current}class="current"{/if}>
+                        <a href="./?page={$page.number}">
+                            {$page.number}
+                        </a>
                     </li>
                 {/foreach}
             </ul>

@@ -32,8 +32,7 @@ class browse_page extends pagebase {
         $this->assign("weighted_tags", $weighted_tags);
 
 		//get attack leaflets
-		
-		
+
 		//
 		
 	}

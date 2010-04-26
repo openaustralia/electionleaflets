@@ -56,7 +56,6 @@ define('SESSION_COOKIE_DOMAIN', null);
 
 //cache
 define('CACHE_TIME', 0);
-define('DB_CACHE_EXPIRE', 3600);
 
 //image sizes
 define('IMAGE_THUMBNAIL_SIZE', 140);

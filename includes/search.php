@@ -18,6 +18,7 @@ class searcher {
 		//check the cache
 		$cache = cache::factory();
 		$cached = $cache->get($key, "search");
+
 		//if we have something in the cache, grab that, if not do the query as normal
 		if (isset($cached) && $cached !== false) {
 			$return = $cached;
@@ -181,9 +182,9 @@ class searcher {
 		}
 
 		//Limit / paging
-		if (isset($number) && isset($start)) {
+		if (isset($number) && isset($start) && is_numeric($number) && is_numeric($start)) {
 			$search_object->limit($start, $number);
-		}elseif (isset($number)) {
+		}elseif (isset($number) && is_numeric($number)) {
 			$search_object->limit($number);		
 		}
 

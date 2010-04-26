@@ -52,8 +52,24 @@ class leaflets_page extends pagebase {
         }
 
 		//do search
+		$leaflets = array();
+		$total_count = 0;
+		$current_page = 1;		
 		if($this->has_vars_set()){
             $leaflets = $this->leaflet_search->search();
+            
+            //get total count (set out to null and redo)
+            //TODO: make this more efficiant by removing joins
+            $current_page_number = ($this->leaflet_search->start / PAGE_ITEMS_COUNT) + 1;
+            $start_record = $this->leaflet_search->start;
+            $end_record = $this->leaflet_search->start + 
+            
+            $this->leaflet_search->start = null;
+            $this->leaflet_search->number = null;
+            $all_leaflets = $this->leaflet_search->search(true);
+
+            $total_count = count($all_leaflets);
+            $total_pages = ceil($total_count / PAGE_ITEMS_COUNT);
         }
 
 		//assign vars
@@ -72,12 +88,28 @@ class leaflets_page extends pagebase {
         $this->assign("has_party_attack", isset($this->leaflet_search->party_attack_id));        
         $this->assign("heading", $title_parts);
         $this->assign("alert_link", $this->get_alert_link());
+        $this->assign("total_count", $total_count);        
+        $this->assign("total_pages", $total_pages);                 
+        $this->assign("current_page_number", $current_page_number);    
+        $this->assign("pagination", $this->get_pagination(1, $total_pages, $current_page_number));
         $this->assign("search_link", WWW_SERVER);        
 
 	}
 	
 	function unbind(){
 	    $this->strip_tags_from_data();
+    }
+    
+    private function get_pagination($start, $end, $current){
+        $return = array();
+        for ($i=$start; $i <= $end ; $i++) { 
+            if($i == $current){
+                array_push($return, array("number" => $i, "current" => true));
+            }else{
+                array_push($return, array("number" => $i, "current" => false));                
+            }
+        }
+        return $return;
     }
 
     private function has_vars_set(){
@@ -156,6 +188,18 @@ class leaflets_page extends pagebase {
     //grab vars form query string
     private function get_vars(){
 
+        //page count
+        $page = get_http_var("page");
+
+        if(isset($page) && is_numeric($page) && $page > 0){
+            $page = floor($page);
+        }else{
+            $page = 1;
+        }
+        $this->leaflet_search->start = (floor($page) - 1) * PAGE_ITEMS_COUNT;
+        $this->leaflet_search->number = PAGE_ITEMS_COUNT;
+
+        //search term
         $search_term = get_http_var("q");        
         if(isset($search_term) && $search_term != ''){
             $this->search_term = trim($search_term);
