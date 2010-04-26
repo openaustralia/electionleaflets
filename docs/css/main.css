@@ -271,3 +271,5 @@ ul.pagination li.next {padding-left:20px;}
 
 /* Random  */
 ul.random li {float:left; margin-right:20px;}
+div.random_questions {font-size:0.8em; border-bottom:solid 1px #ccc; text-align:center; background:#ffffaa;
+    font-weight:bold;}
