@@ -267,3 +267,7 @@ ul.pagination li.current {font-weight:bold; border:none; text-decoration:none!im
 ul.pagination li.previous a, #divPagination ul li.next a {border:none;}
 ul.pagination li.previous {padding-right:20px;}
 ul.pagination li.next {padding-left:20px;}
+
+
+/* Random  */
+ul.random li {float:left;}

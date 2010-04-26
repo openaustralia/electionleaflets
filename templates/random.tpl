@@ -4,9 +4,9 @@
     </div>
 
     <div id="divFullImage" class="contentfull">
-        <ul>
+        <ul class="random">
             {foreach from="$leaflet_images" item="leaflet_image"}
-                <li id="l{$leaflet_image->leaflet_image_id}"><img src="{$leaflet_image->large_url()}" /></li>
+                <li id="l{$leaflet_image->leaflet_image_id}"><img src="{$leaflet_image->medium_url()}" /></li>
             {/foreach}
         </ul>
     </div>
