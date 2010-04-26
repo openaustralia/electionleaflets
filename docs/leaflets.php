@@ -88,7 +88,8 @@ class leaflets_page extends pagebase {
         $this->assign("has_party_attack", isset($this->leaflet_search->party_attack_id));        
         $this->assign("heading", $title_parts);
         $this->assign("alert_link", $this->get_alert_link());
-        $this->assign("total_count", $total_count);        
+        $this->assign("total_count", $total_count); 
+        $this->assign("show_pagination", $total_count > 1);                
         $this->assign("total_pages", $total_pages);                 
         $this->assign("current_page_number", $current_page_number);    
         $this->assign("pagination", $this->get_pagination(1, $total_pages, $current_page_number));

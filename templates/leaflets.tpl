@@ -43,15 +43,17 @@
                     </li>
                 {/foreach}
             </ul>
-            <ul class="pagination">
-                {foreach from="$pagination" item="page"}
-                    <li{if $page.current}class="current"{/if}>
-                        <a href="{$current_url}?page={$page.number}">
-                            {$page.number}
-                        </a>
-                    </li>
-                {/foreach}
-            </ul>
+            {if $show_pagination}
+                <ul class="pagination">
+                    {foreach from="$pagination" item="page"}
+                        <li{if $page.current}class="current"{/if}>
+                            <a href="{$current_url}?page={$page.number}">
+                                {$page.number}
+                            </a>
+                        </li>
+                    {/foreach}
+                </ul>
+            {/if}
         {else}
             {if $has_constituency}
                 <div class="attention">
