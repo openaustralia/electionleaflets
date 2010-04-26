@@ -20,10 +20,18 @@ class browse_page extends pagebase {
         
 		//get categories
 
-        $categories = $search->search_cached("category", array(array("1", "=", "1")));
+        $categories = $search->search_cached("category", 
+                array(array("1", "=", "1")),
+                "AND", null,
+                array(array("name", "ASC"))                
+            );
         $this->assign("categories", $categories);
 
-        $constituencies = $search->search_cached("constituency", array(array("1", "=", "1")));
+        $constituencies = $search->search_cached("constituency", 
+                array(array("1", "=", "1")),
+                "AND", null,
+                array(array("name", "ASC"))
+            );
         $this->assign("constituencies", $constituencies);
 
 		//get top tags
