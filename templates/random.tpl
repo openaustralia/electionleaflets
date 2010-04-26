@@ -1,11 +1,11 @@
 {include file="header.tpl"}
     <div id="divUserStatus">
-        <span><a href="{$www_server}/leaflets/{$leaflet->leaflet_id}/" target="_new">View full details (new window)</a></span> <strong><a href="{$www_server}/random/">Show me another!</a></strong>
+        <span><a href="{$www_server}/leaflets/{$leaflet->leaflet_id}/" target="_new">View full details <small>(new window)</small></a></span> <strong><a href="{$www_server}/random/">Show me another!</a></strong>
     </div>
     <div class="random_questions">
-        <a href="http://spreadsheets.google.com/viewform?formkey=dFhNblRVN1hiXy1iVmhoaWkxNHhGVXc6MQ">Is there a dodgy looking graph on this leaflet?</a>
+        <a href="http://spreadsheets.google.com/viewform?formkey=dFhNblRVN1hiXy1iVmhoaWkxNHhGVXc6MQ" target="_new">Is there a dodgy looking graph on this leaflet? <small>(new window)</small></a>
         &nbsp;&nbsp;
-        <a href="http://spreadsheets.google.com/viewform?formkey=dHJhT0NGYzU1dENQdE5sYWZ2MEN0QUE6MQ">Is there a police officer or Nurse on this leaflet?</a>        
+        <a href="http://spreadsheets.google.com/viewform?formkey=dHJhT0NGYzU1dENQdE5sYWZ2MEN0QUE6MQ"  target="_new">Is there a police officer or Nurse on this leaflet?<small>(new window)</small></a>        
     </div>
     <div id="divFullImage" class="contentfull">
         <ul class="random">
@@ -17,6 +17,6 @@
     </div>
     
     <div id="divUserStatus">
-        <span><a href="{$www_server}/leaflets/{$leaflet->leaflet_id}/"  target="_new">View full details (new window)</a></span> <strong><a href="{$www_server}/random/">Show me another!</a></strong>
+        <span><a href="{$www_server}/leaflets/{$leaflet->leaflet_id}/"  target="_new">View full details <small>(new window)</small></a></span> <strong><a href="{$www_server}/random/">Show me another!</a></strong>
     </div>    
 {include file="footer.tpl"}
