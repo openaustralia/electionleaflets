@@ -3,7 +3,7 @@
 <div class="contentleft">
     <form id="frmUpload" method="post" action="{$form_action}">
         {include file="formvars.tpl"}
-        <h1>Add a leaflet (step 2 of 2)</h1>
+        <h1>Step 2 - add a few details</h1>
         <p>
             Add some more information about this leaflet
         </p>

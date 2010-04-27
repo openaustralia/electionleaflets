@@ -140,6 +140,7 @@ a img {border:none;}
 
 /* Highlight */
 .highlight {background:#ffffaa; padding:0 0.3em;}
+.highlight2 {background:none; text-decoration:underline;}
 
 /* Full images */
 #divFullImage ul {padding:1em 0;}
@@ -212,13 +213,15 @@ div.stats div {float:left;padding-right:30px;}
 #divButtons #btnSkip {font-weight:normal;}
 
 /* Uploadify */
+
+#divFileQue {border-left:solid 1px 808080!important;min-height:100px;_min-height:100px; background:#f8f8f8; width:100%;}
+#divFileQue p.hint {text-align:center; padding-top:30px; color:#8f8f8f; font-weight:bold;}
 .uploadifyQueueItem {
-	font: 11px Verdana, Geneva, sans-serif;
 	border: 2px solid #E5E5E5;
 	background-color: #F5F5F5;
 	margin-top: 5px;
 	padding: 10px;
-	width: 350px;
+	width: 100%;
 }
 .uploadifyError {
 	border: 2px solid #FBCBBC !important;
@@ -273,3 +276,4 @@ ul.pagination li.next {padding-left:20px;}
 ul.random li {float:left; margin-right:20px;}
 div.random_questions {font-size:0.8em; border-bottom:solid 1px #ccc; text-align:center; background:#ffffaa;
     font-weight:bold;}
+    

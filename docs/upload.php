@@ -13,21 +13,21 @@ class upload_page extends pagebase {
                 $this->viewstate['callback'] = $callback;                
             }
         }
+
+        //create a new upload id and add to viewstate
+        $this->viewstate['upload_key'] = md5(uniqid(rand(), true));
     }
 
 	//bind
 	function bind() {
 		$this->page_title = "Add a leaflet";
 		$this->has_upload = true;
-		$upload_key = md5(uniqid(rand(), true));
-		$this->upload_key = $upload_key;
-		session_delete("upload_key");
-		session_write("upload_key", $upload_key);
+		$this->onloadscript = 'setupUploader();';
 	}
 
 	function unbind(){
 	    //get image
-        $upload_key = get_http_var('upload_key');        
+        $upload_key = $this->viewstate['upload_key'];    
         $image_que = factory::create('image_que');
         if(isset($_FILES['Filedata']) && $_FILES['Filedata']['name'] != '' && isset($upload_key) &&  $upload_key != ''){
                $temp_file = $this->upload_image('Filedata');
@@ -72,14 +72,14 @@ class upload_page extends pagebase {
             //has errors?
             if($image['error'] != 0){
                 $this->add_warning("Please select an image to upload");
-            }else{   
+            }else{
                 // not an image?
                 if(!getimagesize($image['tmp_name'])){
                      $this->add_warning("Sorry, that doesn't seem to be an image file");                                    
                  }
             }
             //check is jpeg-Uploadify does not send mime-type, so use a PHP function instead
-			$finfo = finfo_open(FILEINFO_MIME);
+            $finfo = finfo_open(FILEINFO_MIME_TYPE);
 			$image_type = finfo_file($finfo, $image['tmp_name']);
 			finfo_close($finfo);
             if($image_type != "image/jpeg" && $image_type != "image/pjpeg"){

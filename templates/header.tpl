@@ -33,7 +33,6 @@
             <a href="#divContent">Skip navigation</a>
         </div>
 
-
         <div id="divBanner">
             {if $is_home}
             <a href="http://twitter.com/thesc">Follow us on Twitter for the latest titbits of electioneering</a>

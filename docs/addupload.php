@@ -48,7 +48,6 @@ class addupload_page extends pagebase {
     function process(){
      
         if($this->validate()){
-
             //redirect with callback provided
             if($this->viewstate['callback']){
                 redirect("addinfo.php?callback=" . urlencode($this->viewstate['callback']) . "&key=" . urlencode($this->viewstate['upload_key']));

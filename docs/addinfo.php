@@ -110,7 +110,7 @@ class addinfo_page extends pagebase {
 			$this->add_warn_control('txtPostcode');		    
 	    }else{
 	        $geocoder = factory::create('geocoder');
-	        $success = $geocoder->set_from_postcode($this->data['txtPostcode']);
+	        $success = $geocoder->set_from_postcode(trim($this->data['txtPostcode']));
 	        if(!$success){
     			$this->add_warning('Sorry, we couldn\'t locate that postcode');
     			$this->add_warn_control('txtPostcode');	            
@@ -128,14 +128,14 @@ class addinfo_page extends pagebase {
 
             //create & save leaflet
             $leaflet = factory::create('leaflet');
-            $leaflet->title = $this->data['txtTitle'];
+            $leaflet->title = trim($this->data['txtTitle']);
             $leaflet->description = $this->data['txtDescription'];            
             $leaflet->publisher_party_id = $this->data['ddlPartyBy'];                        
-            $leaflet->postcode = $this->data['txtPostcode'];
+            $leaflet->postcode = trim($this->data['txtPostcode']);
             $leaflet->lng = $this->lng;            
             $leaflet->lat = $this->lat;
-            $leaflet->name = $this->data['txtName'];
-            $leaflet->email = $this->data['txtEmail'];
+            $leaflet->name = trim($this->data['txtName']);
+            $leaflet->email = trim($this->data['txtEmail']);
             $leaflet->live = 1;
 
             //date delivered
