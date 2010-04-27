@@ -38,6 +38,7 @@ div.contentright {width:49%;padding:0 0 0 1%;}
 div.contentcolleft {width:74%;padding:0 1% 0 0;}
 div.contentcolright {width:24%;padding:0 0 0 1%;}
 div.bordertop {border-top:dashed 1px #5c6f7b;}
+div.section {padding-top:2em; margin-top:2em;border-top:solid 1px #808080;}
 
 /* Scroll */
 ul.scroll {overflow-y:scroll; height:200px; border:inset 2px; width:70%;}
@@ -64,6 +65,8 @@ ul.results li a.leaflet {height:180px;padding-right:0;}
 #divWelcome {width:45%; float:left;}
 #divWelcome p {font-size:1.3em; font-weight:bold; line-height:1.3em;}
 #pCount {font-size:1em!important; font-weight:normal;}
+#divFrontLookup {background:#ffffaa; padding:0.3em 0; text-align:center;}
+#divFrontLookup input.button {font-size:1em;}
 
 #smlActivist, #smlPost {font-size:0.7em;}
 #divRecentLeaflets {padding-bottom:2em; position:relative; border-top:solid 2px #ccc; margin-top:1em;}

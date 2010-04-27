@@ -27,6 +27,14 @@ class index_page extends pagebase {
             array_push($leaflets_limited, $leaflets[$i]);
         }
         */
+        
+        //constituencies
+        $search = factory::create('search');         
+        $constituencies = $search->search_cached("constituency", 
+                array(array("1", "=", "1")),
+                "AND", null,
+                array(array("name", "ASC"))
+            );
 
         //counts
         $total_counts = tableclass_party::get_party_count(STAT_ZERO_DATE);
@@ -36,6 +44,7 @@ class index_page extends pagebase {
         //assign
         $this->assign("total_counts", $total_counts);
         $this->assign("constituency_counts", $constituency_counts);        
+        $this->assign("constituencies", $constituencies);        
         $this->assign("not_spots", $not_spots);        
         
         

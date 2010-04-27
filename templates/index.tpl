@@ -31,17 +31,22 @@
         </div>
      </div>
      <br class="clear"/>
+     <div id="divFrontLookup">
+         <form method="get" action="{$www_server}/constituencies/">
+             <label for="txtSearch">Enter your postcode to see leaflets near you</label>
+             <input type="text" id="txtSearch" name="p" />
+             <label for="ddlConstituency">or choose a constituency</label>                    
+             <select id="ddlConstituency" name="c">
+                 <option></option>
+                 {foreach from="$constituencies" item="constituency"}
+                     <option value="{$constituency->url_id}">{$constituency->name}</option>
+                 {/foreach}
+             </select>
+             <input  class="button" type="submit" value="GO" />                    
+         </form>
+     </div>
      <div id="divRecentLeaflets">
         <h2>Latest leaflets</h2>
-        <div id="divRecentControls">
-                <form id="frmHomeSearch" method="get" action="{$www_server}/leaflets.php">
-                    <label for="txtSearch">Enter your post code to see leaflets near you</label>
-                    <input type="text" id="txtSearch" name="q" />
-                    <input type="submit" value="GO" />
-                    <small>e.g. <a href="{$www_server}/leaflets.php?q=sw98jx">SW9 8JX</a></small>
-                </form>
-        </div>
-
         <div id="divScroller">
             <a id="btnPrevious" href="#"><img src="{$www_server}/images/arrow_left.png" alt="Previous"/></a>
             <a id="btnNext" href="#"><img src="{$www_server}/images/arrow_right.png" alt="Next"/></a>            
