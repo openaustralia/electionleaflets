@@ -11,7 +11,7 @@
                 <guid isPermaLink="true">{$www_server}/leaflets/{$leaflet->leaflet_id}/</guid>
                 <georss:featurename>{$group->name}</georss:featurename>
                 <georss:point>{$leaflet->lat} {$leaflet->lng}</georss:point>                
-                <description><![CDATA[{$leaflet->description}<br/><img src="{image_url id=$leaflet->leaflet_image_image_key size=s}">"/>]]></description>
+                <description><![CDATA[{$leaflet->description}<br/><a href="{$www_server}/leaflets/{$leaflet->leaflet_id}/"><img src="{image_url id=$leaflet->leaflet_image_image_key size=s}"/></a>]]></description>
                 <link><![CDATA[{$www_server}/leaflets/{$leaflet->leaflet_id}/]]></link>
             </item>
         {/foreach}
