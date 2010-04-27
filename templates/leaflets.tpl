@@ -69,14 +69,11 @@
                 <div class="infobox">
                     {if $has_party}
                         <a href="{$alert_link}">Email alerts for new leaflets from the {$heading[1]}</a>
-                    {/if}
-                    {if $has_category}
+                    {elseif $has_category}
                         <a href="{$alert_link}">Email alerts for new leaflets about {$heading[1]}</a>
-                    {/if}
-                    {if $has_party_attack}
+                    {elseif $has_party_attack}
                         <a href="{$alert_link}">Email alerts for new leaflets attacking the {$heading[1]}</a>
-                    {/if}
-                    {if $has_constituency and $has_leaflets}
+                    {elseif $has_constituency and $has_leaflets}
                         <a href="{$alert_link}">Email alerts for new leaflets in {$heading[1]}</a>
                     {/if}
                 </div>
@@ -99,17 +96,13 @@
                 </a>
                 {if $has_party}
                      <a href="{$rss_link}">Subscribe to an RSS feed for leaflets from the {$heading[1]}</a>
-                 {/if}
-                {if $has_category}
+                {elseif $has_category}
                     <a href="{$rss_link}">Subscribe to an RSS feed about {$heading[1]}</a>
-                {/if}
-                {if $has_party_attack}
+                {elseif $has_party_attack}
                     <a href="{$rss_link}">Subscribe to an RSS feed of new leaflets attacking the {$heading[1]}</a>
-                {/if}
-                {if $has_constituency and $has_leaflets}
+                {elseif $has_constituency and $has_leaflets}
                     <a href="{$rss_link}">Subscribe to an RSS feed of new leaflets in {$heading[1]}</a>
-                {/if}
-                {if $has_vars == false}
+                {else}
                     <a href="{$rss_link}">Subscribe to an RSS feed of the latest leaflets</a>
                 {/if}
             </div>
