@@ -74,6 +74,23 @@ class leaflets_page extends pagebase {
         }
         
         $total_pages = ceil($total_count / PAGE_ITEMS_COUNT);        
+        
+        
+        //get other stuff for sidebar
+        $search = factory::create('search');
+
+		//get top parties
+        $parties = $search->search_cached("party", 
+                array(array("major", "=", true)),
+                "AND",
+                null,
+                array(array("name", "ASC"))
+            );
+        $categories = $search->search_cached("category", 
+                array(array("1", "=", "1")),
+                "AND", null,
+                array(array("name", "ASC"))                
+            );            
 
 		//assign vars
 		$title_parts = $this->get_title();
@@ -96,7 +113,9 @@ class leaflets_page extends pagebase {
         $this->assign("total_pages", $total_pages);                 
         $this->assign("current_page_number", $current_page_number);    
         $this->assign("pagination", $this->get_pagination(1, $total_pages, $current_page_number));
-        $this->assign("search_link", WWW_SERVER);        
+        $this->assign("search_link", WWW_SERVER);   
+        $this->assign("parties", $parties);   
+        $this->assign("categories", $categories);          
 
 	}
 	

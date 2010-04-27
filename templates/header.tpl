@@ -61,8 +61,8 @@
                   </a>
               </li>
               <li>
-                  <a href="{$www_server}/browse.php">
-                      Browse
+                  <a href="{$www_server}/leaflets/">
+                      Leaflets
                   </a>
               </li>
               <li>
@@ -73,12 +73,6 @@
               <li>
                   <a href="{$www_server}/analyze.php">
                       Analyse
-                  </a>
-              </li>
-
-              <li>
-                  <a href="{$www_server}/about.php">
-                      About
                   </a>
               </li>
             </ul>

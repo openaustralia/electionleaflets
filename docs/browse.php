@@ -17,9 +17,8 @@ class browse_page extends pagebase {
                 array(array("name", "ASC"))
             );
         $this->assign("parties", $parties);
-        
-		//get categories
 
+		//get categories
         $categories = $search->search_cached("category", 
                 array(array("1", "=", "1")),
                 "AND", null,

@@ -63,7 +63,6 @@
     </div>
     {if $has_leaflets}
         <div class="contentcolright">
-
             {* iframe  *}
             {if $has_party || $has_category || $has_party_attack || $has_constituency}
                 <div class="infobox">
@@ -127,6 +126,29 @@
                     </p>
                 </div>
             {/if}
+            <div class="infobox">  
+                <h3>Parties</h3>
+                <ul class="parties">
+                    {foreach from="$parties" item="party"}
+                        <li>
+                            <a href="{$www_server}/parties/{$party->url_id}">{$party->name}</a>
+                        </li>
+                    {/foreach}
+                    <li class="more">
+                        <a href="{$www_server}/parties.php">View all parties ...</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="infobox">
+                <h3>Categories</h3>
+                <ul>
+                    {foreach from="$categories" item="category"}
+                        <li>
+                            <a href="{$www_server}/leaflets.php?c={$category->category_id}">{$category->name}</a>
+                        </li>
+                    {/foreach}
+                </ul>
+            </div>
         </div>    
     {/if}
 {include file="footer.tpl"}
