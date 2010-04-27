@@ -9,13 +9,7 @@
                     </p>
                 {/if}
             {else}
-                <div class="searchbox">
-                    <form method="get" action="{$www_server}/leaflets.php">
-                    <label for="txtSearch">Results {if $is_geo}near{else}for{/if}</label>
-                    <input type="text" id="txtSearch" name="q" value="{$user_term}"/>
-                    <input type="submit" value="GO" />
-                    <br/>
-                </div>   
+                <h1>Latest leaflets</h1>
             {/if}
         </div>
     {/if}

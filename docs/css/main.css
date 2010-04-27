@@ -256,7 +256,6 @@ div.stats div {float:left;padding-right:30px;}
 	background-image: url(/images/candy.gif);
 }
 
-
 /* info box */
 div.infobox {background:#f8f8f8; padding:10px; font-size:0.8em; margin-bottom:1em; line-height:1.2em;
     min-height:50px;}
@@ -265,7 +264,7 @@ div.infobox p, div.infobox h3 {color:#333; line-height:1.2em; padding:0 0 1em 0;
 div.infobox img {vertical-align:top; float:left; margin:0 4px 4px 0;}
 
 /* Pagination  */
-ul.pagination {margin:0 auto!important; clear:left; text-align:center;}
+ul.pagination {margin:1em auto 2em  auto!important; clear:left; text-align:center;}
 ul.pagination li {display:inline;}
 ul.pagination li a {border:solid 1px #bdd8ec;padding:2px 7px;text-align:center;margin:0 2px; text-decoration:none!important;}
 ul.pagination li span {padding:2px 7px;text-align:center;margin:0 2px;}
