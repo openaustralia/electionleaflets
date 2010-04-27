@@ -46,24 +46,14 @@ class index_page extends pagebase {
         $this->assign("constituency_counts", $constituency_counts);        
         $this->assign("constituencies", $constituencies);        
         $this->assign("not_spots", $not_spots);        
-        
-        
+
         $this->assign("leaflets", $leaflets);			
         $this->assign("is_home", true);
 	}
 
     private function get_leaflet_count(){
-        $return = 0;
-		$cache = cache::factory();
-    	$cached = $cache->get("total_leaflet_count");    	
-        if($cached !== false && isset($cached)){
-            $return = $cached;
-        }else{
-            $leaflet = factory::create('leaflet');
-            $return = $leaflet->count();            
-            $cache->set("total_leaflet_count", $return);
-        }
-        return $return;
+        $leaflet = factory::create('leaflet');
+        return  $leaflet->count_cached();
     }
     
     

@@ -177,6 +177,22 @@ abstract class tablebase extends DB_DataObject {
 		
 		return $return;
     }
+    
+    public function count_cached(){
+	    $return = null;
+	    $cache = cache::factory();
+	    $key = serialize($this);
+		$cached = $cache->get($key, "count");
+		
+		//if we have something in the cache, grab that, if not do the query as normal
+		if (isset($cached) && $cached !== false) {
+			$return = $cached;
+		}else{
+	        $return = $this->count();	    
+		}
+		return $return;
+    }
+    
 }
 
 ?>

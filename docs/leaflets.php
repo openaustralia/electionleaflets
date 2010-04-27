@@ -55,7 +55,7 @@ class leaflets_page extends pagebase {
 		$total_count = 0;
 		$current_page = 1;		
 
-            $leaflets = $this->leaflet_search->search();
+        $leaflets = $this->leaflet_search->search();
 		if($this->has_vars_set()){ 
             //get total count (set out to null and redo)
             //TODO: make this more efficiant by removing joins
@@ -68,8 +68,12 @@ class leaflets_page extends pagebase {
             $all_leaflets = $this->leaflet_search->search(true);
 
             $total_count = count($all_leaflets);
-            $total_pages = ceil($total_count / PAGE_ITEMS_COUNT);
+        }else{
+            $leaflet = factory::create('leaflet');
+            $total_count = $leaflet->count_cached();   
         }
+        
+        $total_pages = ceil($total_count / PAGE_ITEMS_COUNT);        
 
 		//assign vars
 		$title_parts = $this->get_title();
