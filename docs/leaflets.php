@@ -54,9 +54,9 @@ class leaflets_page extends pagebase {
 		$leaflets = array();
 		$total_count = 0;
 		$current_page = 1;		
-		//if($this->has_vars_set()){
+
             $leaflets = $this->leaflet_search->search();
-            
+		if($this->has_vars_set()){ 
             //get total count (set out to null and redo)
             //TODO: make this more efficiant by removing joins
             $current_page_number = ($this->leaflet_search->start / PAGE_ITEMS_COUNT) + 1;
@@ -69,7 +69,7 @@ class leaflets_page extends pagebase {
 
             $total_count = count($all_leaflets);
             $total_pages = ceil($total_count / PAGE_ITEMS_COUNT);
-        //}
+        }
 
 		//assign vars
 		$title_parts = $this->get_title();
