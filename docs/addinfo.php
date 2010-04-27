@@ -9,19 +9,24 @@ class addinfo_page extends pagebase {
     private $lng = null;
     private $lat = null;
     private $image_que_items = array();
+    private $upload_key = null;
 
-    //setup
-    function setup(){
-        $upload_key = session_read("upload_key");
+    //load
+    function load(){
+        $upload_key = get_http_var("key");
         if(!isset($upload_key) || $upload_key == ''){
             redirect("addupload.php");
         }else{
+            $this->upload_key = $upload_key;
             $this->image_que_items = $this->get_images_from_que();   
             if(count($this->image_que_items) <= 0){
                 redirect("addupload.php");                
             }
-        }
+        }        
+    }
 
+    //setup
+    function setup(){
         //store callback url in viewstate if needed
         $callback = get_http_var('callback');        
         if(isset($callback)){
@@ -147,7 +152,7 @@ class addinfo_page extends pagebase {
 
                 //save images
                 $images = $this->get_images_from_que();
- 
+
                 $sequence = 1;
                 foreach ($images as $image) {
                     $leaflet_image = factory::create("leaflet_image");
@@ -229,18 +234,16 @@ class addinfo_page extends pagebase {
     }
 
     private function clear_images_from_que(){
-        $upload_key = session_read("upload_key");        
         $image_que = factory::create('image_que');
-        $image_que->upload_key = $upload_key;
+        $image_que->upload_key = $this->upload_key;
         $image_que->delete();
     }
 
     private function get_images_from_que(){
 
-        $upload_key = session_read("upload_key");
         $search = factory::create('search');
         $image_que_items = $search->search("image_que", 
-                array(array("upload_key", "=", $upload_key)),
+                array(array("upload_key", "=", $this->upload_key)),
                 "AND",
                 null,
                 array(array("uploaded_date", "ASC"))

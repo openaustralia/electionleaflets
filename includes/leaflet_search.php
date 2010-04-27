@@ -72,7 +72,7 @@ class leaflet_search {
                 $this->get_where_clauses($live_only), 
                 'AND', 
                 $this->get_joins(),
-                array(array("leaflet_id", "DESC")),
+                array(array("date_uploaded", "DESC")),
                 $this->number,
                 $this->start
             );
@@ -82,7 +82,7 @@ class leaflet_search {
                 $this->get_where_clauses($live_only), 
                 'AND', 
                 $this->get_joins(),
-                array(array("leaflet_id", "DESC")),
+                array(array("date_uploaded", "DESC")),
                 $this->number,
                 $this->start
             );        

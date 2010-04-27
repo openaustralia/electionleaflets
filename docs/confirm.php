@@ -16,8 +16,7 @@ class confirm_page extends pagebase {
                     array(array("uploaded_date", "ASC"))
                 );   
             if(count($image_que_items) > 0){
-                session_write("upload_key", $upload_key);
-                redirect(WWW_SERVER . '/addinfo.php');
+                redirect(WWW_SERVER . '/addinfo.php?key=' . urlencode($upload_key));
             }else{
                 throw_404();
             }

@@ -6,9 +6,6 @@ class addupload_page extends pagebase {
     //setup
     function setup(){
 
-        //clear session
-        session_delete("upload_key");
-
         //store callback url in viewstate if needed
         $callback = get_http_var('callback');        
         if(isset($callback)){
@@ -19,7 +16,7 @@ class addupload_page extends pagebase {
         }
         
         //create a new upload id and add to viewstate
-        session_write("upload_key", md5(uniqid(rand(), true))); 
+        $this->viewstate['upload_key'] = md5(uniqid(rand(), true)); 
     }
 
 	//bind
@@ -31,12 +28,12 @@ class addupload_page extends pagebase {
 
 	    //get images
 	    foreach ($_FILES as $key => $value) {   
-	        $ulpoad_key = session_read("upload_key");
-	        if(isset($_FILES[$key]) && $_FILES[$key]['name'] != '' && isset($ulpoad_key) &&  $ulpoad_key != ''){
+	        $upload_key = $this->viewstate['upload_key'];
+	        if(isset($_FILES[$key]) && $_FILES[$key]['name'] != '' && isset($upload_key) &&  $upload_key != ''){
                 $temp_file = $this->upload_image($key);
                 if($temp_file !== false){
             	    $image_que = factory::create('image_que');
-            	    $image_que->upload_key =  session_read("upload_key");
+            	    $image_que->upload_key =  $upload_key;
             	    $image_que->save_image($temp_file);
             	    $image_que->insert();
                 }
@@ -54,9 +51,9 @@ class addupload_page extends pagebase {
 
             //redirect with callback provided
             if($this->viewstate['callback']){
-                redirect("addinfo.php?callback=" . urlencode($this->viewstate['callback']));
+                redirect("addinfo.php?callback=" . urlencode($this->viewstate['callback']) . "&key=" . urlencode($this->viewstate['upload_key']));
             }else{
-                redirect("addinfo.php");                                
+                redirect("addinfo.php?key=" . urlencode($this->viewstate['upload_key']));                                
             }
             
         }else{
