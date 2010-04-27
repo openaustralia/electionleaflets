@@ -62,7 +62,7 @@
               </li>
               <li>
                   <a href="{$www_server}/leaflets/">
-                      Leaflets
+                      Latest
                   </a>
               </li>
               <li>
