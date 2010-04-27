@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-	<title>{$site_name} | {$page_title}</title>	
+	<title>{$page_title} | {$site_name}</title>	
 	<link rel="stylesheet" media="all" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/themes/ui-lightness/jquery-ui.css" />
 	<link rel="stylesheet" media="all" type="text/css" href="{$www_server}/css/main.css?v=3" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
