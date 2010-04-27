@@ -28,6 +28,7 @@ class upload_page extends pagebase {
 	function unbind(){
 	    //get image
         $upload_key = $this->viewstate['upload_key'];    
+		error_log($upload_key);
         $image_que = factory::create('image_que');
         if(isset($_FILES['Filedata']) && $_FILES['Filedata']['name'] != '' && isset($upload_key) &&  $upload_key != ''){
                $temp_file = $this->upload_image('Filedata');
@@ -42,7 +43,7 @@ class upload_page extends pagebase {
 			print json_encode(array(
 					"success" 	=> true,
 					"image_key" => $image_que->image_key,
-					"image_url"	=> s3_url('m',$image_que->image_key)
+					"image_url"	=> s3_url('s',$image_que->image_key)
 				));
 		}
 		else{
@@ -64,10 +65,10 @@ class upload_page extends pagebase {
     private function upload_image($upload_control){
         $return = false;
         $image = $_FILES[$upload_control];
-
         //not uploaded file?
         if(!is_uploaded_file($image["tmp_name"])){
             $this->add_warning("Sorry, An error occurred uploading your image");
+			error_log('error');
         }else{
             //has errors?
             if($image['error'] != 0){
@@ -81,6 +82,7 @@ class upload_page extends pagebase {
             //check is jpeg-Uploadify does not send mime-type, so use a PHP function instead
             $finfo = finfo_open(FILEINFO_MIME_TYPE);
 			$image_type = finfo_file($finfo, $image['tmp_name']);
+			error_log($image_type);
 			finfo_close($finfo);
             if($image_type != "image/jpeg" && $image_type != "image/pjpeg"){
                  $this->add_warning("Sorry, your image needs to be in jpeg/jpg format");

@@ -11,12 +11,12 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js" type="text/javascript"></script> 
     <script src="{$www_server}/script/jcarousel.js" type="text/javascript" charset="utf-8"></script>
     <script src="{$www_server}/script/functions.js" type="text/javascript"></script>
-    <script src="{$www_server}/script/main.js?v=1" type="text/javascript"></script>
 {if $has_upload}
 	<script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js" type="text/javascript"></script>
 	<script src="{$www_server}/script/jquery.uploadify.v2.1.0.min.js" type="text/javascript"></script>
 	<script src="{$www_server}/script/jquery.json-2.2.min.js" type="text/javascript"></script>
-{/if}
+{/if}    
+	<script src="{$www_server}/script/main.js?v=1" type="text/javascript"></script>
 {if $has_map}
      <script src="http://maps.google.com/maps?file=api&v=2&key={$google_maps_key}" type="text/javascript"></script>
      <script src="{$www_server}/script/mapstraction.js" type="text/javascript"></script>

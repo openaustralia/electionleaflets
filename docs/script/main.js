@@ -87,37 +87,45 @@ function setupRate(){
 }
 
 function setupUploader(){
-    $('[name=addInfo]').click(function(){window.location="/addinfo.php";return false;});
     $("#uploadify").uploadify({
-    	'uploader'       : 'script/uploadify.swf',
-    	'script'         : '/upload.php',
-    	'buttonText'     : 'Select files from your computer',
-    	'buttonImg'      : 'images/upload.png',
-    	'width'          : 400,
-    	'height'          : 80,
-    	'scriptData'     : {
-    							'_is_postback' : true,
-    							'upload_key'   : $('[name=upload_key]').val()
-    						},
-    	'cancelImg'      : '/images/cancel.png',
-    	'folder'         : 'uploads',
-    	'queueID'        : 'divFileQue',
-    	'auto'           : true,
-    	'multi'          : true,
-    	'simUploadLimit' : 4,
-    	'onSelectOnce'   : function(){
-                                $('#divFileQue p.hint').hide();
-	                        },
-    	'onComplete'     : function(event,queueId,file,response,data){
-    							var json = $.evalJSON(response);
-    							$('.contentright').prepend("<div id='"+json.image_key+"' style='display:none'><img src='"+json.image_url+"'/></div>");
-    							$('#'+json.image_key).fadeIn('slow');
-    						},
-    	'onOpen'		 : function(){
-    							$('[name=addInfo]').attr('disabled', 'disabled');
-    						},
-    	'onAllComplete'	 : function(){
-    							$('[name=addInfo]').attr('disabled', '');
-    						}
+        'uploader'       : 'script/uploadify.swf',
+        'script'         : '/upload.php',
+        'buttonText'     : 'Select files from your computer',
+        'buttonImg'      : 'images/upload.png',
+        'width'          : 400,
+        'height'         : 80,
+        'scriptData'     : {
+                                '_is_postback'          : $('[name=_is_postback]').val(),
+                                '_viewstate'            : $('[name=_viewstate]').val(),
+                                '_postback_command'     : $('[name=_postback_command]').val(),
+                                '_postback_argument'    : $('[name=_postback_argument]').val()
+                            },
+        'cancelImg'      : '/images/cancel.png',
+        'folder'         : 'uploads',
+        'queueID'        : 'divFileQue',
+        'auto'           : true,
+        'multi'          : true,
+        'simUploadLimit' : 4,
+        'onSelectOnce'   : function(){
+                                      $('#divFileQue p.hint').hide();
+                               },
+        'onComplete'     : function(event,queueId,file,response,data){
+                                        var json = $.evalJSON(response);
+                                        $('#imageList').prepend("<div id='"+json.image_key+"' style='display:none'><img src='"+json.image_url+"'/></div>");
+                                        $('#'+json.image_key).fadeIn('slow');
+                                    },
+        'onOpen'         : function(){
+                                        $('[name=addInfo]').attr('disabled', 'disabled');
+                                    },
+        'onAllComplete'  : function(){
+                                        $('[name=addInfo]').attr('disabled', '');
+                                    },
+        'onProgress'      : function(event,queueId,file,data){
+                                            if (data.percentage==100){
+                                                     $('#uploadify'+queueId+' > .percentage').text(' - Processing ...');
+                                                     $('#uploadify'+queueId+'ProgressBar').css("width","100%");
+                                                     return false;   
+                                            }
+                                    }
     });
 }

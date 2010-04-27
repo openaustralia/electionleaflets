@@ -216,7 +216,6 @@ div.stats div {float:left;padding-right:30px;}
 #divButtons #btnSkip {font-weight:normal;}
 
 /* Uploadify */
-
 #divFileQue {border-left:solid 1px 808080!important;min-height:100px;_min-height:100px; background:#f8f8f8; width:100%;}
 #divFileQue p.hint {text-align:center; padding-top:30px; color:#8f8f8f; font-weight:bold;}
 .uploadifyQueueItem {

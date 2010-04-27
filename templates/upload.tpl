@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-
+<form method="post" action="/addinfo.php" >
 <div id="divContentFull">
         <h1>Step 1 - upload images</h1>
         <p>
@@ -9,16 +9,14 @@
 			<input type="file" name="uploadify" id="uploadify" />
 			<div id="divFileQue">
 			    <p class="hint">Your images will appear here</p>
+				<div id="imageList"></div>
 			</div>
 	    </div>
 		<br/>
 		<div class="buttons">
-			<form method="post" action="{$form_action}" >
                 {include file="formvars.tpl"}        			    
             	<input name="addInfo" type="submit" disabled="disabled"  value="Step 2 - add a few details &raquo;"/>
-			</form>
         </div>
-    </form>
 </div>                
-    
+</form>
 {include file="footer.tpl"}
