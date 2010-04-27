@@ -109,6 +109,9 @@
                 {if $has_constituency and $has_leaflets}
                     <a href="{$rss_link}">Subscribe to an RSS feed of new leaflets in {$heading[1]}</a>
                 {/if}
+                {if $has_vars == false}
+                    <a href="{$rss_link}">Subscribe to an RSS feed of the latest leaflets</a>
+                {/if}
             </div>
         
             {if $has_constituency}
