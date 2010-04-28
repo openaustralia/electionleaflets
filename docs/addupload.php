@@ -85,7 +85,7 @@ class addupload_page extends pagebase {
                 $this->add_warning("Sorry, your image needs to be in jpeg/jpg format");
             }
         }
-        
+
         //if errors return false
         if(count($this->warnings) == 0){
             

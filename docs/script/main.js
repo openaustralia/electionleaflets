@@ -110,9 +110,11 @@ function setupUploader(){
                                       $('#divFileQue p.hint').hide();
                                },
         'onComplete'     : function(event,queueId,file,response,data){
+                                        console.log(response);
                                         var json = $.evalJSON(response);
-                                        $('#imageList').prepend("<div id='"+json.image_key+"' style='display:none'><img src='"+json.image_url+"'/></div>");
-                                        $('#'+json.image_key).fadeIn('slow');
+                                        $.each(json.images,function(index,image_url){
+                                                $('#imageList').prepend("<div><img src='"+image_url+"'/></div>");
+                                        });
                                     },
         'onOpen'         : function(){
                                         $('[name=addInfo]').attr('disabled', 'disabled');
@@ -126,6 +128,7 @@ function setupUploader(){
                                                      $('#uploadify'+queueId+'ProgressBar').css("width","100%");
                                                      return false;   
                                             }
+                                            return true;
                                     }
     });
 }
