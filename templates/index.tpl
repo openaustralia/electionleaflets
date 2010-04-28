@@ -90,7 +90,9 @@
                     <li><a href="{$www_server}/constituencies/{$constituency->url_id}/">{$constituency->name}</a></li>
                 {/foreach}
             </ul>
-            <a href="{$www_server}/notspots.php">View all not-spots</a>
+            <p>
+                <a href="{$www_server}/notspots/">View all not-spots</a>
+            </p>
         </div>
     </div>
     

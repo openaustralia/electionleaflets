@@ -3,16 +3,10 @@
 <div class="contentfull">
 
         <h1>Election Campaign Not-Spots Appeal</h1>
-        <p>We currently have <strong>no leaflets for these constituencies</strong>! Are the politicians just ignoring them, or are we just missing out on the campaign?
-        </p> 
-        <p>Help us find out what is really going on in these seats by:
-            <ol>
-                <li>Email or tweet politicians in these seats asking for their or their opponents leaflets.</li>
-                <li>Write a blog post appealing for leaflets that links to this page.</li>
-                <li>If you live in one of these constituencies hunt down and <a href="{$www_server}/addupload.php">upload a leaflet</a>.</li>
-            </ol>
+        <p><strong>Thanks to you we have nearly 4,000 leaflets so far, but none for the constituencies listed below</strong>. They are, for the most part, <em>very</em> safe seats, could there be a connection?.
         </p>
-        <p>Thanks and have a good weekend, The Straight Choice.org team</p>
+<embed id=VideoPlayback src=http://video.google.com/googleplayer.swf?docid=-9156604322837849461&hl=en&fs=true style=width:400px;height:326px allowFullScreen=true allowScriptAccess=always type=application/x-shockwave-flash> </embed>
+        <p>Help us track down leaflets for these constituencies!</p>
         <hr/>
         <ul>
             {foreach from="$not_spots" item="constituency"}
