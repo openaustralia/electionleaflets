@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-<form method="post" action="/addinfo.php" >
+<form method="get" action="/addinfo.php" >
 <div id="divContentFull">
         <h1>Step 1 - upload images</h1>
         <p>
