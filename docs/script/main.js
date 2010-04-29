@@ -110,7 +110,7 @@ function setupUploader(){
                                       $('#divFileQue p.hint').hide();
                                },
         'onComplete'     : function(event,queueId,file,response,data){
-                                        console.log(response);
+                                        //console.log(response);
                                         var json = $.evalJSON(response);
                                         $.each(json.images,function(index,image_url){
                                                 $('#imageList').prepend("<div><img src='"+image_url+"'/></div>");
