@@ -15,12 +15,12 @@ class addinfo_page extends pagebase {
     function load(){
         $upload_key = get_http_var("key");
         if(!isset($upload_key) || $upload_key == ''){
-            redirect("upload.php");
+            redirect("addupload.php");
         }else{
             $this->upload_key = $upload_key;
             $this->image_que_items = $this->get_images_from_que();   
             if(count($this->image_que_items) <= 0){
-                redirect("upload.php");                
+                redirect("addupload.php");                
             }
         }        
     }
