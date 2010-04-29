@@ -13,4 +13,9 @@ RewriteRule ^leaflets/([0-9]+)/?$ leaflet.php?q=$1 [NC,L]
 RewriteRule ^about/?$ about.php [NC,L]
 RewriteRule ^notspots/?$ notspots.php [NC,L]
 RewriteRule ^random/?$ random.php [NC,L]
-php_flag  log_errors on
+
+RewriteCond  %{HTTP_USER_AGENT}  Linux [NC]
+RewriteRule  ^upload.php$         addupload.php  [L]
+
+#php_value error_reporting 8191
+#php_flag  log_errors on
