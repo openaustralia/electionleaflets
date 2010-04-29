@@ -14,6 +14,7 @@
 	    </div>
 		<br/>
 		<div class="buttons">
+                {include file="formvars.tpl"}        			    
             	<input name="addInfo" type="submit" disabled="disabled"  value="Step 2 - add a few details &raquo;"/>
         </div>
 </div>                
