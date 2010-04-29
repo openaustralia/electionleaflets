@@ -9,7 +9,7 @@ class analyze_page extends pagebase {
 		$this->page_title = "Analysis";				
         $this->assign("leaflet_count", $this->get_leaflet_count());
         $rate_value = factory::create("rate_value");
-        $result = $rate_value->execute_cached("Select user_name, count(leaflet_id) as count from rate_value group by user_name order by count(leaflet_id) desc");
+        $result = $rate_value->execute_cached("Select user_name, count(leaflet_id) as count from rate_value group by user_name order by count(leaflet_id) desc limit 50");
         
         $this->assign("users", $result);
 	}
