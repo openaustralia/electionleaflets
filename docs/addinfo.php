@@ -13,7 +13,7 @@ class addinfo_page extends pagebase {
 
     //load
     function load(){
-        $upload_key = get_http_var("key")?get_http_var("key"):$this->viewstate['upload_key'];
+        $upload_key = get_http_var("key");
         if(!isset($upload_key) || $upload_key == ''){
             redirect("upload.php");
         }else{
