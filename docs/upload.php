@@ -28,33 +28,30 @@ class upload_page extends pagebase {
 	function unbind(){
 	    //get image
         $upload_key = $this->viewstate['upload_key'];    
-        $images = array();
+		error_log($upload_key);
         $image_que = factory::create('image_que');
         if(isset($_FILES['Filedata']) && $_FILES['Filedata']['name'] != '' && isset($upload_key) &&  $upload_key != ''){
-               $temp_files = $this->upload_image('Filedata');
-               if($temp_files !== false){
-                    foreach ($temp_files as $filename) {
-                        $image_que->upload_key =  $upload_key;
-                        $image_que->save_image($filename);
-                        $image_que->insert();
-                        array_push($images, s3_url('s',$image_que->image_key));
-                    }
+               $temp_file = $this->upload_image('Filedata');
+               if($temp_file !== false){
+           	    $image_que->upload_key =  $upload_key;
+           	    $image_que->save_image($temp_file);
+           	    $image_que->insert();
                }
            }
-           
-        header("Content-type: application/json; charset=utf-8");
-        if ($this->validate()){
-                print json_encode(array(
-                                "success" 	=> true,
-                                "images"        => $images
-                        ));
-        }
-        else{
-                print json_encode(array(
-                                "success" 	=> false,
-                                "warnings"	=> $this->warnings
-                        ));
-        }
+		header("Content-type: application/json; charset=utf-8");
+		if ($this->validate()){
+			print json_encode(array(
+					"success" 	=> true,
+					"image_key" => $image_que->image_key,
+					"image_url"	=> s3_url('s',$image_que->image_key)
+				));
+		}
+		else{
+			print json_encode(array(
+					"success" 	=> false,
+					"warnings"	=> $this->warnings
+				));
+		}
     }
     
     function validate(){
@@ -67,14 +64,43 @@ class upload_page extends pagebase {
 
     private function upload_image($upload_control){
         $return = false;
-        $file = $_FILES[$upload_control]['tmp_name'];
-        $image = new Imagick($file);
-        $identity = $image->identifyImage(TRUE);
-        $random_name = md5(uniqid(rand(), true));
-        $temp_file_name = TEMP_DIR . '/' .$random_name.'.jpg';
-        $image->writeImages($temp_file_name,false);
-        return glob(TEMP_DIR . '/' .$random_name.'*.jpg');
+        $image = $_FILES[$upload_control];
+        //not uploaded file?
+        if(!is_uploaded_file($image["tmp_name"])){
+            $this->add_warning("Sorry, An error occurred uploading your image");
+			error_log('error');
+        }else{
+            //has errors?
+            if($image['error'] != 0){
+                $this->add_warning("Please select an image to upload");
+            }else{
+                // not an image?
+                if(!getimagesize($image['tmp_name'])){
+                     $this->add_warning("Sorry, that doesn't seem to be an image file");                                    
+                 }
+            }
+            //check is jpeg-Uploadify does not send mime-type, so use a PHP function instead
+            $finfo = finfo_open(FILEINFO_MIME_TYPE);
+			$image_type = finfo_file($finfo, $image['tmp_name']);
+			error_log($image_type);
+			finfo_close($finfo);
+            if($image_type != "image/jpeg" && $image_type != "image/pjpeg"){
+                 $this->add_warning("Sorry, your image needs to be in jpeg/jpg format");
+            }
+        }   
+        //if errors return false
+        if(count($this->warnings) == 0){
+            //save it to disk in a temp location
+            $temp_file_name = TEMP_DIR . '/' . md5(uniqid(rand(), true));
+    	    $moved = move_uploaded_file($image['tmp_name'], $temp_file_name);
+    	    if($moved){
+    	        $return = $temp_file_name;
+	        }
+        }
+
+        return $return;
     }
+
 }
 
 //create class addupload_page
