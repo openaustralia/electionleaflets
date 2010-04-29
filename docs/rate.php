@@ -98,11 +98,22 @@ class rate_page extends pagebase {
             trigger_error("No leaflet ID set on rate page");
         }
         
-        
-        //save
+        //save rate values
         foreach ($rate_values as $rate_value) {
             $rate_value->insert();
         }
+        
+        //anything interesting?
+        $interesting = trim($this->data['txtInteresting']);
+        if(isset($interesting) && $interesting != '' && strlen($interesting) > 30){
+            $rate_interesting = factory::create('rate_interesting');
+            $rate_interesting->leaflet_id = $leaflet_id;                    
+            $rate_interesting->description = $interesting; 
+            $rate_interesting->user_name = $name;
+            $rate_interesting->user_email = $email;
+            $rate_interesting->insert();
+        }
+        
         
         redirect(WWW_SERVER . "/rate.php");
     }

@@ -24,11 +24,10 @@ class upload_page extends pagebase {
 		$this->has_upload = true;
 		$this->onloadscript = 'setupUploader();';
 	}
-
-	function unbind(){
-	    //get image
-        $upload_key = $this->viewstate['upload_key'];    
-		error_log($upload_key);
+    
+    function handle_upload(){
+        //get image
+        $upload_key = $this->viewstate['upload_key'];
         $image_que = factory::create('image_que');
         if(isset($_FILES['Filedata']) && $_FILES['Filedata']['name'] != '' && isset($upload_key) &&  $upload_key != ''){
                $temp_file = $this->upload_image('Filedata');
@@ -58,8 +57,13 @@ class upload_page extends pagebase {
         return count($this->warnings) == 0;
     }
     
+    
     function process(){
-
+	    if($this->data['_is_uploadify'] == "1"){
+	        $this->handle_upload();
+        }else{
+            redirect(WWW_SERVER . "addinfo.php?key=" . $this->viewstate['upload_key']);
+        }
     }
 
     private function upload_image($upload_control){

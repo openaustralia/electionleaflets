@@ -133,6 +133,7 @@ ul.tagcloud li.tg6 {font-size:1.4em;}
 ul {padding:0; margin:0;list-style-type:none;}
 ul.inline li {display:inline; padding:0;}
 ul li.more {padding-top:1em;}
+ul.bullets {list-style-type: square;}
 
 /* Clear */
 br.clear {clear:left;}
@@ -198,7 +199,7 @@ div.stats div {float:left;padding-right:30px;}
 /* Rate */
 #divUserStatus {text-align:right; font-size:0.9em; border-bottom:solid 1px #ccc;}
 #divUserStatus span {float:left;}
-#divRateControls {background:#fff; height:140px; padding-top:10px; position:fixed; bottom:0; left:0; right:0;
+#divRateControls {background:#fff; height:220px; padding-top:10px; position:fixed; bottom:0; left:0; right:0;
     border-top:ridge 4px #ccc;}
 
 #divRateControls div {clear:left;}
@@ -214,6 +215,9 @@ div.stats div {float:left;padding-right:30px;}
 #divButtons #btnSave {background:#D2FFCF;}
 
 #divButtons #btnSkip {font-weight:normal;}
+
+#divDodgyClaim {padding:8px 20px 0 20px;}
+#divDodgyClaim textarea {width:100%; height:3em;}
 
 /* Uploadify */
 #divFileQue {border-left:solid 1px 808080!important;min-height:100px;_min-height:100px; background:#f8f8f8; width:100%;}
@@ -278,3 +282,8 @@ ul.random li {float:left; margin-right:20px;}
 div.random_questions {font-size:0.8em; border-bottom:solid 1px #ccc; text-align:center; background:#ffffaa;
     font-weight:bold;}
     
+    
+/* Tables */
+table {border-collapse:collapse;}
+table th {font-weight:bold; border-bottom:solid 1px #808080;}
+table th, table td {padding:1em;}

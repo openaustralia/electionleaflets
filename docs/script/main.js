@@ -96,6 +96,7 @@ function setupUploader(){
         'height'         : 80,
         'scriptData'     : {
                                 '_is_postback'          : $('[name=_is_postback]').val(),
+                                '_is_uploadify'          : 1,                                
                                 '_viewstate'            : $('[name=_viewstate]').val(),
                                 '_postback_command'     : $('[name=_postback_command]').val(),
                                 '_postback_argument'    : $('[name=_postback_argument]').val()

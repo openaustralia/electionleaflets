@@ -1210,7 +1210,6 @@ CREATE TABLE `rate_type` (
 )
 CHARACTER SET utf8;
 
-
 CREATE TABLE `rate_value` (
   `rate_value_id` INT NOT NULL AUTO_INCREMENT,
   `leaflet_id` INT NOT NULL,
@@ -1223,3 +1222,13 @@ CREATE TABLE `rate_value` (
 CHARACTER SET utf8;
 
 ALTER TABLE `party` ADD COLUMN `twitter_account` varchar(50) AFTER `colour`;
+
+CREATE TABLE `rate_interesting` (
+  `rate_interesting_id` INT NOT NULL AUTO_INCREMENT,
+  `leaflet_id` INT NOT NULL,
+  `description` TEXT NOT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  PRIMARY KEY (`rate_interesting_id`)
+)
+CHARACTER SET utf8;
