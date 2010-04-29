@@ -33,9 +33,9 @@ class upload_page extends pagebase {
         if(isset($_FILES['Filedata']) && $_FILES['Filedata']['name'] != '' && isset($upload_key) &&  $upload_key != ''){
                $temp_file = $this->upload_image('Filedata');
                if($temp_file !== false){                   
-           	    $image_que->upload_key =  $upload_key;
-           	    $image_que->save_image($temp_file);
-           	    $image_que->insert();
+               	    $image_que->upload_key =  $upload_key;
+               	    $image_que->save_image($temp_file);
+               	    $image_que->insert();
                }
            }
 		header("Content-type: application/json; charset=utf-8");
@@ -84,7 +84,7 @@ class upload_page extends pagebase {
                  }
             }
             //check is jpeg-Uploadify does not send mime-type, so use a PHP function instead
-            $finfo = finfo_open(FILEINFO_MIME_TYPE);
+            $finfo = finfo_open(FILEINFO_MIME);
 			$image_type = finfo_file($finfo, $image['tmp_name']);
 			error_log($image_type);
 			finfo_close($finfo);
