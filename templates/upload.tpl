@@ -1,5 +1,5 @@
 {include file="header.tpl"}
-<form method="get" action="/addinfo.php" >
+<form method="post" action="/addinfo.php" >
 <div id="divContentFull">
         <h1>Step 1 - upload images</h1>
         <p>
@@ -14,7 +14,6 @@
 	    </div>
 		<br/>
 		<div class="buttons">
-                {include file="formvars.tpl"}        			    
             	<input name="addInfo" type="submit" disabled="disabled"  value="Step 2 - add a few details &raquo;"/>
         </div>
 </div>                
