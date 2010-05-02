@@ -6,7 +6,7 @@
 
 	<title>{$page_title} | {$site_name}</title>	
 	<link rel="stylesheet" media="all" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/themes/ui-lightness/jquery-ui.css" />
-	<link rel="stylesheet" media="all" type="text/css" href="{$www_server}/css/main.css?v=4" />
+	<link rel="stylesheet" media="all" type="text/css" href="{$www_server}/css/main.css?v=5" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js" type="text/javascript"></script> 
     <script src="{$www_server}/script/jcarousel.js" type="text/javascript" charset="utf-8"></script>
