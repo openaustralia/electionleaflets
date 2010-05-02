@@ -48,7 +48,7 @@ class stats_page extends pagebase {
         $results = $search->search_cached('leaflet', 
             array(array('publisher_party_id', '=', $this->party->party_id)),
             'AND', 
-            array(array('rate_interesting', 'inner'))
+            array(array('rate_interesting', 'inner'), array('leaflet_image', 'inner'))
         );
         return $results;
     }
