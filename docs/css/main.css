@@ -296,3 +296,4 @@ ul.rate_results span.left_label {left:0;}
 ul.rate_results span.right_label {right:0;}
 
 ul.interesting_leaflets img {float:left; margin:0 10px 10px 0;}
+ul.interesting_leaflets li {clear:left;}
