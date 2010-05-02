@@ -31,6 +31,13 @@ class tableclass_rate_value extends tablebase {
     function keys() {
         return array('rate_value_id');
     }
+    
+    /* Links */
+	public function links (){
+	    return array(
+			"leaflet_id" => "leaflet:leaflet_id"		
+			);        
+	}
 
 	public static function user_count($email, $cache = true){
         $return = 0;

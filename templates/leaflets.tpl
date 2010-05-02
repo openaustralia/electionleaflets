@@ -144,7 +144,7 @@
                 <ul>
                     {foreach from="$categories" item="category"}
                         <li>
-                            <a href="{$www_server}/leaflets.php?c={$category->category_id}">{$category->name}</a>
+                            <a href="{$www_server}/categories/{$category->category_id}/">{$category->name}</a>
                         </li>
                     {/foreach}
                 </ul>

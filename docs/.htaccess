@@ -3,12 +3,24 @@ RewriteEngine On
 RewriteRule ^parties/?$ parties.php [NC,L]
 RewriteRule ^parties/([^/]+)/?$ leaflets.php?p=$1 [L,QSA]
 RewriteRule ^parties/([^/]+)/rss/?$ leaflets.php?p=$1&rss=1 [NC,L]
+RewriteRule ^parties/([^/]+)/stats/?$ stats.php?p=$1 [NC,L]
+
 RewriteRule ^constituencies/?$ constituencies.php [L,QSA]
 RewriteRule ^constituencies/([^/]+)/?$ leaflets.php?n=$1 [NC,L]
 RewriteRule ^constituencies/([^/]+)/rss/?$ leaflets.php?n=$1&rss=1 [NC,L]
+
 RewriteRule ^leaflets/?$ leaflets.php [NC,L]
 RewriteRule ^leaflets/rss/?$ leaflets.php?rss=1 [NC,L]
 RewriteRule ^leaflets/([0-9]+)/?$ leaflet.php?q=$1 [NC,L]
+
+RewriteRule ^categories/?$ categories.php [L,QSA]
+RewriteRule ^categories/([0-9]+)/?$ leaflets.php?c=$1 [NC,L]
+RewriteRule ^categories/([0-9]+)/rss/?$ leaflets.php?c=$1&rss=1 [NC,L]
+
+RewriteRule ^tags/?$ tags.php [L,QSA]
+RewriteRule ^tags/([^/]+)/?$ leaflets.php?t=$1 [NC,L]
+RewriteRule ^tags/([^/]+)/rss/?$ leaflets.php?t=$1&rss=1 [NC,L]
+
 
 RewriteRule ^about/?$ about.php [NC,L]
 RewriteRule ^notspots/?$ notspots.php [NC,L]

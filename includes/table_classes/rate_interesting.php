@@ -29,5 +29,12 @@ class tableclass_rate_interesting extends tablebase {
     function keys() {
         return array('rate_interesting_id');
     }
+    
+    /* Links */
+	public function links (){
+	    return array(
+			"leaflet_id" => "leaflet:leaflet_id"		
+			);        
+	}
    
 }

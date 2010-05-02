@@ -3,7 +3,6 @@ require_once('init.php');
 
 class analyze_page extends pagebase {
 
-
 	//bind
 	function bind() {
 		$this->page_title = "Analysis";				

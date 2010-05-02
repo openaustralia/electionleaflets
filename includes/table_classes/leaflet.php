@@ -48,7 +48,7 @@ class tableclass_leaflet extends tablebase {
 	public function links (){
 	    return array(
 			"publisher_party_id" => "party:party_id",
-			"election_id" => "election:election_id"			
+			"election_id" => "election:election_id"		
 			);        
 	}
 

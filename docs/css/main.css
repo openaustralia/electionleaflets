@@ -276,14 +276,23 @@ ul.pagination li.previous a, #divPagination ul li.next a {border:none;}
 ul.pagination li.previous {padding-right:20px;}
 ul.pagination li.next {padding-left:20px;}
 
-
 /* Random  */
 ul.random li {float:left; margin-right:20px;}
 div.random_questions {font-size:0.8em; border-bottom:solid 1px #ccc; text-align:center; background:#ffffaa;
     font-weight:bold;}
     
-    
 /* Tables */
 table {border-collapse:collapse;}
 table th {font-weight:bold; border-bottom:solid 1px #808080;}
 table th, table td {padding:1em;}
+
+/* Stats pages */
+ul.rate_results {padding-top:1em;}
+ul.rate_results li {height:60px; position:relative;}
+ul.rate_results li span.bar {border-top:solid 4px #000; position:relative; display:block;}
+ul.rate_results li span.result {width:10px; height:30px; top:-15px; background:red;position:absolute;}
+ul.rate_results span.left_label, ul.rate_results span.right_label {position:absolute; top:-30px;}
+ul.rate_results span.left_label {left:0;}
+ul.rate_results span.right_label {right:0;}
+
+ul.interesting_leaflets img {float:left; margin:0 10px 10px 0;}

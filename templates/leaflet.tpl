@@ -10,14 +10,14 @@
         <h4>Categories</h4>
         <ul>
             {foreach from="$leaflet_categories" item="leaflet_category"}
-                <li><a href="{$www_server}/leaflets.php?c={$leaflet_category->category_id}">{$leaflet_category->name}</a></li>
+                <li><a href="{$www_server}/categorties/{$leaflet_category->category_id}/">{$leaflet_category->name}</a></li>
             {/foreach}            
         </ul>
 
         <h4>Tags</h4>
         <ul>
             {foreach from="$leaflet_tags" item="leaflet_tag"}
-                <li><a href="{$www_server}/leaflets.php?t={$leaflet_tag->tag}">{$leaflet_tag->tag}</a></li>
+                <li><a href="{$www_server}/tags/{$leaflet_tag->tag}/">{$leaflet_tag->tag}</a></li>
             {/foreach}
         </ul>
 
