@@ -46,7 +46,7 @@ class stats_page extends pagebase {
 
         $search = factory::create("search");
         $results = $search->search_cached('leaflet', 
-            array(array('publisher_party_id', '=', $this->party->party_id)),
+            array(array('publisher_party_id', '=', $this->party->party_id), array('leaflet_image.sequence', '=', 1)),
             'AND', 
             array(array('rate_interesting', 'inner'), array('leaflet_image', 'inner'))
         );
