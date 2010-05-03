@@ -6,7 +6,7 @@
 
 	<title>{$page_title} | {$site_name}</title>	
 	<link rel="stylesheet" media="all" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/themes/ui-lightness/jquery-ui.css" />
-	<link rel="stylesheet" media="all" type="text/css" href="{$www_server}/css/main.css?v=5" />
+	<link rel="stylesheet" media="all" type="text/css" href="{$www_server}/css/main.css?v=6" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js" type="text/javascript"></script> 
     <script src="{$www_server}/script/jcarousel.js" type="text/javascript" charset="utf-8"></script>
@@ -33,14 +33,16 @@
             <a href="#divContent">Skip navigation</a>
         </div>
 
-        <div id="divBanner">
             {if $is_home}
-            <a href="http://twitter.com/thesc">Follow us on Twitter for the latest titbits of electioneering</a>
+                <div id="divBanner">            
+                    <a href="http://twitter.com/thesc">Follow us on Twitter for the latest titbits of electioneering</a>
+                </div>
             {else}
-            <strong>Have you received any election leaflets?</strong>
-            <a href="/">We need you to photograph them and send them to us!</a>
+            <div id="divBanner" class="mega">                        
+                Your wannabe MPs in their own words:
+                <strong><a href="/">They Work For You - candidate quiz</a></strong>
+                </div>            
             {/if}
-        </div>
 
         <div id="divHeader"{if $hide_logo == true} class="small"{/if}>
 
