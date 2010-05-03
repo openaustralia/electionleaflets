@@ -1,0 +1,11 @@
+<H1>{{constituency.name}}</H1>
+<ul>
+{% for party, leaflets in party_list %}
+  <li>
+    {{ party.name }}
+    {% for leaflet in leaflets %}
+        <a href="{{leaflet.url}}">{{forloop.counter}}</a>
+    {% endfor %}
+  </li>
+{% endfor %}
+</ul>
