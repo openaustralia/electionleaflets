@@ -10,9 +10,9 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASE_ENGINE = 'mysql'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'tsc_test'             # Or path to database file if using sqlite3.
+DATABASE_NAME = 'tsc_live'             # Or path to database file if using sqlite3.
 DATABASE_USER = 'tsc'             # Not used with sqlite3.
-DATABASE_PASSWORD = 'tsc'         # Not used with sqlite3.
+DATABASE_PASSWORD = ''         # Not used with sqlite3.
 DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
 DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
 
@@ -48,7 +48,7 @@ MEDIA_URL = ''
 ADMIN_MEDIA_PREFIX = '/media/'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'f_+c8ghz6394!l3m$d9kr_-q9@te4^$4)m+dcxlv-2o=w!rig5'
+SECRET_KEY = ''
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -58,8 +58,14 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
-)
+    'django.middleware.cache.FetchFromCacheMiddleware',
+    )
+
+CACHE_BACKEND = 'file:///var/tmp/django_cache?timeout=60&max_entries=600'
+CACHE_MIDDLEWARE_SECONDS = 3600
+CACHE_MIDDLEWARE_KEY_PREFIX = "leaflets"
 
 ROOT_URLCONF = 'djangoleaflets.urls'
 
