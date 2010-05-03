@@ -32,6 +32,7 @@
         </ol>
     </div>
     <br class="clear"/>
+    {*
     <div class="content_full">
         <h2>Interesting leaflets</h2>
         <ul class="interesting_leaflets">
@@ -46,5 +47,5 @@
             {/foreach}
         </ul>
     </div>
-
+    *}
 {include file="footer.tpl"}
