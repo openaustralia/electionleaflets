@@ -27,7 +27,7 @@
         <h2>Top categories</h2>
         <ol>
             {foreach from="$top_categories" item="category"}
-                <li><a href="{$www_server}/categories/{$category->category_id}/">{$category->name}</a> {$constituency->count} leaflets</li>
+                <li><a href="{$www_server}/categories/{$category->category_id}/">{$category->name}</a> {$category->count} leaflets</li>
             {/foreach}
         </ol>
     </div>
