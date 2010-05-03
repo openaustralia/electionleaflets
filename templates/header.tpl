@@ -40,7 +40,7 @@
             {else}
             <div id="divBanner" class="mega">                        
                 Your wannabe MPs in their own words:
-                <strong><a href="/">They Work For You - candidate quiz</a></strong>
+                <strong><a href="http://election.theyworkforyou.com/">They Work For You - candidate quiz</a></strong>
                 </div>            
             {/if}
 
