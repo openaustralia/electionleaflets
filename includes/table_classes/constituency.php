@@ -10,7 +10,7 @@ require_once ('tablebase.php');
 class tableclass_constituency extends tablebase {
 
     public $__table = 'constituency';
-    public $category_id;
+    public $constituency_id;
     public $name;
     public $alternative_name;    
     public $constituency_type_id;

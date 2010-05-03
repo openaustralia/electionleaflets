@@ -26,7 +26,7 @@ class rate_page extends pagebase {
 		//get the leaflet
 		$search = factory::create("search");
 		$result = $search->search("leaflet",
-		    array(array("live", "=", 1)),
+		    array(array("live", "=", 1), array("date_uploaded", ">", STAT_ZERO_DATE)),
 		    'AND',
 		    null,
 		    array(array('RAND()', 'DESC')),
