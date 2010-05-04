@@ -5,9 +5,9 @@ require_once('table_classes/rate_value.php');
 class rate_page extends pagebase {
 
     function load(){
-        if(!session_read('analysis_name') || !session_read('analysis_email')){
+        //if(!session_read('analysis_name') || !session_read('analysis_email')){
             redirect(WWW_SERVER . '/analyze.php');
-        }
+        //}
     }
     
 	//bind
