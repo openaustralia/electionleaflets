@@ -73,23 +73,23 @@
 
     function lookup_constituency ($postcode){
         
-//        $cache = cache::factory();
+        $cache = cache::factory();
 
-//		$cached = $cache->get('twfy' . trim($postcode));
-//		if (isset($cached) && $cached !== false && $cached !='') {
-//			return $cached;
-//		}else{
+		$cached = $cache->get('twfy' . trim($postcode));
+		if (isset($cached) && $cached !== false && $cached !='') {
+			return $cached;
+		}else{
             $twfy = factory::create('twfy');
 		    $twfy_constituency = $twfy->query('getConstituency', array('output' => 'php', 'postcode' => $postcode, 'future' => 'yes_please'));         
             $twfy_constituency = unserialize($twfy_constituency);
-		    //$success = $cache->set('twfy' . $postcode, $twfy_constituency);
+		    $cache->set('twfy' . $postcode, $twfy_constituency);
 		    if(isset($twfy_constituency) && $twfy_constituency !='' && $twfy_constituency != false){
 			        return $twfy_constituency;		        
 	        }else{
 	            return false;
             }
 
-//		}
+		}
 
     }
 

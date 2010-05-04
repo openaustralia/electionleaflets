@@ -35,7 +35,7 @@
 
             {if $is_home}
                 <div id="divBanner">            
-                    <a href="http://twitter.com/thesc">Follow us on Twitter for the latest titbits of electioneering</a>
+                    <a href="http://zoom.thestraightchoice.org/index.html">Look into their eyes!</a>
                 </div>
             {else}
             <div id="divBanner" class="mega">                        
