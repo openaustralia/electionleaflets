@@ -25,10 +25,10 @@
                 $leaflet_constituency->insert();
                 print_message($twfy_constituency['name'] . ' - ' . $leaflet->title);
             }else{
-                print_message("skipped " .  $leaflet->postcode);                
+                print_message("skipped a" .  $leaflet->postcode);                
             }
         } catch (Exception $e){
-            print_message("skipped " .  $leaflet->postcode);
+            print_message("skipped b" .  $leaflet->postcode);
         }
         
         //sleep
