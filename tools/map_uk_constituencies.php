@@ -37,7 +37,7 @@
 
     function match_constituency($constituency_name, $constituencies){
         $return = false;
-        $constituency_name = str_replace(',', '', $constituency_name);
+        //$constituency_name = str_replace(',', '', $constituency_name);
         $constituency_name = str_replace('&', 'and', $constituency_name);        
         foreach ($constituencies as $constituency) {
             if($constituency->name == $constituency_name){
@@ -80,10 +80,10 @@
 			return $cached;
 		}else{
             $twfy = factory::create('twfy');
-		    $twfy_constituency = $twfy->query('getConstituency', array('output' => 'php', 'postcode' => $postcode, 'future' => 'yes_please'));         
+		    $twfy_constituency = $twfy->query('getConstituency', array('output' => 'php', 'postcode' => $postcode, 'future' => 'yes_please'));
             $twfy_constituency = unserialize($twfy_constituency);
 		    $cache->set('twfy' . $postcode, $twfy_constituency);
-		    if(isset($twfy_constituency) && $twfy_constituency !='' && $twfy_constituency != false){
+		    if(isset($twfy_constituency) && $twfy_constituency !=''){
 			        return $twfy_constituency;		        
 	        }else{
 	            return false;

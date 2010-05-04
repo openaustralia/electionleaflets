@@ -32,7 +32,6 @@
         <div class="hide">
             <a href="#divContent">Skip navigation</a>
         </div>
-
             {if $is_home}
                 <div id="divBanner">            
                     <a href="http://zoom.thestraightchoice.org/index.html">Look into their eyes!</a>
