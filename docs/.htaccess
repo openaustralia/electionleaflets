@@ -25,6 +25,7 @@ RewriteRule ^tags/([^/]+)/rss/?$ leaflets.php?t=$1&rss=1 [NC,L]
 RewriteRule ^about/?$ about.php [NC,L]
 RewriteRule ^notspots/?$ notspots.php [NC,L]
 RewriteRule ^random/?$ random.php [NC,L]
+RewriteRule ^analysis/?$ allstats.php [NC,L]
 
 RewriteCond  %{HTTP_USER_AGENT}  Linux [NC]
 RewriteRule  ^upload.php$         addupload.php  [L]

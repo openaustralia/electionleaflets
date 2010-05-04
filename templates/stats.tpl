@@ -15,7 +15,7 @@
             {/foreach}
         </ul>
     </div>
-    <div class="contentleft">    
+    <div class="contentleft">
         <h2>Top constituencies</h2>
         <ol>
             {foreach from="$top_constituencies" item="constituency"}

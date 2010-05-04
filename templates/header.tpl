@@ -67,13 +67,13 @@
                   </a>
               </li>
               <li>
-                  <a href="{$www_server}/random/">
-                      Random
+                  <a href="{$www_server}/map/leaflets/">
+                      Map
                   </a>
               </li>
               <li>
-                  <a href="{$www_server}/analyze.php">
-                      Analyse
+                  <a href="{$www_server}/analysis/">
+                      Analysis
                   </a>
               </li>
             </ul>
