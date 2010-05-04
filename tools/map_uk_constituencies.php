@@ -82,7 +82,7 @@
             $twfy = factory::create('twfy');
 		    $twfy_constituency = $twfy->query('getConstituency', array('output' => 'php', 'postcode' => $postcode, 'future' => 'yes_please'));         
             $twfy_constituency = unserialize($twfy_constituency);
-		    $success = $cache->set('twfy' . $postcode, $twfy_constituency);
+		    //$success = $cache->set('twfy' . $postcode, $twfy_constituency);
 		    if($success && isset($twfy_constituency) && $twfy_constituency !='' && $twfy_constituency != false){
 			        return $twfy_constituency;		        
 	        }else{
