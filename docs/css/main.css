@@ -285,7 +285,6 @@ div.random_questions {font-size:0.8em; border-bottom:solid 1px #ccc; text-align:
 /* Tables */
 table {border-collapse:collapse;}
 table th {font-weight:bold; border-bottom:solid 1px #808080;}
-table th, table td {padding:1em;}
 
 /* Stats pages */
 ul.rate_results {padding-top:1em;}

@@ -36,7 +36,7 @@
     }
 
     function match_constituency($constituency_name, $constituencies){
-        $r3eturn = false;
+        $return = false;
         //$constituency_name = str_replace(',', '', $constituency_name);
         $constituency_name = str_replace('&', 'and', $constituency_name);        
         foreach ($constituencies as $constituency) {
