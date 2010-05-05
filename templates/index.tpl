@@ -1,6 +1,42 @@
 {include file="header.tpl"}
 
 <div id="divContentFull">
+    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="300px" id="viewer" name="viewer">
+             <param name="movie" value="http://zoom.thestraightchoice.org/StraightChoiceViewer.swf" />
+             <param name="scale" value="noscale" />
+             <param name="bgcolor" value="#000000" />
+             <param name="allowfullscreen" value="true" />
+             <param name="allowscriptaccess" value="always" />
+             <param name="flashvars" value="source=http://zoom.thestraightchoice.org/Leaders_img/ImageProperties.xml" />
+             <!--[if !IE]>-->
+             <object type="application/x-shockwave-flash" data="http://zoom.thestraightchoice.org/StraightChoiceViewer.swf" width="100%" height="100%" name="viewer">
+                 <param name="scale" value="noscale" />
+                 <param name="bgcolor" value="#000000" />
+                 <param name="allowfullscreen" value="true" />
+                 <param name="allowscriptaccess" value="always" />
+                 <param name="flashvars" value="source=http://zoom.thestraightchoice.org/Leaders_img/ImageProperties.xml" />
+             <!--<![endif]-->
+                 <a href="http://www.adobe.com/go/getflashplayer">
+                     <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" border="0" />
+                 </a>
+             <!--[if !IE]>-->
+             </object>
+             <!--<![endif]-->
+         </object>    
+         <div id="divFrontLookup">
+             <form method="get" action="{$www_server}/constituencies/">
+                 <label for="txtSearch">Enter your postcode to see leaflets near you</label>
+                 <input type="text" id="txtSearch" name="p" />
+                 <label for="ddlConstituency">or choose a constituency</label>                    
+                 <select id="ddlConstituency" name="c">
+                     <option></option>
+                     {foreach from="$constituencies" item="constituency"}
+                         <option value="{$constituency->url_id}">{$constituency->name}</option>
+                     {/foreach}
+                 </select>
+                 <input  class="button" type="submit" value="GO" />                    
+             </form>
+         </div>
     <div id="divWelcome">
         <p>
             Election leaflets are one of the main weapons in the fight for votes in the UK.
@@ -31,20 +67,6 @@
         </div>
      </div>
      <br class="clear"/>
-     <div id="divFrontLookup">
-         <form method="get" action="{$www_server}/constituencies/">
-             <label for="txtSearch">Enter your postcode to see leaflets near you</label>
-             <input type="text" id="txtSearch" name="p" />
-             <label for="ddlConstituency">or choose a constituency</label>                    
-             <select id="ddlConstituency" name="c">
-                 <option></option>
-                 {foreach from="$constituencies" item="constituency"}
-                     <option value="{$constituency->url_id}">{$constituency->name}</option>
-                 {/foreach}
-             </select>
-             <input  class="button" type="submit" value="GO" />                    
-         </form>
-     </div>
      <div id="divRecentLeaflets">
         <h2>Latest leaflets</h2>
         <div id="divScroller">

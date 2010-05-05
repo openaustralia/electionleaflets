@@ -25,6 +25,7 @@
 	{if $rss_link != ''}
 	    <link rel="alternate" type="application/rss+xml" title="{$page_title}" href="{$rss_link}">
 	{/if}
+   
 </head>
 
 <body>
