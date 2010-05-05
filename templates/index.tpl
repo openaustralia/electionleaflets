@@ -1,28 +1,35 @@
 {include file="header.tpl"}
 
 <div id="divContentFull">
-    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="300px" id="viewer" name="viewer">
-             <param name="movie" value="http://zoom.thestraightchoice.org/StraightChoiceViewer.swf" />
-             <param name="scale" value="noscale" />
-             <param name="bgcolor" value="#000000" />
-             <param name="allowfullscreen" value="true" />
-             <param name="allowscriptaccess" value="always" />
-             <param name="flashvars" value="source=http://zoom.thestraightchoice.org/Leaders_img/ImageProperties.xml" />
-             <!--[if !IE]>-->
-             <object type="application/x-shockwave-flash" data="http://zoom.thestraightchoice.org/StraightChoiceViewer.swf" width="100%" height="100%" name="viewer">
-                 <param name="scale" value="noscale" />
-                 <param name="bgcolor" value="#000000" />
-                 <param name="allowfullscreen" value="true" />
-                 <param name="allowscriptaccess" value="always" />
-                 <param name="flashvars" value="source=http://zoom.thestraightchoice.org/Leaders_img/ImageProperties.xml" />
-             <!--<![endif]-->
-                 <a href="http://www.adobe.com/go/getflashplayer">
-                     <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" border="0" />
-                 </a>
-             <!--[if !IE]>-->
-             </object>
-             <!--<![endif]-->
-         </object>    
+	{literal}
+    <script type="text/javascript">
+        <!-- For version detection, set to min. required Flash Player version, or 0 (or 0.0.0), for no version detection. --> 
+        var swfVersionStr = "10.0.0";
+        <!-- To use express install, set to playerProductInstall.swf, otherwise the empty string. -->
+        var xiSwfUrlStr = "http://zoom.thestraightchoice.org/playerProductInstall.swf";
+        var flashvars = {source: 'http://zoom.thestraightchoice.org/Leaders_img/ImageProperties.xml', logo: 'hide'};
+        var params = {};
+        params.quality = "high";
+        params.bgcolor = "#000000";
+        params.allowscriptaccess = "always";
+        params.allowfullscreen = "true";
+        var attributes = {};
+        attributes.id = "StraightChoiceViewer";
+        attributes.name = "StraightChoiceViewer";
+        attributes.align = "middle";
+        swfobject.embedSWF(
+            "http://thestraightchoicezoom.s3.amazonaws.com/StraightChoiceViewer.swf", "flashContent", 
+            "100%", "300px", 
+            swfVersionStr, xiSwfUrlStr, 
+            flashvars, params, attributes);
+		<!-- JavaScript enabled so display the flashContent div in case it is not replaced with a swf object. -->
+		swfobject.createCSS("#flashContent", "display:block;text-align:left;");
+    </script>
+	{/literal}
+    <div id="flashContent" style="display:none">
+    </div>
+
+
          <div id="divFrontLookup">
              <form method="get" action="{$www_server}/constituencies/">
                  <label for="txtSearch">Enter your postcode to see leaflets near you</label>

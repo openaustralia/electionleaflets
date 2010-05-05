@@ -11,8 +11,8 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js" type="text/javascript"></script> 
     <script src="{$www_server}/script/jcarousel.js" type="text/javascript" charset="utf-8"></script>
     <script src="{$www_server}/script/functions.js" type="text/javascript"></script>
-{if $has_upload}
 	<script src="http://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js" type="text/javascript"></script>
+{if $has_upload}
 	<script src="{$www_server}/script/jquery.uploadify.v2.1.0.min.js" type="text/javascript"></script>
 	<script src="{$www_server}/script/jquery.json-2.2.min.js" type="text/javascript"></script>
 {/if}    
