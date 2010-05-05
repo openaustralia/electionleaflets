@@ -6,18 +6,16 @@ body {text-align:center; padding:0; margin:0; color:#353A38; font-size:16px; fon
 #divPage.home {}    
 
 /* Header */
-#divHeader {padding:0; height:130px; border-bottom:solid 10px #353B38;background:url(../images/clouds.png) repeat-x 0 0;
+#divHeader {padding:0; height:135px; border-bottom:solid 10px #353B38;background:url(../images/clouds.png) repeat-x 0 0;
     position:relative;}
 #pLogo {position:absolute;position:absolute; top:-5px; left:5%;width:400px; height:107px; }
-#pLogo a {display:block; width:400px; height:107px; background:url(../images/logo.png) no-repeat;;}
+#pLogo a {display:block; width:400px; height:130px; background:url(../images/logo.png) no-repeat;;}
+#pStrapLine {position:absolute; top:0; right:2%; font-weight:bold;}
 
 /* Banner */
 #divBanner {background:#ffffaa; border-bottom:solid 1px #808080;
         padding-top:0.2em; font-family:verdana, sans-serif; font-size:0.8em;padding:0.5em;}
 #divBanner form {display:inline; position:relative; top:0.4em;}
-
-#divBanner.mega {background:red; color:#fff; border-bottom:#000;}
-#divBanner.mega a {color:#fff;}
 
 /* headings */
 h1, h2, h3, h4, h5, h6 {font-weight:bold; color:#8e7345; line-height:1.5em;}

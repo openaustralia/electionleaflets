@@ -6,7 +6,7 @@
 
 	<title>{$page_title} | {$site_name}</title>	
 	<link rel="stylesheet" media="all" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/themes/ui-lightness/jquery-ui.css" />
-	<link rel="stylesheet" media="all" type="text/css" href="{$www_server}/css/main.css?v=6" />
+	<link rel="stylesheet" media="all" type="text/css" href="{$www_server}/css/main.css?v=7" />
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js" type="text/javascript"></script> 
     <script src="{$www_server}/script/jcarousel.js" type="text/javascript" charset="utf-8"></script>
@@ -33,21 +33,18 @@
         <div class="hide">
             <a href="#divContent">Skip navigation</a>
         </div>
-            {if $is_home}
-                <div id="divBanner">            
-                    <a href="http://zoom.thestraightchoice.org/index.html">Look into their eyes!</a>
-                </div>
-            {else}
-            <div id="divBanner" class="mega">                        
+            {if $is_home == false}
+            <div id="divBanner">                        
                 Your wannabe MPs in their own words:
                 <strong><a href="http://election.theyworkforyou.com/">They Work For You - candidate quiz</a></strong>
-                </div>            
+                </div>
             {/if}
 
         <div id="divHeader"{if $hide_logo == true} class="small"{/if}>
 
             {if $hide_logo == false}
                 <p id="pLogo"><a href="{$www_server}"><span class="hide">{$site_name} - {$site_tag_line}</span></a></p>
+                <p class="hide">General Election 2010: Live election leaflet monitoring</p>
             {/if}
         
             <ul id="ulMenu">
@@ -79,9 +76,9 @@
             </ul>
         </div>
     {/if}
-    
+    </div>
     <div id="divPage" {if $is_home}class="home"{/if}>
-
+    
         <div id="divContent">
 
             {* Warnings *}
