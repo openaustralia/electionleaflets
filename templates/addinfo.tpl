@@ -32,7 +32,9 @@
                         <option value="1" {if $data.ddlDelivered == 1}selected="selected"{/if}>Yesterday</option>
                         <option value="7" {if $data.ddlDelivered == 7}selected="selected"{/if}>Last Week</option>
                         <option value="14" {if $data.ddlDelivered == 14}selected="selected"{/if}>Couple of weeks ago</option>
-                        <option value="30" {if $data.ddlDelivered == 30}selected="selected"{/if}>Last month</option>                        
+                        <option value="30" {if $data.ddlDelivered == 30}selected="selected"{/if}>Last month</option>                     
+                        <option value="60" {if $data.ddlDelivered == 60}selected="selected"{/if}>Two months ago</option>
+                        <option value="90" {if $data.ddlDelivered == 60}selected="selected"{/if}>Three months ago</option>                                                                        
                     </select>
                     <small class="highlight">Please only add leaflets that have been delivered to you recently</small>
                 </li>

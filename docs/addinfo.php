@@ -139,9 +139,9 @@ class addinfo_page extends pagebase {
             $leaflet->live = 1;
 
             //date delivered
-            $days = $this->data['ddlDelivered'];
-            if((int)$days > 30){
-                $days = 30;
+            $days = (int)$this->data['ddlDelivered'];
+            if($days > 90){
+                $days = 90;
             }
             
             $date = mktime(0, 0, 0, date("m")  , date("d") - $days, date("Y"));
