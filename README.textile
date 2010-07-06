@@ -1,0 +1,5 @@
+h3. Fair Dinkum
+
+This is a volunteer project to build a tool for uploading and categorising photographs of Australian election leaflets.
+
+It is a fork of the code used to drive "The Straight Choice":http://www.thestraightchoice.org/.
