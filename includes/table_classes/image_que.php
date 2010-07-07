@@ -68,8 +68,9 @@ class tableclass_image_que extends tablebase {
         $file = $folder."/" . $key . ".jpg";
         $file_path = IMAGES_DIR ."/". $file;
         resize_image($original, $size, $file_path);    
-        $input = S3::inputFile($file_path);
-        S3::putObject($input, S3_BUCKET, $file, S3::ACL_PUBLIC_READ);
+        //$input = S3::inputFile($file_path);
+        //S3::putObject($input, S3_BUCKET, $file, S3::ACL_PUBLIC_READ);
+	//MJFIXME
     }
 
 	/* Keys */
