@@ -44,6 +44,7 @@ define("BUG_EMAIL_PREFIX", '[election leaflet bug]');
 define("CONTACT_EMAIL", 'team@' . DOMAIN);	
 define("BUG_FROM_EMAIL", 'bugs@' . DOMAIN);	
 define("BUG_TO_EMAIL", 'YOUR@EMAIL.co.uk');	
+define("LEAFLETS_EMAIL", CONTACT_EMAIL);
 
 //Site name
 define("SITE_NAME", "FairDinkum");
