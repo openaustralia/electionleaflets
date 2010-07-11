@@ -9,7 +9,6 @@ class leaflet_search {
     public $publisher_party_id = null;
     public $party_attack_id = null;
     public $category_id = null;
-    public $country_id = 225;
     public $constituency_id = null;
     public $tag = null;
     
@@ -172,7 +171,7 @@ class leaflet_search {
 
             //party name
             $search = factory::create("search");
-            $result = $search->search("party", array(array("name", "=", $query), array("country_id", "=",  $this->country_id)));
+            $result = $search->search("party", array(array("name", "=", $query), array("country_id", "=",  COUNTRY)));
             if(count($result) == 1){
 
                 $return_type = "party";
