@@ -1,8 +1,8 @@
--- MySQL dump 10.11
+-- MySQL dump 10.13
 --
--- Host: localhost    Database: fairdinkum
+-- Host: localhost    Database: fairdinkum_test
 -- ------------------------------------------------------
--- Server version	5.0.51a-24+lenny4
+-- Server version	5.1.22-rc
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,11 +23,11 @@ DROP TABLE IF EXISTS `category`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `category` (
-  `category_id` int(11) NOT NULL auto_increment,
+  `category_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `description` text,
-  `default_value` tinyint(1) default NULL,
-  PRIMARY KEY  (`category_id`),
+  `default_value` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`category_id`),
   KEY `name` (`name`)
 ) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
@@ -50,18 +50,18 @@ DROP TABLE IF EXISTS `constituency`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `constituency` (
-  `constituency_id` int(11) NOT NULL auto_increment,
+  `constituency_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `alternative_name` varchar(255) default NULL,
+  `alternative_name` varchar(255) DEFAULT NULL,
   `constituency_type_id` int(11) NOT NULL,
-  `retired` tinyint(1) default '0',
-  `area_code` varchar(20) default NULL,
-  `area_uri` varchar(255) default NULL,
-  `wikipedia_url` varchar(255) default NULL,
-  `url_id` varchar(100) default NULL,
-  `guardian_aristotle_id` int(11) default NULL,
-  `guardian_pa_code` int(11) default NULL,
-  PRIMARY KEY  (`constituency_id`)
+  `retired` tinyint(1) DEFAULT '0',
+  `area_code` varchar(20) DEFAULT NULL,
+  `area_uri` varchar(255) DEFAULT NULL,
+  `wikipedia_url` varchar(255) DEFAULT NULL,
+  `url_id` varchar(100) DEFAULT NULL,
+  `guardian_aristotle_id` int(11) DEFAULT NULL,
+  `guardian_pa_code` int(11) DEFAULT NULL,
+  PRIMARY KEY (`constituency_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -83,11 +83,11 @@ DROP TABLE IF EXISTS `constituency_type`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `constituency_type` (
-  `constituency_type_id` int(11) NOT NULL auto_increment,
+  `constituency_type_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `country_id` int(11) NOT NULL,
-  `url_id` varchar(100) default NULL,
-  PRIMARY KEY  (`constituency_type_id`)
+  `url_id` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`constituency_type_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -109,11 +109,11 @@ DROP TABLE IF EXISTS `country`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `country` (
-  `country_id` int(11) NOT NULL auto_increment,
+  `country_id` int(11) NOT NULL AUTO_INCREMENT,
   `iso` char(2) NOT NULL,
   `name` varchar(80) NOT NULL,
-  `iso3` char(3) default NULL,
-  PRIMARY KEY  (`country_id`)
+  `iso3` char(3) DEFAULT NULL,
+  PRIMARY KEY (`country_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=240 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
@@ -135,11 +135,11 @@ DROP TABLE IF EXISTS `election`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `election` (
-  `election_id` int(11) NOT NULL auto_increment,
+  `election_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(150) NOT NULL,
   `election_type_id` int(11) NOT NULL,
   `vote_date` date NOT NULL,
-  PRIMARY KEY  (`election_id`)
+  PRIMARY KEY (`election_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -161,10 +161,10 @@ DROP TABLE IF EXISTS `election_type`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `election_type` (
-  `election_type_id` int(11) NOT NULL auto_increment,
+  `election_type_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` int(11) NOT NULL,
   `country_id` int(11) NOT NULL,
-  PRIMARY KEY  (`election_type_id`)
+  PRIMARY KEY (`election_type_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -186,16 +186,16 @@ DROP TABLE IF EXISTS `email_alert`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `email_alert` (
-  `email_alert_id` int(11) NOT NULL auto_increment,
+  `email_alert_id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(50) NOT NULL,
   `frequency_hours` int(11) NOT NULL,
-  `last_sent` datetime default NULL,
+  `last_sent` datetime DEFAULT NULL,
   `type` varchar(50) NOT NULL,
   `parent_id` int(11) NOT NULL,
-  `activated` tinyint(1) default '0',
+  `activated` tinyint(1) DEFAULT '0',
   `confirm_id` varchar(100) NOT NULL,
   `title` varchar(255) NOT NULL,
-  PRIMARY KEY  (`email_alert_id`)
+  PRIMARY KEY (`email_alert_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -216,12 +216,12 @@ DROP TABLE IF EXISTS `email_que`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `email_que` (
-  `email_que_id` int(11) NOT NULL auto_increment,
-  `name` varchar(255) default NULL,
+  `email_que_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
   `postcode` varchar(20) NOT NULL,
-  `delivery_date` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  PRIMARY KEY  (`email_que_id`)
+  `delivery_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`email_que_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -242,25 +242,15 @@ DROP TABLE IF EXISTS `image_que`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `image_que` (
-  `image_que_id` int(11) NOT NULL auto_increment,
+  `image_que_id` int(11) NOT NULL AUTO_INCREMENT,
   `upload_key` varchar(255) NOT NULL,
-  `name` varchar(100) default NULL,
-  `email` varchar(100) default NULL,
-  `image_key` varchar(255) default NULL,
-  `uploaded_date` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
-  PRIMARY KEY  (`image_que_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+  `name` varchar(100) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `image_key` varchar(255) DEFAULT NULL,
+  `uploaded_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`image_que_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
-
---
--- Dumping data for table `image_que`
---
-
-LOCK TABLES `image_que` WRITE;
-/*!40000 ALTER TABLE `image_que` DISABLE KEYS */;
-INSERT INTO `image_que` VALUES (1,'b5ad6d518eff7c4b274fedd98096674d',NULL,NULL,'ae1d4d5c987d7dae29708092ed6d20ac','2010-07-09 13:20:09');
-/*!40000 ALTER TABLE `image_que` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `image_que_seq`
@@ -270,20 +260,10 @@ DROP TABLE IF EXISTS `image_que_seq`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `image_que_seq` (
-  `sequence` int(11) NOT NULL auto_increment,
-  PRIMARY KEY  (`sequence`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+  `sequence` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
-
---
--- Dumping data for table `image_que_seq`
---
-
-LOCK TABLES `image_que_seq` WRITE;
-/*!40000 ALTER TABLE `image_que_seq` DISABLE KEYS */;
-INSERT INTO `image_que_seq` VALUES (7);
-/*!40000 ALTER TABLE `image_que_seq` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `leaflet`
@@ -293,23 +273,23 @@ DROP TABLE IF EXISTS `leaflet`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `leaflet` (
-  `leaflet_id` int(11) NOT NULL auto_increment,
+  `leaflet_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `description` text,
   `publisher_party_id` int(11) NOT NULL,
-  `postcode` varchar(50) default NULL,
+  `postcode` varchar(50) DEFAULT NULL,
   `lng` float NOT NULL,
   `lat` float NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `date_uploaded` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  `date_uploaded` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `date_delivered` datetime NOT NULL,
-  `live` tinyint(1) default NULL,
-  PRIMARY KEY  (`leaflet_id`),
+  `live` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`leaflet_id`),
   KEY `title` (`title`),
   KEY `date_uploaded` (`date_uploaded`),
   KEY `latlng` (`lng`,`lat`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -318,7 +298,6 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet` WRITE;
 /*!40000 ALTER TABLE `leaflet` DISABLE KEYS */;
-INSERT INTO `leaflet` VALUES (2,'test','test',1,'nw72ha',-0.216205,51.6135,'matt','matt.joyce@gmail.com','2010-07-09 23:18:08','2010-07-10 00:00:00',1),(3,'double',NULL,2,'nw72ha',-0.216205,51.6135,'matt','matt.joyce@gmail.com','2010-07-10 03:06:32','2010-07-10 00:00:00',1),(4,'forever test','omg how many tests today',4,'nw72ha',-0.216205,51.6135,'matt','matt.joyce@gmail.com','2010-07-10 04:39:43','2010-07-10 00:00:00',1);
 /*!40000 ALTER TABLE `leaflet` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -330,11 +309,11 @@ DROP TABLE IF EXISTS `leaflet_category`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `leaflet_category` (
-  `leaflet_category_id` int(11) NOT NULL auto_increment,
+  `leaflet_category_id` int(11) NOT NULL AUTO_INCREMENT,
   `leaflet_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
-  PRIMARY KEY  (`leaflet_category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`leaflet_category_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -343,7 +322,6 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_category` WRITE;
 /*!40000 ALTER TABLE `leaflet_category` DISABLE KEYS */;
-INSERT INTO `leaflet_category` VALUES (5,4,8),(4,4,4),(3,4,5),(2,3,11),(1,2,3);
 /*!40000 ALTER TABLE `leaflet_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -355,9 +333,9 @@ DROP TABLE IF EXISTS `leaflet_category_seq`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `leaflet_category_seq` (
-  `sequence` int(11) NOT NULL auto_increment,
-  PRIMARY KEY  (`sequence`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+  `sequence` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -366,7 +344,6 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_category_seq` WRITE;
 /*!40000 ALTER TABLE `leaflet_category_seq` DISABLE KEYS */;
-INSERT INTO `leaflet_category_seq` VALUES (5);
 /*!40000 ALTER TABLE `leaflet_category_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -378,10 +355,10 @@ DROP TABLE IF EXISTS `leaflet_constituency`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `leaflet_constituency` (
-  `leaflet_constituency_id` int(11) NOT NULL auto_increment,
+  `leaflet_constituency_id` int(11) NOT NULL AUTO_INCREMENT,
   `leaflet_id` int(11) NOT NULL,
   `constituency_id` int(11) NOT NULL,
-  PRIMARY KEY  (`leaflet_constituency_id`)
+  PRIMARY KEY (`leaflet_constituency_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -405,7 +382,7 @@ CREATE TABLE `leaflet_election` (
   `leaflet_election_id` int(11) NOT NULL,
   `leaflet_id` int(11) NOT NULL,
   `election_id` int(11) NOT NULL,
-  PRIMARY KEY  (`leaflet_election_id`)
+  PRIMARY KEY (`leaflet_election_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -426,8 +403,8 @@ DROP TABLE IF EXISTS `leaflet_election__seq`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `leaflet_election__seq` (
-  `sequence` int(11) NOT NULL auto_increment,
-  PRIMARY KEY  (`sequence`)
+  `sequence` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence`)
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
@@ -453,7 +430,7 @@ CREATE TABLE `leaflet_image` (
   `leaflet_id` int(11) NOT NULL,
   `image_key` varchar(255) NOT NULL,
   `sequence` int(11) NOT NULL,
-  PRIMARY KEY  (`leaflet_image_id`)
+  PRIMARY KEY (`leaflet_image_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -463,7 +440,6 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_image` WRITE;
 /*!40000 ALTER TABLE `leaflet_image` DISABLE KEYS */;
-INSERT INTO `leaflet_image` VALUES (4,2,'ae1d4d5c987d7dae29708092ed6d20ac',1),(5,3,'e3c091b79db69debfe56dd0d80a22d3c',1),(6,3,'5871dd3475b07c97067475dbf3d30f9e',2),(7,4,'c92466a5a8060bd798b6bc7b9ac0ca9b',1),(8,4,'753423d14898ed43ad97ec7d56bbf5cc',2);
 /*!40000 ALTER TABLE `leaflet_image` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -475,9 +451,9 @@ DROP TABLE IF EXISTS `leaflet_image_seq`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `leaflet_image_seq` (
-  `sequence` int(11) NOT NULL auto_increment,
-  PRIMARY KEY  (`sequence`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+  `sequence` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -486,7 +462,6 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_image_seq` WRITE;
 /*!40000 ALTER TABLE `leaflet_image_seq` DISABLE KEYS */;
-INSERT INTO `leaflet_image_seq` VALUES (8);
 /*!40000 ALTER TABLE `leaflet_image_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -498,13 +473,13 @@ DROP TABLE IF EXISTS `leaflet_party_attack`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `leaflet_party_attack` (
-  `leaflet_party_attack_id` int(11) NOT NULL auto_increment,
+  `leaflet_party_attack_id` int(11) NOT NULL AUTO_INCREMENT,
   `leaflet_id` int(11) NOT NULL,
   `party_id` int(11) NOT NULL,
-  PRIMARY KEY  (`leaflet_party_attack_id`),
+  PRIMARY KEY (`leaflet_party_attack_id`),
   KEY `leaflet_id` (`leaflet_id`),
   KEY `party_id` (`party_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -513,7 +488,6 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_party_attack` WRITE;
 /*!40000 ALTER TABLE `leaflet_party_attack` DISABLE KEYS */;
-INSERT INTO `leaflet_party_attack` VALUES (3,15,1109),(4,16,1111),(5,2,2),(6,3,20),(7,4,1),(8,4,2);
 /*!40000 ALTER TABLE `leaflet_party_attack` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -525,9 +499,9 @@ DROP TABLE IF EXISTS `leaflet_party_attack_seq`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `leaflet_party_attack_seq` (
-  `sequence` int(11) NOT NULL auto_increment,
-  PRIMARY KEY  (`sequence`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+  `sequence` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -536,7 +510,6 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_party_attack_seq` WRITE;
 /*!40000 ALTER TABLE `leaflet_party_attack_seq` DISABLE KEYS */;
-INSERT INTO `leaflet_party_attack_seq` VALUES (8);
 /*!40000 ALTER TABLE `leaflet_party_attack_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -548,9 +521,9 @@ DROP TABLE IF EXISTS `leaflet_seq`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `leaflet_seq` (
-  `sequence` int(11) NOT NULL auto_increment,
-  PRIMARY KEY  (`sequence`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `sequence` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -559,7 +532,6 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_seq` WRITE;
 /*!40000 ALTER TABLE `leaflet_seq` DISABLE KEYS */;
-INSERT INTO `leaflet_seq` VALUES (4);
 /*!40000 ALTER TABLE `leaflet_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -571,13 +543,13 @@ DROP TABLE IF EXISTS `leaflet_tag`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `leaflet_tag` (
-  `leaflet_tag_id` int(11) NOT NULL auto_increment,
+  `leaflet_tag_id` int(11) NOT NULL AUTO_INCREMENT,
   `leaflet_id` int(11) NOT NULL,
   `tag_id` int(11) NOT NULL,
-  PRIMARY KEY  (`leaflet_tag_id`),
+  PRIMARY KEY (`leaflet_tag_id`),
   KEY `leaflet_id` (`leaflet_id`),
   KEY `tag_id` (`tag_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -586,7 +558,6 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_tag` WRITE;
 /*!40000 ALTER TABLE `leaflet_tag` DISABLE KEYS */;
-INSERT INTO `leaflet_tag` VALUES (1,2,1),(2,3,1),(3,4,2);
 /*!40000 ALTER TABLE `leaflet_tag` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -598,9 +569,9 @@ DROP TABLE IF EXISTS `leaflet_tag_seq`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `leaflet_tag_seq` (
-  `sequence` int(11) NOT NULL auto_increment,
-  PRIMARY KEY  (`sequence`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  `sequence` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -609,7 +580,6 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_tag_seq` WRITE;
 /*!40000 ALTER TABLE `leaflet_tag_seq` DISABLE KEYS */;
-INSERT INTO `leaflet_tag_seq` VALUES (3);
 /*!40000 ALTER TABLE `leaflet_tag_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -621,15 +591,15 @@ DROP TABLE IF EXISTS `party`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `party` (
-  `party_id` int(11) NOT NULL auto_increment,
+  `party_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `country_id` int(11) NOT NULL,
-  `major` tinyint(1) default NULL,
-  `logo_file` varchar(100) default NULL,
-  `url_id` varchar(255) default NULL,
-  `colour` char(6) default NULL,
-  `twitter_account` varchar(50) default NULL,
-  PRIMARY KEY  (`party_id`)
+  `major` tinyint(1) DEFAULT NULL,
+  `logo_file` varchar(100) DEFAULT NULL,
+  `url_id` varchar(255) DEFAULT NULL,
+  `colour` char(6) DEFAULT NULL,
+  `twitter_account` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`party_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -639,7 +609,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `party` WRITE;
 /*!40000 ALTER TABLE `party` DISABLE KEYS */;
-INSERT INTO `party` VALUES (1,'Australia First Party (NSW) Incorporated',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/afirst.htm',NULL,NULL),(2,'Australian Democrats',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/ad.htm',NULL,NULL),(3,'Australian Fishing and Lifestyle Party',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/aflp.htm',NULL,NULL),(4,'Australian Greens',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/ag.htm',NULL,NULL),(5,'Australian Sex Party',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/austsp.htm',NULL,NULL),(6,'Carers Alliance',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/ca.htm',NULL,NULL),(7,'Christian Democratic Party (Fred Nile Group)',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/files/cdp.pdf',NULL,NULL),(8,'Citizens Electoral Council of Australia',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/cec.htm',NULL,NULL),(9,'Communist Alliance',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/party_registration/Registered_parties/comm.htm',NULL,NULL),(10,'Country Liberals (Northern Territory)',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/cl-nt.pdf',NULL,NULL),(11,'Democratic Labor Party (DLP) of Australia',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/dlpa.htm',NULL,NULL),(12,'Family First Party',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/ffp.htm',NULL,NULL),(13,'Liberal Party of Australia',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/lpa.htm',NULL,NULL),(14,'National Party of Australia',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/npa.htm',NULL,NULL),(15,'Non-Custodial Parents Party (Equal Parenting)',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/ep.htm',NULL,NULL),(16,'One Nation',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/on.htm',NULL,NULL),(17,'Senator On-Line',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/sol.htm',NULL,NULL),(18,'Shooters and Fishers Party',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/shooters-fishers.pdf',NULL,NULL),(19,'Socialist Alliance',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/sa.htm',NULL,NULL),(20,'Socialist Equality Party',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/sep.htm',NULL,NULL);
+INSERT INTO `party` VALUES (1,'Australia First Party (NSW) Incorporated',13,NULL,NULL,'australia_first_party_(nsw)_incorporated',NULL,NULL),(2,'Australian Democrats',13,NULL,NULL,'australian_democrats',NULL,NULL),(3,'Australian Fishing and Lifestyle Party',13,NULL,NULL,'australian_fishing_and_lifestyle_party',NULL,NULL),(4,'Australian Greens',13,NULL,NULL,'australian_greens',NULL,NULL),(5,'Australian Sex Party',13,NULL,NULL,'australian_sex_party',NULL,NULL),(6,'Carers Alliance',13,NULL,NULL,'carers_alliance',NULL,NULL),(7,'Christian Democratic Party (Fred Nile Group)',13,NULL,NULL,'christian_democratic_party_(fred_nile_group)',NULL,NULL),(8,'Citizens Electoral Council of Australia',13,NULL,NULL,'citizens_electoral_council_of_australia',NULL,NULL),(9,'Communist Alliance',13,NULL,NULL,'communist_alliance',NULL,NULL),(10,'Country Liberals (Northern Territory)',13,NULL,NULL,'country_liberals_(northern_territory)',NULL,NULL),(11,'Democratic Labor Party (DLP) of Australia',13,NULL,NULL,'democratic_labor_party_(dlp)_of_australia',NULL,NULL),(12,'Family First Party',13,NULL,NULL,'family_first_party',NULL,NULL),(13,'Liberal Party of Australia',13,NULL,NULL,'liberal_party_of_australia',NULL,NULL),(14,'National Party of Australia',13,NULL,NULL,'national_party_of_australia',NULL,NULL),(15,'Non-Custodial Parents Party (Equal Parenting)',13,NULL,NULL,'non-custodial_parents_party_(equal_parenting)',NULL,NULL),(16,'One Nation',13,NULL,NULL,'one_nation',NULL,NULL),(17,'Senator On-Line',13,NULL,NULL,'senator_on-line',NULL,NULL),(18,'Shooters and Fishers Party',13,NULL,NULL,'shooters_and_fishers_party',NULL,NULL),(19,'Socialist Alliance',13,NULL,NULL,'socialist_alliance',NULL,NULL),(20,'Socialist Equality Party',13,NULL,NULL,'socialist_equality_party',NULL,NULL);
 /*!40000 ALTER TABLE `party` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -651,10 +621,10 @@ DROP TABLE IF EXISTS `promise`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `promise` (
-  `promise_id` int(11) NOT NULL auto_increment,
+  `promise_id` int(11) NOT NULL AUTO_INCREMENT,
   `leaflet_id` int(11) NOT NULL,
   `detail` text NOT NULL,
-  PRIMARY KEY  (`promise_id`)
+  PRIMARY KEY (`promise_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -675,12 +645,12 @@ DROP TABLE IF EXISTS `rate_interesting`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `rate_interesting` (
-  `rate_interesting_id` int(11) NOT NULL auto_increment,
+  `rate_interesting_id` int(11) NOT NULL AUTO_INCREMENT,
   `leaflet_id` int(11) NOT NULL,
   `description` text NOT NULL,
   `user_name` varchar(255) NOT NULL,
   `user_email` varchar(255) NOT NULL,
-  PRIMARY KEY  (`rate_interesting_id`)
+  PRIMARY KEY (`rate_interesting_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -701,10 +671,10 @@ DROP TABLE IF EXISTS `rate_type`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `rate_type` (
-  `rate_type_id` int(11) NOT NULL auto_increment,
+  `rate_type_id` int(11) NOT NULL AUTO_INCREMENT,
   `left_label` varchar(50) NOT NULL,
-  `right_label` varchar(50) default NULL,
-  PRIMARY KEY  (`rate_type_id`)
+  `right_label` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`rate_type_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -725,13 +695,13 @@ DROP TABLE IF EXISTS `rate_value`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `rate_value` (
-  `rate_value_id` int(11) NOT NULL auto_increment,
+  `rate_value_id` int(11) NOT NULL AUTO_INCREMENT,
   `leaflet_id` int(11) NOT NULL,
   `user_name` varchar(100) NOT NULL,
   `user_email` varchar(100) NOT NULL,
   `rate_type_id` int(11) NOT NULL,
   `value` int(11) NOT NULL,
-  PRIMARY KEY  (`rate_value_id`)
+  PRIMARY KEY (`rate_value_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
@@ -752,11 +722,11 @@ DROP TABLE IF EXISTS `tag`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `tag` (
-  `tag_id` int(11) NOT NULL auto_increment,
+  `tag_id` int(11) NOT NULL AUTO_INCREMENT,
   `tag` varchar(255) NOT NULL,
-  PRIMARY KEY  (`tag_id`),
+  PRIMARY KEY (`tag_id`),
   UNIQUE KEY `tag` (`tag`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -765,7 +735,6 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `tag` WRITE;
 /*!40000 ALTER TABLE `tag` DISABLE KEYS */;
-INSERT INTO `tag` VALUES (1,'test'),(2,'test double omg');
 /*!40000 ALTER TABLE `tag` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -777,9 +746,9 @@ DROP TABLE IF EXISTS `tag_seq`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `tag_seq` (
-  `sequence` int(11) NOT NULL auto_increment,
-  PRIMARY KEY  (`sequence`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `sequence` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`sequence`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -788,7 +757,6 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `tag_seq` WRITE;
 /*!40000 ALTER TABLE `tag_seq` DISABLE KEYS */;
-INSERT INTO `tag_seq` VALUES (2);
 /*!40000 ALTER TABLE `tag_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -801,4 +769,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-07-11  3:26:42
+-- Dump completed on 2010-07-11 12:09:33

@@ -10,7 +10,7 @@
         <h4>Categories</h4>
         <ul>
             {foreach from="$leaflet_categories" item="leaflet_category"}
-                <li><a href="{$www_server}/categorties/{$leaflet_category->category_id}/">{$leaflet_category->name}</a></li>
+                <li><a href="{$www_server}/categories/{$leaflet_category->category_id}/">{$leaflet_category->name}</a></li>
             {/foreach}            
         </ul>
 

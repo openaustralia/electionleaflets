@@ -19,6 +19,7 @@ data/smarty_compile
 data/cache
 data/temp
 data/images
+data/images/small
 data/images/original
 data/images/large
 data/images/medium
