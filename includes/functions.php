@@ -646,7 +646,7 @@
 	}
 	
 	function get_image_url($params, &$smarty){
-		if (USE_S3_DIRECTLY){
+		if (STORAGE_STRATEGY=='s3'){
 			return s3_url($params['size'],$params['id']);
 		}
 		else{
