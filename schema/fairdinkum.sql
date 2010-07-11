@@ -62,7 +62,7 @@ CREATE TABLE `constituency` (
   `guardian_aristotle_id` int(11) default NULL,
   `guardian_pa_code` int(11) default NULL,
   PRIMARY KEY  (`constituency_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8399 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -71,6 +71,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `constituency` WRITE;
 /*!40000 ALTER TABLE `constituency` DISABLE KEYS */;
+INSERT INTO `constituency` VALUES (1,'Canberra',NULL,4,0,'ACT',NULL,'http://en.wikipedia.org/wiki/Division_of_Canberra',NULL,NULL,NULL),(2,'Fraser',NULL,4,0,'ACT',NULL,'http://en.wikipedia.org/wiki/Division_of_Fraser',NULL,NULL,NULL),(3,'Banks',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Banks',NULL,NULL,NULL),(4,'Barton',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Barton',NULL,NULL,NULL),(5,'Bennelong',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Bennelong',NULL,NULL,NULL),(6,'Berowra',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Berowra',NULL,NULL,NULL),(7,'Blaxland',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Blaxland',NULL,NULL,NULL),(8,'Bradfield',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Bradfield',NULL,NULL,NULL),(9,'Calare',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Calare',NULL,NULL,NULL),(10,'Charlton',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Charlton',NULL,NULL,NULL),(11,'Chifley',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Chifley',NULL,NULL,NULL),(12,'Cook',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Cook',NULL,NULL,NULL),(13,'Cowper',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Cowper',NULL,NULL,NULL),(14,'Cunningham',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Cunningham',NULL,NULL,NULL),(15,'Dobell',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Dobell',NULL,NULL,NULL),(16,'Eden-Monaro',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Eden-Monaro',NULL,NULL,NULL),(17,'Farrer',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Farrer',NULL,NULL,NULL),(18,'Fowler',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Fowler',NULL,NULL,NULL),(19,'Gilmore',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Gilmore',NULL,NULL,NULL),(20,'Grayndler',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Grayndler',NULL,NULL,NULL),(21,'Greenway',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Greenway',NULL,NULL,NULL),(22,'Hughes',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Hughes',NULL,NULL,NULL),(23,'Hume',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Hume',NULL,NULL,NULL),(24,'Hunter',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Hunter',NULL,NULL,NULL),(25,'Kingsford Smith',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Kingsford Smith',NULL,NULL,NULL),(26,'Lindsay',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Lindsay',NULL,NULL,NULL),(27,'Lyne',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Lyne',NULL,NULL,NULL),(28,'Macarthur',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Macarthur',NULL,NULL,NULL),(29,'Mackellar',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Mackellar',NULL,NULL,NULL),(30,'Macquarie',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Macquarie',NULL,NULL,NULL),(31,'McMahon',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_McMahon',NULL,NULL,NULL),(32,'Mitchell',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Mitchell',NULL,NULL,NULL),(33,'Newcastle',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Newcastle',NULL,NULL,NULL),(34,'New England',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_New England',NULL,NULL,NULL),(35,'North Sydney',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_North Sydney',NULL,NULL,NULL),(36,'Page',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Page',NULL,NULL,NULL),(37,'Parkes',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Parkes',NULL,NULL,NULL),(38,'Parramatta',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Parramatta',NULL,NULL,NULL),(39,'Paterson',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Paterson',NULL,NULL,NULL),(40,'Reid',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Reid',NULL,NULL,NULL),(41,'Richmond',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Richmond',NULL,NULL,NULL),(42,'Riverina',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Riverina',NULL,NULL,NULL),(43,'Robertson',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Robertson',NULL,NULL,NULL),(44,'Shortland',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Shortland',NULL,NULL,NULL),(45,'Sydney',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Sydney',NULL,NULL,NULL),(46,'Throsby',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Throsby',NULL,NULL,NULL),(47,'Warringah',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Warringah',NULL,NULL,NULL),(48,'Watson',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Watson',NULL,NULL,NULL),(49,'Wentworth',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Wentworth',NULL,NULL,NULL),(50,'Werriwa',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Werriwa',NULL,NULL,NULL),(51,'Lingiari',NULL,4,0,'NT',NULL,'http://en.wikipedia.org/wiki/Division_of_Lingiari',NULL,NULL,NULL),(52,'Solomon',NULL,4,0,'NT',NULL,'http://en.wikipedia.org/wiki/Division_of_Solomon',NULL,NULL,NULL),(53,'Blair',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Blair',NULL,NULL,NULL),(54,'Bonner',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Bonner',NULL,NULL,NULL),(55,'Bowman',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Bowman',NULL,NULL,NULL),(56,'Brisbane',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Brisbane',NULL,NULL,NULL),(57,'Capricornia',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Capricornia',NULL,NULL,NULL),(58,'Dawson',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Dawson',NULL,NULL,NULL),(59,'Dickson',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Dickson',NULL,NULL,NULL),(60,'Fadden',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Fadden',NULL,NULL,NULL),(61,'Fairfax',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Fairfax',NULL,NULL,NULL),(62,'Fisher',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Fisher',NULL,NULL,NULL),(63,'Flynn',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Flynn',NULL,NULL,NULL),(64,'Forde',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Forde',NULL,NULL,NULL),(65,'Griffith',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Griffith',NULL,NULL,NULL),(66,'Groom',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Groom',NULL,NULL,NULL),(67,'Herbert',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Herbert',NULL,NULL,NULL),(68,'Hinkler',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Hinkler',NULL,NULL,NULL),(69,'Kennedy',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Kennedy',NULL,NULL,NULL),(70,'Leichhardt',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Leichhardt',NULL,NULL,NULL),(71,'Lilley',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Lilley',NULL,NULL,NULL),(72,'Longman',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Longman',NULL,NULL,NULL),(73,'Maranoa',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Maranoa',NULL,NULL,NULL),(74,'McPherson',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_McPherson',NULL,NULL,NULL),(75,'Moncrieff',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Moncrieff',NULL,NULL,NULL),(76,'Moreton',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Moreton',NULL,NULL,NULL),(77,'Oxley',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Oxley',NULL,NULL,NULL),(78,'Petrie',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Petrie',NULL,NULL,NULL),(79,'Rankin',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Rankin',NULL,NULL,NULL),(80,'Ryan',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Ryan',NULL,NULL,NULL),(81,'Wide Bay',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Wide Bay',NULL,NULL,NULL),(82,'Wright',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Wright',NULL,NULL,NULL),(83,'Adelaide',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Adelaide',NULL,NULL,NULL),(84,'Barker',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Barker',NULL,NULL,NULL),(85,'Boothby',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Boothby',NULL,NULL,NULL),(86,'Grey',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Grey',NULL,NULL,NULL),(87,'Hindmarsh',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Hindmarsh',NULL,NULL,NULL),(88,'Kingston',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Kingston',NULL,NULL,NULL),(89,'Makin',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Makin',NULL,NULL,NULL),(90,'Mayo',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Mayo',NULL,NULL,NULL),(91,'Port Adelaide',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Port Adelaide',NULL,NULL,NULL),(92,'Sturt',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Sturt',NULL,NULL,NULL),(93,'Wakefield',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Wakefield',NULL,NULL,NULL),(94,'Bass',NULL,4,0,'Tas.',NULL,'http://en.wikipedia.org/wiki/Division_of_Bass',NULL,NULL,NULL),(95,'Braddon',NULL,4,0,'Tas.',NULL,'http://en.wikipedia.org/wiki/Division_of_Braddon',NULL,NULL,NULL),(96,'Denison',NULL,4,0,'Tas.',NULL,'http://en.wikipedia.org/wiki/Division_of_Denison',NULL,NULL,NULL),(97,'Franklin',NULL,4,0,'Tas.',NULL,'http://en.wikipedia.org/wiki/Division_of_Franklin',NULL,NULL,NULL),(98,'Lyons',NULL,4,0,'Tas.',NULL,'http://en.wikipedia.org/wiki/Division_of_Lyons',NULL,NULL,NULL),(99,'Aston',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Aston',NULL,NULL,NULL),(100,'Ballarat',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Ballarat',NULL,NULL,NULL),(101,'Batman',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Batman',NULL,NULL,NULL),(102,'Bendigo',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Bendigo',NULL,NULL,NULL),(103,'Bruce',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Bruce',NULL,NULL,NULL),(104,'Calwell',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Calwell',NULL,NULL,NULL),(105,'Casey',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Casey',NULL,NULL,NULL),(106,'Chisholm',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Chisholm',NULL,NULL,NULL),(107,'Corangamite',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Corangamite',NULL,NULL,NULL),(108,'Corio',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Corio',NULL,NULL,NULL),(109,'Deakin',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Deakin',NULL,NULL,NULL),(110,'Dunkley',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Dunkley',NULL,NULL,NULL),(111,'Flinders',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Flinders',NULL,NULL,NULL),(112,'Gellibrand',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Gellibrand',NULL,NULL,NULL),(113,'Gippsland',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Gippsland',NULL,NULL,NULL),(114,'Goldstein',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Goldstein',NULL,NULL,NULL),(115,'Gorton',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Gorton',NULL,NULL,NULL),(116,'Higgins',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Higgins',NULL,NULL,NULL),(117,'Holt',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Holt',NULL,NULL,NULL),(118,'Hotham',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Hotham',NULL,NULL,NULL),(119,'Indi',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Indi',NULL,NULL,NULL),(120,'Isaacs',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Isaacs',NULL,NULL,NULL),(121,'Jagajaga',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Jagajaga',NULL,NULL,NULL),(122,'Kooyong',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Kooyong',NULL,NULL,NULL),(123,'Lalor',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Lalor',NULL,NULL,NULL),(124,'La Trobe',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_La Trobe',NULL,NULL,NULL),(125,'Mallee',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Mallee',NULL,NULL,NULL),(126,'Maribyrnong',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Maribyrnong',NULL,NULL,NULL),(127,'McEwen',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_McEwen',NULL,NULL,NULL),(128,'McMillan',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_McMillan',NULL,NULL,NULL),(129,'Melbourne',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Melbourne',NULL,NULL,NULL),(130,'Melbourne Ports',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Melbourne Ports',NULL,NULL,NULL),(131,'Menzies',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Menzies',NULL,NULL,NULL),(132,'Murray',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Murray',NULL,NULL,NULL),(133,'Scullin',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Scullin',NULL,NULL,NULL),(134,'Wannon',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Wannon',NULL,NULL,NULL),(135,'Wills',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Wills',NULL,NULL,NULL),(136,'Brand',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Brand',NULL,NULL,NULL),(137,'Canning',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Canning',NULL,NULL,NULL),(138,'Cowan',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Cowan',NULL,NULL,NULL),(139,'Curtin',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Curtin',NULL,NULL,NULL),(140,'Durack',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Durack',NULL,NULL,NULL),(141,'Forrest',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Forrest',NULL,NULL,NULL),(142,'Fremantle',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Fremantle',NULL,NULL,NULL),(143,'Hasluck',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Hasluck',NULL,NULL,NULL),(144,'Moore',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Moore',NULL,NULL,NULL),(145,'O\'Connor',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_O\'Connor',NULL,NULL,NULL),(146,'Pearce',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Pearce',NULL,NULL,NULL),(147,'Perth',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Perth',NULL,NULL,NULL),(148,'Stirling',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Stirling',NULL,NULL,NULL),(149,'Swan',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Swan',NULL,NULL,NULL),(150,'Tangney',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Tangney',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `constituency` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -248,7 +249,7 @@ CREATE TABLE `image_que` (
   `image_key` varchar(255) default NULL,
   `uploaded_date` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`image_que_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -257,7 +258,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `image_que` WRITE;
 /*!40000 ALTER TABLE `image_que` DISABLE KEYS */;
-INSERT INTO `image_que` VALUES (1,'55e7ac91a6dd89a5bbd74e51c0b0ed2b',NULL,NULL,'b422337044b6143baa26eda7fbf61273','2010-07-06 12:29:58'),(2,'a66468d235465d96000a83a60cfdf409',NULL,NULL,'a5cb8db8e4d2741faee28c73c3a0cd89','2010-07-06 12:30:17'),(3,'7c6dca36c3866aad5eff5926776f2e17',NULL,NULL,'b422337044b6143baa26eda7fbf61273','2010-07-06 12:36:33'),(4,'31378da3f7e9f93f91cc4adc9249c20f',NULL,NULL,'239e04eed7cadd2e35534be93c4a2d31','2010-07-06 12:37:06'),(5,'848b082aed92b27ae34aeae270d5c9f6',NULL,NULL,'239e04eed7cadd2e35534be93c4a2d31','2010-07-06 13:09:10'),(6,'ebaccd6c1e583007bec0f8a8e3a4c62d',NULL,NULL,'5305d64b40a4520e3224e8a33c901208','2010-07-06 14:00:28'),(7,'413b0321b08f341ee2957759b03055fb',NULL,NULL,'5305d64b40a4520e3224e8a33c901208','2010-07-06 14:01:44'),(12,'3f1add72cb8314e8bbf2b91a10db96d0',NULL,NULL,'5305d64b40a4520e3224e8a33c901208','2010-07-07 11:44:58'),(14,'48d141104fff34d8b5239ddb86286e97',NULL,NULL,'5305d64b40a4520e3224e8a33c901208','2010-07-07 13:12:40'),(15,'db811449e2d5d91776163e95ddb823a9',NULL,NULL,'5305d64b40a4520e3224e8a33c901208','2010-07-07 13:13:19'),(16,'637420af70e8bad0787ae8524f12d007',NULL,NULL,'c61ab2b0684e341f3fd525f435498599','2010-07-07 13:17:31'),(17,'8424c67f33c37745e414c62ad295e515',NULL,NULL,'5305d64b40a4520e3224e8a33c901208','2010-07-07 13:18:49'),(18,'013b666c866d8ed31ed4ab40dc292d80',NULL,NULL,'ae1d4d5c987d7dae29708092ed6d20ac','2010-07-07 13:28:54'),(19,'102c14538fe965fe5599646211283a3e',NULL,NULL,'b422337044b6143baa26eda7fbf61273','2010-07-07 13:49:13');
+INSERT INTO `image_que` VALUES (1,'b5ad6d518eff7c4b274fedd98096674d',NULL,NULL,'ae1d4d5c987d7dae29708092ed6d20ac','2010-07-09 13:20:09');
 /*!40000 ALTER TABLE `image_que` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -271,7 +272,7 @@ SET character_set_client = utf8;
 CREATE TABLE `image_que_seq` (
   `sequence` int(11) NOT NULL auto_increment,
   PRIMARY KEY  (`sequence`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -280,7 +281,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `image_que_seq` WRITE;
 /*!40000 ALTER TABLE `image_que_seq` DISABLE KEYS */;
-INSERT INTO `image_que_seq` VALUES (20);
+INSERT INTO `image_que_seq` VALUES (7);
 /*!40000 ALTER TABLE `image_que_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -295,7 +296,7 @@ CREATE TABLE `leaflet` (
   `leaflet_id` int(11) NOT NULL auto_increment,
   `title` varchar(255) NOT NULL,
   `description` text,
-  `publisher__id` int(11) NOT NULL,
+  `publisher_party_id` int(11) NOT NULL,
   `postcode` varchar(50) default NULL,
   `lng` float NOT NULL,
   `lat` float NOT NULL,
@@ -308,7 +309,7 @@ CREATE TABLE `leaflet` (
   KEY `title` (`title`),
   KEY `date_uploaded` (`date_uploaded`),
   KEY `latlng` (`lng`,`lat`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -317,7 +318,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet` WRITE;
 /*!40000 ALTER TABLE `leaflet` DISABLE KEYS */;
-INSERT INTO `leaflet` VALUES (15,'UKIP manifesto','stuff about UKIP',1282,'sw98jx',-0.114293,51.4624,'Richard Pope','richard@memespring.co.uk','0000-00-00 00:00:00','0000-00-00 00:00:00',NULL),(16,'Castle Voice','Development on marshall\\\'s airfield; money sent to iceland; and road crash budget.',1109,'cb12ld',0.136656,52.2045,'Richard Pope','richard@memespring.co.uk','2009-05-05 05:31:53','0000-00-00 00:00:00',NULL);
+INSERT INTO `leaflet` VALUES (2,'test','test',1,'nw72ha',-0.216205,51.6135,'matt','matt.joyce@gmail.com','2010-07-09 23:18:08','2010-07-10 00:00:00',1),(3,'double',NULL,2,'nw72ha',-0.216205,51.6135,'matt','matt.joyce@gmail.com','2010-07-10 03:06:32','2010-07-10 00:00:00',1),(4,'forever test','omg how many tests today',4,'nw72ha',-0.216205,51.6135,'matt','matt.joyce@gmail.com','2010-07-10 04:39:43','2010-07-10 00:00:00',1);
 /*!40000 ALTER TABLE `leaflet` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -342,7 +343,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_category` WRITE;
 /*!40000 ALTER TABLE `leaflet_category` DISABLE KEYS */;
-INSERT INTO `leaflet_category` VALUES (3,15,5),(4,15,4),(5,16,7),(6,16,9);
+INSERT INTO `leaflet_category` VALUES (5,4,8),(4,4,4),(3,4,5),(2,3,11),(1,2,3);
 /*!40000 ALTER TABLE `leaflet_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -356,7 +357,7 @@ SET character_set_client = utf8;
 CREATE TABLE `leaflet_category_seq` (
   `sequence` int(11) NOT NULL auto_increment,
   PRIMARY KEY  (`sequence`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -365,7 +366,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_category_seq` WRITE;
 /*!40000 ALTER TABLE `leaflet_category_seq` DISABLE KEYS */;
-INSERT INTO `leaflet_category_seq` VALUES (6);
+INSERT INTO `leaflet_category_seq` VALUES (5);
 /*!40000 ALTER TABLE `leaflet_category_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -381,7 +382,7 @@ CREATE TABLE `leaflet_constituency` (
   `leaflet_id` int(11) NOT NULL,
   `constituency_id` int(11) NOT NULL,
   PRIMARY KEY  (`leaflet_constituency_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -414,7 +415,6 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_election` WRITE;
 /*!40000 ALTER TABLE `leaflet_election` DISABLE KEYS */;
-INSERT INTO `leaflet_election` VALUES (3,15,1),(4,16,2);
 /*!40000 ALTER TABLE `leaflet_election` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -463,7 +463,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_image` WRITE;
 /*!40000 ALTER TABLE `leaflet_image` DISABLE KEYS */;
-INSERT INTO `leaflet_image` VALUES (1,15,'6c3cf28d08501075fa93d41419c488de',1),(2,15,'d58f211ea0aa046a8ea5aa5494e8660c',2),(3,16,'aaa1859e1f2c2d2e5d119598a3d5b743',1);
+INSERT INTO `leaflet_image` VALUES (4,2,'ae1d4d5c987d7dae29708092ed6d20ac',1),(5,3,'e3c091b79db69debfe56dd0d80a22d3c',1),(6,3,'5871dd3475b07c97067475dbf3d30f9e',2),(7,4,'c92466a5a8060bd798b6bc7b9ac0ca9b',1),(8,4,'753423d14898ed43ad97ec7d56bbf5cc',2);
 /*!40000 ALTER TABLE `leaflet_image` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -477,7 +477,7 @@ SET character_set_client = utf8;
 CREATE TABLE `leaflet_image_seq` (
   `sequence` int(11) NOT NULL auto_increment,
   PRIMARY KEY  (`sequence`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -486,7 +486,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_image_seq` WRITE;
 /*!40000 ALTER TABLE `leaflet_image_seq` DISABLE KEYS */;
-INSERT INTO `leaflet_image_seq` VALUES (3);
+INSERT INTO `leaflet_image_seq` VALUES (8);
 /*!40000 ALTER TABLE `leaflet_image_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -504,7 +504,7 @@ CREATE TABLE `leaflet_party_attack` (
   PRIMARY KEY  (`leaflet_party_attack_id`),
   KEY `leaflet_id` (`leaflet_id`),
   KEY `party_id` (`party_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -513,7 +513,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_party_attack` WRITE;
 /*!40000 ALTER TABLE `leaflet_party_attack` DISABLE KEYS */;
-INSERT INTO `leaflet_party_attack` VALUES (3,15,1109),(4,16,1111);
+INSERT INTO `leaflet_party_attack` VALUES (3,15,1109),(4,16,1111),(5,2,2),(6,3,20),(7,4,1),(8,4,2);
 /*!40000 ALTER TABLE `leaflet_party_attack` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -527,7 +527,7 @@ SET character_set_client = utf8;
 CREATE TABLE `leaflet_party_attack_seq` (
   `sequence` int(11) NOT NULL auto_increment,
   PRIMARY KEY  (`sequence`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -536,7 +536,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_party_attack_seq` WRITE;
 /*!40000 ALTER TABLE `leaflet_party_attack_seq` DISABLE KEYS */;
-INSERT INTO `leaflet_party_attack_seq` VALUES (4);
+INSERT INTO `leaflet_party_attack_seq` VALUES (8);
 /*!40000 ALTER TABLE `leaflet_party_attack_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -550,7 +550,7 @@ SET character_set_client = utf8;
 CREATE TABLE `leaflet_seq` (
   `sequence` int(11) NOT NULL auto_increment,
   PRIMARY KEY  (`sequence`)
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -559,7 +559,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_seq` WRITE;
 /*!40000 ALTER TABLE `leaflet_seq` DISABLE KEYS */;
-INSERT INTO `leaflet_seq` VALUES (22);
+INSERT INTO `leaflet_seq` VALUES (4);
 /*!40000 ALTER TABLE `leaflet_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -577,7 +577,7 @@ CREATE TABLE `leaflet_tag` (
   PRIMARY KEY  (`leaflet_tag_id`),
   KEY `leaflet_id` (`leaflet_id`),
   KEY `tag_id` (`tag_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -586,7 +586,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_tag` WRITE;
 /*!40000 ALTER TABLE `leaflet_tag` DISABLE KEYS */;
-INSERT INTO `leaflet_tag` VALUES (3,15,3),(4,15,4),(5,15,5),(6,15,6),(7,15,7),(8,15,8),(9,16,9),(10,16,10);
+INSERT INTO `leaflet_tag` VALUES (1,2,1),(2,3,1),(3,4,2);
 /*!40000 ALTER TABLE `leaflet_tag` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -600,7 +600,7 @@ SET character_set_client = utf8;
 CREATE TABLE `leaflet_tag_seq` (
   `sequence` int(11) NOT NULL auto_increment,
   PRIMARY KEY  (`sequence`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -609,7 +609,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `leaflet_tag_seq` WRITE;
 /*!40000 ALTER TABLE `leaflet_tag_seq` DISABLE KEYS */;
-INSERT INTO `leaflet_tag_seq` VALUES (10);
+INSERT INTO `leaflet_tag_seq` VALUES (3);
 /*!40000 ALTER TABLE `leaflet_tag_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -630,7 +630,7 @@ CREATE TABLE `party` (
   `colour` char(6) default NULL,
   `twitter_account` varchar(50) default NULL,
   PRIMARY KEY  (`party_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1360 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -639,7 +639,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `party` WRITE;
 /*!40000 ALTER TABLE `party` DISABLE KEYS */;
-INSERT INTO `party` VALUES (1358,'test1',13,NULL,NULL,NULL,NULL,NULL),(1359,'test2',13,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `party` VALUES (1,'Australia First Party (NSW) Incorporated',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/afirst.htm',NULL,NULL),(2,'Australian Democrats',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/ad.htm',NULL,NULL),(3,'Australian Fishing and Lifestyle Party',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/aflp.htm',NULL,NULL),(4,'Australian Greens',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/ag.htm',NULL,NULL),(5,'Australian Sex Party',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/austsp.htm',NULL,NULL),(6,'Carers Alliance',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/ca.htm',NULL,NULL),(7,'Christian Democratic Party (Fred Nile Group)',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/files/cdp.pdf',NULL,NULL),(8,'Citizens Electoral Council of Australia',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/cec.htm',NULL,NULL),(9,'Communist Alliance',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/party_registration/Registered_parties/comm.htm',NULL,NULL),(10,'Country Liberals (Northern Territory)',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/cl-nt.pdf',NULL,NULL),(11,'Democratic Labor Party (DLP) of Australia',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/dlpa.htm',NULL,NULL),(12,'Family First Party',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/ffp.htm',NULL,NULL),(13,'Liberal Party of Australia',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/lpa.htm',NULL,NULL),(14,'National Party of Australia',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/npa.htm',NULL,NULL),(15,'Non-Custodial Parents Party (Equal Parenting)',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/ep.htm',NULL,NULL),(16,'One Nation',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/on.htm',NULL,NULL),(17,'Senator On-Line',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/sol.htm',NULL,NULL),(18,'Shooters and Fishers Party',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/shooters-fishers.pdf',NULL,NULL),(19,'Socialist Alliance',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/sa.htm',NULL,NULL),(20,'Socialist Equality Party',13,NULL,NULL,'http://aec.gov.au/Parties_and_Representatives/Party_Registration/Registered_parties/sep.htm',NULL,NULL);
 /*!40000 ALTER TABLE `party` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -756,7 +756,7 @@ CREATE TABLE `tag` (
   `tag` varchar(255) NOT NULL,
   PRIMARY KEY  (`tag_id`),
   UNIQUE KEY `tag` (`tag`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -765,7 +765,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `tag` WRITE;
 /*!40000 ALTER TABLE `tag` DISABLE KEYS */;
-INSERT INTO `tag` VALUES (3,'europe'),(4,'pound'),(5,'hatred'),(10,'iceland'),(9,'cambridge');
+INSERT INTO `tag` VALUES (1,'test'),(2,'test double omg');
 /*!40000 ALTER TABLE `tag` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -779,7 +779,7 @@ SET character_set_client = utf8;
 CREATE TABLE `tag_seq` (
   `sequence` int(11) NOT NULL auto_increment,
   PRIMARY KEY  (`sequence`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -788,7 +788,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `tag_seq` WRITE;
 /*!40000 ALTER TABLE `tag_seq` DISABLE KEYS */;
-INSERT INTO `tag_seq` VALUES (10);
+INSERT INTO `tag_seq` VALUES (2);
 /*!40000 ALTER TABLE `tag_seq` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -801,4 +801,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2010-07-07 13:55:39
+-- Dump completed on 2010-07-11  3:26:42

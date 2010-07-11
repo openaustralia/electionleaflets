@@ -43,7 +43,7 @@ class upload_page extends pagebase {
 			print json_encode(array(
 					"success" 	=> true,
 					"image_key" => $image_que->image_key,
-					"image_url"	=> s3_url('s',$image_que->image_key)
+					"image_url"	=> get_image_url('s',$image_que->image_key)
 				));
 		}
 		else{

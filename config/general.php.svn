@@ -3,7 +3,7 @@
 define('DEVSITE', true);
 
 // Paths
-define('VHOST_DIR', '/usr/local/code/theelectionleafletproject');
+define('VHOST_DIR', '/var/www/fairdinkum');
 define('ROOT_DIR', VHOST_DIR . '/electionleaflet');
 define('INCLUDE_DIR', ROOT_DIR . '/includes');
 define('PEAR_DIR', INCLUDE_DIR . '/PEAR');
@@ -21,9 +21,9 @@ define('CACHE_DIR', DATA_DIR . '/cache');
 
 // Define the database details
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'electionleaflet');
+define('DB_NAME', 'fairdinkum');
 define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_PASS', 'mysqlpassword');
 define ('DATETIMEFORMAT_SQL',	"Y-m-d H:i:s"); // 2006-06-02 12:23:23
 define('SQL_DEBUG_LEVEL', 0);
 
@@ -46,7 +46,7 @@ define("BUG_FROM_EMAIL", 'bugs@' . DOMAIN);
 define("BUG_TO_EMAIL", 'YOUR@EMAIL.co.uk');	
 
 //Site name
-define("SITE_NAME", "The Straight Choice");
+define("SITE_NAME", "FairDinkum");
 define("SITE_TAG_LINE", "keeping track of electioneering");     
 
 //session stuff

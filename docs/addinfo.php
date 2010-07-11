@@ -11,6 +11,13 @@ class addinfo_page extends pagebase {
     private $image_que_items = array();
     private $upload_key = null;
 
+    function logthis($foo){
+        $myFile = "/var/www/fairdinkum/data/temp/log.txt";
+	$fh = fopen($myFile, 'a') or die("can't open file");
+	fwrite($fh, $foo . "\n");
+        fclose($fh);
+    }
+
     //load
     function load(){
         $upload_key = get_http_var("key");
@@ -146,9 +153,13 @@ class addinfo_page extends pagebase {
             
             $date = mktime(0, 0, 0, date("m")  , date("d") - $days, date("Y"));
             $leaflet->date_delivered = mysql_date($date);
-            
+
+            $this->logthis("before validate");
+	    if($leaflet->validate()) $this->logthis("validates \n");
+	    $this->logthis("before insert");
 
             if($leaflet->insert()){
+		$this->logthis("after insert");
 
                 //save images
                 $images = $this->get_images_from_que();
