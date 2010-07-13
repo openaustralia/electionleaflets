@@ -15,6 +15,7 @@ foreach($matches2[0] as $row)
     $name=trim($matches3[1][0]);
     $state=trim($matches3[1][1]);
     $wiki="http://en.wikipedia.org/wiki/Division_of_$name";
-    print "INSERT INTO constituency (name,constituency_type_id,area_code,wikipedia_url) VALUES ('$name',4,'$state','$wiki');\n";
+    $url_id=str_replace(" ","_",strtolower($name));
+    print "INSERT INTO constituency (name,constituency_type_id,area_code,wikipedia_url,url_id) VALUES ('$name',4,'$state','$wiki','$url_id');\n";
 }
 ?>

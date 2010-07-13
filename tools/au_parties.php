@@ -8,16 +8,9 @@ preg_match_all($pattern,$page,$matches1);
 $pattern='/<strong><a href=\"(.*)\">(.*)<\/a><\/strong>/iU';
 preg_match_all($pattern,$matches1[0][5],$matches2);
 
-//print_r($matches2);
-
-
-
-$baseurl="/Parties_and_Representatives/Party_Registration/Registered_parties/";
 for($i=0;$i<count($matches2[2]);$i++){
     $party=$matches2[2][$i];
-    $url=$matches2[1][$i];
-    if(!stripos($url,"Parties_and_Representatives")) $url=$baseurl.$url;
-    $url="http://aec.gov.au$url";
+    $url=str_replace(' ','_',strtolower($matches2[2][$i]));
     print "INSERT INTO party (name,country_id,url_id) VALUES ('$party',13,'$url');\n";
 }
 ?>
