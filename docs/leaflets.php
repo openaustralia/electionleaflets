@@ -191,23 +191,23 @@ class leaflets_page extends pagebase {
 
         //party
 	    if(isset($this->leaflet_search->publisher_party_id)){
-	        $return = WWW_SERVER . "/alerts/create.php?p=" . $this->leaflet_search->publisher_party_id;
+	        $return = WWW_SERVER . "/alerts/create?p=" . $this->leaflet_search->publisher_party_id;
         }
         
         //category
         if(isset($this->leaflet_search->category_id)){
-	        $return = WWW_SERVER . "/alerts/create.php?c=" . $this->leaflet_search->category_id;
+	        $return = WWW_SERVER . "/alerts/create?c=" . $this->leaflet_search->category_id;
         }
         
         //party attack
         if(isset($this->leaflet_search->party_attack_id)){
-	        $return = WWW_SERVER . "/alerts/create.php?a=" . $this->leaflet_search->party_attack_id;
+	        $return = WWW_SERVER . "/alerts/create?a=" . $this->leaflet_search->party_attack_id;
         }
         
         //constituency
 
         if(isset($this->leaflet_search->constituency_id)){
-        	$return = WWW_SERVER . "/alerts/create.php?n=" . $this->leaflet_search->constituency_id;    
+        	$return = WWW_SERVER . "/alerts/create?n=" . $this->leaflet_search->constituency_id;    
         }
         return $return;
     }
