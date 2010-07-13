@@ -21,7 +21,9 @@ RewriteRule ^tags/?$ tags.php [L,QSA]
 RewriteRule ^tags/([^/]+)/?$ leaflets.php?t=$1 [L,QSA]
 RewriteRule ^tags/([^/]+)/rss/?$ leaflets.php?t=$1&rss=1 [NC,L]
 
-
+RewriteRule ^browse/?$ browse.php [NC,L]
+RewriteRule ^addupload/?$ addupload.php [NC,L]
+RewriteRule ^report/?$ report.php [NC,L]
 RewriteRule ^about/?$ about.php [NC,L]
 RewriteRule ^notspots/?$ notspots.php [NC,L]
 RewriteRule ^random/?$ random.php [NC,L]

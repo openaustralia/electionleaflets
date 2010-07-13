@@ -6,7 +6,7 @@ Sorry, your email to The Straight Choice has failed. This could be because of on
 
 Please try again of visit the website to upload your leaflet directly:
 
-{$www_server}/addupload.php
+{$www_server}/addupload
 
 
 Thanks,
