@@ -3,7 +3,7 @@
 define('DEVSITE', true);
 
 // Paths
-define('VHOST_DIR', '/var/www');
+define('VHOST_DIR', '/srv/www/dev.fairdinkum.org.au');
 define('ROOT_DIR', VHOST_DIR . '/fairdinkum');
 define('INCLUDE_DIR', ROOT_DIR . '/includes');
 define('PEAR_DIR', INCLUDE_DIR . '/PEAR');
@@ -22,15 +22,15 @@ define('CACHE_DIR', DATA_DIR . '/cache');
 // Define the database details
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'fairdinkum');
-define('DB_USER', 'root');
-define('DB_PASS', 'mysqlpassword');
+define('DB_USER', 'fairdinkum');
+define('DB_PASS', 'fairdinkum');
 define('DATETIMEFORMAT_SQL',	"Y-m-d H:i:s"); // 2006-06-02 12:23:23
 define('SQL_DEBUG_LEVEL', 0);
 
 //urls
-define("WWW_SERVER", "http://10.0.0.204/fairdinkum");
-define("ADMIN_SERVER", "http://10.0.0.204/fairdinkum");
-define("DOMAIN", "10.0.0.204"); 
+define("WWW_SERVER", "http://dev.fairdinkum.org.au");
+define("ADMIN_SERVER", "http://dev.fairdinkum.org.au");
+define("DOMAIN", "dev.fairdinkum.org.au");
 
 //confirmation
 define("CONFIRMATION_BASE_URL", WWW_SERVER . '/confirmed.php?q=');
