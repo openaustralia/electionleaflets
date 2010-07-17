@@ -1,4 +1,4 @@
-Sorry, your email to The Straight Choice has failed. This could be because of one of the following problems:
+Sorry, your email to {$site_name} has failed. This could be because of one of the following problems:
 
 - You did not include a photograph or scan of the leaflet as an attachment
 - The images were all too small (less than 400px)
@@ -6,9 +6,9 @@ Sorry, your email to The Straight Choice has failed. This could be because of on
 
 Please try again of visit the website to upload your leaflet directly:
 
-{$www_server}/addupload.php
+{$www_server}/addupload
 
 
 Thanks,
 
-The Straight Choice Team
+The {$site_name} Team

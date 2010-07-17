@@ -24,7 +24,7 @@
         <h4>Parties attacked in this leaflet</h4>
         <ul>
             {foreach from="$leaflet_parties_attacked" item="leaflet_party_attack"}
-                <li><a href="{$www_server}/leaflets.php?a={$leaflet_party_attack->party_id}">{$leaflet_party_attack->name}</a></li>
+                <li><a href="{$www_server}/leaflets?a={$leaflet_party_attack->party_id}">{$leaflet_party_attack->name}</a></li>
             {/foreach}            
         </ul>
 
@@ -53,7 +53,7 @@
     <div id="divReportAbuse" class="contentfull bordertop">
         <h3>Something wrong with this page?</h3>
         <p>
-            If someone has uploaded something other than an election leaflet <a href="{$www_server}/report.php?q={$leaflet->leaflet_id}"> please report it here</a>.
+            If someone has uploaded something other than an election leaflet <a href="{$www_server}/report?q={$leaflet->leaflet_id}"> please report it here</a>.
         </p>
     </div>
 

@@ -7,11 +7,11 @@
             {foreach from="$parties" item="party"}
                 <li>
                     <a href="{$www_server}/parties/{$party->url_id}">{$party->name}</a>
-                    <small><a href="{$www_server}/leaflets.php?a={$party->party_id}/" title="Leaflets attacking {$party->name}">view leaflets attacking this party</a></small>
+                    <small><a href="{$www_server}/leaflets?a={$party->party_id}/" title="Leaflets attacking {$party->name}">view leaflets attacking this party</a></small>
                 </li>
             {/foreach}
                 <li class="more">
-                    <a href="{$www_server}/parties.php">View all parties ...</a>
+                    <a href="{$www_server}/parties">View all parties ...</a>
                 </li>
         </ul>
         <h3>Tags</h3>

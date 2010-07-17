@@ -68,7 +68,7 @@
         <div>
             <h3>2) Send them to us</h3>
             <p>
-            Email them to <a href="mailto:{$leaflets_email}">{$leaflets_email}</a> and follow the instructions we send you, or just <a href="{$www_server}/addupload.php">upload them directly</a>.
+            Email them to <a href="mailto:{$leaflets_email}">{$leaflets_email}</a> and follow the instructions we send you, or just <a href="{$www_server}/addupload">upload them directly</a>.
             <br/><strong>(One leaflet at a time please).</strong>
             </p>
         </div>
@@ -91,7 +91,7 @@
                 {/foreach}
             </ul>
         </div>
-        <p><a href="{$www_server}/browse.php">Browse leaflets by party or category &raquo;</a></p>                        
+        <p><a href="{$www_server}/browse">Browse leaflets by party or category &raquo;</a></p>
     </div>
     <br class="clear"/>
     
