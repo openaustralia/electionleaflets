@@ -115,6 +115,7 @@ abstract class pagebase {
 		$this->smarty->assign("has_upload", $this->has_upload);	
         $this->smarty->assign("google_maps_key", GOOGLE_MAPS_KEY);
         $this->smarty->assign("map_provider", MAP_PROVIDER);
+        $this->smarty->assign("google_analytics_tracker",GOOGLE_ANALYTICS_TRACKER);
 
 		foreach($this->warn_controls  as $warn_control) {
 			$this->assign('warn_' . $warn_control, true);

@@ -107,4 +107,9 @@ define("PAGE_ITEMS_COUNT",10);
 
 //Country of this installation/election
 define("COUNTRY",13); // see db, country_id=13 Australia
+
+// google analytics
+define("GOOGLE_ANALYTICS_TRACKER",'TRACKER_ID');
+
+
 ?>

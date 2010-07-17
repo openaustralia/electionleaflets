@@ -21,7 +21,7 @@
         </script>
         <script type="text/javascript">
         try {
-        var pageTracker = _gat._getTracker("UA-321882-13");
+        var pageTracker = _gat._getTracker("{/literal}{$google_analytics_tracker}{literal}");
         pageTracker._trackPageview();
         } catch(err) {}</script>
         {/literal}
