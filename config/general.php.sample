@@ -71,7 +71,7 @@ define('SCRAPE_METHOD', 'PEAR');
 define("USER_SALT", "blablabla");
 
 //Searching
-define(MAX_DISTANCE_SEARCH, 30); //km
+define("MAX_DISTANCE_SEARCH", 30); //km
 
 //APIs
 define("API_SLEEP", 0.5); //time to wait between api calls
