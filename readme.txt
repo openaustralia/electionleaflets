@@ -5,7 +5,7 @@ Requires cURL
 
 * Database *
 
-Create a database using the script in schems/database.sql
+Create a database using the script in schema/database.sql
 
 * Config file *
 
