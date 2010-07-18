@@ -1,0 +1,18 @@
+<VirtualHost *:80>
+    ServerName dev.electionleaflets.org.au
+    DocumentRoot "/srv/www/dev.electionleaflets.org.au/electionleaflets/docs/"
+
+    <Directory "/srv/www/dev.electionleaflets.org.au/electionleaflets/docs/">
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+
+      php_value include_path ".:/srv/www/dev.electionleaflets.org.au/electionleaflets/includes:/srv/www/dev.electionleaflets.org.au/electionleaflets/includes/PEAR:/srv/www/dev.electionleaflets.org.au/electionleaflets/config"
+    </Directory>
+
+    ErrorLog /srv/www/dev.electionleaflets.org.au/log/error_log
+    CustomLog /srv/www/dev.electionleaflets.org.au/access_log common
+
+    ErrorDocument 404 /the404.php
+</VirtualHost>
+
