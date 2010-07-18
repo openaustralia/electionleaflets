@@ -33,12 +33,7 @@
         <div class="hide">
             <a href="#divContent">Skip navigation</a>
         </div>
-            {if $is_home == false}
-            <div id="divBanner">                        
-                Track how your new MP is voting with
-                <strong><a href="http://www.publicwhip.org.uk/">The Public Whip</a></strong>
-                </div>
-            {/if}
+	    {include file="banner.tpl"}
 
         <div id="divHeader"{if $hide_logo == true} class="small"{/if}>
 
