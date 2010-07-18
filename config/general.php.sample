@@ -3,8 +3,8 @@
 define('DEVSITE', true);
 
 // Paths
-define('VHOST_DIR', '/srv/www/dev.fairdinkum.org.au');
-define('ROOT_DIR', VHOST_DIR . '/fairdinkum');
+define('VHOST_DIR', '/srv/www/dev.electionleaflets.org.au');
+define('ROOT_DIR', VHOST_DIR . '/electionleaflets');
 define('INCLUDE_DIR', ROOT_DIR . '/includes');
 define('PEAR_DIR', INCLUDE_DIR . '/PEAR');
 define('DATA_DIR', ROOT_DIR . '/data');
@@ -21,16 +21,16 @@ define('CACHE_DIR', DATA_DIR . '/cache');
 
 // Define the database details
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'fairdinkum');
-define('DB_USER', 'fairdinkum');
-define('DB_PASS', 'fairdinkum');
+define('DB_NAME', 'electionleaflets');
+define('DB_USER', 'electionleaflets');
+define('DB_PASS', 'electionleaflets');
 define('DATETIMEFORMAT_SQL',	"Y-m-d H:i:s"); // 2006-06-02 12:23:23
 define('SQL_DEBUG_LEVEL', 0);
 
 //urls
-define("WWW_SERVER", "http://dev.fairdinkum.org.au");
-define("ADMIN_SERVER", "http://dev.fairdinkum.org.au");
-define("DOMAIN", "dev.fairdinkum.org.au");
+define("WWW_SERVER", "http://dev.electionleaflets.org.au");
+define("ADMIN_SERVER", "http://dev.electionleaflets.org.au");
+define("DOMAIN", "dev.electionleaflets.org.au");
 
 //confirmation
 define("CONFIRMATION_BASE_URL", WWW_SERVER . '/confirmed.php?q=');
@@ -47,7 +47,7 @@ define("BUG_TO_EMAIL", 'YOUR@EMAIL.co.uk');
 define("LEAFLETS_EMAIL", CONTACT_EMAIL);
 
 //Site name
-define("SITE_NAME", "FairDinkum");
+define("SITE_NAME", "Election Leaflets Australia");
 define("SITE_TAG_LINE", "keeping track of electioneering");     
 
 //session stuff
