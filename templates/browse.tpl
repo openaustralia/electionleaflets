@@ -32,11 +32,11 @@
             {/foreach}
         </ul>
         
-        <h3>Constituencies</h3>
+        <h3>{$area_names|capitalize}</h3>
         <ul>
             {foreach from="$constituencies" item="constituency"}
                 <li>
-                    <a href="{$www_server}/constituencies/{$constituency->url_id}/">{$constituency->name}</a>
+                    <a href="{$www_server}/{$area_names}/{$constituency->url_id}/">{$constituency->name}</a>
                 </li>
             {/foreach}
         </ul>

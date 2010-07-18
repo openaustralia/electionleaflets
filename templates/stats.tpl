@@ -16,10 +16,10 @@
         </ul>
     </div>
     <div class="contentleft">
-        <h2>Top constituencies</h2>
+        <h2>Top {$area_names|capitalize}</h2>
         <ol>
             {foreach from="$top_constituencies" item="constituency"}
-                <li><a href="{$www_server}/constituencies/{$constituency->url_id}/">{$constituency->name}</a> {$constituency->count} leaflets</li>
+                <li><a href="{$www_server}/{$area_names}/{$constituency->url_id}/">{$constituency->name}</a> {$constituency->count} leaflets</li>
             {/foreach}
         </ol>
     </div>

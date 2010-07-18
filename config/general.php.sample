@@ -105,8 +105,10 @@ define("STAT_ZERO_DATE", '2010-01-01');
 
 define("PAGE_ITEMS_COUNT",10);
 
-//Country of this installation/election
+//Localisation
 define("COUNTRY",13); // see db, country_id=13 Australia
+// The area name, like 'constituencies' or 'electorates'. Needs approprate .htaccess rules for the URL
+define("AREA_NAMES", 'electorates');
 
 // google analytics
 define("GOOGLE_ANALYTICS_TRACKER",'TRACKER_ID');

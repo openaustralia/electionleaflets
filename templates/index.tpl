@@ -31,10 +31,10 @@
 
 
          <div id="divFrontLookup">
-             <form method="get" action="{$www_server}/constituencies/">
+             <form method="get" action="{$www_server}/{$area_names}/">
                  <label for="txtSearch">Enter your postcode to see leaflets near you</label>
                  <input type="text" id="txtSearch" name="p" />
-                 <label for="ddlConstituency">or choose a constituency</label>                    
+                 <label for="ddlConstituency">or choose an electorate</label>
                  <select id="ddlConstituency" name="c">
                      <option></option>
                      {foreach from="$constituencies" item="constituency"}
@@ -105,10 +105,10 @@
             </ol>
         </div>
         <div>
-            <h2>Top constituencies</h2>
+            <h2>Top {$area_names}</h2>
             <ol>
                 {foreach from="$constituency_counts" item="constituency"}
-                    <li><a href="{$www_server}/constituencies/{$constituency->url_id}/">{$constituency->name}</a> {$constituency->count} leaflets</li>
+                    <li><a href="{$www_server}/{$area_names}/{$constituency->url_id}/">{$constituency->name}</a> {$constituency->count} leaflets</li>
                 {/foreach}
             </ol>
         </div>
@@ -116,7 +116,7 @@
             <h2>Campaign not-spots</h2>
             <ul>
                 {foreach from="$not_spots" item="constituency"}
-                    <li><a href="{$www_server}/constituencies/{$constituency->url_id}/">{$constituency->name}</a></li>
+                    <li><a href="{$www_server}/{$area_names}/{$constituency->url_id}/">{$constituency->name}</a></li>
                 {/foreach}
             </ul>
             <p>

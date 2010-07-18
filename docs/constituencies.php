@@ -36,7 +36,7 @@ class constituencies_page extends pagebase {
         
         //redirect
         if (isset($constituency)){
-            redirect(WWW_SERVER . "/constituencies/" . $result[0]->url_id);
+            redirect(WWW_SERVER . "/" . AREA_NAMES . "/" . $result[0]->url_id);
         }
         
     }

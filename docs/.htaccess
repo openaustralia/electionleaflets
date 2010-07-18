@@ -9,6 +9,10 @@ RewriteRule ^constituencies/?$ constituencies.php [L,QSA]
 RewriteRule ^constituencies/([^/]+)/?$ leaflets.php?n=$1 [L,QSA]
 RewriteRule ^constituencies/([^/]+)/rss/?$ leaflets.php?n=$1&rss=1 [NC,L]
 
+RewriteRule ^electorates/?$ constituencies.php [L,QSA]
+RewriteRule ^electorates/([^/]+)/?$ leaflets.php?n=$1 [L,QSA]
+RewriteRule ^electorates/([^/]+)/rss/?$ leaflets.php?n=$1&rss=1 [NC,L]
+
 RewriteRule ^leaflets/?$ leaflets.php [NC,L]
 RewriteRule ^leaflets/rss/?$ leaflets.php?rss=1 [NC,L]
 RewriteRule ^leaflets/([0-9]+)/?$ leaflet.php?q=$1 [NC,L]

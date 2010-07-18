@@ -100,7 +100,7 @@
         </p>
         
         <h3>Thanks and acknowledgements</h3>
-        <p>Linking leaflets to constituencies is made possible thanks to the <a href="http://www.theyworkforyou.com/api/">TheyWorkForYou.com API</a></p>
+        <p>Linking leaflets to {$area_names} is made possible thanks to the <a href="http://www.theyworkforyou.com/api/">TheyWorkForYou.com API</a></p>
     </div>
     
 {include file="footer.tpl"}

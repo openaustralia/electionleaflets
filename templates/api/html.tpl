@@ -70,13 +70,13 @@
     {if $has_leaflets}
         <p class="straightchoice_section">
             {if $method == 'constituency'}
-                <a href="{$www_server}/constituencies/{$leaflets[0]->constituency_url_id}/" target="_top">More campaign material from this area</a>
+                <a href="{$www_server}/{$area_names}/{$leaflets[0]->constituency_url_id}/" target="_top">More campaign material from this area</a>
             {/if}
             {if $method == 'party'}
                 <a href="{$www_server}/parties/{$leaflets[0]->party_url_id}/" target="_top">More campaign material for the party</a>
             {/if}
             {if $method == 'latest'}
-                <a href="{$www_server}/leaflets.php" target="_top">More latest campaign material</a>
+                <a href="{$www_server}/leaflets/" target="_top">More latest campaign material</a>
             {/if}
         </p>
     {/if}

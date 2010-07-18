@@ -88,6 +88,7 @@ abstract class pagebase {
         $this->smarty->assign("root_dir", ROOT_DIR);        
         $this->smarty->assign("www_server", WWW_SERVER);
         $this->smarty->assign("domain", DOMAIN);
+        $this->smarty->assign("area_names", AREA_NAMES);
         $this->smarty->assign("leaflets_email",LEAFLETS_EMAIL);
 	$this->smarty->assign("secure_server", SECURE_SERVER);
         $this->smarty->assign("form_action", htmlspecialchars($_SERVER['PHP_SELF']) . '?' . $_SERVER["QUERY_STRING"]);
