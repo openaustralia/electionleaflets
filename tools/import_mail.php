@@ -65,6 +65,7 @@ function send_success($email, $upload_key){
     $smarty->compile_check = true;
     $smarty->template_dir = TEMPLATE_DIR;
     $smarty->assign('url', WWW_SERVER . '/confirm.php?q=' . $upload_key);
+    $smarty->assign('site_name', SITE_NAME);
 
     $subject = 'Confirm your leaflet and add some details';
     $body = $smarty->fetch(TEMPLATE_DIR . '/emails/emailin_success.tlp');
@@ -81,6 +82,8 @@ function send_fail($email){
     $smarty->compile_dir = SMARTY_PATH;
     $smarty->compile_check = true;
     $smarty->template_dir = TEMPLATE_DIR;
+    $smarty->assign('site_name', SITE_NAME);
+    $smarty->assign('www_server', WWW_SERVER);
 
     $subject = 'Failed to upload leadflet';
     $body = $smarty->fetch(TEMPLATE_DIR . '/emails/emailin_fail.tlp');

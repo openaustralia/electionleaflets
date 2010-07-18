@@ -1,7 +1,7 @@
 ** Setup instructions **
 
 * php *
-Requires cURL
+Requires cURL, php5-imap
 
 * Database *
 

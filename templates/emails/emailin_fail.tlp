@@ -4,10 +4,9 @@ Sorry, your email to {$site_name} has failed. This could be because of one of th
 - The images were all too small (less than 400px)
 - The images where not in JPG or PNG format
 
-Please try again of visit the website to upload your leaflet directly:
+Please try again or visit the website to upload your leaflet directly:
 
 {$www_server}/addupload
-
 
 Thanks,
 
