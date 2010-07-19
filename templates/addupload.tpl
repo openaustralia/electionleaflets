@@ -7,7 +7,7 @@
         <p>
             Take a photo of a <strong>single leaflet</strong> and upload it below in JPG format. If the leaflet has more than one side you can upload multiple images. If the leaflet was sent by mail, please obscure your name and address with a marker pen. 
         </p>
-        <p>Alternatively you can email photographs to leaflets@thestraightchoice.org and we will send you a link back to fill in the details.
+        <p>Alternatively you can email photographs to <a href="mailto:{$leaflets_email}">{$leaflets_email}</a> and we will send you a link back to fill in the details.
         </p>
         <p>If your image files are large (more than about 1MB), please resize to help keep our server happy, very large files may not upload.</p>
         <fieldset>
