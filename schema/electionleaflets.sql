@@ -36,11 +36,17 @@ SET character_set_client = @saved_cs_client;
 -- Dumping data for table `category`
 --
 
-LOCK TABLES `category` WRITE;
-/*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (13,'Litter / dog waste / graffiti','Littering',NULL),(2,'Foreign affairs','Foriegn policy or war',NULL),(3,'Economy','The economy, spending or financial management',NULL),(4,'Education','Schools, universities or adult education',0),(5,'Crime','Crime and disorder',0),(6,'Immigration','Immigration',NULL),(7,'Environment','e.g. Climate change or green belt land',NULL),(8,'Transport','Local or national transport',0),(9,'Tax','Local or national taxation',NULL),(10,'Local issue or campaign','e.g. Closure of a local hospital',NULL),(11,'Young people','e.g. Activities for young people',NULL),(12,'Culture','The arts',NULL);
-/*!40000 ALTER TABLE `category` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `category` (`category_id`, `name`, `description`, `default_value`) VALUES
+(1, 'Communications', NULL, NULL),
+(2, 'Defence', NULL, NULL),
+(3, 'Economy', NULL, NULL),
+(4, 'Education', NULL, NULL),
+(5, 'Environment', NULL, NULL),
+(6, 'Family', NULL, NULL),
+(7, 'Health', NULL, NULL),
+(8, 'Immigration', NULL, NULL),
+(9, 'Jobs', NULL, NULL),
+(10, 'Tax', NULL, NULL);
 
 --
 -- Table structure for table `constituency`
