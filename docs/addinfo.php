@@ -3,7 +3,7 @@ require_once('init.php');
 
 class addinfo_page extends pagebase {
 
-    private $country_id = 13;
+    private $country_id = COUNTRY;
     private $selected_party_attack_ids = array();    
     private $selected_category_ids = array();
     private $lng = null;
