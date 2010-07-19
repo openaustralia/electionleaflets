@@ -155,7 +155,7 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `election` WRITE;
 /*!40000 ALTER TABLE `election` DISABLE KEYS */;
-INSERT INTO `election` VALUES (1,'Australian Federal Election 2010',1,'2010-11-01');
+INSERT INTO `election` VALUES (1,'Australian Federal Election 2010',1,'2010-08-21');
 /*!40000 ALTER TABLE `election` ENABLE KEYS */;
 UNLOCK TABLES;
 
