@@ -4,7 +4,7 @@
         {if $message_sent == false}
             <h1>Report abuse: <em>{$leaflet->title}</em></h1>
             <p>
-                This form is for reporting abuse of this website e.g. people uploading images that are not of election leaflets, maliciously altering the text of a leaflet when transcribing it or generally being an idiot. <strong>It's is not for reporting the content of election leaflets</strong>. If you believe that claims made in an election leaflet are in anyway <a href="http://en.wikipedia.org/wiki/Representation_of_the_People_Act_1983">illegal</a>, abusive, racist, homophobic or sexist please report them directly to the <a href="http://www.electoralcommission.org.uk/contact">Electoral Commission</a>.
+                This form is for reporting abuse of this website e.g. people uploading images that are not of election leaflets, maliciously altering the text of a leaflet when transcribing it or generally being an idiot. <strong>It's is not for reporting the content of election leaflets</strong>. If you believe that claims made in an election leaflet are in anyway <a href="http://www.aec.gov.au/About_AEC/Publications/backgrounders/files/2010c-eb-electoral-advertising.pdf">illegal</a>, abusive, racist, homophobic or sexist please report them directly to the <a href="http://www.aec.gov.au/About_AEC/Contact_the_AEC/">Australian Electoral Commission</a> (AEC).
             </p>
             <form method="post" action="{$form_action}">
                 {include file="formvars.tpl"}                
