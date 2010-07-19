@@ -58,6 +58,7 @@
                       Latest
                   </a>
               </li>
+              <!--
               <li>
                   <a href="{$www_server}/map/leaflets/">
                       Map
@@ -68,6 +69,7 @@
                       Analysis
                   </a>
               </li>
+              -->
             </ul>
         </div>
     {/if}
