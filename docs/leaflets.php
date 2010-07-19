@@ -40,7 +40,7 @@ class leaflets_page extends pagebase {
             $leaflets = array();
             if($search_type['type'] == "postcode" || $search_type['type'] = 'partial postcode'){
                 $geocoder = factory::create('geocoder');
-                $success = $geocoder->set_from_postcode($search_type['display']);
+                $success = $geocoder->set_from_postcode($search_type['display'], COUNTRY_ISO);
                 if($success){
                     $this->leaflet_search->lng = $geocoder->lng;
                     $this->leaflet_search->lat = $geocoder->lat;

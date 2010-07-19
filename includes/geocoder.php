@@ -9,20 +9,23 @@ class geocoder{
 	public $lat = null;	
 
 	//set from postcode / zip code
-	function set_from_postcode($zip, $country = 'UK'){
+	function set_from_postcode($zip, $country_iso){
 
 		//reset
 		$this->reset();
 		$success = false;
 
 		$latlong = null;							
-		$country = strtolower($country);
-		if($country = 'uk'){			
+		$country_iso = strtolower($country_iso);
+		if($country_iso == 'gb'){			
 			$lnglat = $this->get_uk_postcode($zip);
 		}else{
 			//for outside UK, use google maps
-			$lnglat = $this->call_google_geocoder(array($zip, $country));
-	 		$lnglat = process_google_geocoder($data);
+			$lnglat = $this->call_google_geocoder(array($zip, $country_iso));
+			// Swap order of result
+			$temp = $lnglat[0];
+			$lnglat[0] = $lnglat[1];
+			$lnglat[1] = $temp;
 		}
 
 		//set lat / long
