@@ -1,35 +1,6 @@
 {include file="header.tpl"}
 
 <div id="divContentFull">
-	{literal}
-    <script type="text/javascript">
-        <!-- For version detection, set to min. required Flash Player version, or 0 (or 0.0.0), for no version detection. --> 
-        var swfVersionStr = "10.0.0";
-        <!-- To use express install, set to playerProductInstall.swf, otherwise the empty string. -->
-        var xiSwfUrlStr = "http://zoom.thestraightchoice.org/playerProductInstall.swf";
-        var flashvars = {source: 'http://zoom.thestraightchoice.org/Leaders_img/ImageProperties.xml', logo: 'hide'};
-        var params = {};
-        params.quality = "high";
-        params.bgcolor = "#000000";
-        params.allowscriptaccess = "always";
-        params.allowfullscreen = "true";
-        var attributes = {};
-        attributes.id = "StraightChoiceViewer";
-        attributes.name = "StraightChoiceViewer";
-        attributes.align = "middle";
-        swfobject.embedSWF(
-            "http://thestraightchoicezoom.s3.amazonaws.com/StraightChoiceViewer.swf", "flashContent", 
-            "100%", "300px", 
-            swfVersionStr, xiSwfUrlStr, 
-            flashvars, params, attributes);
-		<!-- JavaScript enabled so display the flashContent div in case it is not replaced with a swf object. -->
-		swfobject.createCSS("#flashContent", "display:block;text-align:left;");
-    </script>
-	{/literal}
-    <div id="flashContent" style="display:none">
-    </div>
-
-
          <div id="divFrontLookup">
              <form method="get" action="{$www_server}/{$area_names}/">
                  <label for="txtSearch">Enter your postcode to see leaflets near you</label>
