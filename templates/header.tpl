@@ -39,7 +39,7 @@
 
             {if $hide_logo == false}
                 <p id="pLogo"><a href="{$www_server}"><span class="hide">{$site_name} - {$site_tag_line}</span></a></p>
-                <p class="hide">General Election 2010: Live election leaflet monitoring</p>
+                <p class="hide">Federal Election 2010: Live election leaflet monitoring</p>
             {/if}
         
             <ul id="ulMenu">
