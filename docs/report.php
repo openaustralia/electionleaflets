@@ -30,6 +30,7 @@ class report_page extends pagebase {
 		    throw_404();
 	    }else{
 	        $leaflet = $result[0];
+		$this->page_title = "Report abuse: " . $leaflet->title;
         }
         
 	    $this->assign("leaflet", $leaflet);
