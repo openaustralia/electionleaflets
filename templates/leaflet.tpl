@@ -7,26 +7,33 @@
         <p>
             Delivered {if $constituency}in <a href="{$www_server}/{$area_names}/{$constituency->url_id}/">{$constituency->name}</a> {/if}on {$leaflet->date_delivered|date_format:"%A, %e %B, %Y"} (approximate). Uploaded on {$leaflet->date_uploaded|date_format:"%A, %e %B, %Y"} at {$leaflet->date_uploaded|date_format:"%H:%M"}.
         </p>
+
+        {if $leaflet_categories}
         <h4>Categories</h4>
         <ul>
             {foreach from="$leaflet_categories" item="leaflet_category"}
                 <li><a href="{$www_server}/categories/{$leaflet_category->category_id}/">{$leaflet_category->name}</a></li>
             {/foreach}            
         </ul>
+        {/if}
 
+        {if $leaflet_tags}
         <h4>Tags</h4>
         <ul>
             {foreach from="$leaflet_tags" item="leaflet_tag"}
                 <li><a href="{$www_server}/tags/{$leaflet_tag->tag}/">{$leaflet_tag->tag}</a></li>
             {/foreach}
         </ul>
+        {/if}
 
+        {if $leaflet_parties_attacked}
         <h4>Parties attacked in this leaflet</h4>
         <ul>
             {foreach from="$leaflet_parties_attacked" item="leaflet_party_attack"}
                 <li><a href="{$www_server}/leaflets?a={$leaflet_party_attack->party_id}">{$leaflet_party_attack->name}</a></li>
             {/foreach}            
         </ul>
+        {/if}
 
         <h4>Location (approximate)</h4>
         <div id="divSpotMap"></div>
