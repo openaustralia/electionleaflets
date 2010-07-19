@@ -69,8 +69,17 @@
 		return $return;
 	}
 
-	//is a postcode?
-	function is_postcode ($postcode) {
+  function is_postcode ($postcode) {
+    if (COUNTRY_ISO == "GB")
+      return is_uk_postcode($postcode);
+    else if (COUNTRY_ISO == "AU")
+      return is_australian_postcode($postcode);
+    else
+      throw new Exception('Postcode support is not present for your current country');
+  }
+  
+	//is a UK postcode?
+	function is_uk_postcode ($postcode) {
 		// See http://www.govtalk.gov.uk/gdsc/html/noframes/PostCode-2-1-Release.htm
 
 		$in  = 'ABDEFGHJLNPQRSTUWXYZ';
@@ -94,6 +103,10 @@
 			return false;
 		}
 	}
+	
+	function is_australian_postcode($postcode) {
+	  return (preg_match("/^\d{4}$/", $postcode));
+  }
 
 	//is a postcode?
 	function is_partial_postcode ($postcode) {

@@ -107,6 +107,7 @@ define("PAGE_ITEMS_COUNT",10);
 
 //Localisation
 define("COUNTRY",13); // see db, country_id=13 Australia
+define("COUNTRY_ISO", "AU");
 // The area name, like 'constituencies' or 'electorates'. Needs approprate .htaccess rules for the URL
 define("AREA_NAMES", 'electorates');
 
