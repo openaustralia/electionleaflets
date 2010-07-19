@@ -17,7 +17,7 @@
          </div>
     <div id="divWelcome">
         <p>
-            Election leaflets are one of the main weapons in the fight for votes in the UK.
+            Election leaflets are one of the main weapons in the fight for votes in Australia.
         </p>
         <p>
             They are targeted, effective and sometimes very bitter. 
