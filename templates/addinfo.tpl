@@ -21,7 +21,7 @@
                     <strong>Note: please only add what is actually on the leaflet, not your opinion of it.</strong>
                 </li>
                 <li>
-                    <label for="txtPostcode">Which postcode was the leaflet was delivered to? *</label>
+                    <label for="txtPostcode">Which postcode was the leaflet delivered to? *</label>
                     <input type="text" id="txtPostcode" name="txtPostcode" {if $warn_txtPostcode}class="error"{/if} value="{$data.txtPostcode}"/>
                     <small>this will let us work out which electorate the leaflet covers</small>
                 </li>
