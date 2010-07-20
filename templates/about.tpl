@@ -66,7 +66,7 @@
         </dl>
         <h3 id="contact">Contact</h3>
         <p>
-            You can get in touch with us via contact [at] electionleaflets.org.au or phone Matthew on 0424 563 655.
+            You can get in touch with us via email <a href="mailto:contact@electionleaflets.org.au">contact@electionleaflets.org.au</a>, say hello on <a href="http://twitter.com/electionleaflet">twitter</a> or phone Matthew on 0424 563 655.
         </p>
     </div>
     
