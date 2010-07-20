@@ -4,7 +4,9 @@ require_once('init.php');
 class constituencies_page extends pagebase {
     
     private $has_search = false;
-
+    private $constituencies = false;
+    private $postcode = false;
+    
     //load
     function load(){
 
@@ -20,10 +22,21 @@ class constituencies_page extends pagebase {
             
             //lookup constituency and redirect
             $constituency_lookup = $this->lookup_constituency($postcode);
-            if($constituency_lookup && (count($constituency_lookup) == 1)){
-                $result = $search->search("constituency", array(array("name", "=", $constituency_lookup[0])));
-                if(count($result) == 1){
-                    $constituency = $result[0];
+            if($constituency_lookup){
+                $constituencies = array();
+                foreach($constituency_lookup as $name) {
+                    $result = $search->search("constituency", array(array("name", "=", $name)));
+                    if(count($result) == 1){
+                        $constituencies[] = $result[0];
+                    }
+                }
+                // Loop through the names and assign 
+                if (count($constituencies) == 1) {
+                    $constituency = $constituencies[0];
+                }
+                else if (count($constituencies) > 1) {
+                    $this->constituencies = $constituencies;
+                    $this->postcode = $postcode;
                 }
             }
         }else if(isset($constituency_url_id) && $constituency_url_id != '') {
@@ -43,7 +56,14 @@ class constituencies_page extends pagebase {
     
     function bind(){
         
-        if($this->has_search){
+        if($this->constituencies) {
+            $s = "";
+            foreach($this->constituencies as $c) {
+                $s = $s . '<li><a href="' . $c->url_id . '">' . $c->name . '</a></li>';
+            }
+            $this->add_warning("There are several electorates within postcode " . $this->postcode. ". Choose from one of the following: <ul>". $s . "</ul>");
+        }
+        else if($this->has_search){
             $this->add_warning("sorry, we couldn't find a constituency for you");
         }
         
@@ -82,8 +102,11 @@ class constituencies_page extends pagebase {
         		    null,
         		    array(array('constituency', "ASC"))
         		);
-        		// For the time being just return the first result
-        		return array($constituencies[0]->constituency);
+        		$result = array();
+        		foreach($constituencies as $c) {
+        		    $result[] = $c->constituency;
+    		    }
+        		return $result;
             }
             else
                 $success = false;
