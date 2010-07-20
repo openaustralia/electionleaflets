@@ -26,6 +26,16 @@
                     <small>this will let us work out which electorate the leaflet covers</small>
                 </li>
                 <li>
+                    <label for="ddlConstituency">Which electorate was the leaflet delivered to?</label>
+                    <select id="ddlConstituency" name="ddlConstituency" {if $warn_ddlConstituency}class="error"{/if}>
+                        <option></option>
+                        {foreach from="$constituencies" item="constituency"}
+                            <option value="{$constituency->name}">{$constituency->name}</option>
+                        {/foreach}
+                    </select>
+                    <small>please select one if we can't work out the electorate from the postcode alone</small>
+                </li>
+                <li>
                     <label for="ddlDelivered">When was the leaflet delivered? *</label>
                     <select id="ddlDelivered" name="ddlDelivered" {if $warn_ddlDelivered}class="error"{/if}>
                         <option value="0" {if $data.ddlDelivered == 0}selected="selected"{/if}>Today</option>

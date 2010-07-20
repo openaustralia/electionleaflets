@@ -59,13 +59,21 @@ class addinfo_page extends pagebase {
 		    array(array('major', "DESC"), array('name', "ASC"))
 		);
 
+        //constituencies
+        $search = factory::create('search');         
+        $constituencies = $search->search_cached("constituency", 
+            array(array("1", "=", "1")),
+            "AND", null,
+            array(array("name", "ASC"))
+        );
+
 		//assign
 		$this->assign('categories', $categories);		
 		$this->assign('parties', $parties);				
 		$this->assign('selected_party_attack_ids', $this->selected_party_attack_ids);	
 		$this->assign('selected_category_ids', $this->selected_category_ids);	
 		$this->assign('image_que_items', $this->image_que_items);			
-
+        $this->assign("constituencies", $constituencies);        
 	}
 
 	function unbind(){
@@ -124,14 +132,33 @@ class addinfo_page extends pagebase {
             //Convert postcode to electorate
             $australian_postcode = factory::create('australian_postcode');
             $names = $australian_postcode->lookup_constituency_names($postcode);
-            $name = $names[0];
-            $search = factory::create('search');
-            $result = $search->search("constituency", array(array("name", "=", $name)));
-            if(count($result) == 1){
-                $this->constituency_id = $result[0]->constituency_id;
+            if (isset($this->data['ddlConstituency'])) {
+                if (in_array($this->data['ddlConstituency'], $names))
+                    $name = $this->data['ddlConstituency'];
+                else {
+                    $this->add_warning("The postcode and electorate don't match up. Are you sure you got them both correct?");
+                    $this->add_warn_control('txtPostcode');
+                    $this->add_warn_control('ddlConstituency');
+                }
             }
-            
+            else {
+                if (count($names) == 1) {
+                    $name = $names[0];
+                }
+                else {
+                    $this->add_warning('The postcode is in more than one electorate. Please select the electorate.');
+                    $this->add_warn_control('ddlConstituency');
+                }
+            }
+            if ($name) {
+                $search = factory::create('search');
+                $result = $search->search("constituency", array(array("name", "=", $name)));
+                if(count($result) == 1){
+                    $this->constituency_id = $result[0]->constituency_id;
+                }
+            }
         }
+
         return count($this->warnings) == 0;
     }
 
