@@ -32,6 +32,12 @@ class factory {
 					$object = new application();
 				}
 				break;
+			case 'australian_postcode':
+			require_once( 'table_classes/config.php' );
+			require_once('table_classes/australian_postcode.php');
+    			if (!$require_only) {
+    				$object = DB_DataObject::factory($class_name);
+    			}
 			case 'category':
 				require_once( 'table_classes/config.php' );
 				require_once('table_classes/category.php');

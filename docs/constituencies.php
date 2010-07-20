@@ -65,10 +65,28 @@ class constituencies_page extends pagebase {
 		if (isset($cached) && $cached !== false && $cached !='') {
 			return $cached;
 		}else{
-            $twfy = factory::create('twfy');
-		    $twfy_constituency = $twfy->query('getConstituency', array('output' => 'php', 'postcode' => $postcode, 'future' => 'yes_please'));         
-            $twfy_constituency = unserialize($twfy_constituency);
-		    $success = $cache->set('twfy' . $postcode, $twfy_constituency);
+		    if (COUNTRY_ISO == "GB") {
+                $twfy = factory::create('twfy');
+		        $twfy_constituency = $twfy->query('getConstituency', array('output' => 'php', 'postcode' => $postcode, 'future' => 'yes_please'));         
+                $twfy_constituency = unserialize($twfy_constituency);
+		        $success = $cache->set('twfy' . $postcode, $twfy_constituency);
+	        }
+	        else if (COUNTRY_ISO == "AU") {
+	            $success = true;
+	            $search = factory::create('search');
+        		$constituencies = $search->search("australian_postcode", 
+        		    array(array('postcode', '=', $postcode)),
+        		    'AND',
+        		    null,
+        		    array(array('constituency', "ASC"))
+        		);
+        		// For the time being just return the first result
+        		return array('name' => $constituencies[0]->constituency);
+        		
+            }
+            else
+                $success = false;
+
 		    if($success && isset($twfy_constituency) && $twfy_constituency !='' && $twfy_constituency != false){
 			        return $twfy_constituency;		        
 	        }else{
