@@ -8,6 +8,7 @@ class addinfo_page extends pagebase {
     private $selected_category_ids = array();
     private $lng = null;
     private $lat = null;
+    private $constituency_id = null;
     private $image_que_items = array();
     private $upload_key = null;
 
@@ -110,7 +111,8 @@ class addinfo_page extends pagebase {
 			$this->add_warn_control('txtPostcode');		    
 	    }else{
 	        $geocoder = factory::create('geocoder');
-	        $success = $geocoder->set_from_postcode(trim($this->data['txtPostcode']), COUNTRY_ISO);
+	        $postcode = trim($this->data['txtPostcode']);
+	        $success = $geocoder->set_from_postcode($postcode, COUNTRY_ISO);
 	        if(!$success){
     			$this->add_warning('Sorry, we couldn\'t locate that postcode');
     			$this->add_warn_control('txtPostcode');	            
@@ -118,6 +120,17 @@ class addinfo_page extends pagebase {
                 $this->lng = $geocoder->lng;
                 $this->lat = $geocoder->lat;
             }
+            
+            //Convert postcode to electorate
+            $australian_postcode = factory::create('australian_postcode');
+            $names = $australian_postcode->lookup_constituency_names($postcode);
+            $name = $names[0];
+            $search = factory::create('search');
+            $result = $search->search("constituency", array(array("name", "=", $name)));
+            if(count($result) == 1){
+                $this->constituency_id = $result[0]->constituency_id;
+            }
+            
         }
         return count($this->warnings) == 0;
     }
@@ -207,6 +220,14 @@ class addinfo_page extends pagebase {
                         }
                     }
                 }
+                
+                // Now save the constituency
+                $leaflet_constituency = factory::create('leaflet_constituency');
+                $leaflet_constituency->leaflet_id = $leaflet->leaflet_id;
+                $leaflet_constituency->constituency_id = $this->constituency_id;
+                if(!$leaflet_constituency->insert()){
+                    trigger_error("Unable to save constituency information");                    
+                }                
                     
             }else{
                 trigger_error("Unable to save leaflet");
