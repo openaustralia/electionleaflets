@@ -37,16 +37,18 @@ SET character_set_client = @saved_cs_client;
 --
 
 INSERT INTO `category` (`category_id`, `name`, `description`, `default_value`) VALUES
-(1, 'Communications', NULL, NULL),
-(2, 'Defence', NULL, NULL),
-(3, 'Economy', NULL, NULL),
-(4, 'Education', NULL, NULL),
-(5, 'Environment', NULL, NULL),
-(6, 'Family', NULL, NULL),
-(7, 'Health', NULL, NULL),
-(8, 'Immigration', NULL, NULL),
-(9, 'Jobs', NULL, NULL),
-(10, 'Tax', NULL, NULL);
+(1, 'Climate Change', NULL, NULL),
+(2, 'Communications', NULL, NULL),
+(3, 'Defence', NULL, NULL),
+(4, 'Economy', NULL, NULL),
+(5, 'Education', NULL, NULL),
+(6, 'Environment', NULL, NULL),
+(7, 'Family', NULL, NULL),
+(8, 'Health', NULL, NULL),
+(9, 'Immigration', NULL, NULL),
+(10, 'Jobs', NULL, NULL),
+(11, 'Tax', NULL, NULL),
+(12, 'Transport', NULL, NULL);
 
 --
 -- Table structure for table `constituency`
