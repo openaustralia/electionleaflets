@@ -23,7 +23,7 @@
                 <li>
                     <label for="txtPostcode">Which postcode was the leaflet was delivered to? *</label>
                     <input type="text" id="txtPostcode" name="txtPostcode" {if $warn_txtPostcode}class="error"{/if} value="{$data.txtPostcode}"/>
-                    <small>this will let us work out which constituency the leaflet covers</small>
+                    <small>this will let us work out which electorate the leaflet covers</small>
                 </li>
                 <li>
                     <label for="ddlDelivered">When was the leaflet delivered? *</label>

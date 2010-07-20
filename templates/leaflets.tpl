@@ -51,7 +51,7 @@
         {else}
             {if $has_constituency}
                 <div class="attention">
-                    We don't have any leaflets for <strong>{$heading[1]}</strong>. This could mean that the parties are ignoring this constituency or not sending out many leaflets because they think it is a forgone conclusion.
+                    We don't have any leaflets for <strong>{$heading[1]}</strong>. This could mean that the parties are ignoring this electorate or not sending out many leaflets because they think it is a forgone conclusion.
                     <p>
                     If you know differently please  <a href="{$www_server}/addupload">add a leaflet now</a>
                 </p>
