@@ -94,19 +94,8 @@ class constituencies_page extends pagebase {
                 $twfy_constituency = array($twfy_constituency["name"]);
 	        }
 	        else if (COUNTRY_ISO == "AU") {
-	            $success = true;
-	            $search = factory::create('search');
-        		$constituencies = $search->search("australian_postcode", 
-        		    array(array('postcode', '=', $postcode)),
-        		    'AND',
-        		    null,
-        		    array(array('constituency', "ASC"))
-        		);
-        		$result = array();
-        		foreach($constituencies as $c) {
-        		    $result[] = $c->constituency;
-    		    }
-        		return $result;
+	            $australian_postcode = factory::create("australian_postcode");
+	            return $australian_postcode->lookup_constituency_names($postcode);
             }
             else
                 $success = false;
