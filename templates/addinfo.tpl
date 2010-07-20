@@ -30,7 +30,7 @@
                     <select id="ddlConstituency" name="ddlConstituency" {if $warn_ddlConstituency}class="error"{/if}>
                         <option></option>
                         {foreach from="$constituencies" item="constituency"}
-                            <option value="{$constituency->name}">{$constituency->name}</option>
+                            <option value="{$constituency->name}" {if $data.ddlConstituency == $constituency->name}selected="selected"{/if}>{$constituency->name}</option>
                         {/foreach}
                     </select>
                     <small>please select one if we can't work out the electorate from the postcode alone</small>
