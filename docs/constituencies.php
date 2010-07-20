@@ -20,8 +20,8 @@ class constituencies_page extends pagebase {
             
             //lookup constituency and redirect
             $constituency_lookup = $this->lookup_constituency($postcode);
-            if($constituency_lookup){
-                $result = $search->search("constituency", array(array("name", "=", $constituency_lookup)));
+            if($constituency_lookup && (count($constituency_lookup) == 1)){
+                $result = $search->search("constituency", array(array("name", "=", $constituency_lookup[0])));
                 if(count($result) == 1){
                     $constituency = $result[0];
                 }
@@ -57,7 +57,7 @@ class constituencies_page extends pagebase {
         
     }
 
-    // Returns name of constituency for a given postcode
+    // Returns array of names of constituency for a given postcode
     private function lookup_constituency ($postcode){
 
         $cache = cache::factory();
@@ -71,7 +71,7 @@ class constituencies_page extends pagebase {
 		        $twfy_constituency = $twfy->query('getConstituency', array('output' => 'php', 'postcode' => $postcode, 'future' => 'yes_please'));         
                 $twfy_constituency = unserialize($twfy_constituency);
 		        $success = $cache->set('twfy' . $postcode, $twfy_constituency);
-                $twfy_constituency = $twfy_constituency["name"];
+                $twfy_constituency = array($twfy_constituency["name"]);
 	        }
 	        else if (COUNTRY_ISO == "AU") {
 	            $success = true;
@@ -83,7 +83,7 @@ class constituencies_page extends pagebase {
         		    array(array('constituency', "ASC"))
         		);
         		// For the time being just return the first result
-        		return $constituencies[0]->constituency;
+        		return array($constituencies[0]->constituency);
             }
             else
                 $success = false;
