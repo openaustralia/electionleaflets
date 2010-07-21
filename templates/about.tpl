@@ -59,7 +59,9 @@
             <dd>
                 We will be accepting leaflets by post very shortly. Hang on to any you receive in the meantime.
                 Make a note of the postcode (and electorate) it was delivered to.
-                Also, all leaflets sent to us by post will be forwarded to the <a href="http://www.nla.gov.au/collect/elections.html">National Library of Australia</a> for archiving shortly after the election.
+                Also, we have arranged with the <a href="http://www.nla.gov.au">National Library of Australia</a> to forward all
+                the leaflets we receive by post to be considered for inclusion in
+                their <a href="http://www.nla.gov.au/collect/elections.html">election material archive</a>.
             </dd>
         </dl>
         <h3 id="contact">Contact</h3>
