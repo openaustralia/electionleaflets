@@ -65,7 +65,7 @@
         {/if}
     </ul>
     <p class="straightchoice_section">
-        <a href="{$www_server}/upload.php" target="_top">Help The Straight Choice monitor the campaign by uploading material you receive</a>
+        <a href="{$www_server}/addupload" target="_top">Help {$site_name} monitor the campaign by uploading material you receive</a>
     </p>
     {if $has_leaflets}
         <p class="straightchoice_section">
