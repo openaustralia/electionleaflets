@@ -57,8 +57,10 @@
             <dd>Any kind of written communication - letters, leaflets, flyers - contain useful information. If in doubt, upload it anyway or get in touch with us.</dd>
             <dt>Can I send you leaflets by post?</dt>
             <dd>
-                We will be accepting leaflets by post very shortly. Hang on to any you receive in the meantime.
-                Make a note of the postcode (and electorate) it was delivered to.
+                Yes. Please send them to:
+                <address>Election Leaflets, The OpenAustralia Foundation, PO Box 147, Katoomba NSW 2780</address>
+                and mark each leaflet with the postcode and electorate it was delivered to.
+                
                 Also, we have arranged with the <a href="http://www.nla.gov.au">National Library of Australia</a> to forward all
                 the leaflets we receive by post to be considered for inclusion in
                 their <a href="http://www.nla.gov.au/collect/elections.html">election material archive</a>.
