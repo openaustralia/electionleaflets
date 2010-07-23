@@ -617,7 +617,28 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `party` WRITE;
 /*!40000 ALTER TABLE `party` DISABLE KEYS */;
-INSERT INTO `party` VALUES (1,'Australia First Party (NSW) Incorporated',13,NULL,NULL,'australia_first_party_(nsw)_incorporated',NULL,NULL),(2,'Australian Democrats',13,NULL,NULL,'australian_democrats',NULL,NULL),(3,'Australian Fishing and Lifestyle Party',13,NULL,NULL,'australian_fishing_and_lifestyle_party',NULL,NULL),(4,'Australian Greens',13,NULL,NULL,'australian_greens',NULL,NULL),(5,'Australian Sex Party',13,NULL,NULL,'australian_sex_party',NULL,NULL),(6,'Carers Alliance',13,NULL,NULL,'carers_alliance',NULL,NULL),(7,'Christian Democratic Party (Fred Nile Group)',13,NULL,NULL,'christian_democratic_party_(fred_nile_group)',NULL,NULL),(8,'Citizens Electoral Council of Australia',13,NULL,NULL,'citizens_electoral_council_of_australia',NULL,NULL),(9,'Communist Alliance',13,NULL,NULL,'communist_alliance',NULL,NULL),(10,'Country Liberals (Northern Territory)',13,NULL,NULL,'country_liberals_(northern_territory)',NULL,NULL),(11,'Democratic Labor Party (DLP) of Australia',13,NULL,NULL,'democratic_labor_party_(dlp)_of_australia',NULL,NULL),(12,'Family First Party',13,NULL,NULL,'family_first_party',NULL,NULL),(13,'Liberal Party of Australia',13,NULL,NULL,'liberal_party_of_australia',NULL,NULL),(14,'National Party of Australia',13,NULL,NULL,'national_party_of_australia',NULL,NULL),(15,'Non-Custodial Parents Party (Equal Parenting)',13,NULL,NULL,'non-custodial_parents_party_(equal_parenting)',NULL,NULL),(16,'One Nation',13,NULL,NULL,'one_nation',NULL,NULL),(17,'Senator On-Line',13,NULL,NULL,'senator_on-line',NULL,NULL),(18,'Shooters and Fishers Party',13,NULL,NULL,'shooters_and_fishers_party',NULL,NULL),(19,'Socialist Alliance',13,NULL,NULL,'socialist_alliance',NULL,NULL),(20,'Socialist Equality Party',13,NULL,NULL,'socialist_equality_party',NULL,NULL);
+INSERT INTO `party` VALUES
+(1,'Australia First Party (NSW) Incorporated',13,NULL,NULL,'australia_first_party_(nsw)_incorporated',NULL,NULL),
+(2,'Australian Democrats',13,NULL,NULL,'australian_democrats',NULL,NULL),
+(3,'Australian Fishing and Lifestyle Party',13,NULL,NULL,'australian_fishing_and_lifestyle_party',NULL,NULL),
+(4,'Australian Greens',13,NULL,NULL,'australian_greens',NULL,NULL),
+(5,'Australian Sex Party',13,NULL,NULL,'australian_sex_party',NULL,NULL),
+(6,'Carers Alliance',13,NULL,NULL,'carers_alliance',NULL,NULL),
+(7,'Christian Democratic Party (Fred Nile Group)',13,NULL,NULL,'christian_democratic_party_(fred_nile_group)',NULL,NULL),
+(8,'Citizens Electoral Council of Australia',13,NULL,NULL,'citizens_electoral_council_of_australia',NULL,NULL),
+(9,'Communist Alliance',13,NULL,NULL,'communist_alliance',NULL,NULL),
+(10,'Country Liberals (Northern Territory)',13,NULL,NULL,'country_liberals_(northern_territory)',NULL,NULL),
+(11,'Democratic Labor Party (DLP) of Australia',13,NULL,NULL,'democratic_labor_party_(dlp)_of_australia',NULL,NULL),
+(12,'Family First Party',13,NULL,NULL,'family_first_party',NULL,NULL),
+(13,'Liberal Party of Australia',13,NULL,NULL,'liberal_party_of_australia',NULL,NULL),
+(14,'National Party of Australia',13,NULL,NULL,'national_party_of_australia',NULL,NULL),
+(15,'Non-Custodial Parents Party (Equal Parenting)',13,NULL,NULL,'non-custodial_parents_party_(equal_parenting)',NULL,NULL),
+(16,'One Nation',13,NULL,NULL,'one_nation',NULL,NULL),
+(17,'Senator On-Line',13,NULL,NULL,'senator_on-line',NULL,NULL),
+(18,'Shooters and Fishers Party',13,NULL,NULL,'shooters_and_fishers_party',NULL,NULL),
+(19,'Socialist Alliance',13,NULL,NULL,'socialist_alliance',NULL,NULL),
+(20,'Socialist Equality Party',13,NULL,NULL,'socialist_equality_party',NULL,NULL),
+(21,'Independent',13,NULL,NULL,'independent',NULL,NULL);
 /*!40000 ALTER TABLE `party` ENABLE KEYS */;
 UNLOCK TABLES;
 
