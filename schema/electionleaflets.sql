@@ -48,7 +48,8 @@ INSERT INTO `category` (`category_id`, `name`, `description`, `default_value`) V
 (9, 'Immigration', NULL, NULL),
 (10, 'Jobs', NULL, NULL),
 (11, 'Tax', NULL, NULL),
-(12, 'Transport', NULL, NULL);
+(12, 'Transport', NULL, NULL),
+(13, 'Infrastructure', NULL, NULL);
 
 --
 -- Table structure for table `constituency`
