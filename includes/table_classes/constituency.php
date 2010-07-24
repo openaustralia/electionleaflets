@@ -85,7 +85,12 @@ class tableclass_constituency extends tablebase {
     public static function get_constituency_count($date_since, $limit = 10, $cache = true){
         $return = array();
 	    $constituency = factory::create('constituency');
-	    $sql = "select count(leaflet_constituency.leaflet_constituency_id) as count, constituency.name,constituency.url_id, constituency.constituency_id from constituency inner join leaflet_constituency on constituency.constituency_id = leaflet_constituency.constituency_id inner join leaflet on leaflet_constituency.leaflet_id = leaflet.leaflet_id where date_delivered > '$date_since' group by constituency.name, constituency.constituency_id order by count(leaflet_constituency.leaflet_constituency_id) desc limit " . $limit;
+	    $sql  = "SELECT COUNT(leaflet_constituency.leaflet_constituency_id) AS count, constituency.name, constituency.url_id, constituency.constituency_id FROM constituency ";
+	    $sql .= "INNER JOIN leaflet_constituency ON constituency.constituency_id = leaflet_constituency.constituency_id ";
+	    $sql .= "INNER JOIN leaflet ON leaflet_constituency.leaflet_id = leaflet.leaflet_id ";
+	    $sql .= "WHERE date_delivered > '$date_since' AND leaflet.live=1 ";
+	    $sql .= "GROUP By constituency.name, constituency.constituency_id ";
+	    $sql .= "ORDER BY count(leaflet_constituency.leaflet_constituency_id) desc limit " . $limit;
 	    if($cache){
             $return = $constituency->execute_cached($sql);
         }else{

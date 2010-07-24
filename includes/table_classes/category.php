@@ -46,7 +46,7 @@ class tableclass_category extends tablebase {
         $sql  = "SELECT COUNT(leaflet_category.leaflet_category_id) as count, category.name, category.category_id FROM category ";
         $sql .= "INNER JOIN leaflet_category ON category.category_id = leaflet_category.category_id ";
         $sql .= "INNER JOIN leaflet ON leaflet_category.leaflet_id = leaflet.leaflet_id ";
-        $sql .= "WHERE date_delivered > '$date_since' ";
+        $sql .= "WHERE date_delivered > '$date_since' AND leaflet.live=1";
         $sql .= "GROUP BY category.name, category.category_id ORDER BY COUNT(leaflet_category.leaflet_category_id) DESC LIMIT " . $limit;
 
         if($cache){

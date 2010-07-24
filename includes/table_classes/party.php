@@ -67,7 +67,10 @@ class tableclass_party extends tablebase {
 	public function get_category_count($date_since, $limit = 10, $cache = true){
         $return = array();
 	    $category = factory::create('category');
-	    $sql = "select count(leaflet_category.leaflet_category_id) as count, category.name, category.category_id from category inner join leaflet_category on category.category_id = leaflet_category.category_id inner join leaflet on leaflet_category.leaflet_id = leaflet.leaflet_id where date_delivered > '$date_since' and publisher_party_id = $this->party_id group by category.name, category.category_id order by count(leaflet_category.leaflet_category_id) desc limit " . $limit;
+	    $sql  = "SELECT COUNT(leaflet_category.leaflet_category_id) AS count, category.name, category.category_id FROM category ";
+	    $sql .= "INNER JOIN leaflet_category ON category.category_id = leaflet_category.category_id ";
+	    $sql .= "INNER JOIN leaflet ON leaflet_category.leaflet_id = leaflet.leaflet_id ";
+	    $sql .= "GROUP BY category.name, category.category_id ORDER BY count(leaflet_category.leaflet_category_id) DESC LIMIT " . $limit;
 	    
 	    if($cache){
             $return = $category->execute_cached($sql);
@@ -81,14 +84,12 @@ class tableclass_party extends tablebase {
 
 	    $return = array();
         $rate_value = factory::create('rate_value');
-        $sql = "
-        select left_label, right_label, avg(value) as average
-        from rate_value
-            inner join rate_type on rate_value.rate_type_id = rate_type.rate_type_id
-            inner join leaflet on rate_value.leaflet_id = leaflet.leaflet_id
-        where publisher_party_id = $this->party_id and date_delivered > '$date_since'
-        group by left_label, right_label
-        ";
+        $sql  = "SELECT left_label, right_label, avg(value) AS average FROM rate_value ";
+        $sql .= "INNER JOIN rate_type ON rate_value.rate_type_id = rate_type.rate_type_id ";
+        $sql .= "INNER JOIN leaflet ON rate_value.leaflet_id = leaflet.leaflet_id ";
+        $sql .= "WHERE date_delivered > '$date_since' AND leaflet.live=1 ";
+        $sql .= "AND publisher_party_id = $this->party_id ";
+        $sql .= "GROUP BY left_label, right_label";
 
         if($cache){
             $return = $rate_value->execute_cached($sql);
@@ -102,13 +103,12 @@ class tableclass_party extends tablebase {
     public function get_constituency_count($date_since, $limit = 10, $cache = true){
         $return = array();
 	    $constituency = factory::create('constituency');
-	    $sql = "select count(leaflet_constituency.leaflet_constituency_id) as count, constituency.name,constituency.url_id, constituency.constituency_id from constituency 
-		    inner join leaflet_constituency on constituency.constituency_id = leaflet_constituency.constituency_id 
-		    inner join leaflet on leaflet_constituency.leaflet_id = leaflet.leaflet_id 
-		    where date_delivered > '$date_since' and publisher_party_id = $this->party_id 
-		    group by constituency.name, constituency.constituency_id 
-		    order by count(leaflet_constituency.leaflet_constituency_id) 
-		    desc limit " . $limit;
+	    $sql  = "SELECT COUNT(leaflet_constituency.leaflet_constituency_id) AS count, constituency.name,constituency.url_id, constituency.constituency_id FROM constituency ";
+	    $sql .= "INNER JOIN leaflet_constituency on constituency.constituency_id = leaflet_constituency.constituency_id ";
+	    $sql .= "INNER JOIN leaflet ON leaflet_constituency.leaflet_id = leaflet.leaflet_id ";
+            $sql .= "WHERE date_delivered > '$date_since' AND leaflet.live=1 ";
+	    $sql .= "AND publisher_party_id = $this->party_id ";
+	    $sql .= "GROUP BY constituency.name, constituency.constituency_id ORDER BY count(leaflet_constituency.leaflet_constituency_id) desc limit " . $limit;
 	    if($cache){
             $return = $constituency->execute_cached($sql);
         }else{
@@ -120,12 +120,11 @@ class tableclass_party extends tablebase {
 	public function get_party_count($date_since, $limit = 10, $cache = true){
 	    $return = array();
 	    $party = factory::create('party');
-	    $sql = "select party.name, party.party_id, party.url_id, party.colour, count(leaflet_id) as count from leaflet 
-		    inner join party on leaflet.publisher_party_id = party.party_id 
-		    where date_uploaded > '$date_since' 
-		    group by party.name, party.party_id, party.colour 
-		    order by count(leaflet_id)  
-		    desc limit " . $limit;
+	    $sql  = "SELECT party.name, party.party_id, party.url_id, party.colour, COUNT(leaflet_id) as count FROM leaflet ";
+	    $sql .= "INNER JOIN party on leaflet.publisher_party_id = party.party_id ";
+	    $sql .= "WHERE date_uploaded > '$date_since' AND leaflet.live=1 ";
+	    $sql .= "GROUP BY party.name, party.party_id, party.colour ";
+	    $sql .= "ORDER BY COUNT(leaflet_id) DESC LIMIT " . $limit;
 	    if($cache){
             $return = $party->execute_cached($sql);
         }else{
