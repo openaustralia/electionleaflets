@@ -228,8 +228,11 @@ class addinfo_page extends pagebase {
 
                 //save tags
                 $tag_string = trim($this->data['txtTags']);
-                $tags = split(",", $tag_string);
-                
+                // match, all, these, and these, "and these"
+		$tag_string = preg_replace("/[^a-z0-9, ]/i", '', $tag_string); // drop extended chars
+		preg_match_all("/[\w ]+/i",$tag_string,$found_tags); // search for tags
+		$tags=array_map('trim',$found_tags[0]); // trim found tags
+		$tags=array_unique($tags); // remove dupes
                 if($tag_string != '' && isset($tag_string) && count($tags) > 0){
                     foreach ($tags as $tag) {
                         $new_tag = factory::create('tag');
