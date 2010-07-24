@@ -64,7 +64,7 @@ class tableclass_party extends tablebase {
 		return $saved;
 	}
 	
-	public function category_count($date_since, $limit = 10, $cache = true){
+	public function get_category_count($date_since, $limit = 10, $cache = true){
         $return = array();
 	    $category = factory::create('category');
 	    $sql = "select count(leaflet_category.leaflet_category_id) as count, category.name, category.category_id from category inner join leaflet_category on category.category_id = leaflet_category.category_id inner join leaflet on leaflet_category.leaflet_id = leaflet.leaflet_id where date_delivered > '$date_since' and publisher_party_id = $this->party_id group by category.name, category.category_id order by count(leaflet_category.leaflet_category_id) desc limit " . $limit;
@@ -99,10 +99,16 @@ class tableclass_party extends tablebase {
         return $return;
     }
 
-    public function constituency_count($date_since, $limit = 10, $cache = true){
+    public function get_constituency_count($date_since, $limit = 10, $cache = true){
         $return = array();
 	    $constituency = factory::create('constituency');
-	    $sql = "select count(leaflet_constituency.leaflet_constituency_id) as count, constituency.name,constituency.url_id, constituency.constituency_id from constituency inner join leaflet_constituency on constituency.constituency_id = leaflet_constituency.constituency_id inner join leaflet on leaflet_constituency.leaflet_id = leaflet.leaflet_id where date_delivered > '$date_since' and publisher_party_id = $this->party_id group by constituency.name, constituency.constituency_id order by count(leaflet_constituency.leaflet_constituency_id) desc limit " . $limit;
+	    $sql = "select count(leaflet_constituency.leaflet_constituency_id) as count, constituency.name,constituency.url_id, constituency.constituency_id from constituency 
+		    inner join leaflet_constituency on constituency.constituency_id = leaflet_constituency.constituency_id 
+		    inner join leaflet on leaflet_constituency.leaflet_id = leaflet.leaflet_id 
+		    where date_delivered > '$date_since' and publisher_party_id = $this->party_id 
+		    group by constituency.name, constituency.constituency_id 
+		    order by count(leaflet_constituency.leaflet_constituency_id) 
+		    desc limit " . $limit;
 	    if($cache){
             $return = $constituency->execute_cached($sql);
         }else{
@@ -111,10 +117,15 @@ class tableclass_party extends tablebase {
         return $return;
     }
 	
-	public static function get_party_count($date_since, $limit = 10, $cache = true){
+	public function get_party_count($date_since, $limit = 10, $cache = true){
 	    $return = array();
 	    $party = factory::create('party');
-	    $sql = "select party.name, party.party_id, party.url_id, party.colour, count(leaflet_id) as count from leaflet inner join party on leaflet.publisher_party_id = party.party_id where date_uploaded > '$date_since' group by party.name, party.party_id, party.colour order by count(leaflet_id)  desc limit " . $limit;
+	    $sql = "select party.name, party.party_id, party.url_id, party.colour, count(leaflet_id) as count from leaflet 
+		    inner join party on leaflet.publisher_party_id = party.party_id 
+		    where date_uploaded > '$date_since' 
+		    group by party.name, party.party_id, party.colour 
+		    order by count(leaflet_id)  
+		    desc limit " . $limit;
 	    if($cache){
             $return = $party->execute_cached($sql);
         }else{
@@ -123,5 +134,5 @@ class tableclass_party extends tablebase {
         
         return $return;
     }
-	
+
 }

@@ -39,7 +39,7 @@ class index_page extends pagebase {
         //counts
         $total_counts = tableclass_party::get_party_count(STAT_ZERO_DATE);
         $not_spots = tableclass_constituency::get_not_spots();        
-        $constituency_counts = tableclass_constituency::constituency_count(STAT_ZERO_DATE);                
+        $constituency_counts = tableclass_constituency::get_constituency_count(STAT_ZERO_DATE);                
 
         //assign
         $this->assign("total_counts", $total_counts);

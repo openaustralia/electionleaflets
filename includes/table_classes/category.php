@@ -28,6 +28,8 @@ class tableclass_category extends tablebase {
         );
     }
 
+
+
 	/* Links */
 	public function links (){
 	}
@@ -37,4 +39,21 @@ class tableclass_category extends tablebase {
         return array('category_id');
     }
 
+
+    public function get_category_count($date_since, $limit = 10, $cache = true){
+	$return = array();
+        $category = factory::create('category');
+        $sql  = "SELECT COUNT(leaflet_category.leaflet_category_id) as count, category.name, category.category_id FROM category ";
+        $sql .= "INNER JOIN leaflet_category ON category.category_id = leaflet_category.category_id ";
+        $sql .= "INNER JOIN leaflet ON leaflet_category.leaflet_id = leaflet.leaflet_id ";
+        $sql .= "WHERE date_delivered > '$date_since' ";
+        $sql .= "GROUP BY category.name, category.category_id ORDER BY COUNT(leaflet_category.leaflet_category_id) DESC LIMIT " . $limit;
+
+        if($cache){
+            $return = $category->execute_cached($sql);
+        }else{
+            $return = $category->execute($sql);
+        }
+        return $return;
+    }
 }

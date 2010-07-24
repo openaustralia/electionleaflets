@@ -9,42 +9,23 @@ class browse_page extends pagebase {
 
 		$search = factory::create('search');
 
-		//get top parties
-        $parties = $search->search_cached("party", 
-                array(array("major", "=", true)),
-                "AND",
-                null,
-                array(array("name", "ASC"))
-            );
-        $this->assign("parties", $parties);
+	//get top parties
+		$parties_counts = tableclass_party::get_party_count(STAT_ZERO_DATE);
+		$this->assign("parties_counts",$parties_counts);
 
-		//get categories
-        $categories = $search->search_cached("category", 
-                array(array("1", "=", "1")),
-                "AND", null,
-                array(array("name", "ASC"))                
-            );
-        $this->assign("categories", $categories);
+	//get categories
+		$categories_counts = tableclass_category::get_category_count(STAT_ZERO_DATE);
+		$this->assign("categories_counts",$categories_counts);
 
-        $constituencies = $search->search_cached("constituency", 
-                array(array("1", "=", "1")),
-                "AND", null,
-                array(array("name", "ASC"))
-            );
-        $this->assign("constituencies", $constituencies);
+	//get electorates
+		$constituencies_counts = tableclass_constituency::get_constituency_count(STAT_ZERO_DATE);
+		$this->assign("constituencies_counts",$constituencies_counts);
 
-		//get top tags
-        $tag = factory::create("tag");
-        $weighted_tags = $tag->get_weighted_tags();
-        $this->assign("weighted_tags", $weighted_tags);
-
-		//get attack leaflets
-
-		//
-		
+	//get top tags
+		$tag = factory::create("tag");
+		$weighted_tags = $tag->get_weighted_tags();
+		$this->assign("weighted_tags", $weighted_tags);
 	}
-	
-	
 }
 
 //create class instance

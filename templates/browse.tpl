@@ -3,17 +3,42 @@
         <h1>Browse election leaflets</h1>
 
         <h3>Parties</h3>
-        <ul class="parties">
-            {foreach from="$parties" item="party"}
+        <ul>
+            {foreach from="$parties_counts" item="party"}
                 <li>
-                    <a href="{$www_server}/parties/{$party->url_id}">{$party->name}</a>
-                    <small><a href="{$www_server}/leaflets?a={$party->party_id}/" title="Leaflets attacking {$party->name}">view leaflets attacking this party</a></small>
+                    <a href="{$www_server}/parties/{$party->url_id}/">{$party->name}</a> ({$party->count})
                 </li>
             {/foreach}
-                <li class="more">
-                    <a href="{$www_server}/parties">View all parties ...</a>
-                </li>
+        <li class="more">
+            <a href="{$www_server}/parties">View all parties ...</a>
+        </li>
         </ul>
+
+        <h3>Categories</h3>
+        <ul>
+            {foreach from="$categories_counts" item="category"}
+                <li>
+                    <a href="{$www_server}/categories/{$category->category_id}/">{$category->name}</a> ({$category->count})
+                </li>
+            {/foreach}
+        <li class="more">
+            <a href="{$www_server}/categories">View all categories ...</a>
+        </li>
+        </ul>
+        
+        <h3>{$area_names|capitalize}</h3>
+        <ul>
+            {foreach from="$constituencies_counts" item="constituency"}
+                <li>
+                    <a href="{$www_server}/{$area_names}/{$constituency->url_id}/">{$constituency->name}</a> ({$constituency->count})
+                </li>
+            {/foreach}
+        <li class="more">
+            <a href="{$www_server}/constituencies">View all {$area_names} ...</a>
+        </li>
+        </ul>
+
+
         <h3>Tags</h3>
         <ul class="tagcloud">
             {foreach from="$weighted_tags" item="weighted_tag"}
@@ -23,23 +48,7 @@
             {/foreach}
         </ul>
 
-        <h3>Categories</h3>
-        <ul>
-            {foreach from="$categories" item="category"}
-                <li>
-                    <a href="{$www_server}/categories/{$category->category_id}/">{$category->name}</a>
-                </li>
-            {/foreach}
-        </ul>
-        
-        <h3>{$area_names|capitalize}</h3>
-        <ul>
-            {foreach from="$constituencies" item="constituency"}
-                <li>
-                    <a href="{$www_server}/{$area_names}/{$constituency->url_id}/">{$constituency->name}</a>
-                </li>
-            {/foreach}
-        </ul>
+
     </div>
     
 {include file="footer.tpl"}

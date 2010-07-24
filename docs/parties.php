@@ -10,7 +10,7 @@ class parties_page extends pagebase {
 		$search = factory::create('search');
 
 		//get top parties
-        $parties = $search->search_cached("party", 
+	$parties = $search->search_cached("party", 
                 array(array("1", "=", "1")),
                 "AND",
                 null,
