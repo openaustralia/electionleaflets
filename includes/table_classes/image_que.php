@@ -65,12 +65,13 @@ class tableclass_image_que extends tablebase {
     }
     
     function save_sized_image($original,$key,$size, $folder){
-        $file = $folder."/" . $key . ".jpg";
-        $file_path = IMAGES_DIR ."/". $file;
-        resize_image($original, $size, $file_path);    
-        //$input = S3::inputFile($file_path);
-        //S3::putObject($input, S3_BUCKET, $file, S3::ACL_PUBLIC_READ);
-	//MJFIXME
+	$file = $folder."/" . $key . ".jpg";
+    	$file_path = IMAGES_DIR ."/". $file;
+    	resize_image($original, $size, $file_path);
+	if (STORAGE_STRATEGY=='s3'){
+    	    $input = S3::inputFile($file_path);
+    	    S3::putObject($input, S3_BUCKET, $file, S3::ACL_PUBLIC_READ);
+	}
     }
 
 	/* Keys */
