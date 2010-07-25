@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 
-    <div class="contentfull">
-        <h1>Parties</h1>
+    <div class="contentfull align-left">
+        <h3>Parties</h3>
         <ul class="parties">
             {foreach from="$parties" item="party"}
                 <li>

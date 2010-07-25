@@ -1,6 +1,6 @@
 {include file="header.tpl"}
     {if $has_leaflets}
-        <div class="contentfull">
+        <div class="contentfull align-left">
             {if $has_party || $has_category || $has_tag || $has_party_attack || $has_constituency}
                 <h1>{$heading[0]} <em>{$heading[1]}</em></h1>
                 {if $has_leaflets}
@@ -22,7 +22,9 @@
 							<img src="{image_url id=$leaflet->leaflet_image_image_key size=t}">
                             <!-- <img src="{$www_server}/image.php?i={$leaflet->leaflet_image_image_key}&amp;s=t"/> -->
                         </a>
-                        <a href="{$www_server}/leaflets/{$leaflet->leaflet_id}/">{$leaflet->title}</a>
+                        <small>
+	                        <a href="{$www_server}/leaflets/{$leaflet->leaflet_id}/">{$leaflet->title}</a>
+	                    </small>
                         {if $is_geo}
                             <span class="distance">
                                 {if $leaflet->distance < 0.5 || $leaflet->distance == 0}
@@ -57,7 +59,7 @@
                 </p>
             </div>
             {else}  
-                <h3>Sorry, we couldn't find any leaflets for you</h3>
+                <h4>Sorry, we couldn't find any leaflets for you</h4>
             {/if}
         {/if}
     </div>
@@ -108,7 +110,7 @@
         
             {if $has_constituency}
                 <div class="infobox">            
-                    <h3>Add leaflets from {$heading[1]} to your website</h3>
+                    <h4>Add leaflets from {$heading[1]} to your website</h4>
             
                      <textarea rows="5"><iframe src="{$www_server}/api/call.php?method=constituency&output=html&constituency={$leaflets[0]->constituency_url_id}&count=3" style="border:none;height:900px; overflow:hidden;width:160px;"></iframe></textarea>
                     <p>
@@ -118,7 +120,7 @@
             {/if}
             {if $has_party}
                 <div class="infobox">            
-                    <h3>Add leaflets from <strong>{$heading[1]}</strong> to your website</h3>
+                    <h4>Add leaflets from <strong>{$heading[1]}</strong> to your website</h4>
         
                      <textarea rows="5"><iframe src="{$www_server}/api/call.php?method=party&output=html&party_id={$leaflets[0]->party_party_id}&count=3" style="border:none;height:900px; overflow:hidden;width:160px;"></iframe></textarea>
                     <p>
@@ -127,7 +129,7 @@
                 </div>
             {/if}
             <div class="infobox">  
-                <h3>Parties</h3>
+                <h4>Parties</h4>
                 <ul class="parties">
                     {foreach from="$parties_counts" item="party"}
                         <li>
@@ -140,7 +142,7 @@
                 </ul>
             </div>
             <div class="infobox">
-                <h3>Categories</h3>
+                <h4>Categories</h4>
                 <ul>
                     {foreach from="$categories_counts" item="category"}
                         <li>

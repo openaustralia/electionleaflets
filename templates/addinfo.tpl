@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 
-<div class="contentleft">
+<div class="contentfull align-left">
     <form id="frmUpload" method="post" action="{$form_action}">
         {include file="formvars.tpl"}
         <h1>Step 2 - add a few details</h1>

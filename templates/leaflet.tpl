@@ -1,13 +1,13 @@
 {include file="header.tpl"}
 
-    <div class="contentleft">
-        <h1>{$leaflet->title}</h1>
-        <div>{$leaflet->description|nl2br}</div>
+    <div class="leftcolumn leaflet">
+        <h3>{$leaflet->title}</h3>
         <p>Published by <a href="{$www_server}/parties/{$leaflet->party_url_id}/">{$leaflet->party_name}</a></p>
-        <p>
+        <p class="meta">
             Delivered {if $constituency}in <a href="{$www_server}/{$area_names}/{$constituency->url_id}/">{$constituency->name}</a> {/if}on {$leaflet->date_delivered|date_format:"%A, %e %B, %Y"} (approximate). Uploaded on {$leaflet->date_uploaded|date_format:"%A, %e %B, %Y"} at {$leaflet->date_uploaded|date_format:"%H:%M"}.
         </p>
-
+        <h4>Description</h4>
+		<p>{$leaflet->description|nl2br}</p>
         {if $leaflet_categories}
         <h4>Categories</h4>
         <ul>
@@ -44,10 +44,10 @@
             {foreach from="$leaflet_images" item="leaflet_image"}
                 <li>
                     <a href="{$www_server}/full.php?q={$leaflet->leaflet_id}#l{$leaflet_image->leaflet_image_id}">
-                        <img src="{$leaflet_image->medium_url()}" />
+                        <img class="leaflet-medium" src="{$leaflet_image->medium_url()}" />
                     </a>
                     <br/>
-                    <small>
+                    <small class="leaflet-zoom">
                         <a href="{$www_server}/full.php?q={$leaflet->leaflet_id}#l{$leaflet_image->leaflet_image_id}">
                             view larger image
                         </a>
@@ -58,7 +58,7 @@
     </div>
     <br class="clear"/>
     <div id="divReportAbuse" class="contentfull bordertop">
-        <h3>Something wrong with this page?</h3>
+        <h4>Something wrong with this page?</h4>
         <p>
             If someone has uploaded something other than an election leaflet <a href="{$www_server}/report?q={$leaflet->leaflet_id}"> please report it here</a>.
         </p>

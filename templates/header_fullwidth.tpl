@@ -26,8 +26,8 @@
 	{/if}
 </head>
 
-<body {if $is_full_view == true}class="full-width"{/if}>
-    <div id="page-container" {if $is_full_view == true} class="full-width"{/if}>
+<body>
+    <div id="page-container" class="full-width">
     {if $hide_header == false}
         <div class="hide">
             <a href="#divContent">Skip navigation</a>
@@ -44,10 +44,10 @@
 	  <div id="divHeader"{if $hide_logo == true} class="small"{/if}>
 
             {if $hide_logo == false}
-           <p class="credit">The <a href="http://www.openaustraliafoundation.org.au">OpenAustralia Foundation</a> presents:</p>
 	      <div id="pLogo">
+		<h2><a href="{$www_server}">OpenAustralia Foundation Presents</h2>
                 <h1><a href="{$www_server}">{$site_name}</a></h1>
-                <h2><a href="{$www_server}"><strong>2010</strong> FEDERAL ELECTION <span>|</span> live election monitoring</a></h2>
+                <h2><a href="{$www_server}">2010 FEDERAL ELECTION Live <span>|</span> election monitoring</a></h2>
 	      </div>
             {/if}
         
@@ -80,10 +80,9 @@
               </li>
               -->
             </ul>
-            <div id="header-border"><img src="/images/header_orange_line.png" /></div>
         </div>
     {/if}
-    <div id="divPage" {if $is_home}class="home"{/if} {if $is_full_view == true}class="full-width"{/if}>
+    <div id="divPage" {if $is_home}class="home"{/if}>
     
         <div id="divContent">
 

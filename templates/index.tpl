@@ -1,53 +1,57 @@
 {include file="header.tpl"}
 
 <div id="divContentFull">
-         <div id="divFrontLookup">
-             <form method="get" action="{$www_server}/{$area_names}/">
-                 <label for="txtSearch">Enter your postcode to see leaflets near you</label>
-                 <input type="text" id="txtSearch" name="p" />
-                 <label for="ddlConstituency">or choose an electorate</label>
-                 <select id="ddlConstituency" name="c">
-                     <option></option>
-                     {foreach from="$constituencies" item="constituency"}
-                         <option value="{$constituency->url_id}">{$constituency->name}</option>
-                     {/foreach}
-                 </select>
-                 <input  class="button" type="submit" value="GO" />                    
-             </form>
-         </div>
+    <div class="leftcolumn">
     <div id="divWelcome">
+    	<h3>Make a difference</h3>
+    	<h3 class="light">before you vote</h3>
         <p>
-            Election leaflets are one of the main weapons in the fight for votes in Australia.
+            Election leaflets are one of the main weapons in the fight 
+for votes in Australia.
         </p>
         <p>
             They are targeted, effective and sometimes very bitter. 
         </p>
         <p>
-            We need your help to photograph and map them so we can keep an eye on what the parties are up to, and try to keep them honest.
-        </p>
+            We need <strong>your help</strong> to photograph and map them so we can keep 
+an eye on what the parties are up to, and try to keep them honest.
+        </p><br/>
         <p id="pCount">
-            {$leaflet_count} leaflets added so far!
+            <strong>{$leaflet_count}</strong> leaflets added so far!
         </p>
     </div>
-     <div id="divAction">
-        <div>
-            <h3>1) Photograph any leaflets you receive</h3>
-            <p>
-                Take a photograph of the leaflet with your phone or camera, or scan it if you have access to a scanner.
-            </p>
-        </div>
-        <div>
-            <h3>2) Send them to us</h3>
-            <p>
-            Email them to <a href="mailto:{$leaflets_email}">{$leaflets_email}</a> and follow the instructions we send you, or just <a href="{$www_server}/addupload">upload them directly</a>.
-            <br/><strong>(One leaflet at a time please).</strong>
-            </p>
-        </div>
+    </div>
+    <div class="rightcolumn">
+    <div id="calltoactions">
+    <div class="divider"><img class="left" width="110" height="42" src="/images/crease_line_left.png"/><img class="middle" width="75" height="42" src="/images/crease_line_middle.png"/><img class="right" width="75" height="42" src="/images/crease_line_right.png"/></div>
+	    <div id="divFrontLookup">
+			<h4>View leaflets in your area</h4>
+	         <form method="get" action="{$www_server}/{$area_names}/">
+	             <input id="txtSearch" name="p" value="Enter postcode" type="text" onfocus="value=''"><input type="image" src="{$www_server}/images/search_button.png" class="button" value="GO" type="submit">                    
+	         </form>
+	     </div>
+	     
+	     <div id="divAction">
+	     	<h4>Add a leaflet</h4>
+	        <div class="add upload" onclick="window.location = '{$www_server}/addupload';">
+	            <span class="add-title"><a href="{$www_server}/addupload">Upload them online now</span>
+	            <p>(Photograph or scan them first)</a></p>
+	        </div>
+	        <div class="add email" onclick="window.location = 'mailto:{$leaflets_email}';">
+	            <span class="add-title"><a href="mailto:{$leaflets_email}">Email them straight from your phone</a></span>
+	            <p><a href="mailto:{$leaflets_email}">{$leaflets_email}</a></p>
+	        </div>
+	        <div class="add post">
+	            <span class="add-title">Post them to us via snail mail</span>
+	            <p>OpenAustralia, PO Box 1234, Sydney NSW 2000</p>
+	        </div>
+	     </div>
      </div>
-     <br class="clear"/>
+     </div>
+     <br class="clear">
      <div id="divRecentLeaflets">
-        <h2>Latest leaflets</h2>
-        <div id="divScroller">
+        <h4>Latest leaflets</h4><span class="orange-divider"> | </span><h4><a class="browse-leaflets" href="{$www_server}/browse">Browse leaflets</a></h4>
+        <div id="divScroller"> {* TODO: update this div from Jack's work *}
             <a id="btnPrevious" href="#"><img src="{$www_server}/images/arrow_left.png" alt="Previous"/></a>
             <a id="btnNext" href="#"><img src="{$www_server}/images/arrow_right.png" alt="Next"/></a>            
             <ul class="results">
@@ -67,24 +71,25 @@
     <br class="clear"/>
     
     <div class="stats">
+      <h4>View leaflets by...</h4>
         <div>
-            <h2>Top parties</h2>
+            <h4>Top parties</h4>
             <ol>
                 {foreach from="$total_counts" item="party" name="parties"}
-                    <li><a href="{$www_server}/parties/{$party->url_id}/">{$party->name}</a> {$party->count} leaflets</li>
+                    <li><a href="{$www_server}/parties/{$party->url_id}/">{$party->name}</a> <span class="count">({$party->count})</span></li>
                 {/foreach}
             </ol>
         </div>
         <div>
-            <h2>Top {$area_names}</h2>
+            <h4>Top {$area_names}</h4>
             <ol>
                 {foreach from="$constituency_counts" item="constituency"}
-                    <li><a href="{$www_server}/{$area_names}/{$constituency->url_id}/">{$constituency->name}</a> {$constituency->count} leaflets</li>
+                    <li><a href="{$www_server}/{$area_names}/{$constituency->url_id}/">{$constituency->name}</a> <span class="count">({$constituency->count})</span></li>
                 {/foreach}
             </ol>
         </div>
         <div>
-            <h2>Campaign not-spots</h2>
+            <h4>Campaign not-spots</h4>
             <ul>
                 {foreach from="$not_spots" item="constituency"}
                     <li><a href="{$www_server}/{$area_names}/{$constituency->url_id}/">{$constituency->name}</a></li>

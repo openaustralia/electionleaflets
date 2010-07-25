@@ -138,3 +138,25 @@ function setTextboxHint(sId, sHint){
          $(sId).className = $(sId).className.replace('hint', "");
     }
 }
+
+
+function setActiveNav(){
+	$page = window.location;
+	$page_with_slash = $page+"/";
+	if(!$page) {
+		$page = '';
+	}
+	$('ul#ulMenu li a').each(function(){
+		var $href = $(this).attr('href');
+		var $href_with_slash = $href+"/";
+		if ( ($href == $page) || ($href == $page_with_slash) || $href_with_slash == $page) {
+			$(this).addClass('active');
+		} else {
+			$(this).removeClass('active');
+		}
+	});
+}
+
+$(document).ready(function(){
+	setActiveNav();
+});

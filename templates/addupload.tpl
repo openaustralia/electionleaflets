@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 
-<div id="divContentFull">
+<div class="contentfull align-left">
     <form id="frmUpload" method="post" action="{$form_action}" enctype="multipart/form-data" onsubmit="uploadImages();">
         {include file="formvars.tpl"}        
         <h1>Add a leaflet (step 1 of 2)</h1>

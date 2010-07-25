@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 
-    <div class="contentfull">
+    <div class="contentfull about-us">
         <h1>About {$site_name}</h1>
         <p>
             Electioneering is a high-stakes game. We, at {$site_name}, believe that it’s time for that game to become a spectator sport.
@@ -41,12 +41,12 @@
             If you love what we do <a href="http://blog.openaustralia.org/join-us/">consider donating</a> to the OpenAustralia Foundation.
         </p>
         <br class="clear"/>
-        <h3>FAQs</h3>
+        <h4>FAQs</h4>
         <dl class="faq">
             <dt>How do I upload an election leaflet</dt>
-            <dd>You need to upload a photograph of the leaflet in JPG format, then enter a few details about the leaflet. <a href="{$www_server}/addupload">Click here to get started</a>.</dd>
+            <dd>You need to <a href="{$www_server}/addupload">upload a photograph of the leaflet</a> in JPG format, then enter a few details about the leaflet.</dd>
             <dt id="activist">I'm a party activist, can I upload a leaflet?</dt>
-            <dd>Yes. Just upload a photos of your leaflet and enter <strong>one</strong> of the post codes it is aimed at when prompted. <a href="{$www_server}/addupload">Click here to add a leaflet now</a>.</dd>
+            <dd>Yes. Just <a href="{$www_server}/addupload">upload a photos of your leaflet</a> and enter <strong>one</strong> of the post codes it is aimed at when prompted.</dd>
             <dt>Who can reuse the images</dt>
             <dd>By uploading an image to {$site_name} you are allowing free reuse of the image. For this site to make an impact on the way electioneering is conducted it's important that the dodgy ones get as wide an audience as possible, and this helps it happen. If you would like to make sure that proper attribution for a particular image please let us know.</dd>
             <dt>Is this project affiliated to or supported by any political party</dt>
@@ -66,9 +66,9 @@
                 their <a href="http://www.nla.gov.au/collect/elections.html">election material archive</a>.
             </dd>
         </dl>
-        <h3 id="contact">Contact</h3>
+        <h4 id="contact">Contact</h4>
         <p>
-            You can get in touch with us via email <a href="mailto:contact@electionleaflets.org.au">contact@electionleaflets.org.au</a>, say hello on <a href="http://twitter.com/electionleaflet">twitter</a> or phone Matthew on 0424 563 655.
+            You can get in touch with us via email <a href="mailto:contact@electionleaflets.org.au">contact@electionleaflets.org.au</a>, say hello on <a href="http://twitter.com/electionleaflet">Twitter</a> or phone Matthew on 0424 563 655.
         </p>
     </div>
     

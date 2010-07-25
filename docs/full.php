@@ -53,6 +53,7 @@ class full_page extends pagebase {
 		$this->page_title = "Full image of " . $leaflet->title . " ( election leaflet published by " . $leaflet->party_name . ")";
 	    $this->assign("leaflet", $leaflet);
 	    $this->assign("leaflet_images", $leaflet_images);
+	    $this->assign("is_full_view", true);
 		
 	}
 
