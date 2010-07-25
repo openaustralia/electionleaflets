@@ -150,7 +150,7 @@
                         </li>
                     {/foreach}
                     <li class="more">
-                        <a href="{$www_server}/parties">View all caetegories ...</a>
+                        <a href="{$www_server}/parties">View all categories ...</a>
                     </li>
                 </ul>
             </div>
