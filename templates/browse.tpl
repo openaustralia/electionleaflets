@@ -39,7 +39,7 @@
         </ul>
 
 
-        <h3>Tags</h3>
+        <h4>Tags</h4>
         <ul class="tagcloud">
             {foreach from="$weighted_tags" item="weighted_tag"}
                 <li class="{if $weighted_tag->count < 1}tg1{elseif $weighted_tag->count < 3}tg2{elseif $weighted_tag->count < 5}tg3{elseif $weighted_tag->count < 10}tg4{elseif $weighted_tag->count < 30}tg5{else}tg6{/if}">
