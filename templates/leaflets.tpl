@@ -129,9 +129,9 @@
             <div class="infobox">  
                 <h3>Parties</h3>
                 <ul class="parties">
-                    {foreach from="$parties" item="party"}
+                    {foreach from="$parties_counts" item="party"}
                         <li>
-                            <a href="{$www_server}/parties/{$party->url_id}">{$party->name}</a>
+                            <a href="{$www_server}/parties/{$party->url_id}">{$party->name}</a> ({$party->count})
                         </li>
                     {/foreach}
                     <li class="more">
@@ -142,11 +142,14 @@
             <div class="infobox">
                 <h3>Categories</h3>
                 <ul>
-                    {foreach from="$categories" item="category"}
+                    {foreach from="$categories_counts" item="category"}
                         <li>
-                            <a href="{$www_server}/categories/{$category->category_id}/">{$category->name}</a>
+                            <a href="{$www_server}/categories/{$category->category_id}/">{$category->name}</a> ({$category->count})
                         </li>
                     {/foreach}
+                    <li class="more">
+                        <a href="{$www_server}/parties">View all caetegories ...</a>
+                    </li>
                 </ul>
             </div>
         </div>    

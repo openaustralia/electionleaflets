@@ -118,8 +118,14 @@ class leaflets_page extends pagebase {
         $this->assign("current_page_number", $current_page_number);    
         $this->assign("pagination", $this->get_pagination(1, $total_pages, $current_page_number));
         $this->assign("search_link", WWW_SERVER);   
-        $this->assign("parties", $parties);   
-        $this->assign("categories", $categories);          
+
+        //get parties
+        $parties_counts = tableclass_party::get_party_count(STAT_ZERO_DATE);
+        $this->assign("parties_counts",$parties_counts);
+
+        //get categories
+        $categories_counts = tableclass_category::get_category_count(STAT_ZERO_DATE);
+        $this->assign("categories_counts",$categories_counts);
 
 	}
 	
