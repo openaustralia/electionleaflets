@@ -43,7 +43,7 @@ an eye on what the parties are up to, and try to keep them honest.
 	        </div>
 	        <div class="add post">
 	            <span class="add-title">Post them to us via snail mail</span>
-	            <p>OpenAustralia, PO Box 1234, Sydney NSW 2000</p>
+	            <p>Election Leaflets, The OpenAustralia Foundation, PO Box 147, Katoomba NSW 2780</p>
 	        </div>
 	     </div>
      </div>
