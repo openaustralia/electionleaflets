@@ -68,6 +68,9 @@
             {* iframe  *}
             {if $has_party || $has_category || $has_party_attack || $has_constituency}
                 <div class="infobox">
+	                <a href="{$alert_link}">
+	                    <img src="{$www_server}/images/email.png" alt="rss" title="Subscribe to email alerts for '{$page_title}'"/>
+	                </a>
                     {if $has_party}
                         <a href="{$alert_link}">Email alerts for new leaflets from the {$heading[1]}</a>
                     {elseif $has_category}
