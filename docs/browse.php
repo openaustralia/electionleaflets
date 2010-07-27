@@ -7,8 +7,6 @@ class browse_page extends pagebase {
 	function bind() {
 		$this->page_title = "Browse election leaflets";
 
-		$search = factory::create('search');
-
 	//get top parties
 		$parties_counts = tableclass_party::get_party_count(STAT_ZERO_DATE);
 		$this->assign("parties_counts",$parties_counts);
