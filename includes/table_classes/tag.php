@@ -36,7 +36,12 @@ class tableclass_tag extends tablebase {
 
 
     public function get_weighted_tags($limit = 100){
-        return $this->execute("select tag.tag, tag.tag_id, count(leaflet_id) as count from tag inner join leaflet_tag on tag.tag_id = leaflet_tag.tag_id group by tag.tag, tag.tag_id order by count(leaflet_id) desc limit " . $limit);
+	$sql ="SELECT tag.tag, tag.tag_id, COUNT(leaflet_tag.leaflet_id) AS count FROM tag ";
+	$sql.="INNER JOIN leaflet_tag ON tag.tag_id = leaflet_tag.tag_id ";
+	$sql.="INNER JOIN leaflet ON leaflet_tag.leaflet_id=leaflet.leaflet_id ";
+	$sql.="WHERE leaflet.live=1 ";
+	$sql.="GROUP BY tag.tag, tag.tag_id ORDER BY COUNT(leaflet_tag.leaflet_id) DESC LIMIT " . $limit;
+        return $this->execute($sql);
     }
     
     public function insert(){
