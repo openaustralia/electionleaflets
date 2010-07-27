@@ -74,7 +74,7 @@ an eye on what the parties are up to, and try to keep them honest.
         <div>
             <h4>Top parties</h4>
             <ol>
-                {foreach from="$total_counts" item="party" name="parties"}
+                {foreach from="$party_counts" item="party" name="parties"}
                     <li><a href="{$www_server}/parties/{$party->url_id}/">{$party->name}</a> <span class="count">({$party->count})</span></li>
                 {/foreach}
             </ol>
@@ -105,7 +105,8 @@ an eye on what the parties are up to, and try to keep them honest.
 {*
 <div class="contenthalf">
     <h2>Leaflets by party</h2>
-     <img src="http://chart.apis.google.com/chart?cht=bhs&chd=t:{foreach from="$total_counts" item="party" name="parties"}{$party->count}{if $smarty.foreach.parties.last == false},{/if}{/foreach}&chs=400x125&chco={foreach from="$total_counts" item="party" name="parties"}{$party->colour}{if $smarty.foreach.parties.last == false}|{/if}{/foreach}&chxt=y&chxl=0:{foreach from="$total_counts" item="party" name="parties"}|{$party->name}{/foreach}&chm=N,ffffff,0,-1,11,,c&s:underp&chds=0,50"/>
+    <img src="http://chart.apis.google.com/chart?cht=bhs&chd=t:{foreach from="$party_counts" item="party" name="parties"}{$party->count}{if $smarty.foreach.parties.last == false},{/if}{/foreach}&chs=400x125&chco={foreach from="$total_counts" item="party" name="parties"}{$party->colour}{if $smarty.foreach.parties.last == false}|{/if}{/foreach}&chxt=y&chxl=0:{foreach from="$party_counts" item="party" name="parties"}|{$party->name}{/foreach}&chm=N,ffffff,0,-1,11,,c&s:underp&chds=0,50"/>
 </div>
- *}  
+*}
+ 
 {include file="footer.tpl"}
