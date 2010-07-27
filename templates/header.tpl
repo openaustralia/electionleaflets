@@ -45,12 +45,12 @@
 
             {if $hide_logo == false}
            <p class="credit">The <a href="http://www.openaustraliafoundation.org.au">OpenAustralia Foundation</a> presents:</p>
-	      <div id="pLogo">
+	      <div id="pLogo" onclick="window.location = '{$www_server}';">
                 <h1><a href="{$www_server}">{$site_name}</a></h1>
                 <h2><a href="{$www_server}"><strong>2010</strong> FEDERAL ELECTION <span>|</span> live election monitoring</a></h2>
 	      </div>
             {/if}
-        
+        	<div class="divider top-nav"><img class="left" width="110" height="42" src="/images/crease_line_left.png"/><img class="middle" width="75" height="42" src="/images/crease_line_middle.png"/><img class="right" width="75" height="42" src="/images/crease_line_right.png"/></div>
             <ul id="ulMenu">
               <li>
                   <a href="{$www_server}">
