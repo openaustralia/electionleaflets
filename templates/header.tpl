@@ -67,6 +67,11 @@
                       Latest
                   </a>
               </li>
+              <li>
+                  <a href="{$www_server}/browse/">
+                      Browse
+                  </a>
+              </li>
               <!--
               <li>
                   <a href="{$www_server}/map/leaflets/">
