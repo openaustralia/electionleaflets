@@ -55,7 +55,7 @@
             <dd>Yes, and please make a copy of the image on your site and link back to us.</dd>
             <dt>What do you mean by a leaflet? Does a letter count?</dt>
             <dd>Any kind of written communication - letters, leaflets, flyers - contain useful information. If in doubt, upload it anyway or get in touch with us.</dd>
-            <dt>Can I send you leaflets by post?</dt>
+            <a name=post></a><dt>Can I send you leaflets by post?</dt>
             <dd>
                 Yes. Please send them to:
                 <address>Election Leaflets, The OpenAustralia Foundation, PO Box 147, Katoomba NSW 2780</address>

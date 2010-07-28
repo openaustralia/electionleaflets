@@ -42,8 +42,7 @@ an eye on what the parties are up to, and try to keep them honest.
 	            <p><a href="mailto:{$leaflets_email}">{$leaflets_email}</a></p>
 	        </div>
 	        <div class="add post">
-	            <span class="add-title"><strong>Post them to us</strong></span>
-	            <p>Election Leaflets, The OpenAustralia Foundation<br/>PO Box 147, Katoomba NSW 2780</p>
+	            <span class="add-title">Or <a href="/about#post">post them to us</a> if you don't have a camera or scanner</span>
 	        </div>
 	     </div>
      </div>
