@@ -1219,7 +1219,10 @@ final class S3Request {
 
 		if (S3::$useSSL) {
 			curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 1);
-			curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 1);
+			// HACK: Temporary disable of ssl certificate checking to allow for curl not finding CA. Ugh. *red face*
+			// Fix this!!
+			curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+			//curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 1);
 		}
 
 		curl_setopt($curl, CURLOPT_URL, $url);
