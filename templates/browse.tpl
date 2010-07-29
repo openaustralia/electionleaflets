@@ -1,6 +1,6 @@
 {include file="header.tpl"}
     <div class="contentfull align-left">
-        <h3>Browse election leaflets</h3>
+        <h1>Browse election leaflets</h1>
 
         <h4>Parties</h4>
         <ul class="parties">
