@@ -77,8 +77,8 @@ define("MAX_DISTANCE_SEARCH", 30); //km
 define("API_SLEEP", 0.5); //time to wait between api calls
 
 //Maps
-define("GOOGLE_MAPS_KEY", 'YOUR KEY');
-define("MAP_PROVIDER", "openstreetmap");
+define("GOOGLE_MAPS_KEY", 'ABQIAAAAhMvL5FcIz28xYunmiC9iIRTpXRYBN3sIiprqmxjMQVo62ZN11xTJWWDxSi36gzzGGHLf5xRkuObAoA');
+define("MAP_PROVIDER", "google");
 
 
 //cookies
@@ -112,7 +112,7 @@ define("COUNTRY_ISO", "AU");
 define("AREA_NAMES", 'electorates');
 
 // google analytics
-define("GOOGLE_ANALYTICS_TRACKER",'TRACKER_ID');
+define("GOOGLE_ANALYTICS_TRACKER",'UA-3107958-9');
 
 
 ?>
