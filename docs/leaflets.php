@@ -66,9 +66,10 @@ class leaflets_page extends pagebase {
             $this->leaflet_search->start = null;
             $this->leaflet_search->number = null;
         }
-
-        $all_leaflets = $this->leaflet_search->search(true);
-        $total_count = count($all_leaflets);    
+        else{
+	    $leaflet = factory::create('leaflet');
+	    $total_count = $leaflet->count_live();
+        }
         $total_pages = ceil($total_count / PAGE_ITEMS_COUNT);        
         
         

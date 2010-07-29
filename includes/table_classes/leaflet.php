@@ -57,4 +57,16 @@ class tableclass_leaflet extends tablebase {
         return array('leaflet_id');
     }
 
+    public function count_live($cache = true){
+        $return = array();
+	$sql  = "SELECT COUNT(leaflet_id) AS count FROM leaflet WHERE leaflet.live=1 ";
+        if($cache){
+            $return = $this->execute_cached($sql);
+        }else{
+            $return = $this->execute($sql);
+        }
+        return $return[0]->count;
+    }
+
+
 }
