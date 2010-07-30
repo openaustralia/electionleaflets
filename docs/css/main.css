@@ -401,12 +401,16 @@ form.formhighlight {background:#ffffaa; padding:10px;}
 }
 
 /* Warnings, messages & errors*/
-#divWarning, #divMessages {font-size:0.9em;text-align:center; height:14px; background: #fff;}
+#divWarning, #divMessages {font-size:0.9em;text-align:center; background: #fff;}
 #divWarning {background:#fff;}
 #divMessages {background:#fff; color:#5f5f5f;}
 #divPage.home #divWarning,
 #divPage.home #divMessages{
 	display: none;
+}
+#divWarning ul li,
+#divMessages ul li{
+	color: red;
 }
 input.error, textarea.error, select.error {border: solid 2px #EF5963;}
 input.hint, textarea.hint {color:#bfbfbf; font-style:italic;}
