@@ -651,8 +651,8 @@ div.infobox textarea{width:100%;}
 div.infobox img {vertical-align:top; float:left; margin:2px 4px 4px 0;width: 28px;height: 28px;}
 
 /* Pagination  */
-ul.pagination {margin:1em auto 2em  auto!important; clear:left; text-align:left;}
-ul.pagination li {display:inline;}
+ul.pagination {margin:1em auto 2em  auto!important; clear:left; text-align:left;padding-top:20px;}
+ul.pagination li {display:inline-block; margin-bottom:10px;}
 ul.pagination li a {border:solid 1px #ba5800;padding:2px 7px;text-align:center;margin:0 2px; text-decoration:none!important;}
 ul.pagination li span {padding:2px 7px;text-align:center;margin:0 2px;}
 ul.pagination li.current {font-weight:bold; border:none; text-decoration:none!important;}
