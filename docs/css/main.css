@@ -283,6 +283,9 @@ ul.results li img {margin-bottom:0.2em;}
 ul.results li a {display:block; text-align:left;}
 ul.results li a.leaflet {height:185px;position: relative;}
 ul.results li a.leaflet img {position: absolute;bottom: 0;left:0; max-width: 185px; max-height: 185px;}
+ul.results.jcarousel-list.jcarousel-list-horizontal a.leaflet img{
+	left: 20px;
+}
 
 #imgRSS {position:absolute; top:2.4em; right:1.5em;}
 
