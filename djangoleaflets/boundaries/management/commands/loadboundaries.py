@@ -21,10 +21,14 @@ class Command(django.core.management.base.BaseCommand):
         for b in Boundary.objects.all():
             b.delete()
         print constituencies.keys()
-        for f in ['boundaries/data/england.kml', 
-                  'boundaries/data/wales.kml', 
-                  'boundaries/data/scotland.kml', 
-                  'boundaries/data/northern_ireland.kml']:
+        for f in ['boundaries/data/AUS-ACT-HOR-2004-2010.kml',
+            'boundaries/data/AUS-NSW-HOR-2010.kml',
+            'boundaries/data/AUS-NT-HOR-2001-2010.kml',
+            'boundaries/data/AUS-QLD-HOR-2010.kml',
+            'boundaries/data/AUS-SA-HOR-2004-2010.kml',
+            'boundaries/data/AUS-TAS-HOR-2010.kml',
+            'boundaries/data/AUS-VIC-HOR-2004-2010.kml',
+            'boundaries/data/AUS-WA-HOR-2010.kml']:
             print f
             places = parse(f).getElementsByTagName("Placemark")
             for place in places:
