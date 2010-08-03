@@ -31,8 +31,10 @@ def leaflet_colour(n):
     if n > n1:
         n = n1
     t = math.log((n+1), 2) / math.log((n1+1), 2)
-    col0 = [50, 255, 100, 32]
-    col1 = [146, 63, 196, 224]
+    # Colour when n = 0
+    col0 = [219, 230, 97, 100]
+    # Colour when n = n1
+    col1 = [255, 114, 8, 230]
     d0 = col1[0] - col0[0]
     d1 = col1[1] - col0[1]
     d2 = col1[2] - col0[2]
@@ -40,7 +42,7 @@ def leaflet_colour(n):
     return (col0[0] + d0 * t, col0[1] + d1 * t, col0[2] + d2 * t, col0[3] + d3 * t)
 
 def leaflet_keyvalues():
-    return [0,2,5,10,20,50,100,200]
+    return [0,1,2,3,4,5,10,15]
 
 
 maps = {"leaflets": {"polygon_options": leaflet_polygon_options,
