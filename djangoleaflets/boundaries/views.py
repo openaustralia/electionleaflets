@@ -28,6 +28,8 @@ def leaflet_popup(boundary):
 
 def leaflet_colour(n):
     n1 = 15
+    if n > n1:
+        n = n1
     t = math.log((n+1), 2) / math.log((n1+1), 2)
     col0 = [50, 255, 100, 32]
     col1 = [146, 63, 196, 224]
