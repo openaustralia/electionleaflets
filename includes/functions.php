@@ -477,7 +477,7 @@
 	}
 	// Format a date to mysql format
 	function mysql_date($date){
-	    return date("Y-m-d H::i:s", $date);
+	    return date("Y-m-d H:i:s", $date);
 	}
 
     //postcode to location
