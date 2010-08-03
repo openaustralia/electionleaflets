@@ -27,8 +27,15 @@ def leaflet_popup(boundary):
                              }
 
 def leaflet_colour(n):
-    r = math.log((n+1), 2) 
-    return  (50 + r * 16, 255 - r * 32, 100 + r * 16, 32 + r * 32)
+    n1 = 15
+    t = math.log((n+1), 2) / math.log((n1+1), 2)
+    col0 = [50, 255, 100, 32]
+    col1 = [146, 63, 196, 224]
+    d0 = col1[0] - col0[0]
+    d1 = col1[1] - col0[1]
+    d2 = col1[2] - col0[2]
+    d3 = col1[3] - col0[3]
+    return (col0[0] + d0 * t, col0[1] + d1 * t, col0[2] + d2 * t, col0[3] + d3 * t)
 
 def leaflet_keyvalues():
     return [0,2,5,10,20,50,100,200]
