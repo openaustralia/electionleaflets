@@ -60,9 +60,6 @@ class leaflets_page extends pagebase {
             //get total count (set out to null and redo)
             //TODO: make this more efficiant by removing joins
             $current_page_number = ($this->leaflet_search->start / PAGE_ITEMS_COUNT) + 1;
-            $start_record = $this->leaflet_search->start;
-            $end_record = $this->leaflet_search->start + 
-            
             $this->leaflet_search->start = null;
             $this->leaflet_search->number = null;
             $all_leaflets = $this->leaflet_search->search(true);
@@ -71,6 +68,7 @@ class leaflets_page extends pagebase {
         }else{
             $leaflet = factory::create('leaflet');
             $total_count = $leaflet->count_live();
+            $current_page_number = get_http_var("page");
         }
 
         $total_pages = ceil($total_count / PAGE_ITEMS_COUNT);        
