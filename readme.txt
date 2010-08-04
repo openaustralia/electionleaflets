@@ -28,3 +28,13 @@ data/images/thumbnail
 ** Help **
 If you need any help, contact the developer mainlin list at http://groups.google.com/group/the-election-leaflet-project
 
+* map (django application) *
+
+The map is actually a separate django application. To get this working you will need the following installed:
+python-django
+python-mysqldb
+libgeos-c1
+python-gdal
+proj
+libapache2-mod-python
+
