@@ -4,8 +4,9 @@
     select * from email_alert where hour(timediff(now(), last_sent)) >= frequency_hours
 */
 
-define(ALERT_DEBUG,0);
-//define(ALERT_DEBUG_RECIPIENT,'foo@foo.com');
+define('ALERT_DEBUG', 0);
+// Set this to an email address if you want to redirect alerts to an address for debugging
+define('ALERT_DEBUG_RECIPIENT','');
 
 require_once (dirname(__FILE__) . "/include_path.php");
 require_once (dirname(__FILE__) . "/../includes/init.php");
@@ -19,7 +20,6 @@ if(ALERT_DEBUG>0) {
     print count($email_alerts) . " alerts to process\n";
 }
 
-
 foreach ($email_alerts as $email_alert) {
     //send email
     $leaflets = get_leaflets($email_alert);
@@ -32,12 +32,11 @@ foreach ($email_alerts as $email_alert) {
     $email_alert->update();
 }
 
-
 // retrieve array of leaflets which match the alert type and time period
 function get_leaflets($email_alert) {
     if(ALERT_DEBUG>0){
         print $email_alert->type . "\n";
-	print "frequency : " .$email_alert->frequency_hours . "\n";
+        print "frequency : " .$email_alert->frequency_hours . "\n";
     }
 
     $results = array();
@@ -70,9 +69,8 @@ function get_leaflets($email_alert) {
     	    'AND', array(array('leaflet_category', 'inner')));
     }
     return $results;
-
-
 }
+
 function send_alert($email_alert, $leaflets) {
     $smarty = new Smarty();
     $smarty->compile_dir = SMARTY_PATH;
@@ -91,7 +89,6 @@ function send_alert($email_alert, $leaflets) {
     }
 }
 
-
 function get_url($email_alert) {
     //do we have any matching leaflets?
     if ($email_alert->type == 'attack') {
@@ -99,7 +96,7 @@ function get_url($email_alert) {
     } else if ($email_alert->type == 'party') {
         $search = factory::create('search');
         $results = $search->search('party', array(array('party_id', '=', $email_alert->parent_id)));
-	$return = WWW_SERVER . '/parties/' . $results[0]->url_id;
+    $return = WWW_SERVER . '/parties/' . $results[0]->url_id;
     } else if ($email_alert->type == 'constituency') {
         $search = factory::create('search');
         $results = $search->search('constituency', array(array('constituency_id', '=', $email_alert->parent_id)));
@@ -108,8 +105,8 @@ function get_url($email_alert) {
         $return = WWW_SERVER . '/categories/' . $email_alert->parent_id;
     }
     if (ALERT_DEBUG>0) {
-	print "ID=" . $email_alert->parent_id ."\n";
-	print $return . "\n\n";
+        print "ID=" . $email_alert->parent_id ."\n";
+        print $return . "\n\n";
     }
     return $return;
 }
