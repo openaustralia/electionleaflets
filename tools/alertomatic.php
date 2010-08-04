@@ -48,24 +48,28 @@ function get_leaflets($email_alert) {
     if ($email_alert->type == 'attack') {
         $results = $search->search('leaflet', 
     	    array(array('leaflet_party_attack.party_id', '=', $email_alert->parent_id), 
-    	    array('leaflet.date_uploaded', '>=', $time)),
+          array('leaflet.date_uploaded', '>=', $time),
+          array('leaflet.live', '=', 1)),
     	    'AND', array(array('leaflet_party_attack', 'inner')));
 
     } else if ($email_alert->type == 'party') {
         $results = $search->search('leaflet', 
-	    array(array('leaflet.publisher_party_id', '=', $email_alert->parent_id), 
-	    array('leaflet.date_uploaded', '>=', $time)));
+          array(array('leaflet.publisher_party_id', '=', $email_alert->parent_id),
+          array('leaflet.date_uploaded', '>=', $time),
+          array('leaflet.live', '=', 1)));
 
     } else if ($email_alert->type == 'constituency') {
         $results = $search->search('leaflet', 
     	    array(array('leaflet_constituency.constituency_id', '=', $email_alert->parent_id), 
-    	    array('leaflet.date_uploaded', '>=', $time)), 
+          array('leaflet.date_uploaded', '>=', $time),
+          array('leaflet.live', '=', 1)),
     	    'AND', array(array('leaflet_constituency', 'inner')));
     	    
     } else if ($email_alert->type == 'category') {
         $results = $search->search('leaflet', 
     	    array(array('leaflet_category.category_id', '=', $email_alert->parent_id), 
-    	    array('leaflet.date_uploaded', '>=', $time)), 
+          array('leaflet.date_uploaded', '>=', $time),
+          array('leaflet.live', '=', 1)),
     	    'AND', array(array('leaflet_category', 'inner')));
     }
     return $results;
