@@ -84,6 +84,8 @@ class Leaflet(models.Model):
     date_uploaded = models.DateTimeField()
     date_delivered = models.DateTimeField()
     live = models.IntegerField(null=True, blank=True)
+    def url(self):
+        return '/leaflets/%i' % self.leaflet_id
     class Meta:
         db_table = u'leaflet'
 
