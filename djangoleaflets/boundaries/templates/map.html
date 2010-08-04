@@ -1,7 +1,7 @@
 <html>
 <head>
-    <title>Constituency Example</title>
- 
+    <title>Leaflets map | Election Leaflets Australia</title>
+    <link rel="stylesheet" media="all" type="text/css" href="http://www.electionleaflets.org.au/css/main.css?v=8" />
     <!-- bring in the OpenLayers javascript library
          (here we bring it from the remote site, but you could
          easily serve up this javascript yourself) -->
@@ -16,7 +16,7 @@
         // Start position for the map (hardcoded here for simplicity)
         var lat=-25;
         var lon=133;
-        var zoom=5;
+        var zoom=4;
 
         OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, {                
             defaultHandlerOptions: {
@@ -114,8 +114,8 @@
     </script>
       <STYLE type="text/css">
    H1              { font-size: 125%; }
-   div#sidebar { float:right; width:28.5%; height:100%; margin-left:1em;font-size: 90%; }
-   div#map      {width:70%; height:100%;}
+   div#sidebar { float:right; width:28.5%; margin-left:1em; margin-top:30px; font-size: 90%; }
+   div#map      {width:600px; height:600px; position:relative; top:30px; left:40px;}
    td {width:2em;text-align:center}
   </STYLE>
 
@@ -124,8 +124,53 @@
  
 <!-- body.onload is called once the page is loaded (call the 'init' function) -->
 <body onload="init();">
- 
+        <div id="page-container" > 
+	  <div id="divHeader">
+           <p class="credit">The <a href="http://www.openaustraliafoundation.org.au">OpenAustralia Foundation</a> presents:</p>
+	      <div id="pLogo" onclick="window.location = '/';">
+                <h1><a href="/">ElectionLeaflets.org.au</a></h1>
+                <h2><a href="/"><strong>2010</strong> FEDERAL ELECTION <span>|</span> live election monitoring</a></h2>
+	      </div>
+        	<div class="divider top-nav"><img class="left" width="110" height="42" src="http://www.electionleaflets.org.au/images/crease_line_left.png"/><img class="middle" width="75" height="42" src="http://www.electionleaflets.org.au/images/crease_line_middle.png"/><img class="right" width="75" height="42" src="http://www.electionleaflets.org.au/images/crease_line_right.png"/></div>
+            <ul id="ulMenu">
+              <li>
+                  <a href="http://www.electionleaflets.org.au">
+                      Home
+                  </a>
+              </li>
+              <li>
+                  <a href="http://www.electionleaflets.org.au/addupload">
+                      Add a leaflet
+                  </a>
+              </li>
+              <li>
+                  <a href="http://www.electionleaflets.org.au/leaflets/">
+                      Latest
+                  </a>
+              </li>
+              <li>
+                  <a href="http://www.electionleaflets.org.au/browse/">
+                      Browse
+                  </a>
+              </li>
+              <li>
+                  <a href="http://www.electionleaflets.org.au/map/leaflets/">
+                      Map
+                  </a>
+              </li>
+              <!--
+              <li>
+                  <a href="/analysis/">
+                      Analysis
+                  </a>
+              </li>
+              -->
+            </ul>
+            <div id="header-border"><img src="http://www.electionleaflets.org.au/images/header_orange_line.png" /></div>
+        </div>
+
     <!-- define a DIV into which the map will appear. Make it take up the whole window -->
+<div id="divPage">
 <div id="sidebar" >
 <H1>Leaflets delivered by constituency</H1>
 <table>
@@ -143,5 +188,19 @@
 <div id="content"></div>
  </div>
 <div id="map"></div>
+<div id="divFooter" {if $is_full_view == true}class="full-width"{/if}>
+        	<div class="footer-line">
+        		<img src="http://www.electionleaflets.org.au/images/footer_line.png" />
+        	</div>
+            <ul class="inline">
+                <li><a href="http://www.electionleaflets.org.au">Home</a></li>
+                <li><a href="http://www.electionleaflets.org.au/about">About</a></li>
+                <li><a href="http://www.electionleaflets.org.au/about#contact">Contact</a></li>
+		<li><a href="http://twitter.com/electionleaflet">Twitter</a></li>
+		<li class="last"><a href="http://blog.openaustralia.org">Blog</a></li>
+            </ul>
+        </div>
+      </div>
+</div>
 </body>
 </html>
