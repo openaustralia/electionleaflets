@@ -31,6 +31,7 @@
                 <li>Francis Irving</li>
             </ul>
         </p>
+	<p>The <a href="http://www.tallyroom.com.au/maps">electoral boundaries information</a> used in the map is by Ben Raue from <a href="http://www.tallyroom.com.au">The Tally Room</a>. Thank you Ben for supplying it in an easy to use format under a <a href="http://creativecommons.org/licenses/by-nc/2.5/au/">Creative Commons license</a>.</p>
         <p>
             Our version of the code has been deposited for your viewing and repurposing pleasure at <a href="http://github.com/openaustralia/electionleaflets">http://github.com/openaustralia/electionleaflets</a>.
         </p>
