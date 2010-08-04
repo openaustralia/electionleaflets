@@ -72,12 +72,12 @@
                       Browse
                   </a>
               </li>
-              <!--
               <li>
                   <a href="{$www_server}/map/leaflets/">
                       Map
                   </a>
               </li>
+              <!--
               <li>
                   <a href="{$www_server}/analysis/">
                       Analysis
