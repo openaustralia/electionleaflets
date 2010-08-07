@@ -6,7 +6,7 @@
             Electioneering is a high-stakes game. We, at {$site_name}, believe that it’s time for that game to become a spectator sport.
         </p>
         <p>
-            {$site_name} is an real-time election leaflet project. Our ambition is to create a live visualization of the flood of party political leaflets as they are delivered across the country during an election campaign.
+            {$site_name} is a real-time election leaflet project. Our ambition is to create a live visualization of the flood of party political leaflets as they are delivered across the country during an election campaign.
 
             If you have recently received any election leaflets through your door you can help by photographing or scanning them and <a href="{$www_server}/addupload">uploading the images to our website</a>.
         </p>
