@@ -92,7 +92,7 @@ class leaflets_page extends pagebase {
 
 		//assign vars
 		$title_parts = $this->get_title();
-        $this->rss_link = htmlspecialchars($_SERVER['REQUEST_URI']) . "rss";
+        $this->rss_link = htmlspecialchars($_SERVER['REQUEST_URI']) . "/rss";
         if(count($title_parts) > 1){
 		    $this->page_title = $title_parts[0] . " " . $title_parts[1];		
 		}else{
