@@ -11,7 +11,8 @@ class index_page extends pagebase {
 		$this->onloadscript = "$('#divScroller ul').jcarousel({wrap: 'last',initCallback: mycarousel_initCallback,buttonNextHTML: null,buttonPrevHTML: null});";
 
         //get count of leaflets
-        $this->assign("leaflet_count", $this->get_leaflet_count());
+        $leaflet = factory::create('leaflet');
+        $this->assign("leaflet_count", $leaflet->count_live());
 
 	//get recent leaflets
 	$leaflet_search = factory::create("leaflet_search");
@@ -35,12 +36,6 @@ class index_page extends pagebase {
         $this->assign("is_home", true);
 	}
 
-    private function get_leaflet_count(){
-        $leaflet = factory::create('leaflet');
-        return  $leaflet->count_cached();
-    }
-    
-    
 }
 
 //create class instance
