@@ -228,7 +228,6 @@ class leaflets_page extends pagebase {
             $page = 1;
         }
         $this->leaflet_search->start = (floor($page) - 1) * PAGE_ITEMS_COUNT;
-        $this->leaflet_search->number = PAGE_ITEMS_COUNT;
 
         //search term
         $search_term = get_http_var("q");        
@@ -277,6 +276,12 @@ class leaflets_page extends pagebase {
             $this->is_rss = true;
         }
         
+        // If RSS, get a different number of items
+        if($this->is_rss){
+            $this->leaflet_search->number = RSS_ITEMS_COUNT;
+        }else{
+            $this->leaflet_search->number = PAGE_ITEMS_COUNT;
+        }
     }
     
     //is geo

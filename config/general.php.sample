@@ -104,6 +104,7 @@ define("UPLOAD_MAIL_PASSWORD", 'PASSWORD');
 define("STAT_ZERO_DATE", '2010-01-01');
 
 define("PAGE_ITEMS_COUNT",10);
+define("RSS_ITEMS_COUNT",50);
 
 //Localisation
 define("COUNTRY",13); // see db, country_id=13 Australia
