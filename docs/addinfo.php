@@ -120,7 +120,7 @@ class addinfo_page extends pagebase {
 	    }else{
 	        $geocoder = factory::create('geocoder');
 	        $postcode = trim($this->data['txtPostcode']);
-	        $success = $geocoder->set_from_postcode($postcode, COUNTRY_ISO);
+	        $success = $geocoder->set_from_postcode($postcode, COUNTRY_CODE_TLD);
 	        if(!$success){
     			$this->add_warning('Sorry, we couldn\'t locate that postcode');
     			$this->add_warn_control('txtPostcode');	            

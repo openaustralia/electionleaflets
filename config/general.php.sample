@@ -108,7 +108,8 @@ define("RSS_ITEMS_COUNT",50);
 
 //Localisation
 define("COUNTRY",13); // see db, country_id=13 Australia
-define("COUNTRY_ISO", "AU");
+// Country Code Top Level Domain as defined here http://code.google.com/apis/maps/documentation/geocoding/v2/index.html#CountryCodes
+define("COUNTRY_CODE_TLD", "au");
 // The area name, like 'constituencies' or 'electorates'. Needs approprate .htaccess rules for the URL
 define("AREA_NAMES", 'electorates');
 

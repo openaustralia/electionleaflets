@@ -9,19 +9,19 @@ class geocoder{
 	public $lat = null;	
 
 	//set from postcode / zip code
-	function set_from_postcode($zip, $country_iso){
+	function set_from_postcode($zip, $country_code_tld){
 
 		//reset
 		$this->reset();
 		$success = false;
 
 		$latlong = null;							
-		$country_iso = strtolower($country_iso);
-		if($country_iso == 'gb'){			
+		$country_code_tld = strtolower($country_code_tld);
+		if($country_code_tld == 'uk'){			
 			$lnglat = $this->get_uk_postcode($zip);
 		}else{
 			//for outside UK, use google maps
-			$lnglat = $this->call_google_geocoder(array($zip, $country_iso));
+			$lnglat = $this->call_google_geocoder(array($zip), $country_code_tld);
 			// Swap order of result
 			$temp = $lnglat[0];
 			$lnglat[0] = $lnglat[1];
@@ -51,7 +51,7 @@ class geocoder{
 	}
 	
 	//tries to set lat long by geocoding an address or place name
-	function set_from_address($address){
+	function set_from_address($address, $country_code_tld){
 
 		$return = false;
 					
@@ -89,7 +89,7 @@ class geocoder{
     			$this->lat = $latlong[1];
     		}
 		}else{
-			$latlong = $this->call_google_geocoder($split);
+			$latlong = $this->call_google_geocoder($split, $country_code_tld);
 			if(isset($latlong) && $latlong[0] != 0 && $latlong[1] != 0){
     			$success = true;			
     			$this->lng = $latlong[1];						
@@ -101,7 +101,7 @@ class geocoder{
 	}
 
 	//make google call
-	private static function call_google_geocoder($query_parts){
+	private static function call_google_geocoder($query_parts, $country_code_tld){
 		$return = false;
 
 		//encode the query
@@ -113,9 +113,10 @@ class geocoder{
 			$query .= urlencode($query_parts[$i]);
 		}
 
-		$url = "http://maps.google.com/maps/geo?key={key}&output=csv&q={query}";
+		$url = "http://maps.google.com/maps/geo?key={key}&output=csv&q={query}&gl={cctld}";
 		$url = str_replace('{key}', GOOGLE_MAPS_KEY, $url);
 		$url = str_replace('{query}', $query, $url);
+		$url = str_replace('{cctld}', $country_code_tld, $url);
 		
 		$data = safe_scrape_cached($url, CACHE_TIME_LONG);
 		$data = explode(',', $data);

@@ -86,14 +86,14 @@ class constituencies_page extends pagebase {
 		if (isset($cached) && $cached !== false && $cached !='') {
 			return $cached;
 		}else{
-		    if (COUNTRY_ISO == "GB") {
+		    if (COUNTRY_CODE_TLD == "uk") {
                 $twfy = factory::create('twfy');
 		        $twfy_constituency = $twfy->query('getConstituency', array('output' => 'php', 'postcode' => $postcode, 'future' => 'yes_please'));         
                 $twfy_constituency = unserialize($twfy_constituency);
 		        $success = $cache->set('twfy' . $postcode, $twfy_constituency);
                 $twfy_constituency = array($twfy_constituency["name"]);
 	        }
-	        else if (COUNTRY_ISO == "AU") {
+	        else if (COUNTRY_CODE_TLD == "au") {
 	            $australian_postcode = factory::create("australian_postcode");
 	            return $australian_postcode->lookup_constituency_names($postcode);
             }

@@ -70,9 +70,9 @@
 	}
 
   function is_postcode ($postcode) {
-    if (COUNTRY_ISO == "GB")
+    if (COUNTRY_CODE_TLD == "uk")
       return is_uk_postcode($postcode);
-    else if (COUNTRY_ISO == "AU")
+    else if (COUNTRY_CODE_TLD == "au")
       return is_australian_postcode($postcode);
     else
       throw new Exception('Postcode support is not present for your current country');
