@@ -5,6 +5,9 @@
 */
 
 define('ALERT_DEBUG', 0);
+// when this script runs it will update the 'lastsent' field of each alert processed
+// it's useful to disbale that during testing.  0=allow update, 1= no update
+define('ALERT_DEBUG_LASTSENT_NO_UPDATE', 0);
 // Set this to an email address if you want to redirect alerts to an address for debugging
 define('ALERT_DEBUG_RECIPIENT','');
 
@@ -29,7 +32,7 @@ foreach ($email_alerts as $email_alert) {
     }
     //update last_sent
     $email_alert->last_sent = mysql_date(time());
-    $email_alert->update();
+    if(!ALERT_DEBUG_LASTSENT_NO_UPDATE) $email_alert->update();
 }
 
 // retrieve array of leaflets which match the alert type and time period
@@ -83,6 +86,7 @@ function send_alert($email_alert, $leaflets) {
     $smarty->assign('leaflets', $leaflets);
     $smarty->assign('leaflet_count', $leaflets);
     $smarty->assign('url', get_url($email_alert));
+    $smarty->assign('unsub_url', WWW_SERVER . '/alerts/manage.php?q=' . $email_alert->confirm_id);
     $subject = 'New ' . $email_alert->title;
     $body = $smarty->fetch(TEMPLATE_DIR . '/emails/send_alert.tpl');
     //send email

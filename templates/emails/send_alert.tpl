@@ -12,4 +12,7 @@ Details:
 
 
 {/foreach}
+
+Unsubscribe, or change this alert : {$unsub_url}
+
 {/textformat}
