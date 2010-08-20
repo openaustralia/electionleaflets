@@ -3,7 +3,7 @@
         <div class="contentfull">
             <h1>Manage your alert for <em>{$email_alert->title}</em></h1>
         </div>
-        <div class="contentleft">
+        <div class="contentfull">
             <h2>Change the frequency of this alert</h2>        
             <form method="post" action="{$form_action}">
                 {include file="../formvars.tpl"}
@@ -17,7 +17,7 @@
                 <input type="submit" value="Save changes"/>            
             </form>
         </div>
-        <div class="contentright">
+        <div class="contentfull">
             <h2>Delete this alert?</h2>        
             <form method="post" action="{$form_action}">
                 {include file="../formvars.tpl"}
