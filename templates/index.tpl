@@ -47,7 +47,12 @@ an eye on what the parties are up to, and try to keep them honest.
 	     </div>
      </div>
      </div>
-     <br class="clear">
+     <img src="/images/leaders_small.jpg" width="998" height="422" border="0" usemap="#map" />
+     <map name="map">
+        <area shape="rect" coords="0,0,347,422" href="/images/labor.jpg" />
+        <area shape="rect" coords="348,0,652,422" href="/images/liberal.jpg" />
+        <area shape="rect" coords="653,0,997,422" href="/images/green.jpg" />
+      </map>
      <div id="divRecentLeaflets">
         <h4>Latest leaflets</h4><span class="orange-divider"> | </span><h4><a class="browse-leaflets" href="{$www_server}/browse">Browse leaflets</a></h4>
         <div id="divScroller"> {* TODO: update this div from Jack's work *}
