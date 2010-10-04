@@ -37,4 +37,5 @@ libgeos-c1
 python-gdal
 proj
 libapache2-mod-python
+python-imaging
 
