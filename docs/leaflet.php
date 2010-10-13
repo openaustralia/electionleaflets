@@ -80,6 +80,12 @@ class leaflet_page extends pagebase {
                 'AND',
                 array(array("leaflet_constituency", 'inner'))
             );    
+        //get election
+        $leaflet_elections = $search->search("election",
+                array(array("leaflet_election.leaflet_id", "=", $this->leaflet_id)),
+                'AND',
+                array(array("leaflet_election", 'inner'))
+            );
         //js
         $this->onloadscript = "showMap('" . MAP_PROVIDER . "', " . number_format($leaflet->lng, 2) . ", " . number_format($leaflet->lat, 2) .");";        
 
@@ -92,8 +98,9 @@ class leaflet_page extends pagebase {
 	    $this->assign("leaflet_categories", $leaflet_categories);
 	    $this->assign("leaflet_tags", $leaflet_tags);	
 	    $this->assign("constituency", $leaflet_constituencies[0]);
+	    $this->assign("election", $leaflet_elections[0]);
 	    $this->assign("leaflet_parties_attacked", $leaflet_parties_attacked);
-		
+
 	}
 
 }
