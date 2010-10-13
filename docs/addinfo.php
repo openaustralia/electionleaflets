@@ -67,14 +67,15 @@ class addinfo_page extends pagebase {
             array(array("name", "ASC"))
         );
 
-		//assign
-		$this->assign('categories', $categories);		
-		$this->assign('parties', $parties);				
-		$this->assign('selected_party_attack_ids', $this->selected_party_attack_ids);	
-		$this->assign('selected_category_ids', $this->selected_category_ids);	
-		$this->assign('image_que_items', $this->image_que_items);			
-        $this->assign("constituencies", $constituencies);        
-	}
+    //assign
+    $this->assign('categories', $categories);
+    $this->assign('parties', $parties);
+    $this->assign('selected_party_attack_ids', $this->selected_party_attack_ids);
+    $this->assign('selected_category_ids', $this->selected_category_ids);
+    $this->assign('image_que_items', $this->image_que_items);
+    $this->assign("constituencies", $constituencies);
+    $this->assign("elections", CURRENT_ELECTION);
+    }
 
 	function unbind(){
 
@@ -257,7 +258,15 @@ class addinfo_page extends pagebase {
                 $leaflet_constituency->constituency_id = $this->constituency_id;
                 if(!$leaflet_constituency->insert()){
                     trigger_error("Unable to save constituency information");                    
-                }                
+                }
+
+                // Now save the election it's for
+                $leaflet_election = factory::create('leaflet_election');
+                $leaflet_election->leaflet_id = $leaflet->leaflet_id;
+                $leaflet_election->election_id = CURRENT_ELECTION;
+                if(!$leaflet_election->insert()){
+                    trigger_error("Unable to save election information");
+                }
                     
             }else{
                 trigger_error("Unable to save leaflet");
