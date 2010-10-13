@@ -8,8 +8,18 @@
         <!-- AddThis Button END -->{/literal}
         <p>Published by <a href="{$www_server}/parties/{$leaflet->party_url_id}/">{$leaflet->party_name}</a></p>
         <p class="meta">
-            Delivered {if $constituency}in <a href="{$www_server}/{$area_names}/{$constituency->url_id}/">{$constituency->name}</a> {/if}on {$leaflet->date_delivered|date_format:"%A, %e %B, %Y"} (approximate). Uploaded on {$leaflet->date_uploaded|date_format:"%A, %e %B, %Y"} at {$leaflet->date_uploaded|date_format:"%H:%M"}.
+            Delivered
+            {if $constituency}
+                in <a href="{$www_server}/{$area_names}/{$constituency->url_id}/">{$constituency->name}</a>
+            {/if}
+            on {$leaflet->date_delivered|date_format:"%A, %e %B, %Y"}
+            {if $election->name}
+                (approximate), during the {$election->name}.
+            {else}
+                (approximate).
+            {/if}
         </p>
+        <p class="meta">Uploaded on {$leaflet->date_uploaded|date_format:"%A, %e %B, %Y"} at {$leaflet->date_uploaded|date_format:"%H:%M"}.</p>
         <h4>Description</h4>
 		<p>{$leaflet->description|nl2br}</p>
         {if $leaflet_categories}
