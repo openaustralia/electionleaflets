@@ -59,6 +59,14 @@ class addinfo_page extends pagebase {
 		    array(array('major', "DESC"), array('name', "ASC"))
 		);
 
+    //elections
+    $search = factory::create('search');
+    $elections = $search->search_cached("election",
+        array(array("1", "=", "1")),
+        "AND", null,
+        array(array("name", "ASC"))
+    );
+
         //constituencies
         $search = factory::create('search');         
         $constituencies = $search->search_cached("constituency", 
@@ -67,14 +75,15 @@ class addinfo_page extends pagebase {
             array(array("name", "ASC"))
         );
 
-		//assign
-		$this->assign('categories', $categories);		
-		$this->assign('parties', $parties);				
-		$this->assign('selected_party_attack_ids', $this->selected_party_attack_ids);	
-		$this->assign('selected_category_ids', $this->selected_category_ids);	
-		$this->assign('image_que_items', $this->image_que_items);			
-        $this->assign("constituencies", $constituencies);        
-	}
+    //assign
+    $this->assign('categories', $categories);
+    $this->assign('parties', $parties);
+    $this->assign('selected_party_attack_ids', $this->selected_party_attack_ids);
+    $this->assign('selected_category_ids', $this->selected_category_ids);
+    $this->assign('image_que_items', $this->image_que_items);
+    $this->assign("constituencies", $constituencies);
+    $this->assign("elections", $elections);
+    }
 
 	function unbind(){
 
@@ -94,6 +103,14 @@ class addinfo_page extends pagebase {
     }
 
     function validate(){
+		if(!isset($this->data['ddlElection']) || $this->data['ddlElection'] ==''){
+			$this->add_warning('Please select an election this leaflet is for');
+			$this->add_warn_control('ddlElection');
+		} else {
+			$search = factory::create('search');
+			$result = $search->search("election", array(array("name", "=", $this->data['ddlElection'])));
+			$this->election_id = $result[0]->election_id;
+		}
 		if(!isset($this->data['txtTitle']) || $this->data['txtTitle'] ==''){
 			$this->add_warning('Please add a title for this leaflet');
 			$this->add_warn_control('txtTitle');
@@ -257,7 +274,15 @@ class addinfo_page extends pagebase {
                 $leaflet_constituency->constituency_id = $this->constituency_id;
                 if(!$leaflet_constituency->insert()){
                     trigger_error("Unable to save constituency information");                    
-                }                
+                }
+
+                // Now save the election it's for
+                $leaflet_election = factory::create('leaflet_election');
+                $leaflet_election->leaflet_id = $leaflet->leaflet_id;
+                $leaflet_election->election_id = $this->election_id;
+                if(!$leaflet_election->insert()){
+                    trigger_error("Unable to save election information");
+                }
                     
             }else{
                 trigger_error("Unable to save leaflet");

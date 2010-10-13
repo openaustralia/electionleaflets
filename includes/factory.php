@@ -38,6 +38,12 @@ class factory {
     			if (!$require_only) {
     				$object = DB_DataObject::factory($class_name);
     			}
+			case 'election':
+        require_once( 'table_classes/config.php' );
+        require_once('table_classes/election.php');
+        if (!$require_only) {
+              $object = DB_DataObject::factory($class_name);
+        }
 			case 'category':
 				require_once( 'table_classes/config.php' );
 				require_once('table_classes/category.php');
@@ -151,6 +157,13 @@ class factory {
 					$object = DB_DataObject::factory($class_name);
 				}									
 				break;				
+			case 'leaflet_election':
+				require_once( 'table_classes/config.php' );
+				require_once('table_classes/leaflet_election.php');
+				if (!$require_only) {
+					$object = DB_DataObject::factory($class_name);
+				}
+				break;
 			case 'party':
 				require_once( 'table_classes/config.php' );
 				require_once('table_classes/party.php');
