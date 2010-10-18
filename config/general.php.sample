@@ -112,6 +112,8 @@ define("COUNTRY",13); // see db, country_id=13 Australia
 define("COUNTRY_CODE_TLD", "au");
 // The area name, like 'constituencies' or 'electorates'. Needs approprate .htaccess rules for the URL
 define("AREA_NAMES", 'electorates');
+// ID of the current election
+define("CURRENT_ELECTION", "1");
 
 // google analytics
 define("GOOGLE_ANALYTICS_TRACKER",'UA-3107958-9');

@@ -118,14 +118,22 @@ abstract class pagebase {
         $this->smarty->assign("map_provider", MAP_PROVIDER);
         $this->smarty->assign("google_analytics_tracker",GOOGLE_ANALYTICS_TRACKER);
 
-		foreach($this->warn_controls  as $warn_control) {
-			$this->assign('warn_' . $warn_control, true);
-		}
-		
-		//register the image url function
-		$this->smarty->register_function('image_url', 'get_image_url');
+        // Get the name of the current election, probably a more
+        // efficient way to do this somehow
+        $search = factory::create("search");
+        $result = $search->search("election",
+            array(array("election_id", "=", CURRENT_ELECTION))
+        );
+        $this->smarty->assign("current_election", $result[0]->name);
 
-       $this->smarty->display($this->smarty_template);
+        foreach($this->warn_controls  as $warn_control) {
+            $this->assign('warn_' . $warn_control, true);
+        }
+
+        //register the image url function
+        $this->smarty->register_function('image_url', 'get_image_url');
+
+        $this->smarty->display($this->smarty_template);
     }
 
 	// assign smarty var
