@@ -111,6 +111,14 @@ abstract class pagebase {
         $this->smarty->assign("map_provider", MAP_PROVIDER);
         $this->smarty->assign("google_analytics_tracker",GOOGLE_ANALYTICS_TRACKER);
 
+        // Get the name of the current election, probably a more
+        // efficient way to do this somehow
+        $search = factory::create("search");
+        $result = $search->search("election",
+            array(array("election_id", "=", CURRENT_ELECTION))
+        );
+        $this->smarty->assign("current_election", $result[0]->name);
+
         foreach($this->warn_controls  as $warn_control) {
             $this->assign('warn_' . $warn_control, true);
         }
