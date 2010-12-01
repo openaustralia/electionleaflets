@@ -23,7 +23,7 @@ namespace :deploy do
   task :restart do ; end
   
   desc "Once the deploy is symlinked, we link additional config"
-  after "deploy:symlink" do
+  before "deploy:symlink" do
     links = {
             "#{release_path}/config/general.php"         => "#{shared_path}/config/general.php",
             "#{release_path}/data"                       => "#{shared_path}/data",
