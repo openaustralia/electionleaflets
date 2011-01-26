@@ -19,15 +19,18 @@ class tableclass_australian_postcode extends tablebase {
 	/* Definition */
    function table() {
         return array(
+            'election_id' 			=> DB_DATAOBJECT_INT,
             'postcode'   			=> DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,
             'constituency'   			=> DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL
         );
     }
 
-	public static function lookup_constituency_names($postcode){
+	public static function lookup_constituency_names($postcode, $election_id = null){
+            $election_id = get_election_id($election_id);
 	    $search = factory::create('search');
 		$constituencies = $search->search("australian_postcode", 
-		    array(array('postcode', '=', $postcode)),
+		    array(array('postcode', '=', $postcode),
+                          array('election_id', '=', $election_id)),
 		    'AND',
 		    null,
 		    array(array('constituency', "ASC"))
@@ -41,6 +44,9 @@ class tableclass_australian_postcode extends tablebase {
 
 	/* Links */
 	public function links (){
+	    return array(
+			"election_id" => "election:election_id"
+			);
 	}
 
 	/* Keys */

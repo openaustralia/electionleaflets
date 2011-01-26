@@ -40,6 +40,8 @@ class addinfo_page extends pagebase {
 
 	//bind
 	function bind() {
+                $election_id = get_election_id();
+
 		$this->page_title = "Add a leaflet (step 2 of 2)";	
 		
 		//get categories
@@ -53,9 +55,10 @@ class addinfo_page extends pagebase {
 
 		//get parties
 		$parties = $search->search("party", 
-		    array(array('country_id', '=', $this->country_id)),
+		    array(array('country_id', '=', $this->country_id), 
+		          array("party_election.election_id", "=", $election_id)),
 		    'AND',
-		    null,
+		    array(array("party_election", "inner")),
 		    array(array('major', "DESC"), array('name', "ASC"))
 		);
 
@@ -70,8 +73,9 @@ class addinfo_page extends pagebase {
         //constituencies
         $search = factory::create('search');         
         $constituencies = $search->search_cached("constituency", 
-            array(array("1", "=", "1")),
-            "AND", null,
+            array(array("constituency_election.election_id", "=", $election_id)),
+            "AND",
+            array(array("constituency_election", "inner")),
             array(array("name", "ASC"))
         );
 
