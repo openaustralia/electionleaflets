@@ -69,10 +69,12 @@ class tableclass_constituency extends tablebase {
 		return $saved;
 	}
 
-	public static function get_not_spots($limit = 10, $cache = true){
+	public static function get_not_spots($limit = 10, $cache = true, $election_id = null){
+	$election_id = get_election_id($election_id);
+
         $return = array();
 	    $constituency = factory::create('constituency');
-	    $sql = "select constituency.name, constituency.url_id, constituency.constituency_id from constituency left outer join leaflet_constituency on constituency.constituency_id = leaflet_constituency.constituency_id where leaflet_constituency.constituency_id is null group by constituency.name, constituency.constituency_id, constituency.url_id limit " . $limit;
+	    $sql = "SELECT constituency.name, constituency.url_id, constituency.constituency_id FROM constituency LEFT OUTER JOIN leaflet_constituency ON constituency.constituency_id = leaflet_constituency.constituency_id WHERE leaflet_constituency.constituency_id IS null AND constituency.election_id = $election_id GROUP BY constituency.name, constituency.constituency_id, constituency.url_id LIMIT " . $limit;
 
 	    if($cache){
             $return = $constituency->execute_cached($sql);
@@ -82,13 +84,16 @@ class tableclass_constituency extends tablebase {
         return $return;
     }
 
-    public static function get_constituency_count($date_since, $limit = 10, $cache = true){
+    public static function get_constituency_count($date_since, $limit = 10, $cache = true, $election_id = null){
+	$election_id = get_election_id($election_id);
+
         $return = array();
 	    $constituency = factory::create('constituency');
 	    $sql  = "SELECT COUNT(leaflet_constituency.leaflet_constituency_id) AS count, constituency.name, constituency.url_id, constituency.constituency_id FROM constituency ";
 	    $sql .= "INNER JOIN leaflet_constituency ON constituency.constituency_id = leaflet_constituency.constituency_id ";
 	    $sql .= "INNER JOIN leaflet ON leaflet_constituency.leaflet_id = leaflet.leaflet_id ";
-	    $sql .= "WHERE date_delivered > '$date_since' AND leaflet.live=1 ";
+	    $sql .= "INNER JOIN leaflet_election ON leaflet_election.leaflet_id = leaflet.leaflet_id ";
+	    $sql .= "WHERE date_delivered > '$date_since' AND leaflet.live=1 AND leaflet_election.election_id = $election_id ";
 	    $sql .= "GROUP By constituency.name, constituency.constituency_id ";
 	    $sql .= "ORDER BY count(leaflet_constituency.leaflet_constituency_id) desc limit " . $limit;
 	    if($cache){
