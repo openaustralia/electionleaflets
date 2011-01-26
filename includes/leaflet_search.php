@@ -129,10 +129,7 @@ class leaflet_search {
             array_push($where_clauses, array("leaflet.live", "=", 1));                    
         }
         
-	$this->election_id = (int)($this->election_id);
-        if (is_numeric($this->election_id)) {
-            $this->election_id = CURRENT_ELECTION;
-	}
+	$this->election_id = get_election_id($this->election_id);
 
 	array_push($where_clauses, array("leaflet_election.election_id", "=", $this->election_id));
 
