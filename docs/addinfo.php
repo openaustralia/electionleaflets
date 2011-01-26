@@ -59,6 +59,14 @@ class addinfo_page extends pagebase {
 		    array(array('major', "DESC"), array('name', "ASC"))
 		);
 
+    //elections
+    $search = factory::create('search');
+    $elections = $search->search_cached("election",
+        array(array("1", "=", "1")),
+        "AND", null,
+        array(array("name", "ASC"))
+    );
+
         //constituencies
         $search = factory::create('search');         
         $constituencies = $search->search_cached("constituency", 
@@ -74,7 +82,7 @@ class addinfo_page extends pagebase {
     $this->assign('selected_category_ids', $this->selected_category_ids);
     $this->assign('image_que_items', $this->image_que_items);
     $this->assign("constituencies", $constituencies);
-    $this->assign("elections", CURRENT_ELECTION);
+    $this->assign("elections", $elections);
     }
 
 	function unbind(){
@@ -95,6 +103,7 @@ class addinfo_page extends pagebase {
     }
 
     function validate(){
+		$this->election_id = get_election_id(); 
 		if(!isset($this->data['txtTitle']) || $this->data['txtTitle'] ==''){
 			$this->add_warning('Please add a title for this leaflet');
 			$this->add_warn_control('txtTitle');
@@ -263,7 +272,7 @@ class addinfo_page extends pagebase {
                 // Now save the election it's for
                 $leaflet_election = factory::create('leaflet_election');
                 $leaflet_election->leaflet_id = $leaflet->leaflet_id;
-                $leaflet_election->election_id = CURRENT_ELECTION;
+                $leaflet_election->election_id = $this->election_id;
                 if(!$leaflet_election->insert()){
                     trigger_error("Unable to save election information");
                 }
