@@ -88,6 +88,13 @@ class factory {
 					$object = DB_DataObject::factory($class_name);
 				}
 				break;				
+			case 'constituency_election':
+				require_once( 'table_classes/config.php' );
+				require_once('table_classes/constituency_election.php');
+				if (!$require_only) {
+					$object = DB_DataObject::factory($class_name);
+				}
+				break;				
 			case 'country':
 				require_once( 'table_classes/config.php' );
 				require_once('table_classes/country.php');

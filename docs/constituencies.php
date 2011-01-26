@@ -69,8 +69,9 @@ class constituencies_page extends pagebase {
         
         $search = factory::create('search');     
         $constituencies = $search->search_cached("constituency", 
-                array(array("1", "=", "1")),
-                "AND", null,
+                array(array("constituency_election.election_id", "=", $election_id)),
+                "AND",
+                array(array("constituency_election", "inner")),
                 array(array("name", "ASC"))
             );
         $this->assign("constituencies", $constituencies);
