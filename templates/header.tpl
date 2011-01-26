@@ -72,11 +72,13 @@
                       Browse
                   </a>
               </li>
+              {if MAP_ENABLED}
               <li>
                   <a href="{$www_server}/map/leaflets/">
                       Map
                   </a>
               </li>
+              {/if}
               <!--
               <li>
                   <a href="{$www_server}/analysis/">
