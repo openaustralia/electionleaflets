@@ -10,6 +10,15 @@
         <fieldset>
             <ul>
                 <li>
+                    <label for="ddlElection">What election is this leaflet for? *</label>
+                    <select type="ddlElection" id="ddlElection" name="ddlElection" {if $warn_ddlElection}class="error"{/if}>
+                        <option></option>
+                        {foreach from="$elections" item="election"}
+                            <option value="{$election->name}" {if $data.ddlElection == $election->name}selected="selected"{/if}>{$election->name}</option>
+                        {/foreach}
+                    </select>
+                </li>
+                <li>
                     <label for="txtTitle">Give the leaflet a title *</label>
                     <input type="text" id="txtTitle" name="txtTitle" {if $warn_txtTitle}class="error"{/if} value="{$data.txtTitle}"/>
                     <small>e.g. the main headline</small>
