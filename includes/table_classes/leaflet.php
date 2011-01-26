@@ -56,9 +56,16 @@ class tableclass_leaflet extends tablebase {
         return array('leaflet_id');
     }
 
-    public function count_live($cache = true){
+    public function count_live($cache = true, $election_id=null){
+
+	if ($election_id === null) {
+		$election_id = CURRENT_ELECTION;
+	} else {
+		$election_id = int($election_id);
+	}
+
         $return = array();
-	$sql  = "SELECT COUNT(leaflet_id) AS count FROM leaflet WHERE leaflet.live=1 ";
+	$sql  = "SELECT COUNT(leaflet.leaflet_id) AS count FROM leaflet JOIN leaflet_election ON leaflet.leaflet_id = leaflet_election.leaflet_id WHERE leaflet.live = 1 AND leaflet_election.election_id = $election_id";
         if($cache){
             $return = $this->execute_cached($sql);
         }else{
