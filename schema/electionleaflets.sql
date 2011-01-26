@@ -650,6 +650,59 @@ INSERT INTO `party` VALUES
 UNLOCK TABLES;
 
 --
+-- Table structure for table `party_election`
+--
+
+DROP TABLE IF EXISTS `party_election`;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+CREATE TABLE `party_election` (
+  `party_election_id` int(11) NOT NULL,
+  `election_id` int(11) NOT NULL,
+  `party_id` int(11) NOT NULL,
+  PRIMARY KEY (`party_election_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+SET character_set_client = @saved_cs_client;
+
+--
+-- Dumping data for table `party_election`
+--
+
+LOCK TABLES `party_election` WRITE;
+/*!40000 ALTER TABLE `party_election` DISABLE KEYS */;
+INSERT INTO `party_election` VALUES
+(1,1,1),
+(2,1,2),
+(3,1,3),
+(4,1,4),
+(5,1,5),
+(6,1,6),
+(7,1,7),
+(8,1,8),
+(9,1,9),
+(10,1,10),
+(11,1,11),
+(12,1,12),
+(13,1,13),
+(14,1,14),
+(15,1,15),
+(16,1,16),
+(17,1,17),
+(18,1,18),
+(19,1,19),
+(20,1,20),
+(21,1,21),
+(22,1,22),
+(23,1,23),
+(24,1,24),
+(25,1,25),
+(26,1,26);
+/*!40000 ALTER TABLE `party` ENABLE KEYS */;
+/*!40000 ALTER TABLE `party_election` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+--
 -- Table structure for table `promise`
 --
 

@@ -10,10 +10,11 @@ class parties_page extends pagebase {
 		$search = factory::create('search');
 
 		//get top parties
+        $election_id = get_election_id();
 	$parties = $search->search_cached("party", 
-                array(array("1", "=", "1")),
+                array(array("party_election.election_id", "=", $election_id)),
                 "AND",
-                null,
+        	array(array("party_election", "inner")),
                 array(array("name", "ASC"))
             );
         $this->assign("parties", $parties);
