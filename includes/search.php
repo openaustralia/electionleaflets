@@ -132,8 +132,8 @@ class searcher {
 			if(is_numeric($where_clause[2])){
 				$quote = "";
 			}
-			if(isset($where_clauses[3])){
-			    $clause_join = $where_clauses[3];
+			if(isset($where_clause[3])){
+			    $clause_join = $where_clause[3];
 		    }
 
 			$search_object->whereAdd( $where_clause[0] . " " . $where_clause[1] . " " . $quote . 
