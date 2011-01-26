@@ -103,14 +103,7 @@ class addinfo_page extends pagebase {
     }
 
     function validate(){
-		if(!isset($this->data['ddlElection']) || $this->data['ddlElection'] ==''){
-			$this->add_warning('Please select an election this leaflet is for');
-			$this->add_warn_control('ddlElection');
-		} else {
-			$search = factory::create('search');
-			$result = $search->search("election", array(array("name", "=", $this->data['ddlElection'])));
-			$this->election_id = $result[0]->election_id;
-		}
+		$this->election_id = get_election_id(); 
 		if(!isset($this->data['txtTitle']) || $this->data['txtTitle'] ==''){
 			$this->add_warning('Please add a title for this leaflet');
 			$this->add_warn_control('txtTitle');
