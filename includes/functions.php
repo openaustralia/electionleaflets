@@ -666,5 +666,13 @@
 			return WWW_SERVER.'/image.php?i='.$params['id'].'&s='.$params['size'];
 		}
 	}
+
+	function get_election_id($election_id){
+		$election_id = (int)($election_id);
+		if (is_numeric($election_id)) {
+			$election_id = CURRENT_ELECTION;
+		}
+		return $election_id;
+	}
 	
 ?>
