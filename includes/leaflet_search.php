@@ -3,6 +3,7 @@
 class leaflet_search {
 
     //properties
+    public $election_id = null;
     public $search_term = null;
     public $lng = null;
     public $lat = null;
@@ -96,6 +97,8 @@ class leaflet_search {
         //required
         array_push($joins, array("leaflet_image", "inner"));
         array_push($joins, array("party", "inner"));        
+
+        array_push($joins, array("leaflet_election", "inner"));
             
         //optional
         if(isset($this->party_attack_id) && $this->party_attack_id != '' && $this->party_attack_id != 0){
@@ -125,6 +128,13 @@ class leaflet_search {
         if ($live_only){
             array_push($where_clauses, array("leaflet.live", "=", 1));                    
         }
+        
+	$this->election_id = (int)($this->election_id);
+        if (is_numeric($this->election_id)) {
+            $this->election_id = CURRENT_ELECTION;
+	}
+
+	array_push($where_clauses, array("leaflet_election.election_id", "=", $this->election_id));
 
         //required
         array_push($where_clauses, array("leaflet_image.sequence", "=", 1));        
