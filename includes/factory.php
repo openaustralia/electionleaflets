@@ -171,6 +171,13 @@ class factory {
 					$object = DB_DataObject::factory($class_name);
 				}									
 				break;
+			case 'party_election':
+				require_once( 'table_classes/config.php' );
+				require_once('table_classes/party_election.php');
+				if (!$require_only) {
+					$object = DB_DataObject::factory($class_name);
+				}
+				break;
 			case 'promise':
 				require_once( 'table_classes/config.php' );
 				require_once('table_classes/promise.php');

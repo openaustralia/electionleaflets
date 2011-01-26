@@ -667,7 +667,7 @@
 		}
 	}
 
-	function get_election_id($election_id){
+	function get_election_id($election_id = null){
 		$election_id = (int)($election_id);
 		if (is_numeric($election_id)) {
 			$election_id = CURRENT_ELECTION;
