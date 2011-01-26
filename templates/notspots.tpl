@@ -2,7 +2,7 @@
 
 <div class="contentfull">
 
-        <h1>Federal Election 2010 Not-Spots</h1>
+        <h1>{$current_election} Not-Spots</h1>
         <p>Volunteers from all over the country have uploaded leaflets to {$site_name}, <strong>but we don't have any leaflets at all for the {$area_names} listed below</strong>.
         </p>
 <embed id=VideoPlayback src=http://video.google.com/googleplayer.swf?docid=-9156604322837849461&hl=en&fs=true style=width:400px;height:326px allowFullScreen=true allowScriptAccess=always type=application/x-shockwave-flash> </embed>
