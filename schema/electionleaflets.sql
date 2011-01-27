@@ -768,7 +768,14 @@ INSERT INTO `party` VALUES
 (23,'Building Australia Party',13,NULL,NULL,'building_australia_party',NULL,NULL),
 (24,'Liberal Democratic Party',13,NULL,NULL,'liberal_democratic_party',NULL,NULL),
 (25,'Secular Party of Australia',13,NULL,NULL,'secular_party_of_australia',NULL,NULL),
-(26,'The Climate Sceptics',13,NULL,NULL,'the_climate_sceptics',NULL,NULL);
+(26,'The Climate Sceptics',13,NULL,NULL,'the_climate_sceptics',NULL,NULL),
+(27, 'Country Labor Party', 13, NULL, NULL, 'country_labor_party', NULL, NULL),
+(28, 'No Parking Meters Party', 13, NULL, NULL, 'no_parking_meters_party', NULL, NULL),
+(29, 'Outdoor Recreation Party', 13, NULL, NULL, 'outdoor_recreation_party', NULL, NULL),
+(30, 'Restore the Workers’ Rights Party', 13, NULL, NULL, 'restore_the_workers_rights_party', NULL, NULL),
+(31, 'Save Our State', 13, NULL, NULL, 'save_our_state', NULL, NULL),
+(32, 'The Fishing Party', 13, NULL, NULL, 'the_fishing_party', NULL, NULL),
+(33, 'Unity Party', 13, NULL, NULL, 'unity_party', NULL, NULL);
 /*!40000 ALTER TABLE `party` ENABLE KEYS */;
 UNLOCK TABLES;
 
