@@ -19,6 +19,8 @@ class leaflets_page extends pagebase {
 
 	//bind
 	function bind() {
+
+	$election_id = get_election_id();
         
         //get variables
         $this->get_vars();
@@ -79,9 +81,9 @@ class leaflets_page extends pagebase {
 
 		//get top parties
         $parties = $search->search_cached("party", 
-                array(array("major", "=", true)),
+                array(array("major", "=", true), array('party_election.election_id', '=', $election_id)),
                 "AND",
-                null,
+                array(array("party_election", "inner")),
                 array(array("name", "ASC"))
             );
         $categories = $search->search_cached("category", 
@@ -218,6 +220,7 @@ class leaflets_page extends pagebase {
 
     //grab vars form query string
     private function get_vars(){
+	$election_id = get_election_id();
 
         //page count
         $page = get_http_var("page");
@@ -264,7 +267,11 @@ class leaflets_page extends pagebase {
         if(isset($constituency_url_id) && $constituency_url_id != ''){
 
             $search = factory::create('search');
-            $results = $search->search_cached('constituency', array(array('url_id', '=', $constituency_url_id)));
+            $results = $search->search_cached('constituency',
+                 array(array("url_id", "=", $constituency_url_id),array("constituency_election.election_id", "=", $election_id)),
+                 "AND",
+                 array(array("constituency_election", "inner")));
+
             if (count($results) !=1){
                 throw_404();
             }
