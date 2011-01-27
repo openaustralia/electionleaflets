@@ -772,7 +772,7 @@ INSERT INTO `party` VALUES
 (27, 'Country Labor Party', 13, NULL, NULL, 'country_labor_party', NULL, NULL),
 (28, 'No Parking Meters Party', 13, NULL, NULL, 'no_parking_meters_party', NULL, NULL),
 (29, 'Outdoor Recreation Party', 13, NULL, NULL, 'outdoor_recreation_party', NULL, NULL),
-(30, 'Restore the Workers’ Rights Party', 13, NULL, NULL, 'restore_the_workers_rights_party', NULL, NULL),
+(30, 'Restore the Workers'' Rights Party', 13, NULL, NULL, 'restore_the_workers_rights_party', NULL, NULL),
 (31, 'Save Our State', 13, NULL, NULL, 'save_our_state', NULL, NULL),
 (32, 'The Fishing Party', 13, NULL, NULL, 'the_fishing_party', NULL, NULL),
 (33, 'Unity Party', 13, NULL, NULL, 'unity_party', NULL, NULL);
