@@ -81,6 +81,97 @@ SET character_set_client = @saved_cs_client;
 LOCK TABLES `constituency` WRITE;
 /*!40000 ALTER TABLE `constituency` DISABLE KEYS */;
 INSERT INTO `constituency` VALUES (1,'Canberra',NULL,4,0,'ACT',NULL,'http://en.wikipedia.org/wiki/Division_of_Canberra','canberra',NULL,NULL),(2,'Fraser',NULL,4,0,'ACT',NULL,'http://en.wikipedia.org/wiki/Division_of_Fraser','fraser',NULL,NULL),(3,'Banks',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Banks','banks',NULL,NULL),(4,'Barton',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Barton','barton',NULL,NULL),(5,'Bennelong',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Bennelong','bennelong',NULL,NULL),(6,'Berowra',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Berowra','berowra',NULL,NULL),(7,'Blaxland',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Blaxland','blaxland',NULL,NULL),(8,'Bradfield',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Bradfield','bradfield',NULL,NULL),(9,'Calare',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Calare','calare',NULL,NULL),(10,'Charlton',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Charlton','charlton',NULL,NULL),(11,'Chifley',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Chifley','chifley',NULL,NULL),(12,'Cook',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Cook','cook',NULL,NULL),(13,'Cowper',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Cowper','cowper',NULL,NULL),(14,'Cunningham',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Cunningham','cunningham',NULL,NULL),(15,'Dobell',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Dobell','dobell',NULL,NULL),(16,'Eden-Monaro',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Eden-Monaro','eden-monaro',NULL,NULL),(17,'Farrer',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Farrer','farrer',NULL,NULL),(18,'Fowler',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Fowler','fowler',NULL,NULL),(19,'Gilmore',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Gilmore','gilmore',NULL,NULL),(20,'Grayndler',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Grayndler','grayndler',NULL,NULL),(21,'Greenway',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Greenway','greenway',NULL,NULL),(22,'Hughes',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Hughes','hughes',NULL,NULL),(23,'Hume',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Hume','hume',NULL,NULL),(24,'Hunter',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Hunter','hunter',NULL,NULL),(25,'Kingsford Smith',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Kingsford Smith','kingsford_smith',NULL,NULL),(26,'Lindsay',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Lindsay','lindsay',NULL,NULL),(27,'Lyne',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Lyne','lyne',NULL,NULL),(28,'Macarthur',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Macarthur','macarthur',NULL,NULL),(29,'Mackellar',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Mackellar','mackellar',NULL,NULL),(30,'Macquarie',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Macquarie','macquarie',NULL,NULL),(31,'McMahon',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_McMahon','mcmahon',NULL,NULL),(32,'Mitchell',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Mitchell','mitchell',NULL,NULL),(33,'Newcastle',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Newcastle','newcastle',NULL,NULL),(34,'New England',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_New England','new_england',NULL,NULL),(35,'North Sydney',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_North Sydney','north_sydney',NULL,NULL),(36,'Page',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Page','page',NULL,NULL),(37,'Parkes',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Parkes','parkes',NULL,NULL),(38,'Parramatta',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Parramatta','parramatta',NULL,NULL),(39,'Paterson',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Paterson','paterson',NULL,NULL),(40,'Reid',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Reid','reid',NULL,NULL),(41,'Richmond',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Richmond','richmond',NULL,NULL),(42,'Riverina',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Riverina','riverina',NULL,NULL),(43,'Robertson',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Robertson','robertson',NULL,NULL),(44,'Shortland',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Shortland','shortland',NULL,NULL),(45,'Sydney',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Sydney','sydney',NULL,NULL),(46,'Throsby',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Throsby','throsby',NULL,NULL),(47,'Warringah',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Warringah','warringah',NULL,NULL),(48,'Watson',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Watson','watson',NULL,NULL),(49,'Wentworth',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Wentworth','wentworth',NULL,NULL),(50,'Werriwa',NULL,4,0,'NSW',NULL,'http://en.wikipedia.org/wiki/Division_of_Werriwa','werriwa',NULL,NULL),(51,'Lingiari',NULL,4,0,'NT',NULL,'http://en.wikipedia.org/wiki/Division_of_Lingiari','lingiari',NULL,NULL),(52,'Solomon',NULL,4,0,'NT',NULL,'http://en.wikipedia.org/wiki/Division_of_Solomon','solomon',NULL,NULL),(53,'Blair',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Blair','blair',NULL,NULL),(54,'Bonner',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Bonner','bonner',NULL,NULL),(55,'Bowman',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Bowman','bowman',NULL,NULL),(56,'Brisbane',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Brisbane','brisbane',NULL,NULL),(57,'Capricornia',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Capricornia','capricornia',NULL,NULL),(58,'Dawson',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Dawson','dawson',NULL,NULL),(59,'Dickson',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Dickson','dickson',NULL,NULL),(60,'Fadden',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Fadden','fadden',NULL,NULL),(61,'Fairfax',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Fairfax','fairfax',NULL,NULL),(62,'Fisher',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Fisher','fisher',NULL,NULL),(63,'Flynn',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Flynn','flynn',NULL,NULL),(64,'Forde',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Forde','forde',NULL,NULL),(65,'Griffith',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Griffith','griffith',NULL,NULL),(66,'Groom',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Groom','groom',NULL,NULL),(67,'Herbert',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Herbert','herbert',NULL,NULL),(68,'Hinkler',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Hinkler','hinkler',NULL,NULL),(69,'Kennedy',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Kennedy','kennedy',NULL,NULL),(70,'Leichhardt',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Leichhardt','leichhardt',NULL,NULL),(71,'Lilley',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Lilley','lilley',NULL,NULL),(72,'Longman',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Longman','longman',NULL,NULL),(73,'Maranoa',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Maranoa','maranoa',NULL,NULL),(74,'McPherson',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_McPherson','mcpherson',NULL,NULL),(75,'Moncrieff',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Moncrieff','moncrieff',NULL,NULL),(76,'Moreton',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Moreton','moreton',NULL,NULL),(77,'Oxley',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Oxley','oxley',NULL,NULL),(78,'Petrie',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Petrie','petrie',NULL,NULL),(79,'Rankin',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Rankin','rankin',NULL,NULL),(80,'Ryan',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Ryan','ryan',NULL,NULL),(81,'Wide Bay',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Wide Bay','wide_bay',NULL,NULL),(82,'Wright',NULL,4,0,'Qld',NULL,'http://en.wikipedia.org/wiki/Division_of_Wright','wright',NULL,NULL),(83,'Adelaide',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Adelaide','adelaide',NULL,NULL),(84,'Barker',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Barker','barker',NULL,NULL),(85,'Boothby',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Boothby','boothby',NULL,NULL),(86,'Grey',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Grey','grey',NULL,NULL),(87,'Hindmarsh',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Hindmarsh','hindmarsh',NULL,NULL),(88,'Kingston',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Kingston','kingston',NULL,NULL),(89,'Makin',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Makin','makin',NULL,NULL),(90,'Mayo',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Mayo','mayo',NULL,NULL),(91,'Port Adelaide',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Port Adelaide','port_adelaide',NULL,NULL),(92,'Sturt',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Sturt','sturt',NULL,NULL),(93,'Wakefield',NULL,4,0,'SA',NULL,'http://en.wikipedia.org/wiki/Division_of_Wakefield','wakefield',NULL,NULL),(94,'Bass',NULL,4,0,'Tas.',NULL,'http://en.wikipedia.org/wiki/Division_of_Bass','bass',NULL,NULL),(95,'Braddon',NULL,4,0,'Tas.',NULL,'http://en.wikipedia.org/wiki/Division_of_Braddon','braddon',NULL,NULL),(96,'Denison',NULL,4,0,'Tas.',NULL,'http://en.wikipedia.org/wiki/Division_of_Denison','denison',NULL,NULL),(97,'Franklin',NULL,4,0,'Tas.',NULL,'http://en.wikipedia.org/wiki/Division_of_Franklin','franklin',NULL,NULL),(98,'Lyons',NULL,4,0,'Tas.',NULL,'http://en.wikipedia.org/wiki/Division_of_Lyons','lyons',NULL,NULL),(99,'Aston',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Aston','aston',NULL,NULL),(100,'Ballarat',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Ballarat','ballarat',NULL,NULL),(101,'Batman',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Batman','batman',NULL,NULL),(102,'Bendigo',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Bendigo','bendigo',NULL,NULL),(103,'Bruce',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Bruce','bruce',NULL,NULL),(104,'Calwell',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Calwell','calwell',NULL,NULL),(105,'Casey',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Casey','casey',NULL,NULL),(106,'Chisholm',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Chisholm','chisholm',NULL,NULL),(107,'Corangamite',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Corangamite','corangamite',NULL,NULL),(108,'Corio',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Corio','corio',NULL,NULL),(109,'Deakin',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Deakin','deakin',NULL,NULL),(110,'Dunkley',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Dunkley','dunkley',NULL,NULL),(111,'Flinders',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Flinders','flinders',NULL,NULL),(112,'Gellibrand',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Gellibrand','gellibrand',NULL,NULL),(113,'Gippsland',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Gippsland','gippsland',NULL,NULL),(114,'Goldstein',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Goldstein','goldstein',NULL,NULL),(115,'Gorton',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Gorton','gorton',NULL,NULL),(116,'Higgins',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Higgins','higgins',NULL,NULL),(117,'Holt',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Holt','holt',NULL,NULL),(118,'Hotham',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Hotham','hotham',NULL,NULL),(119,'Indi',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Indi','indi',NULL,NULL),(120,'Isaacs',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Isaacs','isaacs',NULL,NULL),(121,'Jagajaga',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Jagajaga','jagajaga',NULL,NULL),(122,'Kooyong',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Kooyong','kooyong',NULL,NULL),(123,'Lalor',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Lalor','lalor',NULL,NULL),(124,'La Trobe',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_La Trobe','la_trobe',NULL,NULL),(125,'Mallee',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Mallee','mallee',NULL,NULL),(126,'Maribyrnong',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Maribyrnong','maribyrnong',NULL,NULL),(127,'McEwen',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_McEwen','mcewen',NULL,NULL),(128,'McMillan',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_McMillan','mcmillan',NULL,NULL),(129,'Melbourne',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Melbourne','melbourne',NULL,NULL),(130,'Melbourne Ports',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Melbourne Ports','melbourne_ports',NULL,NULL),(131,'Menzies',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Menzies','menzies',NULL,NULL),(132,'Murray',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Murray','murray',NULL,NULL),(133,'Scullin',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Scullin','scullin',NULL,NULL),(134,'Wannon',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Wannon','wannon',NULL,NULL),(135,'Wills',NULL,4,0,'Vic.',NULL,'http://en.wikipedia.org/wiki/Division_of_Wills','wills',NULL,NULL),(136,'Brand',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Brand','brand',NULL,NULL),(137,'Canning',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Canning','canning',NULL,NULL),(138,'Cowan',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Cowan','cowan',NULL,NULL),(139,'Curtin',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Curtin','curtin',NULL,NULL),(140,'Durack',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Durack','durack',NULL,NULL),(141,'Forrest',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Forrest','forrest',NULL,NULL),(142,'Fremantle',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Fremantle','fremantle',NULL,NULL),(143,'Hasluck',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Hasluck','hasluck',NULL,NULL),(144,'Moore',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Moore','moore',NULL,NULL),(145,'O\'Connor',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_O\'Connor','o_connor',NULL,NULL),(146,'Pearce',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Pearce','pearce',NULL,NULL),(147,'Perth',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Perth','perth',NULL,NULL),(148,'Stirling',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Stirling','stirling',NULL,NULL),(149,'Swan',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Swan','swan',NULL,NULL),(150,'Tangney',NULL,4,0,'WA',NULL,'http://en.wikipedia.org/wiki/Division_of_Tangney','tangney',NULL,NULL);
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Albury',5,'NSW','albury');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Auburn',5,'NSW','auburn');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Ballina',5,'NSW','ballina');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Balmain',5,'NSW','balmain');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Bankstown',5,'NSW','bankstown');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Barwon',5,'NSW','barwon');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Bathurst',5,'NSW','bathurst');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Baulkham Hills',5,'NSW','baulkham_hills');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Bega',5,'NSW','bega');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Blacktown',5,'NSW','blacktown');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Blue Mountains',5,'NSW','blue_mountains');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Burrinjuck',5,'NSW','burrinjuck');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Cabramatta',5,'NSW','cabramatta');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Camden',5,'NSW','camden');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Campbelltown',5,'NSW','campbelltown');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Canterbury',5,'NSW','canterbury');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Castle Hill',5,'NSW','castle_hill');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Cessnock',5,'NSW','cessnock');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Charlestown',5,'NSW','charlestown');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Clarence',5,'NSW','clarence');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Coffs Harbour',5,'NSW','coffs_harbour');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Coogee',5,'NSW','coogee');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Cronulla',5,'NSW','cronulla');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Davidson',5,'NSW','davidson');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Drummoyne',5,'NSW','drummoyne');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Dubbo',5,'NSW','dubbo');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('East Hills',5,'NSW','east_hills');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Epping',5,'NSW','epping');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Fairfield',5,'NSW','fairfield');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Gosford',5,'NSW','gosford');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Hawkesbury',5,'NSW','hawkesbury');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Heathcote',5,'NSW','heathcote');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Heffron',5,'NSW','heffron');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Hornsby',5,'NSW','hornsby');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Keira',5,'NSW','keira');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Kiama',5,'NSW','kiama');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Kogarah',5,'NSW','kogarah');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Ku-ring-gai',5,'NSW','ku-ring-gai');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Lake Macquarie',5,'NSW','lake_macquarie');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Lakemba',5,'NSW','lakemba');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Lane Cove',5,'NSW','lane_cove');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Lismore',5,'NSW','lismore');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Liverpool',5,'NSW','liverpool');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Londonderry',5,'NSW','londonderry');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Macquarie Fields',5,'NSW','macquarie_fields');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Maitland',5,'NSW','maitland');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Manly',5,'NSW','manly');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Maroubra',5,'NSW','maroubra');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Marrickville',5,'NSW','marrickville');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Menai',5,'NSW','menai');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Miranda',5,'NSW','miranda');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Monaro',5,'NSW','monaro');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Mount Druitt',5,'NSW','mount_druitt');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Mulgoa',5,'NSW','mulgoa');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Murray-darling',5,'NSW','murray-darling');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Murrumbidgee',5,'NSW','murrumbidgee');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Myall Lakes',5,'NSW','myall_lakes');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Newcastle',5,'NSW','newcastle');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('North Shore',5,'NSW','north_shore');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Northern Tablelands',5,'NSW','northern_tablelands');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Oatley',5,'NSW','oatley');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Orange',5,'NSW','orange');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Oxley',5,'NSW','oxley');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Parramatta',5,'NSW','parramatta');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Penrith',5,'NSW','penrith');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Pittwater',5,'NSW','pittwater');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Port Macquarie',5,'NSW','port_macquarie');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Port Stephens',5,'NSW','port_stephens');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Riverstone',5,'NSW','riverstone');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Rockdale',5,'NSW','rockdale');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Ryde',5,'NSW','ryde');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Shellharbour',5,'NSW','shellharbour');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Smithfield',5,'NSW','smithfield');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('South Coast',5,'NSW','south_coast');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Strathfield',5,'NSW','strathfield');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Swansea',5,'NSW','swansea');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Sydney',5,'NSW','sydney');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Tamworth',5,'NSW','tamworth');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Terrigal',5,'NSW','terrigal');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('The Entrance',5,'NSW','the_entrance');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Toongabbie',5,'NSW','toongabbie');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Tweed',5,'NSW','tweed');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Upper Hunter',5,'NSW','upper_hunter');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Vaucluse',5,'NSW','vaucluse');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Wagga Wagga',5,'NSW','wagga_wagga');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Wakehurst',5,'NSW','wakehurst');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Wallsend',5,'NSW','wallsend');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Willoughby',5,'NSW','willoughby');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Wollondilly',5,'NSW','wollondilly');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Wollongong',5,'NSW','wollongong');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Wyong',5,'NSW','wyong');
 /*!40000 ALTER TABLE `constituency` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -106,7 +197,12 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `constituency_type` WRITE;
 /*!40000 ALTER TABLE `constituency_type` DISABLE KEYS */;
-INSERT INTO `constituency_type` VALUES (1,'European Parliament Constituency',225,'europe'),(2,'Local Authority Ward',225,'council'),(3,'UK Parliament Constituency',225,'wesminster'),(4,'Australian Electoral Division',13,'federalaustralia');
+INSERT INTO `constituency_type` VALUES
+(1,'European Parliament Constituency',225,'europe'),
+(2,'Local Authority Ward',225,'council'),
+(3,'UK Parliament Constituency',225,'wesminster'),
+(4,'Australian Electoral Division',13,'federalaustralia'),
+(5,'NSW Electoral Division',13,'nsw');
 /*!40000 ALTER TABLE `constituency_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -184,7 +280,9 @@ SET character_set_client = @saved_cs_client;
 
 LOCK TABLES `election` WRITE;
 /*!40000 ALTER TABLE `election` DISABLE KEYS */;
-INSERT INTO `election` VALUES (1,'Australian Federal Election 2010',1,'2010-08-21');
+INSERT INTO `election` VALUES
+(1,'Australian Federal Election 2010',1,'2010-08-21'),
+(2,'NSW State Election 2011',1,'2011-03-26');
 /*!40000 ALTER TABLE `election` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -670,7 +768,14 @@ INSERT INTO `party` VALUES
 (23,'Building Australia Party',13,NULL,NULL,'building_australia_party',NULL,NULL),
 (24,'Liberal Democratic Party',13,NULL,NULL,'liberal_democratic_party',NULL,NULL),
 (25,'Secular Party of Australia',13,NULL,NULL,'secular_party_of_australia',NULL,NULL),
-(26,'The Climate Sceptics',13,NULL,NULL,'the_climate_sceptics',NULL,NULL);
+(26,'The Climate Sceptics',13,NULL,NULL,'the_climate_sceptics',NULL,NULL),
+(27, 'Country Labor Party', 13, NULL, NULL, 'country_labor_party', NULL, NULL),
+(28, 'No Parking Meters Party', 13, NULL, NULL, 'no_parking_meters_party', NULL, NULL),
+(29, 'Outdoor Recreation Party', 13, NULL, NULL, 'outdoor_recreation_party', NULL, NULL),
+(30, 'Restore the Workers’ Rights Party', 13, NULL, NULL, 'restore_the_workers_rights_party', NULL, NULL),
+(31, 'Save Our State', 13, NULL, NULL, 'save_our_state', NULL, NULL),
+(32, 'The Fishing Party', 13, NULL, NULL, 'the_fishing_party', NULL, NULL),
+(33, 'Unity Party', 13, NULL, NULL, 'unity_party', NULL, NULL);
 /*!40000 ALTER TABLE `party` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -721,8 +826,24 @@ INSERT INTO `party_election` VALUES
 (23,1,23),
 (24,1,24),
 (25,1,25),
-(26,1,26);
-/*!40000 ALTER TABLE `party` ENABLE KEYS */;
+(26,1,26),
+(27,2,2),
+(28,2,22),
+(29,2,23),
+(30,2,7),
+(31,2,27),
+(32,2,12),
+(33,2,13),
+(34,2,14),
+(35,2,28),
+(36,2,29),
+(37,2,30),
+(38,2,31),
+(39,2,19),
+(40,2,32),
+(41,2,4),
+(42,2,18),
+(43,2,33);
 /*!40000 ALTER TABLE `party_election` ENABLE KEYS */;
 UNLOCK TABLES;
 

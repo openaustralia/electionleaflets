@@ -7,7 +7,18 @@
         <a class="addthis_button" href="http://www.addthis.com/bookmark.php?v=250&amp;username=electionleaflets"><img src="http://s7.addthis.com/static/btn/v2/lg-share-en.gif" width="125" height="16" alt="Bookmark and Share" style="border:0"/></a><script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=electionleaflets"></script>
         <!-- AddThis Button END -->{/literal}
         <p>Published by <a href="{$www_server}/parties/{$leaflet->party_url_id}/">{$leaflet->party_name}</a></p>
-        <p class="meta">Delivered {if $constituency}in <a href="{$www_server}/{$area_names}/{$constituency->url_id}/">{$constituency->name}</a> {/if}on {$leaflet->date_delivered|date_format:"%A, %e %B, %Y"} (approximate), during the {$election->name}.</p>
+        <p class="meta">
+            Delivered
+            {if $constituency}
+                in <a href="{$www_server}/{$area_names}/{$constituency->url_id}/">{$constituency->name}</a>
+            {/if}
+            on {$leaflet->date_delivered|date_format:"%A, %e %B, %Y"}
+            {if $election->name}
+                (approximate), during the {$election->name}.
+            {else}
+                (approximate).
+            {/if}
+        </p>
         <p class="meta">Uploaded on {$leaflet->date_uploaded|date_format:"%A, %e %B, %Y"} at {$leaflet->date_uploaded|date_format:"%H:%M"}.</p>
         <h4>Description</h4>
 		<p>{$leaflet->description|nl2br}</p>
