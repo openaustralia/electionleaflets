@@ -214,7 +214,7 @@ DROP TABLE IF EXISTS `constituency_election`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `constituency_election` (
-  `constituency_election_id` int(11) NOT NULL,
+  `constituency_election_id` int(11) NOT NULL AUTO_INCREMENT,
   `constituency_id` int(11) NOT NULL,
   `election_id` int(11) NOT NULL,
   PRIMARY KEY (`constituency_election_id`)
@@ -231,6 +231,7 @@ INSERT INTO `constituency_election` VALUES (1, 1, 1),(2, 2, 1),(3, 3, 1),(4, 4, 
 /*!40000 ALTER TABLE `constituency_election` ENABLE KEYS */;
 UNLOCK TABLES;
 
+INSERT INTO `constituency_election` (constituency_id, election_id) SELECT constituency_id, 2 FROM constituency WHERE constituency_type_id=5;
 
 --
 -- Table structure for table `country`

@@ -25,7 +25,12 @@ class constituencies_page extends pagebase {
             if($constituency_lookup){
                 $constituencies = array();
                 foreach($constituency_lookup as $name) {
-                    $result = $search->search("constituency", array(array("name", "=", $name)));
+                    $result = $search->search("constituency",
+                         array(array("name", "=", $name),array("constituency_election.election_id", "=", $election_id)),
+                         "AND",
+                         array(array("constituency_election", "inner")),
+                         array(array("name", "ASC"))
+                         );
                     if(count($result) == 1){
                         $constituencies[] = $result[0];
                     }
@@ -41,7 +46,11 @@ class constituencies_page extends pagebase {
             }
         }else if(isset($constituency_url_id) && $constituency_url_id != '') {
             $this->has_search = true;
-            $result = $search->search("constituency", array(array("url_id", "=", $constituency_url_id)));
+            $result = $search->search("constituency",
+                 array(array("url_id", "=", $constituency_url_id),array("constituency_election.election_id", "=", $election_id)),
+                 "AND",
+                 array(array("constituency_election", "inner")),
+                 null);
             if(count($result) == 1){
                 $constituency = $result[0];
             }

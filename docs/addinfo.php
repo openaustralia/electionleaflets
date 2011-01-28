@@ -166,7 +166,10 @@ class addinfo_page extends pagebase {
             }
             if ($name) {
                 $search = factory::create('search');
-                $result = $search->search("constituency", array(array("name", "=", $name)));
+                $result = $search->search("constituency", 
+                    array(array("name", "=", $name), array("constituency_election.election_id", "=", $this->election_id = get_election_id())), 
+                    "AND",
+                    array(array("constituency_election", "inner")));
                 if(count($result) == 1){
                     $this->constituency_id = $result[0]->constituency_id;
                 }
