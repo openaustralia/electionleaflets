@@ -156,10 +156,12 @@ class addinfo_page extends pagebase {
                 }
             }
             else {
-                if (count($names) == 1) {
+                if (count($names) == 0) {
+                    $this->add_warning("The postcode is in not in a valid electorate.");
+                    $this->add_warn_control('ddlConstituency');
+                } else if (count($names) == 1) {
                     $name = $names[0];
-                }
-                else {
+                } else {
                     $this->add_warning("The postcode is in more than one electorate. Please select the electorate. Hint: it's either " . join(" or ", $names));
                     $this->add_warn_control('ddlConstituency');
                 }
