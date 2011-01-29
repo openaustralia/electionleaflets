@@ -15,7 +15,7 @@ if stage == "production"
   set :deploy_to, "/srv/www/www.#{application}"
 elsif stage == "test"
   set :deploy_to, "/srv/www/test.#{application}"
-  #set :branch, "test"
+  set :branch, "test"
 end
 
 namespace :deploy do
