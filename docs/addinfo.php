@@ -170,7 +170,7 @@ class addinfo_page extends pagebase {
                 } else if (count($names) == 1) {
                     $name = $names[0];
                 } else {
-                    $this->add_warning("The postcode is in more than one electorate. Please select the electorate. Hint: it's either " . join(" or ", $names));
+                    $this->add_warning("The postcode is in more than one electorate. Please an electorate below.");
                     $this->add_warn_control('ddlConstituency');
                 }
             }
