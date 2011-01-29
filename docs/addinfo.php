@@ -79,6 +79,9 @@ class addinfo_page extends pagebase {
             array(array("name", "ASC"))
         );
 
+	$australian_postcode = factory::create('australian_postcode');
+	$constituencies_hints = $australian_postcode->lookup_constituency_names(trim($this->data['txtPostcode']));
+
     //assign
     $this->assign('categories', $categories);
     $this->assign('parties', $parties);
@@ -86,6 +89,7 @@ class addinfo_page extends pagebase {
     $this->assign('selected_category_ids', $this->selected_category_ids);
     $this->assign('image_que_items', $this->image_que_items);
     $this->assign("constituencies", $constituencies);
+    $this->assign("constituencies_hints", $constituencies_hints);
     $this->assign("elections", $elections);
     }
 
@@ -142,6 +146,10 @@ class addinfo_page extends pagebase {
                 $this->lng = $geocoder->lng;
                 $this->lat = $geocoder->lat;
             }
+
+            if (strlen(trim($this->data['ddlConstituencyHint'])) > 0) {
+                $this->data['ddlConstituency'] = $this->data['ddlConstituencyHint'];
+            }
             
             //Convert postcode to electorate
             $australian_postcode = factory::create('australian_postcode');
@@ -156,10 +164,12 @@ class addinfo_page extends pagebase {
                 }
             }
             else {
-                if (count($names) == 1) {
+                if (count($names) == 0) {
+                    $this->add_warning("The postcode is in not in a valid electorate.");
+                    $this->add_warn_control('ddlConstituency');
+                } else if (count($names) == 1) {
                     $name = $names[0];
-                }
-                else {
+                } else {
                     $this->add_warning("The postcode is in more than one electorate. Please select the electorate. Hint: it's either " . join(" or ", $names));
                     $this->add_warn_control('ddlConstituency');
                 }

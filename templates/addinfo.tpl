@@ -27,12 +27,20 @@
                 </li>
                 <li>
                     <label for="ddlConstituency">Which electorate was the leaflet delivered to?</label>
+                    {if $constituencies_hints}
+                        <ol {if $warn_ddlConstituency}class="error"{/if}>
+                          {foreach from="$constituencies_hints" item="name"}
+                          <li><input type="radio" name="ddlConstituencyHint" value="{$name}" {if $data.ddlConstituency == $name}selected="selected"{/if}>{$name}</li>
+                          {/foreach}
+                        </ol>
+                    {else}
                     <select id="ddlConstituency" name="ddlConstituency" {if $warn_ddlConstituency}class="error"{/if}>
                         <option></option>
                         {foreach from="$constituencies" item="constituency"}
                             <option value="{$constituency->name}" {if $data.ddlConstituency == $constituency->name}selected="selected"{/if}>{$constituency->name}</option>
                         {/foreach}
                     </select>
+                    {/if}
                     <small>please select one if we can't work out the electorate from the postcode alone</small>
                 </li>
                 <li>
