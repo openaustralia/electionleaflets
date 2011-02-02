@@ -21,6 +21,7 @@
                 <li>Matt Joyce</li>
                 <li>Matthew Landauer</li>
                 <li>Teresa Leung</li>
+                <li>Tim 'mithro' Ansell</li>
             </ul>
         </p>
         <p>
