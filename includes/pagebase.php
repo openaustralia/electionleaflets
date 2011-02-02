@@ -78,6 +78,7 @@ abstract class pagebase {
     public function display_template(){
         $this->smarty->assign("site_name", SITE_NAME);
         $this->smarty->assign("site_tag_line", SITE_TAG_LINE);
+        if(defined('BANNER')){ $this->smarty->assign("banner", BANNER); }
         $this->smarty->assign("root_dir", ROOT_DIR);
         $this->smarty->assign("www_server", WWW_SERVER);
         $this->smarty->assign("domain", DOMAIN);

@@ -1,5 +1,4 @@
 <?php
-
 define('DEVSITE', true);
 
 // Paths
@@ -48,7 +47,8 @@ define("LEAFLETS_EMAIL", CONTACT_EMAIL);
 
 //Site name
 define("SITE_NAME", "Election Leaflets Australia");
-define("SITE_TAG_LINE", "keeping track of electioneering");     
+define("SITE_TAG_LINE", "keeping track of electioneering");
+define("BANNER", "You can define this <strong>banner</strong> in <em>config/general.php</em>");
 
 //session stuff
 define('SESSION_COOKIE_LIFETIME', 0);

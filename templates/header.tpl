@@ -32,15 +32,11 @@
         <div class="hide">
             <a href="#divContent">Skip navigation</a>
         </div>
-            {* Comment this out for another day
-            {if $is_home == false}
-            <div id="divBanner">
-                Track how your new MP is voting with
-                <strong><a href="http://www.publicwhip.org.uk/">The Public Whip</a></strong>
-                </div>
-            {/if}
-            *}
-	
+        {if isset($banner)}
+          <div id="divBanner">
+            {$banner}
+          </div>
+        {/if}
 	  <div id="divHeader"{if $hide_logo == true} class="small"{/if}>
 
             {if $hide_logo == false}
