@@ -23,6 +23,7 @@ class constituencies_page extends pagebase {
             //lookup constituency and redirect
             $constituency_lookup = $this->lookup_constituency($postcode);
             if($constituency_lookup){
+                $election_id = CURRENT_ELECTION;
                 $constituencies = array();
                 foreach($constituency_lookup as $name) {
                     $result = $search->search("constituency",
