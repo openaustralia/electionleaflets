@@ -61,10 +61,6 @@
                 Yes. Please send them to:
                 <address>Election Leaflets, The OpenAustralia Foundation, PO Box 147, Katoomba NSW 2780</address>
                 and mark each leaflet with the postcode and electorate it was delivered to.
-                
-                Also, we have arranged with the <a href="http://www.nla.gov.au">National Library of Australia</a> to forward all
-                the leaflets we receive by post to be considered for inclusion in
-                their <a href="http://www.nla.gov.au/collect/elections.html">election material archive</a>.
             </dd>
         </dl>
         <h4 id="contact">Contact</h4>
