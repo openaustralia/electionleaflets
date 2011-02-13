@@ -14,6 +14,7 @@ class constituencies_page extends pagebase {
         $postcode = get_http_var('p');
         $constituency_url_id = get_http_var('c');
         $constituency = null;        
+        $election_id = get_election_id();
         
         //is postcode set?
         if(isset($postcode) && $postcode != '' && is_postcode($postcode)){
@@ -23,7 +24,6 @@ class constituencies_page extends pagebase {
             //lookup constituency and redirect
             $constituency_lookup = $this->lookup_constituency($postcode);
             if($constituency_lookup){
-                $election_id = CURRENT_ELECTION;
                 $constituencies = array();
                 foreach($constituency_lookup as $name) {
                     $result = $search->search("constituency",
@@ -78,6 +78,7 @@ class constituencies_page extends pagebase {
         }
         
         $search = factory::create('search');     
+        $election_id = get_election_id();
         $constituencies = $search->search_cached("constituency", 
                 array(array("constituency_election.election_id", "=", $election_id)),
                 "AND",
