@@ -17,7 +17,7 @@ for votes in Australia.
 an eye on what the parties are up to, and try to keep them honest.
         </p><br/>
         <p id="pCount">
-            <strong>{$leaflet_count}</strong> leaflets added so far!
+            <strong>{$leaflet_count}</strong> leaflets added so far for the {$current_election}!
         </p>
     </div>
     </div>
