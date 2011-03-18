@@ -7,7 +7,7 @@ class notspots_page extends pagebase {
 
 	//bind
 	function bind() {
-		$this->page_title = SITE_TAG_LINE;	
+		$this->page_title = "Not-spots";
 
         $not_spots = tableclass_constituency::get_not_spots(800);        
      
