@@ -6,14 +6,15 @@ class categories_page extends pagebase {
   function bind() {
     $this->page_title = "Election leaflets by category";
     $search = factory::create('search');
+    $election_id = get_election_id();
 
     // Get categories
     $categories = $search->search_cached("category",
-      array(array("1", "=", "1")),
-      "AND",
-      null,
-      array(array("name", "ASC"))
-    );
+      array(array("category_election.election_id", "=", $election_id)),
+      'AND',
+      array(array("category_election", "inner")),
+      array(array('name', "ASC"))
+		);
     $this->assign("categories", $categories);
   }
 }
