@@ -172,6 +172,95 @@ INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('W
 INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Wollondilly',5,'NSW','wollondilly');
 INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Wollongong',5,'NSW','wollongong');
 INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Wyong',5,'NSW','wyong');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Albert',6,'QLD','albert');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Charters Towers',6,'QLD','charters_towers');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Hinchinbrook',6,'QLD','hinchinbrook');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Mount Coot-tha',6,'QLD','mount_coot-tha');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('South Brisbane',6,'QLD','south_brisbane');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Algester',6,'QLD','algester');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Chatsworth',6,'QLD','chatsworth');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Inala',6,'QLD','inala');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Mount Gravatt',6,'QLD','mount_gravatt');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Southern Downs',6,'QLD','southern_downs');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Ashgrove',6,'QLD','ashgrove');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Clayfield',6,'QLD','clayfield');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Indooroopilly',6,'QLD','indooroopilly');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Mount Isa',6,'QLD','mount_isa');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Southport',6,'QLD','southport');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Aspley',6,'QLD','aspley');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Cleveland',6,'QLD','cleveland');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Ipswich',6,'QLD','ipswich');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Mount Ommaney',6,'QLD','mount_ommaney');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Springwood',6,'QLD','springwood');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Barron River',6,'QLD','barron_river');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Cook',6,'QLD','cook');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Ipswich West',6,'QLD','ipswich_west');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Mudgeeraba',6,'QLD','mudgeeraba');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Stafford',6,'QLD','stafford');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Beaudesert',6,'QLD','beaudesert');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Cunningham',6,'QLD','cunningham');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Kallangur',6,'QLD','kallangur');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Mulgrave',6,'QLD','mulgrave');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Stretton',6,'QLD','stretton');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Brisbane Central',6,'QLD','brisbane_central');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Currumbin',6,'QLD','currumbin');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Kawana',6,'QLD','kawana');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Mundingburra',6,'QLD','mundingburra');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Surfers Paradise',6,'QLD','surfers_paradise');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Broadwater',6,'QLD','broadwater');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Darling Downs',6,'QLD','darling_downs');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Keppel',6,'QLD','keppel');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Murrumba',6,'QLD','murrumba');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Tablelands',6,'QLD','tablelands');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Bulimba',6,'QLD','bulimba');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Everton ',6,'QLD','everton');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Kurwongbah',6,'QLD','kurwongbah');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Nanango',6,'QLD','nanango');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Thuringowa',6,'QLD','thuringowa');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Bundaberg',6,'QLD','bundaberg');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Ferny Grove',6,'QLD','ferny_grove');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Lockyer',6,'QLD','lockyer');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Nicklin',6,'QLD','nicklin');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Toowoomba North',6,'QLD','toowoomba_north');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Bundamba',6,'QLD','bundamba');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Fitzroy',6,'QLD','fitzroy');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Logan',6,'QLD','logan');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Noosa ',6,'QLD','noosa');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Toowoomba South',6,'QLD','toowoomba_south');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Burdekin',6,'QLD','burdekin');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Gaven',6,'QLD','gaven');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Lytton',6,'QLD','lytton');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Nudgee',6,'QLD','nudgee');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Townsville',6,'QLD','townsville');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Burleigh',6,'QLD','burleigh');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Gladstone',6,'QLD','gladstone');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Mackay',6,'QLD','mackay');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Pumicestone',6,'QLD','pumicestone');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Warrego',6,'QLD','warrego');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Burnett',6,'QLD','burnett');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Glass House',6,'QLD','glass_house');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Mansfield',6,'QLD','mansfield');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Redcliffe',6,'QLD','redcliffe');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Waterford',6,'QLD','waterford');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Cairns',6,'QLD','cairns');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Greenslopes',6,'QLD','greenslopes');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Maroochydore',6,'QLD','maroochydore');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Redlands',6,'QLD','redlands');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Whitsunday',6,'QLD','whitsunday');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Callide',6,'QLD','callide');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Gregory',6,'QLD','gregory');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Maryborough',6,'QLD','maryborough');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Robina',6,'QLD','robina');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Woodridge',6,'QLD','woodridge');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Caloundra',6,'QLD','caloundra');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Gympie',6,'QLD','gympie');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Mirani',6,'QLD','mirani');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Rockhampton',6,'QLD','rockhampton');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Yeerongpilly',6,'QLD','yeerongpilly');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Capalaba',6,'QLD','capalaba');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Hervey Bay',6,'QLD','hervey_bay');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Moggill',6,'QLD','moggill');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Sandgate',6,'QLD','sandgate');
 /*!40000 ALTER TABLE `constituency` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -202,7 +291,8 @@ INSERT INTO `constituency_type` VALUES
 (2,'Local Authority Ward',225,'council'),
 (3,'UK Parliament Constituency',225,'wesminster'),
 (4,'Australian Electoral Division',13,'federalaustralia'),
-(5,'NSW Electoral Division',13,'nsw');
+(5,'NSW Electoral Division',13,'nsw'),
+(6,'QLD Electoral Division',13,'qld');
 /*!40000 ALTER TABLE `constituency_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -231,8 +321,11 @@ INSERT INTO `constituency_election` VALUES (1, 1, 1),(2, 2, 1),(3, 3, 1),(4, 4, 
 /*!40000 ALTER TABLE `constituency_election` ENABLE KEYS */;
 UNLOCK TABLES;
 
+-- NSW
 INSERT INTO `constituency_election` (constituency_id, election_id) SELECT constituency_id, 2 FROM constituency WHERE constituency_type_id=5;
 
+-- QLD
+INSERT INTO `constituency_election` (constituency_id, election_id) SELECT constituency_id, 3 FROM constituency WHERE constituency_type_id=6;
 --
 -- Table structure for table `country`
 --
@@ -283,7 +376,8 @@ LOCK TABLES `election` WRITE;
 /*!40000 ALTER TABLE `election` DISABLE KEYS */;
 INSERT INTO `election` VALUES
 (1,'Australian Federal Election 2010',1,'2010-08-21'),
-(2,'NSW State Election 2011',1,'2011-03-26');
+(2,'NSW State Election 2011',1,'2011-03-26'),
+(3,'QLD State Election 2012',1,'2012-03-01');
 /*!40000 ALTER TABLE `election` ENABLE KEYS */;
 UNLOCK TABLES;
 
