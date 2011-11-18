@@ -68,6 +68,11 @@ abstract class pagebase {
             $application = factory::create('application');
         }
         $this->application = $application;
+
+        $election_id = get_http_var('election_id');
+        if ($election_id != 0) {
+          session_write('election_id', $election_id);
+        }
     }
 
     private function save_application(){
@@ -92,6 +97,7 @@ abstract class pagebase {
         }else{
             $this->smarty->assign("set_focus_control", $this->warn_controls[0]);
         }
+        $this->smarty->assign("elections", $this->get_elections());
         $this->smarty->assign("warnings", $this->warnings);
         $this->smarty->assign("messages", $this->messages);
         $this->smarty->assign("data", $this->data);
@@ -116,7 +122,7 @@ abstract class pagebase {
         // efficient way to do this somehow
         $search = factory::create("search");
         $result = $search->search("election",
-            array(array("election_id", "=", CURRENT_ELECTION))
+            array(array("election_id", "=", get_election_id()))
         );
         $this->smarty->assign("current_election", $result[0]->name);
 
@@ -133,6 +139,17 @@ abstract class pagebase {
     // assign smarty var
     public function assign($name, $value){
         $this->smarty->assign($name, $value);
+    }
+
+    private function get_elections() {
+      $search = factory::create("search");
+      $results = $search->search("election",
+                                 array(array("election_id", "!=", "0")));
+      $elections = array("Change elections...");
+      foreach ($results as $result) {
+        $elections[$result->election_id] = $result->name; 
+      }
+      return $elections;
     }
 
     private function get_url(){
