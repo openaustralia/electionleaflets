@@ -38,7 +38,7 @@
 	    {foreach name="elections" from="$elections" key="value" item="election"}
               <option value="{$value}">{$election}</option>
 	    {/foreach}
-            <input type="submit" value="submit"/></form>
+            <input type="submit" value="Select"/></form>
           </div>
         {/if}
 	  <div id="divHeader"{if $hide_logo == true} class="small"{/if}>

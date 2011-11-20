@@ -143,7 +143,8 @@ p.credit a{
 /* Banner */
 #divBanner {background:#ffffaa; border-bottom:solid 1px #808080;
         padding-top:0.2em; font-family:verdana, sans-serif; font-size:0.8em;padding:0.5em;}
-#divBanner form {display:inline; position:relative; top:0.4em;}
+#divBanner form {display:inline;}
+#divBanner input[type='submit'] {font-size:1em; padding:0.0em;}
 
 /* headings */
 
