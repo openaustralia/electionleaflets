@@ -90,7 +90,19 @@ INSERT INTO `category_election` (`category_election_id`, `category_id`, `electio
 (21, 9, 2),
 (22, 10, 2),
 (23, 11, 2),
-(24, 12, 2);
+(24, 12, 2),
+(25, 1, 3),
+(26, 2, 3),
+(27, 3, 3),
+(28, 4, 3),
+(29, 5, 3),
+(30, 6, 3),
+(31, 7, 3),
+(32, 8, 3),
+(33, 9, 3),
+(34, 10, 3),
+(35, 11, 3),
+(36, 12, 3);
 
 --
 -- Table structure for table `constituency`
