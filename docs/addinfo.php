@@ -47,10 +47,10 @@ class addinfo_page extends pagebase {
 		//get categories
 		$search = factory::create('search');
 		$categories = $search->search_cached("category", 
-		    array(array(1, '=', 1)),
+		    array(array("category_election.election_id", "=", $election_id)),
 		    'AND',
-		    null,
-		    array(array('default_value', "DESC"), array('name', "ASC"))
+		    array(array("category_election", "inner")),
+		    array(array('name', "ASC"))
 		);
 
 		//get parties

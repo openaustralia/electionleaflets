@@ -52,6 +52,47 @@ INSERT INTO `category` (`category_id`, `name`, `description`, `default_value`) V
 (13, 'Infrastructure', NULL, NULL);
 
 --
+-- Table structure for table `category_election`
+--
+
+CREATE TABLE IF NOT EXISTS `category_election` (
+  `category_election_id` int(11) NOT NULL AUTO_INCREMENT,
+  `category_id` int(11) NOT NULL,
+  `election_id` int(11) NOT NULL,
+  PRIMARY KEY (`category_election_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+
+--
+-- Dumping data for table `category_election`
+--
+
+INSERT INTO `category_election` (`category_election_id`, `category_id`, `election_id`) VALUES
+(1, 1, 1),
+(2, 2, 1),
+(3, 3, 1),
+(4, 4, 1),
+(5, 5, 1),
+(6, 6, 1),
+(7, 7, 1),
+(8, 8, 1),
+(9, 9, 1),
+(10, 10, 1),
+(11, 11, 1),
+(12, 12, 1),
+(13, 1, 2),
+(14, 2, 2),
+(15, 3, 2),
+(16, 4, 2),
+(17, 5, 2),
+(18, 6, 2),
+(19, 7, 2),
+(20, 8, 2),
+(21, 9, 2),
+(22, 10, 2),
+(23, 11, 2),
+(24, 12, 2);
+
+--
 -- Table structure for table `constituency`
 --
 

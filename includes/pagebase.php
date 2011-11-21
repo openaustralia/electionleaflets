@@ -145,7 +145,7 @@ abstract class pagebase {
       $search = factory::create("search");
       $results = $search->search("election",
                                  array(array("election_id", "!=", "0")));
-      $elections = array("Change elections...");
+      $elections = array();
       foreach ($results as $result) {
         $elections[$result->election_id] = $result->name; 
       }

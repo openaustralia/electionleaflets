@@ -34,11 +34,13 @@
         </div>
         {if isset($banner)}
           <div id="divBanner">
-            You're currently viewing leaflets for the <strong>{$current_election}</strong>. <form method="post" action="{$www_server}"><select name="election_id">
-	    {foreach name="elections" from="$elections" key="value" item="election"}
-              <option value="{$value}">{$election}</option>
-	    {/foreach}
-            <input type="submit" value="submit"/></form>
+            <form method="post" action="{$www_server}">
+              You're currently viewing leaflets for the <select name="election_id">
+	            {foreach name="elections" from="$elections" key="value" item="election"}
+                <option value="{$value}" {if $current_election == $election}selected="selected"{/if}>{$election}</option>
+	            {/foreach}
+              <input type="submit" value="Change"/>
+            </form>
           </div>
         {/if}
 	  <div id="divHeader"{if $hide_logo == true} class="small"{/if}>

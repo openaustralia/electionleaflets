@@ -133,3 +133,9 @@ function setupUploader(){
                                     }
     });
 }
+
+$(document).ready(function() {
+    $("#divBanner select").change(function() {
+       $("#divBanner form").submit();
+    });
+});

@@ -50,6 +50,12 @@ class factory {
 				if (!$require_only) {
 					$object = DB_DataObject::factory($class_name);
 				}
+      case 'category_election':
+        require_once( 'table_classes/config.php' );
+        require_once('table_classes/category_election.php');
+        if (!$require_only) {
+          $object = DB_DataObject::factory($class_name);
+        }
 			case 'rate_type':
 				require_once( 'table_classes/config.php' );
 				require_once('table_classes/rate_type.php');
