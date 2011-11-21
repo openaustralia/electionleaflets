@@ -870,7 +870,11 @@ INSERT INTO `party` VALUES
 (30, 'Restore the Workers'' Rights Party', 13, NULL, NULL, 'restore_the_workers_rights_party', NULL, NULL),
 (31, 'Save Our State', 13, NULL, NULL, 'save_our_state', NULL, NULL),
 (32, 'The Fishing Party', 13, NULL, NULL, 'the_fishing_party', NULL, NULL),
-(33, 'Unity Party', 13, NULL, NULL, 'unity_party', NULL, NULL);
+(33, 'Unity Party', 13, NULL, NULL, 'unity_party', NULL, NULL),
+(34, 'Liberal National Party of Queensland', 13, NULL, NULL, 'liberal_national_party_of_queensland', NULL, NULL),
+(35, 'Daylight Saving for South East Queensland', 13, NULL, NULL, 'daylight_saving_for_south_east_queensland', NULL, NULL),
+(36, 'The Queensland Party', 13, NULL, NULL, 'the_queensland_party', NULL, NULL),
+(37, 'Katter\'s Australian Party', 13, NULL, NULL, 'katters_australian_party', NULL, NULL);
 /*!40000 ALTER TABLE `party` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -938,7 +942,15 @@ INSERT INTO `party_election` VALUES
 (40,2,32),
 (41,2,4),
 (42,2,18),
-(43,2,33);
+(43,2,33),
+(44,3,4),
+(45,3,12),
+(46,3,16),
+(47,3,22),
+(48,3,34),
+(49,3,35),
+(50,3,36),
+(51,3,37);
 /*!40000 ALTER TABLE `party_election` ENABLE KEYS */;
 UNLOCK TABLES;
 
