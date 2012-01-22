@@ -42,6 +42,21 @@ class tableclass_australian_postcode extends tablebase {
 		return $result;
     }
 
+  # Returns an example postcode for the current election so we can provide a
+  # suggestion to the user
+  public static function example_postcode(){
+    $election_id = get_election_id($election_id);
+    $search = factory::create('search');
+    $result = $search->search("australian_postcode",
+      array(array('election_id', '=', $election_id)),
+      null,
+      null,
+      null,
+      1
+    );
+    return $result[0]->postcode;
+  }
+
 	/* Links */
 	public function links (){
 	    return array(

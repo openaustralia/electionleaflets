@@ -86,7 +86,10 @@ class constituencies_page extends pagebase {
                 array(array("name", "ASC"))
             );
         $this->assign("constituencies", $constituencies);
-        
+
+        # Set example postcode for display on the page
+        $australian_postcode = factory::create("australian_postcode");
+        $this->assign("example_postcode", $australian_postcode->example_postcode());
     }
 
     // Returns array of names of constituency for a given postcode
