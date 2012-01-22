@@ -681,4 +681,15 @@
 		return $election_id;
 	}
 	
+        function set_election_id($election_id = null) {
+                session_start();
+		$election_id = (int)($election_id);
+		if (is_numeric($election_id)) {
+                  $_SESSION['election_id'] = $election_id;
+                }
+                else {
+                  $_SESSION['election_id'] = CURRENT_ELECTION;
+                }
+        }
+
 ?>

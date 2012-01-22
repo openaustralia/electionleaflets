@@ -86,6 +86,8 @@ class leaflet_page extends pagebase {
                 'AND',
                 array(array("leaflet_election", 'inner'))
             );
+        set_election_id($leaflet_elections[0]->election_id);
+
         //js
         $this->onloadscript = "showMap('" . MAP_PROVIDER . "', " . number_format($leaflet->lng, 2) . ", " . number_format($leaflet->lat, 2) .");";        
 
