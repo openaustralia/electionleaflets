@@ -111,6 +111,7 @@ class create_page extends pagebase {
         if(isset($publisher_party_id) && $publisher_party_id != ''){
             
             $this->email_alert->parent_id = trim($publisher_party_id);
+            $this->email_alert->election_id = get_election_id();
             $this->email_alert->type = 'party';
         }
 

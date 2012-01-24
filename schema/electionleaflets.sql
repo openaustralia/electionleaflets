@@ -473,6 +473,7 @@ CREATE TABLE `email_alert` (
   `last_sent` datetime DEFAULT NULL,
   `type` varchar(50) NOT NULL,
   `parent_id` int(11) NOT NULL,
+  `election_id` int(11) NOT NULL,  
   `activated` tinyint(1) DEFAULT '0',
   `confirm_id` varchar(100) NOT NULL,
   `title` varchar(255) NOT NULL,
