@@ -104,7 +104,7 @@ function get_url($email_alert) {
     } else if ($email_alert->type == 'party') {
         $search = factory::create('search');
         $results = $search->search('party', array(array('party_id', '=', $email_alert->parent_id)));
-    $return = WWW_SERVER . '/parties/' . $results[0]->url_id;
+    $return = WWW_SERVER . '/leaflets.php?p=' . $results[0]->url_id . '&election_id=' . $email_alert->election_id;
     } else if ($email_alert->type == 'constituency') {
         $search = factory::create('search');
         $results = $search->search('constituency', array(array('constituency_id', '=', $email_alert->parent_id)));
