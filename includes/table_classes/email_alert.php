@@ -16,7 +16,6 @@ class tableclass_email_alert extends tablebase {
     public $last_sent;
     public $type;
     public $parent_id;
-    public $election_id;
     public $activated;
     public $confirm_id;
     public $title;
@@ -38,7 +37,6 @@ class tableclass_email_alert extends tablebase {
             'last_sent'   			=> DB_DATAOBJECT_STR,            
             'type'   			=> DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,                        
             'parent_id'   			=> DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
-            'election_id'   			=> DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
             'activated'   			=> DB_DATAOBJECT_INT + DB_DATAOBJECT_NOTNULL,
             'confirm_id'   			=> DB_DATAOBJECT_STR,
             'title'   			=> DB_DATAOBJECT_STR + DB_DATAOBJECT_NOTNULL,                                                      
