@@ -85,7 +85,7 @@ function send_alert($email_alert, $leaflets) {
     $smarty->template_dir = TEMPLATE_DIR;
     $smarty->assign('leaflets', $leaflets);
     $smarty->assign('leaflet_count', $leaflets);
-    $smarty->assign('url', get_url($email_alert));
+    $smarty->assign('url', WWW_SERVER . '/leaflets/');
     $smarty->assign('unsub_url', WWW_SERVER . '/alerts/manage.php?q=' . $email_alert->confirm_id);
     $subject = 'New ' . $email_alert->title;
     $body = $smarty->fetch(TEMPLATE_DIR . '/emails/send_alert.tpl');
@@ -97,25 +97,4 @@ function send_alert($email_alert, $leaflets) {
     }
 }
 
-function get_url($email_alert) {
-    //do we have any matching leaflets?
-    if ($email_alert->type == 'attack') {
-        $return = WWW_SERVER . '/leaflets.php?a=' . $email_alert->parent_id;
-    } else if ($email_alert->type == 'party') {
-        $search = factory::create('search');
-        $results = $search->search('party', array(array('party_id', '=', $email_alert->parent_id)));
-    $return = WWW_SERVER . '/parties/' . $results[0]->url_id;
-    } else if ($email_alert->type == 'constituency') {
-        $search = factory::create('search');
-        $results = $search->search('constituency', array(array('constituency_id', '=', $email_alert->parent_id)));
-        $return = WWW_SERVER . '/' . AREA_NAMES . '/' . $results[0]->url_id;
-    } else if ($email_alert->type == 'category') {
-        $return = WWW_SERVER . '/categories/' . $email_alert->parent_id;
-    }
-    if (ALERT_DEBUG>0) {
-        print "ID=" . $email_alert->parent_id ."\n";
-        print $return . "\n\n";
-    }
-    return $return;
-}
 ?>
