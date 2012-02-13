@@ -22,6 +22,7 @@
                 <li>Matthew Landauer</li>
                 <li>Teresa Leung</li>
                 <li>Tim 'mithro' Ansell</li>
+                <li>Malcolm Blaney</li>
             </ul>
         </p>
         <p>
