@@ -10,6 +10,12 @@
                 <li><a href="http://twitter.com/electionleaflet">Twitter</a></li>
                 <li class="last"><a href="http://blog.openaustralia.org">Blog</a></li>
             </ul>
+            <p>
+                Other wonderful projects by the OpenAustralia Foundation:
+                <a href="http://www.planningalerts.org.au/">PlanningAlerts</a>
+                |
+                <a href="http://www.openaustralia.org/">OpenAustralia.org</a>
+            </p>
         </div>
     </div>
 
