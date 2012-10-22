@@ -314,6 +314,10 @@ INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('C
 INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Hervey Bay',6,'QLD','hervey_bay');
 INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Moggill',6,'QLD','moggill');
 INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Sandgate',6,'QLD','sandgate');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Brindabella',7,'ACT','brindabella');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Ginninderra',7,'ACT','ginninderra');
+INSERT INTO constituency (name,constituency_type_id,area_code,url_id) VALUES ('Molonglo',7,'ACT','molonglo');
+
 /*!40000 ALTER TABLE `constituency` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -345,7 +349,8 @@ INSERT INTO `constituency_type` VALUES
 (3,'UK Parliament Constituency',225,'wesminster'),
 (4,'Australian Electoral Division',13,'federalaustralia'),
 (5,'NSW Electoral Division',13,'nsw'),
-(6,'QLD Electoral Division',13,'qld');
+(6,'QLD Electoral Division',13,'qld'),
+(7,'ACT Electoral Division',13,'act');
 /*!40000 ALTER TABLE `constituency_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -379,6 +384,9 @@ INSERT INTO `constituency_election` (constituency_id, election_id) SELECT consti
 
 -- QLD
 INSERT INTO `constituency_election` (constituency_id, election_id) SELECT constituency_id, 3 FROM constituency WHERE constituency_type_id=6;
+
+-- ACT
+INSERT INTO `constituency_election` (constituency_id, election_id) SELECT constituency_id, 4 FROM constituency WHERE constituency_type_id=7;
 --
 -- Table structure for table `country`
 --
@@ -430,7 +438,8 @@ LOCK TABLES `election` WRITE;
 INSERT INTO `election` VALUES
 (1,'Australian Federal Election 2010',1,'2010-08-21'),
 (2,'NSW State Election 2011',1,'2011-03-26'),
-(3,'QLD State Election 2012',1,'2012-03-01');
+(3,'QLD State Election 2012',1,'2012-03-01'),
+(4,'ACT Legislative Assembly Election 2012',1,'2012-10-20');
 /*!40000 ALTER TABLE `election` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -927,7 +936,15 @@ INSERT INTO `party` VALUES
 (34, 'Liberal National Party of Queensland', 13, NULL, NULL, 'liberal_national_party_of_queensland', NULL, NULL),
 (35, 'Daylight Saving for South East Queensland', 13, NULL, NULL, 'daylight_saving_for_south_east_queensland', NULL, NULL),
 (36, 'The Queensland Party', 13, NULL, NULL, 'the_queensland_party', NULL, NULL),
-(37, 'Katter\'s Australian Party', 13, NULL, NULL, 'katters_australian_party', NULL, NULL);
+(37, 'Katter\'s Australian Party', 13, NULL, NULL, 'katters_australian_party', NULL, NULL),
+(38, 'Canberra Liberals', 13, NULL, NULL, 'canberra_liberals', NULL, NULL),
+(39, 'The ACT Greens', 13, NULL, NULL, 'act_greens', NULL, NULL),
+(40, 'ACT Labor', 13, NULL, NULL, 'act_labor', NULL, NULL),
+(41, 'Bullet Train for Canberra', 13, NULL, NULL, 'bullet_train_for_canberra', NULL, NULL),
+(42, 'Australian Motorist Party', 13, NULL, NULL, 'australian_motorist_part', NULL, NULL),
+(43, 'Liberal Democratic Party', 13, NULL, NULL, 'liberal_democratic_party', NULL, NULL),
+(44, 'Marion Lê Social Justice Party', 13, NULL, NULL, 'marion_le_social_justice_party', NULL, NULL);
+
 /*!40000 ALTER TABLE `party` ENABLE KEYS */;
 UNLOCK TABLES;
 
