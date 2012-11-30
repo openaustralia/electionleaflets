@@ -18,12 +18,14 @@ elsif stage == "test"
   set :branch, "test"
 end
 
+after 'deploy:update_code', 'deploy:symlink_configuration'
+
 namespace :deploy do
   desc "Restart doesn't do anything"
   task :restart do ; end
   
-  desc "Once the deploy is symlinked, we link additional config"
-  before "deploy:symlink" do
+  desc "Link additional configuration"
+  task :symlink_configuration do
     links = {
             "#{release_path}/config/general.php"         => "#{shared_path}/config/general.php",
             "#{release_path}/data"                       => "#{shared_path}/data",
