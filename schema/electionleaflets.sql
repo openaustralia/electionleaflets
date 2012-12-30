@@ -101,9 +101,16 @@ INSERT INTO `category_election` (`category_election_id`, `category_id`, `electio
 (33, 9, 3),
 (34, 10, 3),
 (35, 11, 3),
-(36, 12, 3);
-
-INSERT INTO `category_election` (`category_id`, `election_id`) SELECT category_id, 4 FROM category;
+(36, 12, 3),
+(37, 1, 4),
+(40, 4, 4),
+(41, 5, 4),
+(42, 6, 4),
+(44, 8, 4),
+(45, 9, 4),
+(46, 10, 4),
+(47, 11, 4),
+(48, 12, 4);
 
 --
 -- Table structure for table `constituency`
@@ -1076,7 +1083,8 @@ INSERT INTO `party_election` VALUES
 (55,4,18),
 (56,4,4),
 (57,4,13),
-(58,4,12);
+(58,4,12),
+(59,4,21);
 /*!40000 ALTER TABLE `party_election` ENABLE KEYS */;
 UNLOCK TABLES;
 
