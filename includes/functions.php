@@ -680,6 +680,23 @@
 		}
 		return $election_id;
 	}
+
+	function get_election($election_id = null) {
+		$election = null;
+		if($election_id === null) {
+			$election_id = get_election_id();
+		}
+
+		if(is_numeric($election_id)) {
+			$search = factory::create("search");
+			$results = $search->search("election",
+										array(array("election_id", "=", $election_id)));
+			if(count($results) === 1) {
+				$election = $results[0];
+			}
+		}
+		return $election;
+	}
 	
         function set_election_id($election_id = null) {
                 session_start();
@@ -692,4 +709,37 @@
                 }
         }
 
+	function mapit_postcode_to_electorates($postcode = null) {
+		/*
+		http://mapit.openlocal.org.au/areas/pc6053
+		http://mapit.openlocal.org.au/area/3456/overlaps?type=SED,WAS
+		http://mapit.openlocal.org.au/area/3456/covered?type=CED
+
+		http://mapit.openlocal.org.au/point/4326/115.901,-31.916?type=WAS,SEB,CED
+		*/
+
+		$electorates = array();
+		if(is_numeric($postcode)) {
+			// Workaround required because MapIt was originally designed with postal areas as points, not polygons,
+			// so we can't look the postcode up directly.
+			$postcode_area_id = array_shift(json_decode(file_get_contents("http://mapit.openlocal.org.au/areas/pc" . $postcode), true))["id"];
+
+			if(is_numeric($postcode_area_id)) {
+				$election = get_election();
+
+				// This is horrid, but it's only temporary. There's an issue in MapIt that Andrew is looking 
+				// to patch so /coverlaps?type=CED,SED,WAS would work for all cases.
+				if(stristr($election->name, "Australian Federal Election") !== false) {
+					$electorates_json = json_decode(file_get_contents("http://mapit.openlocal.org.au/area/" . $postcode_area_id . "/covered?type=CED"), true);
+				} else {
+					$electorates_json = json_decode(file_get_contents("http://mapit.openlocal.org.au/area/" . $postcode_area_id . "/overlaps?type=SED,WAS"), true);
+				}
+
+				foreach($electorates_json as $electorate) {
+					$electorates[] = $electorate["name"];
+				}
+	        }
+		}
+		return $electorates;
+	}
 ?>

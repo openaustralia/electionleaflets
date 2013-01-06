@@ -12,7 +12,7 @@
                 <li>
                     <label for="txtTitle">Give the leaflet a title *</label>
                     <input type="text" id="txtTitle" name="txtTitle" {if $warn_txtTitle}class="error"{/if} value="{$data.txtTitle}"/>
-                    <small>e.g. the main headline</small>
+                    <small>e.g. the main headline</semall>
                 </li>
                 <li>
                     <label for="txtDescription">Enter a transcript of the main points / first paragraph</label>
@@ -27,21 +27,22 @@
                 </li>
                 <li>
                     <label for="ddlConstituency">Which electorate was the leaflet delivered to?</label>
-                    {if $constituencies_hints}
-                        <ol {if $warn_ddlConstituency}class="error"{/if}>
+                    <ol id="ddlConstituencyHint" {if $warn_ddlConstituency}class="error"{/if}>
+                        {if $constituencies_hints}
                           {foreach from="$constituencies_hints" item="name"}
                           <li><input type="radio" name="ddlConstituencyHint" value="{$name}" {if $data.ddlConstituency == $name}selected="selected"{/if}>{$name}</li>
                           {/foreach}
-                        </ol>
-                    {else}
-                    <select id="ddlConstituency" name="ddlConstituency" {if $warn_ddlConstituency}class="error"{/if}>
-                        <option></option>
-                        {foreach from="$constituencies" item="constituency"}
-                            <option value="{$constituency->name}" {if $data.ddlConstituency == $constituency->name}selected="selected"{/if}>{$constituency->name}</option>
-                        {/foreach}
-                    </select>
-                    {/if}
-                    <small>please select one if we can't work out the electorate from the postcode alone</small>
+                        {/if}
+                    </ol>
+                    <div id="ddlConstituencyList">
+                        <select id="ddlConstituency" name="ddlConstituency" {if $warn_ddlConstituency}class="error"{/if}>
+                            <option></option>
+                            {foreach from="$constituencies" item="constituency"}
+                                <option value="{$constituency->name}" {if $data.ddlConstituency == $constituency->name}selected="selected"{/if}>{$constituency->name}</option>
+                            {/foreach}
+                        </select>
+                        <small>please select one if we can't work out the electorate from the postcode alone</small>
+                    </div>
                 </li>
                 <li>
                     <label for="ddlDelivered">When was the leaflet delivered? *</label>
@@ -133,5 +134,36 @@
         {/foreach}
     </div>
 </div>
+
+{literal}
+<script type="text/javascript">
+$("#txtPostcode").blur(function() {
+    $.ajax({
+        type: "GET",
+        url: "mapit.php",
+        data: {"postcode": $(this).val()},
+        dataType: "json",
+        beforeSend: function() {
+            $("#ddlConstituencyList").hide();
+            $("#ddlConstituencyHint").show().empty().append('<li>Searching for electorates...</li>');
+        },
+        success: function(electorates) {
+            if(electorates.length === 0) {
+                $("#ddlConstituencyList").show();
+                $("#ddlConstituencyHint").hide();
+            } else {
+                $("#ddlConstituencyList").hide();
+
+                var ddlConstituencyHint = $("#ddlConstituencyHint");
+                ddlConstituencyHint.show().empty();
+                for(var i = 0; len = electorates.length, i < len; i++) {
+                    ddlConstituencyHint.append('<li><input type="radio" name="ddlConstituencyHint" value="' + electorates[i] + '">' + electorates[i] + '</li>');
+                }
+            }
+        }
+    })
+});
+</script>
+{/literal}
 
 {include file="footer.tpl"}
