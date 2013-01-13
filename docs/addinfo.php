@@ -79,7 +79,8 @@ class addinfo_page extends pagebase {
             array(array("name", "ASC"))
         );
 
-    $constituencies_hints = mapit_postcode_to_electorates(trim($this->data['txtPostcode']));
+	$australian_postcode = factory::create('australian_postcode');
+	$constituencies_hints = $australian_postcode->lookup_constituency_names(trim($this->data['txtPostcode']));
 
     //assign
     $this->assign('categories', $categories);
