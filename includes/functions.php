@@ -730,11 +730,14 @@
 				// This is horrid, but it's only temporary. There's an issue in MapIt that Andrew is looking 
 				// to patch so /coverlaps?type=CED,SED,WAS would work for all cases.
 				if(stristr($election->name, "Australian Federal Election") !== false) {
-					$electorates_json = json_decode(file_get_contents("http://mapit.openlocal.org.au/area/" . $postcode_area_id . "/covered?type=CED"), true);
+					$types = "CED";
+				} elseif(stristr($election->name, "WA State Election") !== false) {
+					$types = "SED,WAS";
 				} else {
-					$electorates_json = json_decode(file_get_contents("http://mapit.openlocal.org.au/area/" . $postcode_area_id . "/overlaps?type=SED,WAS"), true);
+					$types = "SEB";
 				}
 
+				$electorates_json = json_decode(file_get_contents("http://mapit.openlocal.org.au/area/" . $postcode_area_id . "/overlaps?type=" . $types), true);
 				foreach($electorates_json as $electorate) {
 					$electorates[] = $electorate["name"];
 				}

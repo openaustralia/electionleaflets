@@ -41,7 +41,7 @@
                                 <option value="{$constituency->name}" {if $data.ddlConstituency == $constituency->name}selected="selected"{/if}>{$constituency->name}</option>
                             {/foreach}
                         </select>
-                        <small>please select one if we can't work out the electorate from the postcode alone</small>
+                        <small>we couldn't work out your electorate from your postcode, please select your electorate</small>
                     </div>
                 </li>
                 <li>
@@ -137,31 +137,37 @@
 
 {literal}
 <script type="text/javascript">
-$("#txtPostcode").blur(function() {
-    $.ajax({
-        type: "GET",
-        url: "mapit.php",
-        data: {"postcode": $(this).val()},
-        dataType: "json",
-        beforeSend: function() {
-            $("#ddlConstituencyList").hide();
-            $("#ddlConstituencyHint").show().empty().append('<li>Searching for electorates...</li>');
-        },
-        success: function(electorates) {
-            if(electorates.length === 0) {
-                $("#ddlConstituencyList").show();
-                $("#ddlConstituencyHint").hide();
-            } else {
-                $("#ddlConstituencyList").hide();
+$("#txtPostcode").bind('blur keyup', function(e) {
+    var postcode = $(this).val();
+    if(postcode.length === 4 && postcode !== $("#txtPostcode").data("last-postcode")) {
+        console.log("Go!");
+        $("#txtPostcode").data("last-postcode", postcode);
 
-                var ddlConstituencyHint = $("#ddlConstituencyHint");
-                ddlConstituencyHint.show().empty();
-                for(var i = 0; len = electorates.length, i < len; i++) {
-                    ddlConstituencyHint.append('<li><input type="radio" name="ddlConstituencyHint" value="' + electorates[i] + '">' + electorates[i] + '</li>');
+        $.ajax({
+            type: "GET",
+            url: "mapit.php",
+            data: {"postcode": postcode},
+            dataType: "json",
+            beforeSend: function() {
+                $("#ddlConstituencyList").hide();
+                $("#ddlConstituencyHint").show().empty().append('<li>Searching for electorates...</li>');
+            },
+            success: function(electorates) {
+                if(electorates.length === 0) {
+                    $("#ddlConstituencyList").show();
+                    $("#ddlConstituencyHint").hide();
+                } else {
+                    $("#ddlConstituencyList").hide();
+
+                    var ddlConstituencyHint = $("#ddlConstituencyHint");
+                    ddlConstituencyHint.show().empty();
+                    for(var i = 0; len = electorates.length, i < len; i++) {
+                        ddlConstituencyHint.append('<li><input type="radio" name="ddlConstituencyHint" value="' + electorates[i] + '">' + electorates[i] + '</li>');
+                    }
                 }
             }
-        }
-    })
+        })
+    }
 });
 </script>
 {/literal}
