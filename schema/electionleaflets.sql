@@ -53,7 +53,8 @@ INSERT INTO `category` (`category_id`, `name`, `description`, `default_value`) V
 (14, 'Justice', NULL, NULL),
 (15, 'Sustainability', NULL, NULL),
 (16, 'Democracy', NULL, NULL),
-(17, 'Social Justice', NULL, NULL);
+(17, 'Social Justice', NULL, NULL),
+(18, 'Regional Development', NULL, NULL);
 
 --
 -- Table structure for table `category_election`
@@ -118,7 +119,8 @@ INSERT INTO `category_election` (`category_election_id`, `category_id`, `electio
 (46, 14, 4),
 (47, 15, 4),
 (48, 16, 4),
-(49, 17, 4);
+(49, 17, 4),
+(50, 18, 4);
 
 --
 -- Table structure for table `constituency`
