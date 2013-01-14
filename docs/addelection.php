@@ -1,5 +1,4 @@
 <?php
-// https://github.com/openaustralia/electionleaflets/pull/9/files
 require_once('init.php');
 
 class addelection_page extends pagebase {
