@@ -18,6 +18,27 @@ class addelection_page extends pagebase {
         $this->assign("election_details", $election_details);
     }
 
+    function process() {
+        if($this->validate()){
+            // do stuff
+        }else{
+            $this->bind();
+            $this->render();
+        }
+    }
+
+    function validate()
+    {
+        if(!isset($this->data['txtName']) || $this->data['txtName'] ==''){
+            $this->add_warning('Please add a name for this election');
+            $this->add_warn_control('txtName');
+        }
+        if(!isset($this->data['txtDate']) || $this->data['txtDate'] ==''){
+            $this->add_warning('Please add a voting date for this election');
+            $this->add_warn_control('txtDate');
+        }
+    }
+
 }
 
 //create class addelection_page
