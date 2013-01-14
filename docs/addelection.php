@@ -64,18 +64,18 @@ class addelection_page extends pagebase {
             array(array("name", "ASC"))
         );*/
 
-    //$australian_postcode = factory::create('australian_postcode');
-    //$constituencies_hints = $australian_postcode->lookup_constituency_names(trim($this->data['txtPostcode']));
+        //$australian_postcode = factory::create('australian_postcode');
+        //$constituencies_hints = $australian_postcode->lookup_constituency_names(trim($this->data['txtPostcode']));
 
-    //assign
-    $this->assign('categories', $categories);
-    $this->assign('parties', $parties);
-    // $this->assign('selected_party_attack_ids', $this->selected_party_attack_ids);
-    // $this->assign('selected_category_ids', $this->selected_category_ids);
-    // $this->assign('image_que_items', $this->image_que_items);
-    // $this->assign("constituencies", $constituencies);
-    // $this->assign("constituencies_hints", $constituencies_hints);
-    $this->assign("elections", $elections);
+        //assign
+        $this->assign('categories', $categories);
+        $this->assign('parties', $parties);
+        // $this->assign('selected_party_attack_ids', $this->selected_party_attack_ids);
+        // $this->assign('selected_category_ids', $this->selected_category_ids);
+        // $this->assign('image_que_items', $this->image_que_items);
+        // $this->assign("constituencies", $constituencies);
+        // $this->assign("constituencies_hints", $constituencies_hints);
+        $this->assign("election_details", $election_details);
     }
 
     function unbind(){
