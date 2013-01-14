@@ -48,13 +48,12 @@ class addelection_page extends pagebase {
             array(array('major', "DESC"), array('name', "ASC"))
         );
 
-    //elections
-    $search = factory::create('search');
-    $elections = $search->search_cached("election",
-        array(array("1", "=", "1")),
-        "AND", null,
-        array(array("name", "ASC"))
-    );
+        // Get full election information since we pass election names only by default to all pages
+        $election_details = $search->search("election",
+            array(array("1", "=", "1")),
+            "AND", null,
+            array(array("vote_date", "DESC"))
+        );
 
         //constituencies
         /*$search = factory::create('search');
