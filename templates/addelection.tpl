@@ -85,17 +85,17 @@
                         <option value="1" {if $data.ddlDelivered == 1}selected="selected"{/if}>Yesterday</option>
                         <option value="7" {if $data.ddlDelivered == 7}selected="selected"{/if}>Last Week</option>
                         <option value="14" {if $data.ddlDelivered == 14}selected="selected"{/if}>Couple of weeks ago</option>
-                        <option value="30" {if $data.ddlDelivered == 30}selected="selected"{/if}>Last month</option>                     
+                        <option value="30" {if $data.ddlDelivered == 30}selected="selected"{/if}>Last month</option>
                         <option value="60" {if $data.ddlDelivered == 60}selected="selected"{/if}>Two months ago</option>
-                        <option value="90" {if $data.ddlDelivered == 60}selected="selected"{/if}>Three months ago</option>                                                                        
+                        <option value="90" {if $data.ddlDelivered == 60}selected="selected"{/if}>Three months ago</option>
                     </select>
                     <small class="highlight">Please only add leaflets that have been delivered to you recently</small>
                 </li>
                 <li>
                     <label>Which parties (if any) does the leaflet attack or criticise?</label>
                     <ul class="scroll">
-						{section name="party" loop="$parties"}
-    						{assign var="checked" value=false}
+                        {section name="party" loop="$parties"}
+                            {assign var="checked" value=false}
                             {foreach from="$selected_party_attack_ids" item="selected_party_attack_id"}
                                 {if $parties[party]->party_id == $selected_party_attack_id}
                                     {assign var="checked" value=true}
@@ -105,7 +105,7 @@
                                 <input type="checkbox" id="chkPartyAttack_{$parties[party]->party_id}" name="chkPartyAttack_{$parties[party]->party_id}" value="{$parties[party]->party_id}" {if $checked == true}checked="checked"{/if}/>
                                 <label for="chkPartyAttack_{$parties[party]->party_id}">{$parties[party]->name}</label>
                             </li>
-						{/section}
+                        {/section}
                     </ul>
                 </li>
                 <li>
@@ -118,14 +118,14 @@
                     <label for="txtName">Enter your name and email address *</label>
                     <input type="text" id="txtName" name="txtName" value="{$data.txtName}"/>
                     <input type="text" id="txtEmail" name="txtEmail" value="{$data.txtEmail}"/>
-                    <small>Your email address will not be made public</small>                                   
+                    <small>Your email address will not be made public</small>
                 </li> -->
             </ul>
         </fieldset>
         <div class="buttons">
             <input type="submit"  value="Create election"/>
         </div>
-    </form>    
+    </form>
 </div>
 
 {literal}

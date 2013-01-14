@@ -5,7 +5,7 @@ require_once('init.php');
 class addelection_page extends pagebase {
 
     private $country_id = COUNTRY;
-    private $selected_party_attack_ids = array();    
+    private $selected_party_attack_ids = array();
     private $selected_category_ids = array();
     private $lng = null;
     private $lat = null;
@@ -21,33 +21,33 @@ class addelection_page extends pagebase {
     //setup
     function setup(){
         //store callback url in viewstate if needed
-        $callback = get_http_var('callback');        
+        $callback = get_http_var('callback');
         if(isset($callback)){
             if(valid_url($callback)){
                 $callback = urldecode($callback);
-                $this->viewstate['callback'] = $callback;                
+                $this->viewstate['callback'] = $callback;
             }
         }
     }
 
-	//bind
-	function bind() {
-		$this->page_title = "Add an election";	
-		
-		//get categories
-		$search = factory::create('search');
-		$categories = $search->search_cached("category", 
+    //bind
+    function bind() {
+        $this->page_title = "Add an election";
+
+        //get categories
+        $search = factory::create('search');
+        $categories = $search->search_cached("category",
             array(array("1", "=", "1")),
             "AND", null,
-		    array(array('name', "ASC"))
-		);
+            array(array('name', "ASC"))
+        );
 
-		//get parties
-		$parties = $search->search("party", 
+        //get parties
+        $parties = $search->search("party",
             array(array('country_id', '=', $this->country_id)),
-		    'AND', null,
-		    array(array('major', "DESC"), array('name', "ASC"))
-		);
+            'AND', null,
+            array(array('major', "DESC"), array('name', "ASC"))
+        );
 
     //elections
     $search = factory::create('search');
@@ -58,16 +58,16 @@ class addelection_page extends pagebase {
     );
 
         //constituencies
-        /*$search = factory::create('search');         
-        $constituencies = $search->search_cached("constituency", 
+        /*$search = factory::create('search');
+        $constituencies = $search->search_cached("constituency",
             array(array("constituency_election.election_id", "=", $election_id)),
             "AND",
             array(array("constituency_election", "inner")),
             array(array("name", "ASC"))
         );*/
 
-	//$australian_postcode = factory::create('australian_postcode');
-	//$constituencies_hints = $australian_postcode->lookup_constituency_names(trim($this->data['txtPostcode']));
+    //$australian_postcode = factory::create('australian_postcode');
+    //$constituencies_hints = $australian_postcode->lookup_constituency_names(trim($this->data['txtPostcode']));
 
     //assign
     $this->assign('categories', $categories);
@@ -80,7 +80,7 @@ class addelection_page extends pagebase {
     $this->assign("elections", $elections);
     }
 
-	function unbind(){
+    function unbind(){
         echo "DEBUG: unbind<br>";
 
         /*//strip out parties attacked
@@ -89,7 +89,7 @@ class addelection_page extends pagebase {
                 array_push($this->selected_party_attack_ids, $value);
             }
         }
-        
+
         //strip out categories
         foreach ($this->data as $key => $value) {
             if(strpos($key, 'chkCategory_') !== false){
@@ -99,37 +99,37 @@ class addelection_page extends pagebase {
     }
 
     function validate(){
-		/*$this->election_id = get_election_id(); 
-		if(!isset($this->data['txtTitle']) || $this->data['txtTitle'] ==''){
-			$this->add_warning('Please add a title for this leaflet');
-			$this->add_warn_control('txtTitle');
-		}
-		if(!isset($this->data['ddlPartyBy']) || $this->data['ddlPartyBy'] ==''){
-			$this->add_warning('Please specify the party responsible for this leaflet');
-			$this->add_warn_control('ddlPartyBy');
-		}
-		if(!isset($this->data['txtName']) || $this->data['txtName'] ==''){
-			$this->add_warning('Please add your name');
-			$this->add_warn_control('txtName');
-		}
-		if(!isset($this->data['txtEmail']) || $this->data['txtEmail'] =='' || !valid_email($this->data['txtEmail'] )){
-			$this->add_warning('Please add a valid email address');
-			$this->add_warn_control('txtEmail');
-		}
-		//TODO: handle non-UK postcodes
-		if(!isset($this->data['txtPostcode']) || $this->data['txtPostcode'] ==''){
-			$this->add_warning('Please add a post code for this leaflet');
-			$this->add_warn_control('txtPostcode');
-		} else if(!is_postcode($this->data['txtPostcode'])){
-			$this->add_warning('Please enter a valid postcode');
-			$this->add_warn_control('txtPostcode');		    
-	    }else{
-	        $geocoder = factory::create('geocoder');
-	        $postcode = trim($this->data['txtPostcode']);
-	        $success = $geocoder->set_from_postcode($postcode, COUNTRY_CODE_TLD);
-	        if(!$success){
-    			$this->add_warning('Sorry, we couldn\'t locate that postcode');
-    			$this->add_warn_control('txtPostcode');	            
+        /*$this->election_id = get_election_id();
+        if(!isset($this->data['txtTitle']) || $this->data['txtTitle'] ==''){
+            $this->add_warning('Please add a title for this leaflet');
+            $this->add_warn_control('txtTitle');
+        }
+        if(!isset($this->data['ddlPartyBy']) || $this->data['ddlPartyBy'] ==''){
+            $this->add_warning('Please specify the party responsible for this leaflet');
+            $this->add_warn_control('ddlPartyBy');
+        }
+        if(!isset($this->data['txtName']) || $this->data['txtName'] ==''){
+            $this->add_warning('Please add your name');
+            $this->add_warn_control('txtName');
+        }
+        if(!isset($this->data['txtEmail']) || $this->data['txtEmail'] =='' || !valid_email($this->data['txtEmail'] )){
+            $this->add_warning('Please add a valid email address');
+            $this->add_warn_control('txtEmail');
+        }
+        //TODO: handle non-UK postcodes
+        if(!isset($this->data['txtPostcode']) || $this->data['txtPostcode'] ==''){
+            $this->add_warning('Please add a post code for this leaflet');
+            $this->add_warn_control('txtPostcode');
+        } else if(!is_postcode($this->data['txtPostcode'])){
+            $this->add_warning('Please enter a valid postcode');
+            $this->add_warn_control('txtPostcode');
+        }else{
+            $geocoder = factory::create('geocoder');
+            $postcode = trim($this->data['txtPostcode']);
+            $success = $geocoder->set_from_postcode($postcode, COUNTRY_CODE_TLD);
+            if(!$success){
+                $this->add_warning('Sorry, we couldn\'t locate that postcode');
+                $this->add_warn_control('txtPostcode');
             }else{
                 $this->lng = $geocoder->lng;
                 $this->lat = $geocoder->lat;
@@ -138,7 +138,7 @@ class addelection_page extends pagebase {
             if (strlen(trim($this->data['ddlConstituencyHint'])) > 0) {
                 $this->data['ddlConstituency'] = $this->data['ddlConstituencyHint'];
             }
-            
+
             //Convert postcode to electorate
             $australian_postcode = factory::create('australian_postcode');
             $names = $australian_postcode->lookup_constituency_names($postcode);
@@ -164,8 +164,8 @@ class addelection_page extends pagebase {
             }
             if ($name) {
                 $search = factory::create('search');
-                $result = $search->search("constituency", 
-                    array(array("name", "=", $name), array("constituency_election.election_id", "=", $this->election_id = get_election_id())), 
+                $result = $search->search("constituency",
+                    array(array("name", "=", $name), array("constituency_election.election_id", "=", $this->election_id = get_election_id())),
                     "AND",
                     array(array("constituency_election", "inner")));
                 if(count($result) == 1){
@@ -178,16 +178,16 @@ class addelection_page extends pagebase {
     }
 
     function process(){
-        
+
         if($this->validate()){
 
             /*//create & save leaflet
             $leaflet = factory::create('leaflet');
             $leaflet->title = trim($this->data['txtTitle']);
-            $leaflet->description = $this->data['txtDescription'];            
-            $leaflet->publisher_party_id = $this->data['ddlPartyBy'];                        
+            $leaflet->description = $this->data['txtDescription'];
+            $leaflet->publisher_party_id = $this->data['ddlPartyBy'];
             $leaflet->postcode = trim($this->data['txtPostcode']);
-            $leaflet->lng = $this->lng;            
+            $leaflet->lng = $this->lng;
             $leaflet->lat = $this->lat;
             $leaflet->name = trim($this->data['txtName']);
             $leaflet->email = trim($this->data['txtEmail']);
@@ -198,7 +198,7 @@ class addelection_page extends pagebase {
             if($days > 90){
                 $days = 90;
             }
-            
+
             $date = mktime(0, 0, 0, date("m")  , date("d") - $days, date("Y"));
             $leaflet->date_delivered = mysql_date($date);
 
@@ -213,12 +213,12 @@ class addelection_page extends pagebase {
                     $leaflet_image->image_key = $image->image_key;
                     $leaflet_image->sequence = $sequence;
                     if(!$leaflet_image->insert()){
-                        trigger_error("Unable to save leaflet image");                    
+                        trigger_error("Unable to save leaflet image");
                     }
 
                     $sequence ++;
                 }
-                
+
                 //TODO: move the code below into the leaflet object
 
                 //save party attack
@@ -227,7 +227,7 @@ class addelection_page extends pagebase {
                     $leaflet_party_attack->leaflet_id = $leaflet->leaflet_id;
                     $leaflet_party_attack->party_id = $selected_party_attack_id;
                     if(!$leaflet_party_attack->insert()){
-                        trigger_error("Unable to save leaflet party attack");                    
+                        trigger_error("Unable to save leaflet party attack");
                     }
                 }
 
@@ -237,41 +237,41 @@ class addelection_page extends pagebase {
                     $leaflet_category->leaflet_id = $leaflet->leaflet_id;
                     $leaflet_category->category_id = $selected_category_id;
                     if(!$leaflet_category->insert()){
-                        trigger_error("Unable to save leaflet category");                    
+                        trigger_error("Unable to save leaflet category");
                     }
                 }
 
                 //save tags
                 $tag_string = trim($this->data['txtTags']);
                 // match, all, these, and these, "and these"
-		$tag_string = preg_replace("/[^a-z0-9, ]/i", '', $tag_string); // drop extended chars
-		preg_match_all("/[\w ]+/i",$tag_string,$found_tags); // search for tags
-		$tags=array_map('trim',$found_tags[0]); // trim found tags
-		$tags=array_unique($tags); // remove dupes
+        $tag_string = preg_replace("/[^a-z0-9, ]/i", '', $tag_string); // drop extended chars
+        preg_match_all("/[\w ]+/i",$tag_string,$found_tags); // search for tags
+        $tags=array_map('trim',$found_tags[0]); // trim found tags
+        $tags=array_unique($tags); // remove dupes
                 if($tag_string != '' && isset($tag_string) && count($tags) > 0){
                     foreach ($tags as $tag) {
                         $new_tag = factory::create('tag');
                         $new_tag->tag = trim($tag);
 
                         if(!$new_tag->insert()){
-                            trigger_error("Unable to save new tag");                    
+                            trigger_error("Unable to save new tag");
                         }
-                         
+
                         $leaflet_tag = factory::create('leaflet_tag');
                         $leaflet_tag->leaflet_id = $leaflet->leaflet_id;
                         $leaflet_tag->tag_id = $new_tag->tag_id;
                         if(!$leaflet_tag->insert()){
-                            trigger_error("Unable to save leaflet/tag bridge");                    
+                            trigger_error("Unable to save leaflet/tag bridge");
                         }
                     }
                 }
-                
+
                 // Now save the constituency
                 $leaflet_constituency = factory::create('leaflet_constituency');
                 $leaflet_constituency->leaflet_id = $leaflet->leaflet_id;
                 $leaflet_constituency->constituency_id = $this->constituency_id;
                 if(!$leaflet_constituency->insert()){
-                    trigger_error("Unable to save constituency information");                    
+                    trigger_error("Unable to save constituency information");
                 }
 
                 // Now save the election it's for
@@ -281,14 +281,14 @@ class addelection_page extends pagebase {
                 if(!$leaflet_election->insert()){
                     trigger_error("Unable to save election information");
                 }
-                    
+
             }else{
                 trigger_error("Unable to save leaflet");
             }
 
             //clear session
             session_delete('image_ids');
-            
+
             //clear the image que for this upload
             $this->clear_images_from_que();
 
@@ -296,12 +296,12 @@ class addelection_page extends pagebase {
             if($this->viewstate['callback']){
                 redirect($this->viewstate['callback'] . "?v1=" . WWW_SERVER . "/leaflets/" . $leaflet->leaflet_id . "/");
             }else{
-                redirect("leaflets/" . $leaflet->leaflet_id . "?m=1");                
+                redirect("leaflets/" . $leaflet->leaflet_id . "?m=1");
             }*/
 
         }else{
             $this->bind();
-            $this->render();            
+            $this->render();
         }
     }
 
