@@ -20,7 +20,16 @@ class addelection_page extends pagebase {
 
     function process() {
         if($this->validate()){
-            // do stuff
+            $election = factory::create('election');
+            $election->name = trim($this->data['txtName']);
+            $election->vote_date = DB_DataObject_Cast::date($this->data['txtDate']);
+
+            if($election->insert()){
+                $this->bind();
+                $this->render();
+            }else{
+                trigger_error("Unable to save election");
+            }
         }else{
             $this->bind();
             $this->render();
@@ -37,6 +46,8 @@ class addelection_page extends pagebase {
             $this->add_warning('Please add a voting date for this election');
             $this->add_warn_control('txtDate');
         }
+
+        return count($this->warnings) == 0;
     }
 
 }
