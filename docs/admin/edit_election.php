@@ -45,8 +45,7 @@ class edit_election_page extends pagebase {
         }
     }
 
-    function validate()
-    {
+    function validate() {
         if(!isset($this->data['txtName']) || $this->data['txtName'] ==''){
             $this->add_warning('Please add a name for this election');
             $this->add_warn_control('txtName');
