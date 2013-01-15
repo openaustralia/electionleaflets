@@ -1,7 +1,7 @@
 <?php
 require_once('init.php');
 
-class addelection_page extends pagebase {
+class admin_index_page extends pagebase {
 
     //bind
     function bind() {
@@ -53,5 +53,5 @@ class addelection_page extends pagebase {
 }
 
 //create class addelection_page
-$addelection_page = new addelection_page();
+$admin_index_page = new admin_index_page();
 ?>
