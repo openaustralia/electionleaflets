@@ -26,7 +26,7 @@
     <h1>Existing elections</h1>
     <ul>
         {foreach from="$election_details" item="election"}
-            <li>{$election->name} - <a href="#">Edit</a></li>
+            <li>{$election->name} - <a href="edit_election.php?id={$election->election_id}">Edit</a></li>
         {/foreach}
     </ul>
 </div>
