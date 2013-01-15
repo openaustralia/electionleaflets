@@ -1,6 +1,6 @@
 {include file="../header.tpl"}
 
-<div class="leftcolumn leaflet">
+<div class="contentfull align-left">
     <form id="frmUpload" method="post" action="{$form_action}">
         {include file="../formvars.tpl"}
         <h1>Add an election</h1>
