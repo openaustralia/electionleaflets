@@ -51,8 +51,10 @@ class edit_election_page extends pagebase {
     function process() {
         if($this->validate()){
             $this->election_details->name = trim($this->data['txtName']);
+            $this->election_details->vote_date = DB_DataObject_Cast::date($this->data['txtDate']);
 
             if($this->election_details->update()){
+                $this->load(); // Reload so we get the date back as a string
                 $this->bind();
                 $this->render();
             }else{
@@ -68,6 +70,10 @@ class edit_election_page extends pagebase {
         if(!isset($this->data['txtName']) || $this->data['txtName'] ==''){
             $this->add_warning('Please add a name for this election');
             $this->add_warn_control('txtName');
+        }
+        if(!isset($this->data['txtDate']) || $this->data['txtDate'] ==''){
+            $this->add_warning('Please add a voting date for this election');
+            $this->add_warn_control('txtDate');
         }
 
         return count($this->warnings) == 0;

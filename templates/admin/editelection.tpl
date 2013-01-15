@@ -13,6 +13,11 @@
                     <input type="text" id="txtName" name="txtName" {if $warn_txtName}class="error"{/if} value="{$election_details->name}"/>
                 </li>
                 <li>
+                    <label for="txtDate">What date is the vote? *</label>
+                    <input type="text" id="txtDate" name="txtDate" {if $warn_txtDate}class="error"{/if} value="{$election_details->vote_date}"/>
+                    <small>e.g. 2013-01-15</small>
+                </li>
+                <li>
                     <label>Categories to display for this election</label>
                     <ul class="scroll">
                         {foreach from="$categories" item="category"}
