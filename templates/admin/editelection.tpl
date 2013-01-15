@@ -12,6 +12,23 @@
                     <label for="txtName">Election Name *</label>
                     <input type="text" id="txtName" name="txtName" {if $warn_txtName}class="error"{/if} value="{$election_details->name}"/>
                 </li>
+                <li>
+                    <label>Categories to display for this election</label>
+                    <ul class="scroll">
+                        {foreach from="$categories" item="category"}
+                            {assign var="checked" value=false}
+                            {foreach from="$selected_category_ids" item="selected_category_id"}
+                                {if $category->category_id == $selected_category_id->category_id}
+                                    {assign var="checked" value=true}
+                                {/if}
+                            {/foreach}
+                            <li>
+                                <input type="checkbox" id="chkCategory_{$category->category_id}" name="chkCategory_{$category->category_id}" value="{$category->category_id}" {if $checked == true}checked="checked"{/if}/>
+                                <label for="chkCategory_{$category->category_id}">{$category->name}</label>
+                            </li>
+                        {/foreach}
+                    </ul>
+                </li>
             </ul>
         </fieldset>
         <div class="buttons">

@@ -26,7 +26,26 @@ class edit_election_page extends pagebase {
     function bind() {
         $this->page_title = "Edit";
 
+        //get all categories
+        $search = factory::create('search');
+        $all_categories = $search->search_cached("category",
+            array(array("1", "=", "1")),
+            'AND',
+            null,
+            array(array('name', "ASC"))
+        );
+
+        //get this election's categories
+        $election_categories = $search->search_cached("category",
+            array(array("category_election.election_id", "=", $this->election_details->election_id)),
+            'AND',
+            array(array("category_election", "inner")),
+            array(array('name', "ASC"))
+        );
+
         $this->assign("election_details", $this->election_details);
+        $this->assign("categories", $all_categories);
+        $this->assign("selected_category_ids", $election_categories);
     }
 
     function process() {
