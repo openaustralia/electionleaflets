@@ -66,30 +66,7 @@ class edit_election_page extends pagebase {
 
             $this->process_removed_categories();
 
-            $search = factory::create('search');
-
-            // Insert/update categories
-            foreach ($this->selected_category_ids as $category_id) {
-                // See if we already have this category
-                // TODO: Replace with comparison from category_election_ids
-                $result = $search->search("category_election",
-                    array(
-                        array("election_id", "=", $this->election_details->election_id),
-                        array("category_id", "=", $category_id)
-                    ),
-                    'AND'
-                );
-
-                if(!$result) {
-                    $category_election = factory::create('category_election');
-                    $category_election->election_id = $this->election_details->election_id;
-                    $category_election->category_id = $category_id;
-
-                    if(!$category_election->insert()){
-                        trigger_error("Unable to save election category");
-                    }
-                }
-            }
+            $this->process_selected_categories();
 
             if($this->election_details->update() !== false){
                 $this->load(); // Reload so we get the date back as a string
@@ -142,6 +119,33 @@ class edit_election_page extends pagebase {
 
             if(!$result[0]->delete()) {
                 trigger_error("Unable to remove election category");
+            }
+        }
+    }
+
+    // Insert/updates selected categories
+    private function process_selected_categories() {
+        $search = factory::create('search');
+
+        foreach ($this->selected_category_ids as $category_id) {
+            // See if we already have this category
+            // TODO: Replace with comparison from category_election_ids
+            $result = $search->search("category_election",
+                array(
+                    array("election_id", "=", $this->election_details->election_id),
+                    array("category_id", "=", $category_id)
+                ),
+                'AND'
+            );
+
+            if(!$result) {
+                $category_election = factory::create('category_election');
+                $category_election->election_id = $this->election_details->election_id;
+                $category_election->category_id = $category_id;
+
+                if(!$category_election->insert()){
+                    trigger_error("Unable to save election category");
+                }
             }
         }
     }
