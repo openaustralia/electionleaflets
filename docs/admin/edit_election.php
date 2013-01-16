@@ -53,7 +53,7 @@ class edit_election_page extends pagebase {
             $this->election_details->name = trim($this->data['txtName']);
             $this->election_details->vote_date = DB_DataObject_Cast::date($this->data['txtDate']);
 
-            if($this->election_details->update()){
+            if($this->election_details->update() !== false){
                 $this->load(); // Reload so we get the date back as a string
                 $this->bind();
                 $this->render();
