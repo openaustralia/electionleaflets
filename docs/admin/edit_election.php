@@ -64,32 +64,9 @@ class edit_election_page extends pagebase {
             $this->election_details->name = trim($this->data['txtName']);
             $this->election_details->vote_date = DB_DataObject_Cast::date($this->data['txtDate']);
 
+            $this->process_removed_categories();
+
             $search = factory::create('search');
-
-            // Get existing categories in the DB linked to this election
-            $category_election_category_ids = array();
-            $results = $search->search("category_election",
-                array(array("election_id", "=", $this->election_details->election_id))
-            );
-            foreach ($results as $result) {
-                $category_election_category_ids[] = $result->category_id;
-            }
-
-            // Delete categories the user has unselected
-            $deleted_categories = array_diff($category_election_category_ids, $this->selected_category_ids);
-            foreach ($deleted_categories as $category_id) {
-                $result = $search->search("category_election",
-                    array(
-                        array("election_id", "=", $this->election_details->election_id),
-                        array("category_id", "=", $category_id)
-                    ),
-                    'AND'
-                );
-
-                if(!$result[0]->delete()) {
-                    trigger_error("Unable to remove election category");
-                }
-            }
 
             // Insert/update categories
             foreach ($this->selected_category_ids as $category_id) {
@@ -138,6 +115,35 @@ class edit_election_page extends pagebase {
         }
 
         return count($this->warnings) == 0;
+    }
+
+    // Deletes categories the user has unselected
+    private function process_removed_categories() {
+        $search = factory::create('search');
+        // Get existing categories in the DB linked to this election
+        $category_election_category_ids = array();
+        $results = $search->search("category_election",
+            array(array("election_id", "=", $this->election_details->election_id))
+        );
+        foreach ($results as $result) {
+            $category_election_category_ids[] = $result->category_id;
+        }
+
+        // Delete categories the user has unselected
+        $deleted_categories = array_diff($category_election_category_ids, $this->selected_category_ids);
+        foreach ($deleted_categories as $category_id) {
+            $result = $search->search("category_election",
+                array(
+                    array("election_id", "=", $this->election_details->election_id),
+                    array("category_id", "=", $category_id)
+                ),
+                'AND'
+            );
+
+            if(!$result[0]->delete()) {
+                trigger_error("Unable to remove election category");
+            }
+        }
     }
 }
 
