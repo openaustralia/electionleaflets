@@ -3,6 +3,8 @@ require_once('init.php');
 
 class edit_election_page extends pagebase {
 
+    private $selected_category_ids = array();
+
     function load(){
         $election_id = get_http_var('id');
         if(!isset($election_id)){
@@ -48,10 +50,42 @@ class edit_election_page extends pagebase {
         $this->assign("selected_category_ids", $election_categories);
     }
 
+    function unbind(){
+        //strip out categories
+        foreach ($this->data as $key => $value) {
+            if(strpos($key, 'chkCategory_') !== false){
+                array_push($this->selected_category_ids, $value);
+            }
+        }
+    }
+
     function process() {
         if($this->validate()){
             $this->election_details->name = trim($this->data['txtName']);
             $this->election_details->vote_date = DB_DataObject_Cast::date($this->data['txtDate']);
+
+            // Insert/update categories
+            $search = factory::create('search');
+            foreach ($this->selected_category_ids as $category_id) {
+                // See if we already have this category
+                $result = $search->search("category_election",
+                    array(
+                        array("election_id", "=", $this->election_details->election_id),
+                        array("category_id", "=", $category_id)
+                    ),
+                    'AND'
+                );
+
+                if(!$result) {
+                    $category_election = factory::create('category_election');
+                    $category_election->election_id = $this->election_details->election_id;
+                    $category_election->category_id = $category_id;
+
+                    if(!$category_election->insert()){
+                        trigger_error("Unable to save election category");
+                    }
+                }
+            }
 
             if($this->election_details->update() !== false){
                 $this->load(); // Reload so we get the date back as a string
