@@ -94,6 +94,7 @@ class edit_election_page extends pagebase {
             $this->process_removed_categories();
             $this->process_selected_categories();
 
+            $this->process_removed_parties();
             $this->process_selected_parties();
 
             if($this->election_details->update() !== false){
@@ -177,6 +178,36 @@ class edit_election_page extends pagebase {
             }
         }
     }
+
+    // Deletes parties the user has unselected
+    private function process_removed_parties() {
+        $search = factory::create('search');
+        // Get existing categories in the DB linked to this election
+        $party_election_party_ids = array();
+        $results = $search->search("party_election",
+            array(array("election_id", "=", $this->election_details->election_id))
+        );
+        foreach ($results as $result) {
+            $party_election_party_ids[] = $result->party_id;
+        }
+
+        // Delete categories the user has unselected
+        $deleted_categories = array_diff($party_election_party_ids, $this->selected_party_ids);
+        foreach ($deleted_categories as $party_id) {
+            $result = $search->search("party_election",
+                array(
+                    array("election_id", "=", $this->election_details->election_id),
+                    array("party_id", "=", $party_id)
+                ),
+                'AND'
+            );
+
+            if(!$result[0]->delete()) {
+                trigger_error("Unable to remove election party");
+            }
+        }
+    }
+
 
     // Insert/updates selected parties
     private function process_selected_parties() {
