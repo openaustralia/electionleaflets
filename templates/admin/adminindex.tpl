@@ -1,9 +1,10 @@
 {include file="../header.tpl"}
 
 <div class="contentfull align-left">
+    <h1>Elections</h1>
     <form id="frmUpload" method="post" action="{$form_action}">
         {include file="../formvars.tpl"}
-        <h1>Add an election</h1>
+        <h4>Add an election</h4>
         <fieldset>
             <ul>
                 <li>
@@ -23,7 +24,7 @@
         </div>
     </form>
 
-    <h1>Existing elections</h1>
+    <h4>Existing elections</h4>
     <ul>
         {foreach from="$election_details" item="election"}
             <li>{$election->name} - <a href="edit_election.php?id={$election->election_id}">Edit</a></li>
