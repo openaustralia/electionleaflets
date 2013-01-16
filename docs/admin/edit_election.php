@@ -45,8 +45,17 @@ class edit_election_page extends pagebase {
             array(array('name', "ASC"))
         );
 
+        // Get all parties
+        $all_parties = $search->search_cached("party",
+            array(array("1", "=", "1")),
+            'AND',
+            null,
+            array(array('name', "ASC"))
+        );
+
         $this->assign("election_details", $this->election_details);
         $this->assign("categories", $all_categories);
+        $this->assign("parties", $all_parties);
         $this->assign("selected_category_ids", $election_categories);
     }
 

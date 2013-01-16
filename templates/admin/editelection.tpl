@@ -34,6 +34,23 @@
                         {/foreach}
                     </ul>
                 </li>
+                <li>
+                    <label>Parties registered for this election</label>
+                    <ul class="scroll">
+                        {foreach from="$parties" item="party"}
+                            {assign var="checked" value=false}
+                            {foreach from="$selected_party_ids" item="selected_party_id"}
+                                {if $party->party_id == $selected_party_id->party_id}
+                                    {assign var="checked" value=true}
+                                {/if}
+                            {/foreach}
+                            <li>
+                                <input type="checkbox" id="chkParty_{$party->party_id}" name="chkParty_{$party->party_id}" value="{$party->party_id}" {if $checked == true}checked="checked"{/if}/>
+                                <label for="chkParty_{$party->party_id}">{$party->name}</label>
+                            </li>
+                        {/foreach}
+                    </ul>
+                </li>
             </ul>
         </fieldset>
         <div class="buttons">
