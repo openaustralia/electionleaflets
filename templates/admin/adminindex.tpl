@@ -30,6 +30,11 @@
             <li>{$election->name} - <a href="edit_election.php?id={$election->election_id}">Edit</a></li>
         {/foreach}
     </ul>
+
+    <h1>New Parties and Categories</h1>
+    <p>
+        <a href="new_party_category.php">Add Parties and Categories</a>
+    </p>
 </div>
 
 {include file="../footer.tpl"}
