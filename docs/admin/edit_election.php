@@ -4,6 +4,7 @@ require_once('init.php');
 class edit_election_page extends pagebase {
 
     private $selected_category_ids = array();
+    private $selected_party_ids = array();
 
     function load(){
         $election_id = get_http_var('id');
@@ -75,6 +76,14 @@ class edit_election_page extends pagebase {
                 array_push($this->selected_category_ids, $value);
             }
         }
+
+        //strip out parties
+        foreach ($this->data as $key => $value) {
+            if(strpos($key, 'chkParty_') !== false){
+                array_push($this->selected_party_ids, $value);
+            }
+        }
+
     }
 
     function process() {
@@ -83,8 +92,9 @@ class edit_election_page extends pagebase {
             $this->election_details->vote_date = DB_DataObject_Cast::date($this->data['txtDate']);
 
             $this->process_removed_categories();
-
             $this->process_selected_categories();
+
+            $this->process_selected_parties();
 
             if($this->election_details->update() !== false){
                 $this->load(); // Reload so we get the date back as a string
@@ -163,6 +173,33 @@ class edit_election_page extends pagebase {
 
                 if(!$category_election->insert()){
                     trigger_error("Unable to save election category");
+                }
+            }
+        }
+    }
+
+    // Insert/updates selected parties
+    private function process_selected_parties() {
+        $search = factory::create('search');
+
+        foreach ($this->selected_party_ids as $party_id) {
+            // See if we already have this party
+            // TODO: Replace with comparison from party_election_ids
+            $result = $search->search("party_election",
+                array(
+                    array("election_id", "=", $this->election_details->election_id),
+                    array("party_id", "=", $party_id)
+                ),
+                'AND'
+            );
+
+            if(!$result) {
+                $party_election = factory::create('party_election');
+                $party_election->election_id = $this->election_details->election_id;
+                $party_election->party_id = $party_id;
+
+                if(!$party_election->insert()){
+                    trigger_error("Unable to save election party");
                 }
             }
         }
