@@ -13,11 +13,6 @@
                     <input type="text" id="txtPartyName" name="txtPartyName" {if $warn_txtPartyName}class="error"{/if}/>
                     <small>e.g. Australian Labor Party (ALP)</small>
                 </li>
-                <li>
-                    <label for="txtCategoryName">New Category</label>
-                    <input type="text" id="txtCategoryName" name="txtCategoryName" {if $warn_txtCategoryName}class="error"{/if}/>
-                    <small>e.g. Zombie Apocalypse Preparedness</small>
-                </li>
             </ul>
         </fieldset>
         <div class="buttons">
