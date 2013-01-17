@@ -1,7 +1,7 @@
 <?php
 require_once('init.php');
 
-class admin_party_category_page extends pagebase {
+class admin_party_page extends pagebase {
 
     //bind
     function bind() {
@@ -35,5 +35,5 @@ class admin_party_category_page extends pagebase {
 }
 
 //create class addelection_page
-$admin_party_category_page = new admin_party_category_page();
+$admin_party_page = new admin_party_page();
 ?>

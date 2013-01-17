@@ -32,9 +32,10 @@
     </ul>
 
     <h1>New Parties and Categories</h1>
-    <p>
-        <a href="new_party_category.php">Add Parties and Categories</a>
-    </p>
+    <ul>
+        <li><a href="new_party.php">Add Party</a></li>
+        <li><a href="new_category.php">Add Category</a></li>
+    </ul>
 </div>
 
 {include file="../footer.tpl"}
