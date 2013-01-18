@@ -57,6 +57,20 @@
             <input type="submit"  value="Update election"/>
         </div>
     </form>
+
+    <h4>Constituencies</h4>
+    <ul>
+        <li>
+            <a href="adminconstituencies.php?election_id={$election_details->election_id}">
+                Constituencies bulk edit
+            </a>
+        </li>
+        <li>
+            <a href="adminpostcodes.php?election_id={$election_details->election_id}">
+                Postcode mapping bulk edit
+            </a>
+        </li>
+    </ul>
 </div>
 
 {include file="../footer.tpl"}
