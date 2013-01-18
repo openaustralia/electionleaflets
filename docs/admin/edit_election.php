@@ -31,7 +31,7 @@ class edit_election_page extends pagebase {
 
         //get all categories
         $search = factory::create('search');
-        $all_categories = $search->search_cached("category",
+        $all_categories = $search->search("category",
             array(array("1", "=", "1")),
             'AND',
             null,
@@ -39,7 +39,7 @@ class edit_election_page extends pagebase {
         );
 
         //get this election's categories
-        $election_categories = $search->search_cached("category",
+        $election_categories = $search->search("category",
             array(array("category_election.election_id", "=", $this->election_details->election_id)),
             'AND',
             array(array("category_election", "inner")),
@@ -47,7 +47,7 @@ class edit_election_page extends pagebase {
         );
 
         // Get all parties
-        $all_parties = $search->search_cached("party",
+        $all_parties = $search->search("party",
             array(array("1", "=", "1")),
             'AND',
             null,
@@ -55,7 +55,7 @@ class edit_election_page extends pagebase {
         );
 
         // Get this election's parties
-        $election_parties = $search->search_cached("party",
+        $election_parties = $search->search("party",
             array(array("party_election.election_id", "=", $this->election_details->election_id)),
             'AND',
             array(array("party_election", "inner")),
