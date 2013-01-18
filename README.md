@@ -37,17 +37,19 @@ You must point it to the MySQL database you just created and set `ROOT_DIR`,
 Folder structure
 ----------------
 
-Create the following folders and make them writable by the webserver:
+Run these commands to create the following folders:
 
-    data/smarty_compile
-    data/cache
-    data/temp
-    data/images
-    data/images/small
-    data/images/original
-    data/images/large
-    data/images/medium
-    data/images/thumbnail
+    mkdir -p data/smarty_compile
+    mkdir -p data/cache
+    mkdir -p data/temp
+    mkdir -p data/images
+    mkdir -p data/images/small
+    mkdir -p data/images/original
+    mkdir -p data/images/large
+    mkdir -p data/images/medium
+    mkdir -p data/images/thumbnail
+
+Also ensure they are writable by the webserver.
 
 On a SELinux based distro (Fedora, RHEL, CentOS etc.) you will also have to
 give these folders the correct security context
