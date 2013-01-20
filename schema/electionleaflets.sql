@@ -417,6 +417,7 @@ CREATE TABLE `election` (
   `name` varchar(150) NOT NULL,
   `election_type_id` int(11) NOT NULL,
   `vote_date` date NOT NULL,
+  `enabled` tinyint(1) DEFAULT 0 NOT NULL,
   PRIMARY KEY (`election_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
