@@ -124,7 +124,7 @@ CREATE TABLE `constituency` (
   `guardian_aristotle_id` int(11) DEFAULT NULL,
   `guardian_pa_code` int(11) DEFAULT NULL,
   PRIMARY KEY (`constituency_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -361,7 +361,7 @@ CREATE TABLE `constituency_election` (
   `constituency_id` int(11) NOT NULL,
   `election_id` int(11) NOT NULL,
   PRIMARY KEY (`constituency_election_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
