@@ -38,4 +38,11 @@ class tableclass_election extends tablebase {
     function keys() {
         return 	array('election_id');
     }
+
+    /* Tells DB_DataObject that constituency_id is an autoincrementing key
+     * and not to use those stupid sequence tables
+     */
+    function sequenceKey() {
+        return array('election_id', TRUE);
+    }
 }
