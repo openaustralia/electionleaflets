@@ -35,11 +35,15 @@
         {if isset($banner)}
           <div id="divBanner">
             <form method="post" action="{$www_server}">
-              You're currently viewing leaflets for the <select name="election_id">
-	            {foreach name="elections" from="$elections" key="value" item="election"}
-                <option value="{$value}" {if $current_election == $election}selected="selected"{/if}>{$election}</option>
-	            {/foreach}
-              <input type="submit" value="Change"/>
+              {if count($elections) > 0}
+                You're currently viewing leaflets for the <select name="election_id">
+  	            {foreach name="elections" from="$elections" key="value" item="election"}
+                  <option value="{$value}" {if $current_election == $election}selected="selected"{/if}>{$election}</option>
+  	            {/foreach}</select>
+                <input type="submit" value="Change"/>
+              {else}
+                <small>No elections are currently available to view</small>
+              {/if}
             </form>
           </div>
         {/if}

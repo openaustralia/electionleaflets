@@ -144,7 +144,8 @@ abstract class pagebase {
     private function get_elections() {
       $search = factory::create("search");
       $results = $search->search("election",
-                                 array(array("election_id", "!=", "0")));
+                                 array(array("election_id", "!=", "0"),
+                                        array("enabled", "=", "1")));
       $elections = array();
       foreach ($results as $result) {
         $elections[$result->election_id] = $result->name; 

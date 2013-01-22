@@ -124,7 +124,7 @@ CREATE TABLE `constituency` (
   `guardian_aristotle_id` int(11) DEFAULT NULL,
   `guardian_pa_code` int(11) DEFAULT NULL,
   PRIMARY KEY (`constituency_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -361,7 +361,7 @@ CREATE TABLE `constituency_election` (
   `constituency_id` int(11) NOT NULL,
   `election_id` int(11) NOT NULL,
   PRIMARY KEY (`constituency_election_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
 
 --
@@ -417,6 +417,7 @@ CREATE TABLE `election` (
   `name` varchar(150) NOT NULL,
   `election_type_id` int(11) NOT NULL,
   `vote_date` date NOT NULL,
+  `enabled` tinyint(1) DEFAULT 0 NOT NULL,
   PRIMARY KEY (`election_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 SET character_set_client = @saved_cs_client;
@@ -939,7 +940,7 @@ DROP TABLE IF EXISTS `party_election`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `party_election` (
-  `party_election_id` int(11) NOT NULL,
+  `party_election_id` int(11) NOT NULL AUTO_INCREMENT,
   `election_id` int(11) NOT NULL,
   `party_id` int(11) NOT NULL,
   PRIMARY KEY (`party_election_id`)

@@ -1,10 +1,9 @@
 <?php
-
 define('DEVSITE', true);
 
 // Paths
-define('VHOST_DIR', '/var/www/fairdinkum');
-define('ROOT_DIR', VHOST_DIR . '/electionleaflet');
+define('VHOST_DIR', '/srv/www/dev.electionleaflets.org.au');
+define('ROOT_DIR', VHOST_DIR . '/electionleaflets');
 define('INCLUDE_DIR', ROOT_DIR . '/includes');
 define('PEAR_DIR', INCLUDE_DIR . '/PEAR');
 define('DATA_DIR', ROOT_DIR . '/data');
@@ -21,16 +20,16 @@ define('CACHE_DIR', DATA_DIR . '/cache');
 
 // Define the database details
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'fairdinkum');
-define('DB_USER', 'root');
-define('DB_PASS', 'mysqlpassword');
-define ('DATETIMEFORMAT_SQL',	"Y-m-d H:i:s"); // 2006-06-02 12:23:23
+define('DB_NAME', 'electionleaflets');
+define('DB_USER', 'electionleaflets');
+define('DB_PASS', 'electionleaflets');
+define('DATETIMEFORMAT_SQL',	"Y-m-d H:i:s"); // 2006-06-02 12:23:23
 define('SQL_DEBUG_LEVEL', 0);
 
 //urls
-define("WWW_SERVER", "http://localhost.electionleaflet");
-define("ADMIN_SERVER", "http://localhost.electionleaflet");
-define("DOMAIN", "localhost.electionleaflet"); 
+define("WWW_SERVER", "http://dev.electionleaflets.org.au");
+define("ADMIN_SERVER", "http://dev.electionleaflets.org.au");
+define("DOMAIN", "dev.electionleaflets.org.au");
 
 //confirmation
 define("CONFIRMATION_BASE_URL", WWW_SERVER . '/confirmed.php?q=');
@@ -44,10 +43,12 @@ define("BUG_EMAIL_PREFIX", '[election leaflet bug]');
 define("CONTACT_EMAIL", 'team@' . DOMAIN);	
 define("BUG_FROM_EMAIL", 'bugs@' . DOMAIN);	
 define("BUG_TO_EMAIL", 'YOUR@EMAIL.co.uk');	
+define("LEAFLETS_EMAIL", CONTACT_EMAIL);
 
 //Site name
-define("SITE_NAME", "FairDinkum");
-define("SITE_TAG_LINE", "keeping track of electioneering");     
+define("SITE_NAME", "Election Leaflets Australia");
+define("SITE_TAG_LINE", "keeping track of electioneering");
+define("BANNER", true);
 
 //session stuff
 define('SESSION_COOKIE_LIFETIME', 0);
@@ -70,15 +71,16 @@ define('SCRAPE_METHOD', 'PEAR');
 define("USER_SALT", "blablabla");
 
 //Searching
-define(MAX_DISTANCE_SEARCH, 30); //km
+define("MAX_DISTANCE_SEARCH", 30); //km
 
 //APIs
 define("API_SLEEP", 0.5); //time to wait between api calls
 
 //Maps
-define("GOOGLE_MAPS_KEY", 'YOUR KEY');
-define("MAP_PROVIDER", "openstreetmap");
-
+define("GOOGLE_MAPS_KEY", 'ABQIAAAAhMvL5FcIz28xYunmiC9iIRTpXRYBN3sIiprqmxjMQVo62ZN11xTJWWDxSi36gzzGGHLf5xRkuObAoA');
+define("MAP_PROVIDER", "google");
+//Enable the link to the Django map
+define("MAP_ENABLED", false);
 
 //cookies
 define("LOGIN_COOKIE_NAME", "electionleafletlogin");
@@ -91,7 +93,9 @@ define("THEYWORKFORYOU_API_KEY", 'YOUR KEY');
 define("AWS_KEY",'YOUR AWS KEY');
 define("AWS_SECRET",'YOUR AWS SECRET');
 define("S3_BUCKET",'BUCKET NAME');
-define("USE_S3_DIRECTLY",true);
+
+//Storage
+define("STORAGE_STRATEGY",'local');  //or 's3'
 
 //image upload by email
 define("UPLOAD_MAIL_SERVER", 'AN IMAP SERVER LIKE GMAIL'); //imap server
@@ -100,4 +104,22 @@ define("UPLOAD_MAIL_PASSWORD", 'PASSWORD');
 
 define("STAT_ZERO_DATE", '2010-01-01');
 
+define("PAGE_ITEMS_COUNT",10);
+define("RSS_ITEMS_COUNT",50);
+
+//Localisation
+define("COUNTRY",13); // see db, country_id=13 Australia
+// Country Code Top Level Domain as defined here http://code.google.com/apis/maps/documentation/geocoding/v2/index.html#CountryCodes
+define("COUNTRY_CODE_TLD", "au");
+// The area name, like 'constituencies' or 'electorates'. Needs approprate .htaccess rules for the URL
+define("AREA_NAMES", 'electorates');
+// ID of the current election
+define("CURRENT_ELECTION", "1");
+
+// google analytics
+define("GOOGLE_ANALYTICS_TRACKER",'UA-3107958-9');
+
+// Admin area username and password. Uncomment to enable
+//define("ADMIN_USERNAME",'admin');
+//define("ADMIN_PASSWORD",'');
 ?>

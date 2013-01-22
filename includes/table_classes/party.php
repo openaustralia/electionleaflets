@@ -48,6 +48,13 @@ class tableclass_party extends tablebase {
         return array('party_id');
     }
 
+    /* Tells DB_DataObject that there is an autoincrementing key
+    * and not to use those stupid sequence tables
+    */
+    function sequenceKey() {
+        return array('party_id', TRUE);
+    }
+
     //overrride insert to create a url id
     public function insert (){
 
