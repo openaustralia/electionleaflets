@@ -45,7 +45,52 @@ class admin_postcodes_page extends pagebase {
     }
 
     function process() {
-        // TODO
+        // Start transaction
+        $db = new DB_DataObject;
+        $db->query('BEGIN');
+
+        // Get existing mappings
+        $search = factory::create('search');
+        $results = $search->search("australian_postcode",
+            array(array("election_id", "=", $this->election_id))
+        );
+
+        // Delete existing mappings
+        foreach ($results as $result) {
+            if($result->delete() === false) {
+                $db->query('ROLLBACK');
+                die("Unable to delete mapping. Transaction rolled back.");
+            }
+        }
+
+        // Add user supplied mappings
+        $supplied_mappings = explode("\n", $this->data['txtPostcodeMappings']);
+
+        foreach ($supplied_mappings as $mapping) {
+            $mapping = explode(',', $mapping);
+
+            $postcode = trim($mapping[0]); // TODO: Sanity check postcode
+            $constituency = trim($mapping[1]);
+
+            if($postcode == '' && $constituency == '') {
+                continue;
+            }
+
+            $australian_postcode = factory::create('australian_postcode');
+            $australian_postcode->election_id = $this->election_id;
+            $australian_postcode->postcode = $postcode;
+            $australian_postcode->constituency = $constituency;
+
+            if(!$australian_postcode->insert()) {
+                $db->query('ROLLBACK');
+                die("Unable to add mapping. Transaction rolled back.");
+            }
+        }
+
+        $db->query('COMMIT');
+
+        $this->bind();
+        $this->render();
     }
 }
 
