@@ -57,29 +57,43 @@ class admin_constituencies_page extends pagebase {
 
         // Delete existing constituencies
         foreach ($results as $result) {
-            $result->delete(); // TODO: Check for errors
+            if(!$result->delete()) {
+                $db->query('ROLLBACK');
+                die("Unable to delete constituency. Transaction rolled back.");
+            }
         }
 
         // Delete many-to-many joins
-        $db->query(
-            'DELETE FROM `constituency_election`
-             WHERE `election_id`=' . $this->election_id
-        );
+        $query_string = 'DELETE FROM `constituency_election`
+                         WHERE `election_id`=' . $this->election_id;
+        if(!$db->query($query_string)) {
+            $db->query('ROLLBACK');
+            die("Unable to delete constituency links. Transaction rolled back.");
+        }
 
         // Add user supplied constituencies
         $supplied_constituencies = explode("\n", $this->data['txtConstituencies']);
 
         foreach ($supplied_constituencies as $constituency_name) {
+            $constituency_name = trim($constituency_name);
+            if($constituency_name == '') { continue; }
+
             // Create constituency
             $constituency = factory::create('constituency');
-            $constituency->name = trim($constituency_name);
-            $constituency->insert(); // TODO: Check for errors
+            $constituency->name = $constituency_name;
+            if(!$constituency->insert()) {
+                $db->query('ROLLBACK');
+                die("Unable to add constituency. Transaction rolled back.");
+            }
 
             // Create join
             $constituency_election = factory::create('constituency_election');
             $constituency_election->constituency_id = $constituency->constituency_id;
             $constituency_election->election_id = $this->election_id;
-            $constituency_election->insert(); // TODO: Check for errors
+            if(!$constituency_election->insert()) {
+                $db->query('ROLLBACK');
+                die("Unable to add constituency. Transaction rolled back.");
+            }
         }
 
         $db->query('COMMIT');
