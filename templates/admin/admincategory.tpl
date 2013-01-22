@@ -16,7 +16,7 @@
             </ul>
         </fieldset>
         <div class="buttons">
-            <input type="submit"  value="Create Category"/>
+            <input type="submit"  value="Create category"/>
         </div>
     </form>
 
