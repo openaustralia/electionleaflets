@@ -940,7 +940,7 @@ DROP TABLE IF EXISTS `party_election`;
 SET @saved_cs_client     = @@character_set_client;
 SET character_set_client = utf8;
 CREATE TABLE `party_election` (
-  `party_election_id` int(11) NOT NULL,
+  `party_election_id` int(11) NOT NULL AUTO_INCREMENT,
   `election_id` int(11) NOT NULL,
   `party_id` int(11) NOT NULL,
   PRIMARY KEY (`party_election_id`)
