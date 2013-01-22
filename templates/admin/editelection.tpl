@@ -18,23 +18,6 @@
                     <small>e.g. 2013-01-15</small>
                 </li>
                 <li>
-                    <label>Categories to display for this election</label>
-                    <ul class="scroll">
-                        {foreach from="$categories" item="category"}
-                            {assign var="checked" value=false}
-                            {foreach from="$selected_category_ids" item="selected_category_id"}
-                                {if $category->category_id == $selected_category_id->category_id}
-                                    {assign var="checked" value=true}
-                                {/if}
-                            {/foreach}
-                            <li>
-                                <input type="checkbox" id="chkCategory_{$category->category_id}" name="chkCategory_{$category->category_id}" value="{$category->category_id}" {if $checked == true}checked="checked"{/if}/>
-                                <label for="chkCategory_{$category->category_id}">{$category->name}</label>
-                            </li>
-                        {/foreach}
-                    </ul>
-                </li>
-                <li>
                     <label>Parties registered for this election</label>
                     <ul class="scroll">
                         {foreach from="$parties" item="party"}
@@ -47,6 +30,23 @@
                             <li>
                                 <input type="checkbox" id="chkParty_{$party->party_id}" name="chkParty_{$party->party_id}" value="{$party->party_id}" {if $checked == true}checked="checked"{/if}/>
                                 <label for="chkParty_{$party->party_id}">{$party->name}</label>
+                            </li>
+                        {/foreach}
+                    </ul>
+                </li>
+                <li>
+                    <label>Categories to display for this election</label>
+                    <ul class="scroll">
+                        {foreach from="$categories" item="category"}
+                            {assign var="checked" value=false}
+                            {foreach from="$selected_category_ids" item="selected_category_id"}
+                                {if $category->category_id == $selected_category_id->category_id}
+                                    {assign var="checked" value=true}
+                                {/if}
+                            {/foreach}
+                            <li>
+                                <input type="checkbox" id="chkCategory_{$category->category_id}" name="chkCategory_{$category->category_id}" value="{$category->category_id}" {if $checked == true}checked="checked"{/if}/>
+                                <label for="chkCategory_{$category->category_id}">{$category->name}</label>
                             </li>
                         {/foreach}
                     </ul>
