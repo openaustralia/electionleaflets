@@ -19,6 +19,13 @@
             <input type="submit"  value="Add party"/>
         </div>
     </form>
+
+    <h4>Existing Parties</h4>
+    <ul>
+        {foreach from="$parties" item="party"}
+            <li>{$party->name}</li>
+        {/foreach}
+    </ul>
 </div>
 
 {include file="../footer.tpl"}

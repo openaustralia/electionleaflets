@@ -19,6 +19,13 @@
             <input type="submit"  value="Create Category"/>
         </div>
     </form>
+
+    <h4>Existing Categories</h4>
+    <ul>
+        {foreach from="$categories" item="category"}
+            <li>{$category->name}</li>
+        {/foreach}
+    </ul>
 </div>
 
 {include file="../footer.tpl"}

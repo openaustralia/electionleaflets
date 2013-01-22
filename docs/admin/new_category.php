@@ -7,6 +7,16 @@ class admin_category_page extends pagebase {
     //bind
     function bind() {
         $this->page_title = "Add a new Category";
+
+        $search = factory::create('search');
+        $categories = $search->search("category",
+            array(array("1", "=", "1")),
+            'AND',
+            null,
+            array(array('name', "ASC"))
+        );
+
+        $this->assign("categories", $categories);
     }
 
     function process() {
