@@ -39,6 +39,12 @@ class tableclass_category extends tablebase {
         return array('category_id');
     }
 
+    /* Tells DB_DataObject that there is an autoincrementing key
+    * and not to use those stupid sequence tables
+    */
+    function sequenceKey() {
+        return array('category_id', TRUE);
+    }
 
     public function get_category_count($date_since, $limit = 10, $cache = true, $election_id=null){
         $election_id = get_election_id($election_id);
