@@ -92,6 +92,12 @@ class edit_election_page extends pagebase {
             $this->election_details->name = trim($this->data['txtName']);
             $this->election_details->vote_date = DB_DataObject_Cast::date($this->data['txtDate']);
 
+            if($this->data['chkEnabled']) {
+                $this->election_details->enabled = 1;
+            }else{
+                $this->election_details->enabled = 0;
+            }
+
             $this->process_removed_categories();
             $this->process_selected_categories();
 

@@ -18,6 +18,10 @@
                     <small>e.g. 2013-01-15</small>
                 </li>
                 <li>
+                    <label for="chkEnabled">Is this election live? *</label>
+                    <input type="checkbox" id="chkEnabled" name="chkEnabled" {if $warn_chkEnabled}class="error"{/if} value="1" {if $election_details->enabled == 1}checked="checked"{/if}/>
+                </li>
+                <li>
                     <label>Parties registered for this election</label>
                     <ul class="scroll">
                         {foreach from="$parties" item="party"}
