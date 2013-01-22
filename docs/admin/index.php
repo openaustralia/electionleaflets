@@ -1,5 +1,6 @@
 <?php
 require_once('init.php');
+require_once('authentication.php');
 
 class admin_index_page extends pagebase {
 

@@ -1,5 +1,6 @@
 <?php
 require_once('init.php');
+require_once('authentication.php');
 
 class admin_postcodes_page extends pagebase {
 

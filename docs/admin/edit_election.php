@@ -1,5 +1,6 @@
 <?php
 require_once('init.php');
+require_once('authentication.php');
 
 class edit_election_page extends pagebase {
 

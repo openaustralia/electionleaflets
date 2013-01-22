@@ -119,5 +119,7 @@ define("CURRENT_ELECTION", "1");
 // google analytics
 define("GOOGLE_ANALYTICS_TRACKER",'UA-3107958-9');
 
-
+// Admin area username and password. Uncomment to enable
+//define("ADMIN_USERNAME",'admin');
+//define("ADMIN_PASSWORD",'');
 ?>
