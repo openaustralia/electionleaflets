@@ -42,32 +42,51 @@ class admin_constituencies_page extends pagebase {
     }
 
     function process() {
-        // $constituency = factory::create('constituency');
+        // Start transaction
+        $db = new DB_DataObject;
+        $db->query('BEGIN');
 
-        // // Start transaction
-        // $constituency->query('BEGIN');
+        // Get existing constituencies
+        $search = factory::create('search');
+        $results = $search->search("constituency",
+            array(array("election_id", "=", $this->election_id)),
+            'AND',
+            array(array("constituency_election", "inner")),
+            array(array('name', "ASC"))
+        );
 
-        // // Trash existing constituencies
+        // Delete existing constituencies
+        foreach ($results as $result) {
+            $result->delete(); // TODO: Check for errors
+        }
 
-        // // Add user supplied constituencies
+        // Delete many-to-many joins
+        $db->query(
+            'DELETE FROM `constituency_election`
+             WHERE `election_id`=' . $this->election_id
+        );
 
-        // if($this->validate()){
-        //     $election = factory::create('election');
-        //     $election->name = trim($this->data['txtName']);
-        //     $election->vote_date = DB_DataObject_Cast::date($this->data['txtDate']);
+        // Add user supplied constituencies
+        $supplied_constituencies = explode("\n", $this->data['txtConstituencies']);
 
-        //     if($election->insert()){
-        //         $this->bind();
-        //         $this->render();
-        //     }else{
-        //         trigger_error("Unable to save election");
-        //     }
-        // }else{
-        //     $this->bind();
-        //     $this->render();
-        // }
+        foreach ($supplied_constituencies as $constituency_name) {
+            // Create constituency
+            $constituency = factory::create('constituency');
+            $constituency->name = trim($constituency_name);
+            $constituency->insert(); // TODO: Check for errors
+
+            // Create join
+            $constituency_election = factory::create('constituency_election');
+            $constituency_election->constituency_id = $constituency->constituency_id;
+            $constituency_election->election_id = $this->election_id;
+            $constituency_election->insert(); // TODO: Check for errors
+        }
+
+        $db->query('COMMIT');
+
+        $this->bind();
+        $this->render();
     }
-
 }
 
 //create class addelection_page

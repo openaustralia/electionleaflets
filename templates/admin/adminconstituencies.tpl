@@ -10,7 +10,7 @@
 
     <form id="frmUpload" method="post" action="{$form_action}">
         {include file="../formvars.tpl"}
-        <textarea rows="20" cols="45">{$constituencies}</textarea>
+        <textarea type="text" id="txtConstituencies" name="txtConstituencies" rows="20" cols="45">{$constituencies}</textarea>
         <div class="buttons">
             <input type="submit"  value="Bulk replace constituencies"/>
         </div>

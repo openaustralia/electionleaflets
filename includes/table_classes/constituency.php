@@ -52,7 +52,14 @@ class tableclass_constituency extends tablebase {
     function keys() {
         return array('constituency_id');
     }
-    
+
+    /* Tells DB_DataObject that constituency_id is an autoincrementing key
+     * and not to use those stupid sequence tables
+     */
+    function sequenceKey() {
+        return array('constituency_id', TRUE);
+    }
+
     //overrride insert to create a url id
     public function insert(){
 
