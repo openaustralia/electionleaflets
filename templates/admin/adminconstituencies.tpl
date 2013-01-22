@@ -8,6 +8,11 @@
         </a>
     </p>
 
+    <p>
+        <strong>Format:</strong> one constituency name per line
+        <small>e.g. <code>Grayndler</code></small>
+    </p>
+
     <form id="frmUpload" method="post" action="{$form_action}">
         {include file="../formvars.tpl"}
         <textarea type="text" id="txtConstituencies" name="txtConstituencies" rows="20" cols="45">{$constituencies}</textarea>
