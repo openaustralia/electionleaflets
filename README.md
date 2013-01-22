@@ -28,7 +28,7 @@ Create a MySQL database using the script in `schema/electionleaflets.sql` and
 Config file
 -----------
 
-Make a copy of config/general.svn.php as config/general.php then edit the
+Make a copy of config/general.php.example as config/general.php then edit the
 variables for you local setup.
 
 You must point it to the MySQL database you just created and set `ROOT_DIR`,
