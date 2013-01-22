@@ -1,7 +1,7 @@
 {include file="../header.tpl"}
 
 <div class="contentfull align-left">
-    <h1>Bulk replace constituencies</h1>
+    <h1>{$page_title}</h1>
     <p>
         <a href="edit_election.php?id={$election_details->election_id}">
             « Back to {$election_details->name}
