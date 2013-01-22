@@ -66,7 +66,7 @@ class admin_constituencies_page extends pagebase {
         // Delete many-to-many joins
         $query_string = 'DELETE FROM `constituency_election`
                          WHERE `election_id`=' . $this->election_id;
-        if(!$db->query($query_string)) {
+        if($db->query($query_string) === false) {
             $db->query('ROLLBACK');
             die("Unable to delete constituency links. Transaction rolled back.");
         }
