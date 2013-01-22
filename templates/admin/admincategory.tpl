@@ -1,7 +1,7 @@
 {include file="../header.tpl"}
 
 <div class="contentfull">
-    <h1>Add a new party or category</h1>
+    <h1>Add a new category</h1>
     <p><a href="/admin">« Admin home</a></p>
 
     <form method="post" action="{$form_action}">

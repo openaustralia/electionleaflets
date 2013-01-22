@@ -1,7 +1,7 @@
 {include file="../header.tpl"}
 
 <div class="contentfull">
-    <h1>Add a new party or category</h1>
+    <h1>Add a new party</h1>
     <p><a href="/admin">« Admin home</a></p>
 
     <form method="post" action="{$form_action}">
@@ -16,7 +16,7 @@
             </ul>
         </fieldset>
         <div class="buttons">
-            <input type="submit"  value="Create election"/>
+            <input type="submit"  value="Add party"/>
         </div>
     </form>
 </div>
