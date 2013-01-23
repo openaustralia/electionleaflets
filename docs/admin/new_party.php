@@ -24,6 +24,7 @@ class admin_party_page extends pagebase {
         if($this->data['txtPartyName']) {
             $party = factory::create('party');
             $party->name = trim($this->data['txtPartyName']);
+            $party->country_id = COUNTRY;
 
             if(!$party->insert()){
                 trigger_error("Unable to save party");
