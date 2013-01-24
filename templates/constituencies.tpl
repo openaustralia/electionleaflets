@@ -6,7 +6,7 @@
             <label for="txtSearch">Postcode</label>
             <input type="text" id="txtSearch" name="p" />
             <input  type="submit" value="GO" />
-            <small>e.g. <a href="{$www_server}/{$area_names}?p={$example_postcode}">{$example_postcode}</a></small>
+            <small>e.g. <a href="{$www_server}/{$area_names}/?p={$example_postcode}">{$example_postcode}</a></small>
         </form>
         <div class="section">
             <ul>
