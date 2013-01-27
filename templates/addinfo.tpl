@@ -140,7 +140,6 @@
 $("#txtPostcode").bind('blur keyup', function(e) {
     var postcode = $(this).val();
     if(postcode.length === 4 && postcode !== $("#txtPostcode").data("last-postcode")) {
-        console.log("Go!");
         $("#txtPostcode").data("last-postcode", postcode);
 
         $.ajax({
