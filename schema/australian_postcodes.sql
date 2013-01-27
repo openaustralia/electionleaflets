@@ -26,7 +26,7 @@ CREATE TABLE `australian_postcode` (
   `election_id` int(11) NOT NULL,
   `postcode` varchar(10) NOT NULL,
   `constituency` varchar(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `australian_postcode` WRITE;
 /*!40000 ALTER TABLE `australian_postcode` DISABLE KEYS */;
