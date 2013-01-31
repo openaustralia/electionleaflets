@@ -24,6 +24,7 @@
                 <li>Tim 'mithro' Ansell</li>
                 <li>Malcolm Blaney</li>
                 <li>Keith Moss</li>
+                <li>Nathan Jenkins</li>
             </ul>
         </p>
         <p>
