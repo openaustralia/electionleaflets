@@ -57,6 +57,9 @@ class apicall_page extends pagebase {
 		$this->reset_smarty(TEMPLATE_DIR . "/api/" . $this->output . ".tpl");
     	$result = $this->get_data();
 
+        // Add JSONP callback. Not sure if urlencode needed - better safe than sorry??
+        $this->assign('callback', urlencode($this->all_arguments['callback']));
+
 		if($this->method == 'constituency' || $this->method == 'party'|| $this->method == 'latest'){    	    
     	    if($this->success){
     	        $this->assign("leaflets", $result);

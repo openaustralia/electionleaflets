@@ -1,6 +1,7 @@
 {php}
 	header("Content-Type: application/json");
 	$leaflets_reduce = array();
+    $callback = $this->_tpl_vars['callback'];
 
 	if($this->_tpl_vars["has_leaflets"] === true) {
         foreach($this->_tpl_vars["leaflets"] as $leaflet) {
@@ -15,5 +16,11 @@
         }
 	}
 
-	echo json_encode($leaflets_reduce);
+    $json = json_encode($leaflets_reduce);
+
+    if($callback) {
+        echo "$callback($json)";
+    }else{
+        echo $json;
+    }
 {/php}
