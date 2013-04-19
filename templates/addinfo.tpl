@@ -28,11 +28,11 @@
                 <li>
                     <label for="ddlConstituency">Which electorate was the leaflet delivered to?</label>
                     {if $constituencies_hints}
-                        <ol {if $warn_ddlConstituency}class="error"{/if}>
+                        <ul {if $warn_ddlConstituency}class="error"{/if}>
                           {foreach from="$constituencies_hints" item="name"}
-                          <li><input type="radio" name="ddlConstituencyHint" value="{$name}" {if $data.ddlConstituency == $name}selected="selected"{/if}>{$name}</li>
+                          <li><input type="radio" name="ddlConstituencyHint" value="{$name}" id="{$name}"{if $data.ddlConstituency == $name}selected="selected"{/if}><label for="{$name}">{$name}</label></li>
                           {/foreach}
-                        </ol>
+                        </ul>
                     {else}
                     <select id="ddlConstituency" name="ddlConstituency" {if $warn_ddlConstituency}class="error"{/if}>
                         <option></option>

@@ -416,7 +416,7 @@ form.formhighlight {background:#ffffaa; padding:10px;}
 #divMessages ul li{
 	color: red;
 }
-input.error, textarea.error, select.error, ol.error {border: solid 2px #EF5963;}
+input.error, textarea.error, select.error, ol.error, ul.error {border: solid 2px #EF5963;}
 input.hint, textarea.hint {color:#bfbfbf; font-style:italic;}
 small.error {background:#ff6f75;}
 
