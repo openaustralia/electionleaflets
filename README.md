@@ -21,12 +21,17 @@ Requires cURL, php5-imap, php5-gd, php-mbstring
 Database
 --------
 
-Create a MySQL database using the script in `schema/electionleaflets.sql` and
-`schema/australian_postcodes.sql`
+Create a MySQL database and user:
 
-    echo "CREATE DATABASE electionleaflets" | mysql
-    cat schema/electionleaflets.sql | mysql electionleaflets
-    cat schema/australian_postcodes.sql | mysql electionleaflets
+    echo "CREATE DATABASE electionleaflets" | mysql --user=root --password
+    echo "GRANT USAGE ON *.* TO 'electionleaflets'@'localhost' IDENTIFIED BY 'electionleaflets'" | mysql --user=root --password
+    echo "GRANT ALL PRIVILEGES ON electionleaflets.* TO 'electionleaflets'@'localhost'" | mysql --user=root --password
+
+The create the database schema using the script in `schema/electionleaflets.sql`
+and `schema/australian_postcodes.sql`
+
+    cat schema/electionleaflets.sql | mysql --user=root --password electionleaflets
+    cat schema/australian_postcodes.sql | mysql --user=root --password electionleaflets
 
 Config file
 -----------
