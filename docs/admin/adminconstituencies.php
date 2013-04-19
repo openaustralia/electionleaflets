@@ -79,12 +79,21 @@ class admin_constituencies_page extends pagebase {
             $constituency_name = trim($constituency_name);
             if($constituency_name == '') { continue; }
 
-            // Create constituency
-            $constituency = factory::create('constituency');
-            $constituency->name = $constituency_name;
-            if(!$constituency->insert()) {
-                $db->query('ROLLBACK');
-                die("Unable to add constituency. Transaction rolled back.");
+            // Check for an existing constituency (from another election)
+            $existing_constituency = $search->search("constituency",
+                array(array("name", "=", $constituency_name))
+            );
+
+            if(count($existing_constituency) == 1) {
+                $constituency = $existing_constituency[0];
+            }else{
+                // Create constituency
+                $constituency = factory::create('constituency');
+                $constituency->name = $constituency_name;
+                if(!$constituency->insert()) {
+                    $db->query('ROLLBACK');
+                    die("Unable to add constituency. Transaction rolled back.");
+                }
             }
 
             // Create join
