@@ -82,11 +82,12 @@ class tableclass_constituency extends tablebase {
         $return = array();
 	    $constituency = factory::create('constituency');
 	    $sql = "SELECT constituency.name, constituency.url_id, constituency.constituency_id 
-                    FROM constituency 
-                    WHERE constituency.constituency_id NOT IN 
+                    FROM constituency_election, constituency 
+                    WHERE constituency_election.election_id = $election_id AND constituency_election.constituency_id NOT IN 
                         (SELECT leaflet_constituency.constituency_id 
                             FROM leaflet_constituency INNER JOIN leaflet_election ON leaflet_constituency.leaflet_id = leaflet_election.leaflet_id 
                             WHERE leaflet_election.election_id = $election_id)
+                        AND constituency_election.constituency_id = constituency.constituency_id
                     GROUP BY constituency.name, constituency.constituency_id, constituency.url_id LIMIT " . $limit;
 
 	    if($cache){
