@@ -24,6 +24,15 @@
 	{if $rss_link != ''}
 	  <link rel="alternate" type="application/rss+xml" title="{$page_title}" href="{$rss_link}">
 	{/if}
+        {if $leaflet->leaflet_id>0}
+          <meta name="twitter:card" content="summary_large_image">
+          <meta name="twitter:site" content="@electionleaflet">
+          <meta name="twitter:title" content="{$page_title|default:$site_tag_line}">
+          <meta name="twitter:description" content="{$leaflet->description}">
+          <meta name="twitter:creator" content="@electionleaflet">
+          <meta name="twitter:image:src" content="{$leaflet_images[0]->medium_url()}">
+        {/if}
+
 </head>
 
 <body {if $is_full_view == true}class="full-width"{/if}>
