@@ -24,7 +24,7 @@
 	{if $rss_link != ''}
 	  <link rel="alternate" type="application/rss+xml" title="{$page_title}" href="{$rss_link}">
 	{/if}
-        {if $leaflet->leaflet_id>0}
+        {if ($leaflet->leaflet_id>0 && is_object($leaflet_images[0]))}
           <meta name="twitter:card" content="summary_large_image">
           <meta name="twitter:site" content="@electionleaflet">
           <meta name="twitter:title" content="{$page_title|default:$site_tag_line}">
