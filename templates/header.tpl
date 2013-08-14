@@ -45,6 +45,7 @@
       })();
     </script>
   {/literal}
+  <meta name="google-site-verification" content="bOOVF81-_5MQr7KZXcMTXBlpFNnMTxSVjWMq4UgqC5g" />
 </head>
 
 <body {if $is_full_view == true}class="full-width"{/if}>
