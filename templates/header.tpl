@@ -32,7 +32,19 @@
           <meta name="twitter:creator" content="@electionleaflet">
           <meta name="twitter:image:src" content="{$leaflet_images[0]->medium_url()}">
         {/if}
+  {literal}
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '{/literal}{$google_analytics_tracker}{literal}']);
+      _gaq.push(['_trackPageview']);
 
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  {/literal}
 </head>
 
 <body {if $is_full_view == true}class="full-width"{/if}>
