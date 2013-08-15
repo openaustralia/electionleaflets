@@ -11,15 +11,7 @@ class full_page extends pagebase {
         if(!isset($leaflet_id)){
             throw_404();
         }else{
-            if($leaflet_id == 1362){
-                //redirects
-                redirect(WWW_SERVER . '/full.php?q=' . 1339);
-            }else if($leaflet_id == 1882){
-                //redirects
-                redirect(WWW_SERVER . '/full.php?q=' . 1842);
-            }else{
-                $this->leaflet_id = $leaflet_id;
-            }
+            $this->leaflet_id = $leaflet_id;
         }
 
     }
