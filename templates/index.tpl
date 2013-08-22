@@ -15,12 +15,12 @@ for votes in Australia.
         <p>
             We need <strong>your help</strong> to photograph and map them so we can keep 
 an eye on what the parties are up to, and try to keep them honest.
+        </p>
+        <p>
+            Help spread the word by printing out and delivering these wonderful <a href="https://www.openaustraliafoundation.org.au/2013/08/22/this-is-not-an-election-leaflet-2013-federal-election-edition/">"This is not an election leaflet" leaflets</a>!
         </p><br/>
         <p id="pCount">
             <strong>{$leaflet_count}</strong> leaflets added so far for the {$current_election}!
-        </p><br/>
-        <p>
-            Help spread the word by printing out and delivering these wonderful <a href="https://www.openaustraliafoundation.org.au/2013/08/22/this-is-not-an-election-leaflet-2013-federal-election-edition/">"This is not an election leaflet" leaflets</a>!
         </p>
     </div>
     </div>
