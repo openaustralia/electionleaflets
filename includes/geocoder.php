@@ -114,7 +114,6 @@ class geocoder{
 		}
 
 		$url = "http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address={query}&region={cctld}";
-		$url = str_replace('{key}', GOOGLE_MAPS_KEY, $url);
 		$url = str_replace('{query}', $query, $url);
 		$url = str_replace('{cctld}', $country_code_tld, $url);
 		

@@ -1,3 +1,4 @@
+php_value date.timezone "America/Chicago"
 RewriteEngine On
 
 RewriteRule ^parties/?$ parties.php [NC,L]
