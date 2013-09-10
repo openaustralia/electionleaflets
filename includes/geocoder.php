@@ -113,18 +113,16 @@ class geocoder{
 			$query .= urlencode($query_parts[$i]);
 		}
 
-		$url = "http://maps.google.com/maps/geo?key={key}&output=csv&q={query}&gl={cctld}";
+		$url = "http://maps.googleapis.com/maps/api/geocode/json?sensor=false&address={query}&region={cctld}";
 		$url = str_replace('{key}', GOOGLE_MAPS_KEY, $url);
 		$url = str_replace('{query}', $query, $url);
 		$url = str_replace('{cctld}', $country_code_tld, $url);
 		
 		$data = safe_scrape_cached($url, CACHE_TIME_LONG);
-		$data = explode(',', $data);
-		
-		if(($data[0] + 0)  != 602){
-			$return[0] = $data[2] + 0;
-			$return[1] = $data[3] + 0;			
-		}
+
+		$return[0] = json_decode($data)->results[0]->geometry->location->lat;
+		$return[1] = json_decode($data)->results[0]->geometry->location->lng;
+
 		return $return;
 	}
 
