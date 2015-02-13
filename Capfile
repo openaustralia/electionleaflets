@@ -27,7 +27,7 @@ after 'deploy:update_code', 'deploy:symlink_configuration'
 namespace :deploy do
   desc "Restart doesn't do anything"
   task :restart do ; end
-  
+
   desc "Link additional configuration"
   task :symlink_configuration do
     links = {
