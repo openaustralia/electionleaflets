@@ -4,7 +4,6 @@ Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
 set :application, "electionleaflets.org.au"
 set :repository,  "git://github.com/openaustralia/electionleaflets.git"
 
-role :web, "kedumba.openaustraliafoundation.org.au"
 
 set :use_sudo, false
 set :user, "deploy"
@@ -12,10 +11,15 @@ set :scm, :git
 set :stage, "test" unless exists? :stage
 
 if stage == "production"
+  role :web, "kedumba.openaustraliafoundation.org.au"
   set :deploy_to, "/srv/www/www.#{application}"
 elsif stage == "test"
+  role :web, "kedumba.openaustraliafoundation.org.au"
   set :deploy_to, "/srv/www/test.#{application}"
   set :branch, "test"
+elsif stage == "development"
+  role :web, "electionleaflets.org.au.dev"
+  set :deploy_to, "/srv/www"
 end
 
 after 'deploy:update_code', 'deploy:symlink_configuration'
@@ -34,5 +38,11 @@ namespace :deploy do
 
     # "ln -sf <a> <b>" creates a symbolic link but deletes <b> if it already exists
     run links.map {|a| "ln -sf #{a.last} #{a.first}"}.join(";")
+  end
+
+  desc "Setup database schema - CAUTION THIS WILL DELETE DATA"
+  task :setup_db do
+    run "cat /srv/www/current/schema/electionleaflets.sql | mysql --user=root electionleaflets"
+    run "cat /srv/www/current/schema/australian_postcodes.sql | mysql --user=root electionleaflets"
   end
 end
