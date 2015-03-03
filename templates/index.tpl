@@ -15,10 +15,10 @@
 	    <div id="divFrontLookup">
 			<h4>View leaflets in your area</h4>
 	         <form method="get" action="{$www_server}/{$area_names}/">
-	             <input id="txtSearch" name="p" value="Enter postcode" type="text" onfocus="value=''"><input type="image" src="{$www_server}/images/search_button.png" class="button" value="GO" type="submit">                    
+	             <input id="txtSearch" name="p" value="Enter postcode" type="text" onfocus="value=''"><input type="image" src="{$www_server}/images/search_button.png" class="button" value="GO" type="submit">
 	         </form>
 	     </div>
-	     
+
 	     <div id="divAction">
 	     	<h4>Add a leaflet</h4>
 	        <div class="add upload" onclick="window.location = '{$www_server}/addupload';">
@@ -40,7 +40,7 @@
         <h4>Latest leaflets</h4><span class="orange-divider"> | </span><h4><a class="browse-leaflets" href="{$www_server}/browse">Browse leaflets</a></h4>
         <div id="divScroller"> {* TODO: update this div from Jack's work *}
             <a id="btnPrevious" href="#"><img src="{$www_server}/images/arrow_left.png" alt="Previous"/></a>
-            <a id="btnNext" href="#"><img src="{$www_server}/images/arrow_right.png" alt="Next"/></a>            
+            <a id="btnNext" href="#"><img src="{$www_server}/images/arrow_right.png" alt="Next"/></a>
             <ul class="results">
                 {foreach from="$leaflets" item="leaflet"}
                     <li>
@@ -56,7 +56,7 @@
         <p><a href="{$www_server}/browse">Browse leaflets by party or category &raquo;</a></p>
     </div>
     <br class="clear"/>
-    
+
     <div class="stats">
       <h4>View leaflets by...</h4>
         <div>
@@ -87,7 +87,7 @@
             </p>
         </div>
     </div>
-    
+
 </div>
 
 {*
@@ -96,5 +96,5 @@
     <img src="http://chart.apis.google.com/chart?cht=bhs&chd=t:{foreach from="$party_counts" item="party" name="parties"}{$party->count}{if $smarty.foreach.parties.last == false},{/if}{/foreach}&chs=400x125&chco={foreach from="$total_counts" item="party" name="parties"}{$party->colour}{if $smarty.foreach.parties.last == false}|{/if}{/foreach}&chxt=y&chxl=0:{foreach from="$party_counts" item="party" name="parties"}|{$party->name}{/foreach}&chm=N,ffffff,0,-1,11,,c&s:underp&chds=0,50"/>
 </div>
 *}
- 
+
 {include file="footer.tpl"}
