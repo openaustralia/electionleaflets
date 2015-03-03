@@ -3,22 +3,10 @@
 <div id="divContentFull">
     <div class="leftcolumn">
     <div id="divWelcome">
-    	<h3>Make a difference</h3>
-    	<h3 class="light">before you vote</h3>
-        <p>
-            Election leaflets are one of the main weapons in the fight 
-for votes in Australia.
-        </p>
-        <p>
-            They are targeted, effective and sometimes very bitter. 
-        </p>
-        <p>
-            We need <strong>your help</strong> to photograph and map them so we can keep 
-an eye on what the parties are up to, and try to keep them honest.
-        </p><br/>
-        <p id="pCount">
-            <strong>{$leaflet_count}</strong> leaflets added so far for the {$current_election}!
-        </p>
+    	<h3>We will not be collecting leaflets for the NSW State&nbsp;Election&nbsp;2015</h3>
+        <p>Unfortunately, the OpenAustralia Foundation doesn't have the time or the resources to
+          run Election Leaflets during the upcoming NSW State Election in March 2015.</p>
+        <p>We'll have more to say on this soon&hellip;</p>
     </div>
     </div>
     <div class="rightcolumn">
