@@ -121,3 +121,10 @@ need the following installed:
     proj
     libapache2-mod-python
     python-imaging
+
+
+Local PHP server for local development
+======================================
+
+cd docs
+php -d include_path=".:../includes:../includes/PEAR:../config" -d date.timezone="Australia/Sydney" -S localhost:8000
