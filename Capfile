@@ -20,6 +20,7 @@ elsif stage == "test"
 elsif stage == "development"
   role :web, "electionleaflets.org.au.dev"
   set :deploy_to, "/srv/www"
+  set :normalize_asset_timestamps, false
 end
 
 after 'deploy:update_code', 'deploy:symlink_configuration'
