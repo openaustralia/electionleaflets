@@ -32,7 +32,7 @@ namespace :deploy do
   desc "Link additional configuration"
   task :symlink_configuration do
     links = {
-            "#{release_path}/config/general.php"         => "#{shared_path}/config/general.php",
+            "#{release_path}/config/general.php"         => "#{shared_path}/../#{stage}/shared/config/general.php",
             "#{release_path}/data"                       => "#{shared_path}/data",
             "#{release_path}/djangoleaflets/settings.py" => "#{shared_path}/djangoleaflets/settings.py"
     }
