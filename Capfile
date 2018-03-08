@@ -12,14 +12,14 @@ set :stage, "test" unless exists? :stage
 
 if stage == "production"
   role :web, "kedumba.openaustraliafoundation.org.au"
-  set :deploy_to, "/srv/www/www.#{application}"
+  set :deploy_to, "/srv/www/production"
 elsif stage == "test"
   role :web, "kedumba.openaustraliafoundation.org.au"
-  set :deploy_to, "/srv/www/test.#{application}"
+  set :deploy_to, "/srv/www/staging"
   set :branch, "test"
 elsif stage == "development"
   role :web, "electionleaflets.org.au.dev"
-  set :deploy_to, "/srv/www"
+  set :deploy_to, "/srv/www/production"
   set :normalize_asset_timestamps, false
 end
 
@@ -32,7 +32,7 @@ namespace :deploy do
   desc "Link additional configuration"
   task :symlink_configuration do
     links = {
-            "#{release_path}/config/general.php"         => "#{shared_path}/../#{stage}/shared/config/general.php",
+            "#{release_path}/config/general.php"         => "#{shared_path}/config/general.php",
             "#{release_path}/data"                       => "#{shared_path}/data",
             "#{release_path}/djangoleaflets/settings.py" => "#{shared_path}/djangoleaflets/settings.py"
     }
