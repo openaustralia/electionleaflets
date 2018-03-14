@@ -43,7 +43,7 @@ namespace :deploy do
 
   desc "Setup database schema - CAUTION THIS WILL DELETE DATA"
   task :setup_db do
-    run "cat /srv/www/current/schema/electionleaflets.sql | mysql --user=root electionleaflets"
-    run "cat /srv/www/current/schema/australian_postcodes.sql | mysql --user=root electionleaflets"
+    run "cat #{current_path}/schema/electionleaflets.sql | mysql --user=root electionleaflets"
+    run "cat #{current_path}/schema/australian_postcodes.sql | mysql --user=root electionleaflets"
   end
 end
