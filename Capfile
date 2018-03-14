@@ -34,16 +34,18 @@ namespace :deploy do
     links = {
             "#{release_path}/config/general.php"         => "#{shared_path}/config/general.php",
             "#{release_path}/data"                       => "#{shared_path}/data",
-            "#{release_path}/djangoleaflets/settings.py" => "#{shared_path}/djangoleaflets/settings.py"
+            "#{release_path}/djangoleaflets/settings.py" => "#{shared_path}/djangoleaflets/settings.py",
+            "/home/deploy/.my.cnf"                       => "#{shared_path}/config/my.cnf",
     }
 
     # "ln -sf <a> <b>" creates a symbolic link but deletes <b> if it already exists
     run links.map {|a| "ln -sf #{a.last} #{a.first}"}.join(";")
+
   end
 
   desc "Setup database schema - CAUTION THIS WILL DELETE DATA"
   task :setup_db do
-    run "cat #{current_path}/schema/electionleaflets.sql | mysql --user=root electionleaflets"
-    run "cat #{current_path}/schema/australian_postcodes.sql | mysql --user=root electionleaflets"
+    run "cat #{current_path}/schema/electionleaflets.sql | mysql el-production"
+    run "cat #{current_path}/schema/australian_postcodes.sql | mysql el-production"
   end
 end
