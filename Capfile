@@ -18,7 +18,7 @@ elsif stage == "test"
   set :deploy_to, "/srv/www/staging"
   set :branch, "test"
 elsif stage == "development"
-  role :web, "electionleaflets.org.au.dev"
+  role :web, "electionleaflets.org.au.test"
   set :deploy_to, "/srv/www/production"
   set :normalize_asset_timestamps, false
 end
