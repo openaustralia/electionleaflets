@@ -17,11 +17,14 @@ elsif stage == "test"
   role :web, "ec2.electionleaflets.org.au"
   set :deploy_to, "/srv/www/staging"
   set :branch, "test"
+  set :dbname, "el-staging"
 elsif stage == "development"
   role :web, "electionleaflets.org.au.test"
   set :deploy_to, "/srv/www/production"
   set :normalize_asset_timestamps, false
 end
+
+set :dbname, "el-production" unless exists? :dbname
 
 after 'deploy:update_code', 'deploy:symlink_configuration'
 
@@ -45,7 +48,7 @@ namespace :deploy do
 
   desc "Setup database schema - CAUTION THIS WILL DELETE DATA"
   task :setup_db do
-    run "cat #{current_path}/schema/electionleaflets.sql | mysql el-production"
-    run "cat #{current_path}/schema/australian_postcodes.sql | mysql el-production"
+    run "cat #{current_path}/schema/electionleaflets.sql | mysql #{dbname}"
+    run "cat #{current_path}/schema/australian_postcodes.sql | mysql #{dbname}"
   end
 end
