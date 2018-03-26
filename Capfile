@@ -11,7 +11,7 @@ set :scm, :git
 set :stage, "test" unless exists? :stage
 
 if stage == "production"
-  role :web, "kedumba.openaustraliafoundation.org.au"
+  role :web, "ec2.electionleaflets.org.au"
   set :deploy_to, "/srv/www/production"
 elsif stage == "test"
   role :web, "ec2.electionleaflets.org.au"
