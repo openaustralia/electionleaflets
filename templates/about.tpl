@@ -28,7 +28,7 @@
             </ul>
         </p>
         <p>
-            ElectionLeaflets.org.au has been adapted from the UK's <a href="http://www.thestraightchoice.org/about.php">TheStraightChoice.org</a> built by the very amazing:
+            ElectionLeaflets.org.au has been adapted from the UK's <a href="http://www.electionleaflets.org/about.php">www.electionleaflets.org.org</a> built by the very amazing:
             <ul>
                 <li>Julian Todd</li>
                 <li>Richard Pope</li>
