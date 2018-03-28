@@ -28,7 +28,7 @@
             </ul>
         </p>
         <p>
-            ElectionLeaflets.org.au has been adapted from the UK's <a href="http://www.electionleaflets.org/about.php">www.electionleaflets.org.org</a> built by the very amazing:
+            ElectionLeaflets.org.au has been adapted from the UK's <a href="http://www.electionleaflets.org/about.php">www.electionleaflets.org</a> built by the very amazing:
             <ul>
                 <li>Julian Todd</li>
                 <li>Richard Pope</li>
@@ -64,7 +64,7 @@
                 Yes. Please send them to:
                 <address>Election Leaflets, The OpenAustralia Foundation, PO Box 147, Katoomba NSW 2780</address>
                 and mark each leaflet with the postcode and electorate it was delivered to.
-                
+
                 Also, we have arranged with the <a href="http://www.nla.gov.au">National Library of Australia</a> to forward all
                 the leaflets we receive by post to be considered for inclusion in
                 their <a href="http://www.nla.gov.au/collect/elections.html">election material archive</a>.
@@ -75,5 +75,5 @@
             You can get in touch with us via email <a href="mailto:contact@electionleaflets.org.au">contact@electionleaflets.org.au</a>, say hello on <a href="http://twitter.com/electionleaflet">Twitter</a> or phone Matthew on 0424 563 655.
         </p>
     </div>
-    
+
 {include file="footer.tpl"}
