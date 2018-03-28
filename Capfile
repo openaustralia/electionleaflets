@@ -11,10 +11,10 @@ set :scm, :git
 set :stage, "test" unless exists? :stage
 
 if stage == "production"
-  role :web, "ec2.electionleaflets.org.au"
+  role :web, "electionleaflets.org.au"
   set :deploy_to, "/srv/www/production"
 elsif stage == "test"
-  role :web, "ec2.electionleaflets.org.au"
+  role :web, "electionleaflets.org.au"
   set :deploy_to, "/srv/www/staging"
   set :branch, "test"
   set :dbname, "el-staging"
