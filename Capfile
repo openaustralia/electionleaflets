@@ -11,16 +11,20 @@ set :scm, :git
 set :stage, "test" unless exists? :stage
 
 if stage == "production"
-  role :web, "kedumba.openaustraliafoundation.org.au"
-  set :deploy_to, "/srv/www/www.#{application}"
+  role :web, "ec2.electionleaflets.org.au"
+  set :deploy_to, "/srv/www/production"
 elsif stage == "test"
-  role :web, "kedumba.openaustraliafoundation.org.au"
-  set :deploy_to, "/srv/www/test.#{application}"
+  role :web, "ec2.electionleaflets.org.au"
+  set :deploy_to, "/srv/www/staging"
   set :branch, "test"
+  set :dbname, "el-staging"
 elsif stage == "development"
-  role :web, "electionleaflets.org.au.dev"
-  set :deploy_to, "/srv/www"
+  role :web, "electionleaflets.org.au.test"
+  set :deploy_to, "/srv/www/production"
+  set :normalize_asset_timestamps, false
 end
+
+set :dbname, "el-production" unless exists? :dbname
 
 after 'deploy:update_code', 'deploy:symlink_configuration'
 
@@ -33,16 +37,18 @@ namespace :deploy do
     links = {
             "#{release_path}/config/general.php"         => "#{shared_path}/config/general.php",
             "#{release_path}/data"                       => "#{shared_path}/data",
-            "#{release_path}/djangoleaflets/settings.py" => "#{shared_path}/djangoleaflets/settings.py"
+            "#{release_path}/djangoleaflets/settings.py" => "#{shared_path}/djangoleaflets/settings.py",
+            "/home/deploy/.my.cnf"                       => "#{shared_path}/config/my.cnf",
     }
 
     # "ln -sf <a> <b>" creates a symbolic link but deletes <b> if it already exists
     run links.map {|a| "ln -sf #{a.last} #{a.first}"}.join(";")
+
   end
 
   desc "Setup database schema - CAUTION THIS WILL DELETE DATA"
   task :setup_db do
-    run "cat /srv/www/current/schema/electionleaflets.sql | mysql --user=root electionleaflets"
-    run "cat /srv/www/current/schema/australian_postcodes.sql | mysql --user=root electionleaflets"
+    run "cat #{current_path}/schema/electionleaflets.sql | mysql #{dbname}"
+    run "cat #{current_path}/schema/australian_postcodes.sql | mysql #{dbname}"
   end
 end
