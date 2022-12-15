@@ -2,7 +2,7 @@ load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
 
 set :application, "electionleaflets.org.au"
-set :repository,  "git://github.com/openaustralia/electionleaflets.git"
+set :repository,  "https://github.com/openaustralia/electionleaflets.git"
 
 
 set :use_sudo, false
