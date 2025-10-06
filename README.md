@@ -102,6 +102,46 @@ categories that may already have data uploaded.
 
 With great power...
 
+Deployment
+==========
+
+This project uses Capistrano 3 for automated deployment. The deployment is also automated via GitHub Actions for continuous deployment.
+
+Requirements
+------------
+
+* Ruby 3.2.3 or later (see `.ruby-version`)
+* Bundler gem
+
+Setup
+-----
+
+Install dependencies:
+
+    bundle install
+
+Deploy to staging (test branch):
+
+    bundle exec cap test deploy
+
+Deploy to production (master branch):
+
+    bundle exec cap production deploy
+
+Deploy to development:
+
+    bundle exec cap development deploy
+
+Continuous Deployment
+---------------------
+
+The project is configured for continuous deployment via GitHub Actions:
+
+* Pushes to the `master` branch automatically deploy to production
+* Pushes to the `test` branch automatically deploy to staging
+
+The deployment workflow requires the `DEPLOY_SSH_KEY` secret to be configured in the repository settings with the SSH private key for the deploy user.
+
 Help
 ====
 

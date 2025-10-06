@@ -1,0 +1,64 @@
+# Logfile created on 2025-10-06 21:16:38 +0000 by logger.rb/v1.7.0
+  INFO ---------------------------------------------------------------------------
+  INFO START 2025-10-06 21:16:38 +0000 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [fbf36696] Running /usr/bin/env mkdir -p /tmp as deploy@electionleaflets.org.au
+ DEBUG [fbf36696] Command: /usr/bin/env mkdir -p /tmp
+  INFO [5381dd95] Running /usr/bin/env #<StringIO:0x00007fced164c010> /tmp/git-ssh-1feae139b6d8420826a5.sh as deploy@electionleaflets.org.au
+ DEBUG [5381dd95] Command: /usr/bin/env #<StringIO:0x00007fced164c010> /tmp/git-ssh-1feae139b6d8420826a5.sh
+  INFO [55b972f4] Running /usr/bin/env chmod 700 /tmp/git-ssh-1feae139b6d8420826a5.sh as deploy@electionleaflets.org.au
+ DEBUG [55b972f4] Command: /usr/bin/env chmod 700 /tmp/git-ssh-1feae139b6d8420826a5.sh
+  INFO [8f0b7aa9] Running /usr/bin/env git ls-remote https://github.com/openaustralia/electionleaflets.git HEAD as deploy@electionleaflets.org.au
+ DEBUG [8f0b7aa9] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-1feae139b6d8420826a5.sh" ; /usr/bin/env git ls-remote https://github.com/openaustralia/electionleaflets.git HEAD )
+  INFO [2ca7cfdf] Running /usr/bin/env mkdir -p /srv/www/production/shared /srv/www/production/releases as deploy@electionleaflets.org.au
+ DEBUG [2ca7cfdf] Command: /usr/bin/env mkdir -p /srv/www/production/shared /srv/www/production/releases
+  INFO [db9a781c] Running /usr/bin/env mkdir -p /srv/www/production/shared/data as deploy@electionleaflets.org.au
+ DEBUG [db9a781c] Command: /usr/bin/env mkdir -p /srv/www/production/shared/data
+  INFO [a5eb49d4] Running /usr/bin/env mkdir -p /srv/www/production/shared/config /srv/www/production/shared/djangoleaflets as deploy@electionleaflets.org.au
+ DEBUG [a5eb49d4] Command: /usr/bin/env mkdir -p /srv/www/production/shared/config /srv/www/production/shared/djangoleaflets
+ DEBUG [e7ab25f7] Running [ -f /srv/www/production/shared/config/general.php ] as deploy@electionleaflets.org.au
+ DEBUG [e7ab25f7] Command: [ -f /srv/www/production/shared/config/general.php ]
+ DEBUG [811d0245] Running [ -f /srv/www/production/shared/djangoleaflets/settings.py ] as deploy@electionleaflets.org.au
+ DEBUG [811d0245] Command: [ -f /srv/www/production/shared/djangoleaflets/settings.py ]
+  INFO ---------------------------------------------------------------------------
+  INFO START 2025-10-06 21:17:03 +0000 cap test deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [6c8170ef] Running /usr/bin/env mkdir -p /tmp as deploy@electionleaflets.org.au
+ DEBUG [6c8170ef] Command: /usr/bin/env mkdir -p /tmp
+  INFO [c8af7680] Running /usr/bin/env #<StringIO:0x00007fd69ec8e138> /tmp/git-ssh-34353b67a0f3588d7610.sh as deploy@electionleaflets.org.au
+ DEBUG [c8af7680] Command: /usr/bin/env #<StringIO:0x00007fd69ec8e138> /tmp/git-ssh-34353b67a0f3588d7610.sh
+  INFO [a1c6d930] Running /usr/bin/env chmod 700 /tmp/git-ssh-34353b67a0f3588d7610.sh as deploy@electionleaflets.org.au
+ DEBUG [a1c6d930] Command: /usr/bin/env chmod 700 /tmp/git-ssh-34353b67a0f3588d7610.sh
+  INFO [a00aabd7] Running /usr/bin/env git ls-remote https://github.com/openaustralia/electionleaflets.git HEAD as deploy@electionleaflets.org.au
+ DEBUG [a00aabd7] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-34353b67a0f3588d7610.sh" ; /usr/bin/env git ls-remote https://github.com/openaustralia/electionleaflets.git HEAD )
+  INFO [efe13396] Running /usr/bin/env mkdir -p /srv/www/staging/shared /srv/www/staging/releases as deploy@electionleaflets.org.au
+ DEBUG [efe13396] Command: /usr/bin/env mkdir -p /srv/www/staging/shared /srv/www/staging/releases
+  INFO [5469c12e] Running /usr/bin/env mkdir -p /srv/www/staging/shared/data as deploy@electionleaflets.org.au
+ DEBUG [5469c12e] Command: /usr/bin/env mkdir -p /srv/www/staging/shared/data
+  INFO [e9b67e3f] Running /usr/bin/env mkdir -p /srv/www/staging/shared/config /srv/www/staging/shared/djangoleaflets as deploy@electionleaflets.org.au
+ DEBUG [e9b67e3f] Command: /usr/bin/env mkdir -p /srv/www/staging/shared/config /srv/www/staging/shared/djangoleaflets
+ DEBUG [00c12384] Running [ -f /srv/www/staging/shared/config/general.php ] as deploy@electionleaflets.org.au
+ DEBUG [00c12384] Command: [ -f /srv/www/staging/shared/config/general.php ]
+ DEBUG [9378141e] Running [ -f /srv/www/staging/shared/djangoleaflets/settings.py ] as deploy@electionleaflets.org.au
+ DEBUG [9378141e] Command: [ -f /srv/www/staging/shared/djangoleaflets/settings.py ]
+  INFO ---------------------------------------------------------------------------
+  INFO START 2025-10-06 21:18:06 +0000 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [930aa72a] Running /usr/bin/env mkdir -p /tmp as deploy@electionleaflets.org.au
+ DEBUG [930aa72a] Command: /usr/bin/env mkdir -p /tmp
+  INFO [25f86eca] Running /usr/bin/env #<StringIO:0x00007fd18db1d648> /tmp/git-ssh-55d227339c07daa83ec8.sh as deploy@electionleaflets.org.au
+ DEBUG [25f86eca] Command: /usr/bin/env #<StringIO:0x00007fd18db1d648> /tmp/git-ssh-55d227339c07daa83ec8.sh
+  INFO [c586e591] Running /usr/bin/env chmod 700 /tmp/git-ssh-55d227339c07daa83ec8.sh as deploy@electionleaflets.org.au
+ DEBUG [c586e591] Command: /usr/bin/env chmod 700 /tmp/git-ssh-55d227339c07daa83ec8.sh
+  INFO [cdbe35b9] Running /usr/bin/env git ls-remote https://github.com/openaustralia/electionleaflets.git HEAD as deploy@electionleaflets.org.au
+ DEBUG [cdbe35b9] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-55d227339c07daa83ec8.sh" ; /usr/bin/env git ls-remote https://github.com/openaustralia/electionleaflets.git HEAD )
+  INFO [aeb8629e] Running /usr/bin/env mkdir -p /srv/www/production/shared /srv/www/production/releases as deploy@electionleaflets.org.au
+ DEBUG [aeb8629e] Command: /usr/bin/env mkdir -p /srv/www/production/shared /srv/www/production/releases
+  INFO [e702fc7d] Running /usr/bin/env mkdir -p /srv/www/production/shared/data as deploy@electionleaflets.org.au
+ DEBUG [e702fc7d] Command: /usr/bin/env mkdir -p /srv/www/production/shared/data
+  INFO [4376e125] Running /usr/bin/env mkdir -p /srv/www/production/shared/config /srv/www/production/shared/djangoleaflets as deploy@electionleaflets.org.au
+ DEBUG [4376e125] Command: /usr/bin/env mkdir -p /srv/www/production/shared/config /srv/www/production/shared/djangoleaflets
+ DEBUG [7ff1808f] Running [ -f /srv/www/production/shared/config/general.php ] as deploy@electionleaflets.org.au
+ DEBUG [7ff1808f] Command: [ -f /srv/www/production/shared/config/general.php ]
+ DEBUG [f755c0d9] Running [ -f /srv/www/production/shared/djangoleaflets/settings.py ] as deploy@electionleaflets.org.au
+ DEBUG [f755c0d9] Command: [ -f /srv/www/production/shared/djangoleaflets/settings.py ]

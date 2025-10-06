@@ -4,9 +4,6 @@ lock "~> 3.19.2"
 set :application, "electionleaflets.org.au"
 set :repo_url, "https://github.com/openaustralia/electionleaflets.git"
 
-# Default value for :scm is :git
-set :scm, :git
-
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
 
