@@ -1,0 +1,8 @@
+version: 2
+updates:
+  # Maintain dependencies for Bundler (Ruby)
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5

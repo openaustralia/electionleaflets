@@ -1,54 +1,15 @@
-load 'deploy' if respond_to?(:namespace) # cap2 differentiator
-Dir['vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
+# Load DSL and set up stages
+require "capistrano/setup"
 
-set :application, "electionleaflets.org.au"
-set :repository,  "https://github.com/openaustralia/electionleaflets.git"
+# Include default deployment tasks
+require "capistrano/deploy"
 
+# Load the SCM plugin appropriate to your project:
+require "capistrano/scm/git"
+install_plugin Capistrano::SCM::Git
 
-set :use_sudo, false
-set :user, "deploy"
-set :scm, :git
-set :stage, "test" unless exists? :stage
+# Include tasks from other gems included in your Gemfile
+require "capistrano/bundler"
 
-if stage == "production"
-  role :web, "electionleaflets.org.au"
-  set :deploy_to, "/srv/www/production"
-elsif stage == "test"
-  role :web, "electionleaflets.org.au"
-  set :deploy_to, "/srv/www/staging"
-  set :branch, "test"
-  set :dbname, "el-staging"
-elsif stage == "development"
-  role :web, "electionleaflets.org.au.test"
-  set :deploy_to, "/srv/www/production"
-  set :normalize_asset_timestamps, false
-end
-
-set :dbname, "el-production" unless exists? :dbname
-
-after 'deploy:update_code', 'deploy:symlink_configuration'
-
-namespace :deploy do
-  desc "Restart doesn't do anything"
-  task :restart do ; end
-
-  desc "Link additional configuration"
-  task :symlink_configuration do
-    links = {
-            "#{release_path}/config/general.php"         => "#{shared_path}/config/general.php",
-            "#{release_path}/data"                       => "#{shared_path}/data",
-            "#{release_path}/djangoleaflets/settings.py" => "#{shared_path}/djangoleaflets/settings.py",
-            "/home/deploy/.my.cnf"                       => "#{shared_path}/config/my.cnf",
-    }
-
-    # "ln -sf <a> <b>" creates a symbolic link but deletes <b> if it already exists
-    run links.map {|a| "ln -sf #{a.last} #{a.first}"}.join(";")
-
-  end
-
-  desc "Setup database schema - CAUTION THIS WILL DELETE DATA"
-  task :setup_db do
-    run "cat #{current_path}/schema/electionleaflets.sql | mysql #{dbname}"
-    run "cat #{current_path}/schema/australian_postcodes.sql | mysql #{dbname}"
-  end
-end
+# Load custom tasks from `lib/capistrano/tasks` if you have any defined
+Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
