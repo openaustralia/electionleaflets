@@ -3,3 +3,4 @@ config/general.php
 data/
 vendor/bundle
 .bundle
+log/
