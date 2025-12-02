@@ -1,3 +1,7 @@
+Election Leaflets has been archived.
+see blog post for more info https://www.oaf.org.au/2025/12/02/farewell-election-leaflets/
+
+
 Setup Instructions
 ==================
 
